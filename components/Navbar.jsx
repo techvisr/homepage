@@ -4,9 +4,9 @@ export default function Navbar() {
   const navLinks = [
     { label: "Services", href: "/services" },
     { label: "Case Studies", href: "/case-studies" },
-    { label: "Products", href: "/#products" },
-    { label: "Industries", href: "/#community" },
-    { label: "Why Techvisr", href: "/#why-techvisr" },
+    { label: "Products", href: "/products" },
+    { label: "Industries", href: "/community" },
+    { label: "Why Techvisr", href: "/why-techvisr" },
     { label: "Contact", href: "/contact" },
   ];
 
@@ -46,7 +46,10 @@ export default function Navbar() {
             <ul className="flex flex-col gap-1 text-sm text-gray-700">
               {navLinks.map((link) => (
                 <li key={`mobile-${link.label}`}>
-                  <a className="block rounded px-2 py-2 hover:bg-red-50" href={link.href}>
+                  <a
+                    className="block rounded px-2 py-2 hover:bg-red-50"
+                    href={link.href}
+                  >
                     {link.label}
                   </a>
                 </li>
