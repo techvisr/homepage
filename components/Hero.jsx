@@ -1,3 +1,5 @@
+import CalendlyPopupButton from "./CalendlyPopupButton";
+
 export default function Hero() {
   return (
     <section
@@ -25,12 +27,9 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="/contact"
+            <CalendlyPopupButton
               className="inline-flex items-center justify-center rounded-md bg-red-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-700"
-            >
-              Book a Strategy Consultation
-            </a>
+            />
             <a
               href="/services"
               className="inline-flex items-center justify-center rounded-md border border-gray-500 bg-white px-5 py-3 text-sm font-semibold text-gray-900 transition-colors"
@@ -43,4 +42,3 @@ export default function Hero() {
     </section>
   );
 }
-
