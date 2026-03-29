@@ -4,44 +4,42 @@ export default function Services() {
   const pillars = [
     {
       icon: Cpu,
-      title: "Product Engineering & Development",
-      desc: "Custom software development, web and mobile applications, SaaS platforms, enterprise systems, and cloud-native architectures built with modern frameworks and scalable infrastructure.",
+      title: "Product Engineering",
+      desc: "We design and build web, mobile, and SaaS products from idea to launch.",
     },
     {
       icon: FlaskConical,
-      title: "AI & Advanced Research",
-      desc: "Applied AI solutions, machine learning models, automation systems, data intelligence platforms, and innovation research to transform complex business challenges into competitive advantages.",
+      title: "AI & Data",
+      desc: "Production-ready AI, automation, and data platforms that create real business impact.",
     },
     {
       icon: BadgeCheck,
-      title: "Quality Engineering & Testing",
-      desc: "End-to-end quality assurance, automated testing frameworks, performance engineering, security validation, and continuous testing strategies to ensure flawless digital experiences.",
+      title: "Quality Engineering",
+      desc: "Automated testing and quality systems that catch issues before release.",
     },
     {
       icon: CloudCog,
-      title: "Cloud, DevOps & Scalability",
-      desc: "Cloud migration, DevOps transformation, CI/CD pipelines, infrastructure automation, containerization, and enterprise-grade deployment architectures.",
+      title: "Cloud & DevOps",
+      desc: "Cloud migration and CI/CD pipelines for faster, more reliable delivery.",
     },
   ];
 
   const metrics = [
-    "50+ Projects Delivered",
-    "100% Agile Execution",
+    "50+ Projects",
+    "Agile Delivery",
     "24/7 Engineering Support",
-    "Multi-Industry Expertise",
+    "Multi-Industry Teams",
   ];
 
   return (
     <section id="services" className="bg-gray-100 py-16 md:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <h2 className="text-3xl font-bold text-slate-900 md:text-[36px]">
-          A Full-Stack Technology Powerhouse Built for Scale
+          Services built for speed and scale.
         </h2>
 
         <p className="mt-4 max-w-4xl text-[18px] font-medium text-slate-600">
-          From research and architecture to development, DevOps, and quality
-          engineering - we deliver secure, scalable, and high-performance
-          technology ecosystems.
+          One engineering partner for product, AI, quality, and cloud delivery.
         </p>
 
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -67,10 +65,6 @@ export default function Services() {
           })}
         </div>
 
-        <p className="mx-auto mt-12 max-w-5xl text-center text-xl font-semibold text-slate-900">
-          We don&apos;t just build software. We engineer digital ecosystems that
-          drive measurable business growth.
-        </p>
       </div>
 
       <div className="mt-12 bg-[#0F172A] py-6">

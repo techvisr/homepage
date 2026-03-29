@@ -2,7 +2,7 @@
 
 export default function CalendlyPopupButton({
   className,
-  label = "Book a Strategy Consultation",
+  label = "Book a Consultation",
   url = process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/admin-techvisr/30min",
 }) {
   const openCalendly = (event) => {
