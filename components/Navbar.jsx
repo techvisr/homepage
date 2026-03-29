@@ -3,9 +3,9 @@ import Image from "next/image";
 export default function Navbar() {
   const navLinks = [
     { label: "Services", href: "/services" },
-    { label: "Case Studies", href: "/case-studies" },
-    { label: "Products", href: "/products" },
-    { label: "Industries", href: "/community" },
+    // { label: "Case Studies", href: "/case-studies" },
+    // { label: "Products", href: "/products" },
+    // { label: "Industries", href: "/community" },
     { label: "Why Techvisr", href: "/why-techvisr" },
     { label: "Contact", href: "/contact" },
   ];

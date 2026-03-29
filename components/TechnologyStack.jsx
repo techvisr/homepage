@@ -121,7 +121,7 @@ export default function TechnologyStack() {
   ];
 
   return (
-    <section id="technology-stack" className="bg-white py-24">
+    <section id="technology-stack" className="bg-gray-100 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <h2 className="text-3xl font-semibold text-gray-900 md:text-4xl">
           Modern Technology Stack. Enterprise-Grade Capabilities.
@@ -140,7 +140,7 @@ export default function TechnologyStack() {
             return (
               <article
                 key={category.title}
-                className="rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
                 <Icon className="mb-4 h-7 w-7 text-red-600" />
                 <h3 className="text-xl font-bold text-gray-900">{category.title}</h3>
@@ -160,7 +160,7 @@ export default function TechnologyStack() {
           })}
         </div>
 
-        <div className="mt-12 rounded-xl bg-slate-100 px-6 py-7 text-center">
+        <div className="mt-12 rounded-xl bg-white px-6 py-7 text-center">
           <p className="text-lg font-semibold text-slate-800">
             <strong>Architecture-first thinking</strong>,
             <strong> security-driven development</strong>, and

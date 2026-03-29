@@ -6,6 +6,7 @@ import {
   TrendingUp,
   Handshake,
 } from "lucide-react";
+import CalendlyPopupButton from "./CalendlyPopupButton";
 
 export default function WhyChooseTechvisr() {
   const points = [
@@ -94,12 +95,7 @@ export default function WhyChooseTechvisr() {
             Let&apos;s discuss how Techvisr can help you build, scale, or transform
             your technology initiatives.
           </p>
-          <a
-            href="/contact"
-            className="mt-6 inline-flex items-center justify-center rounded-md bg-red-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-700"
-          >
-            Book a Consultation
-          </a>
+          <CalendlyPopupButton label="Book a Consultation" className="mt-6 inline-flex items-center justify-center rounded-md bg-red-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-700" />
         </div>
       </div>
     </section>

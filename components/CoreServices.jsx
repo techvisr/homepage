@@ -1,91 +1,101 @@
 export default function CoreServices() {
   const services = [
     {
-      title: "Software Development & Product Engineering",
-      authority: "Building reliable, scalable, and future-ready digital products.",
+      title: "Product Engineering & Development",
+      sectionHeadline: "Build it right the first time.",
       content:
-        "We design and develop robust software solutions tailored to your business needs - from early-stage MVPs to large-scale enterprise platforms.",
+        "Great software starts with great architecture. We don't just write code to spec - we question the spec, challenge the assumptions, and design systems that will still be maintainable and scalable two years after launch.",
       bullets: [
         "Custom web and mobile application development",
         "SaaS product engineering and multi-tenant platforms",
-        "Enterprise software and internal systems",
-        "API development and system integrations",
-        "Legacy system modernization and re-architecture",
+        "Enterprise software, portals, and internal tooling",
+        "API design, development, and third-party integrations",
+        "Legacy system modernisation and re-architecture",
+        "Cloud-native applications on AWS, Azure, and GCP",
       ],
+      audience:
+        "Startups shipping their first product. Scale-ups replacing a fragile MVP. Enterprises modernising a legacy core system.",
       outcome:
-        "Outcome: Faster time-to-market, scalable architecture, and long-term maintainability.",
-      cta: "Talk to Our Engineering Team",
+        "You get working, tested, documented software - with architecture decisions you can explain to your board and a codebase your next engineer can understand.",
+      cta: "Talk to our engineering team",
       href: "/contact",
     },
     {
-      title: "AI, Data & Advanced Research",
-      authority:
-        "Turning data and intelligence into measurable business advantage.",
+      title: "AI & Data Engineering",
+      sectionHeadline: "AI that works in the real world, not just in demos.",
       content:
-        "Our research-driven approach enables organizations to leverage artificial intelligence, machine learning, and data engineering to solve complex problems and unlock new growth opportunities.",
+        "Most AI projects fail not because the models are wrong, but because the engineering around them is weak. Data pipelines break. Integrations don't scale. Outputs aren't explainable. We build AI systems end-to-end - from data infrastructure to deployed model to user-facing interface.",
       bullets: [
-        "AI/ML model development and deployment",
-        "Intelligent automation and workflow optimization",
-        "Data engineering and analytics platforms",
-        "Predictive modeling and decision intelligence",
-        "Research, experimentation, and proof-of-concepts",
+        "AI/ML model development, training, and deployment",
+        "Generative AI applications and LLM integrations",
+        "Intelligent document processing and workflow automation",
+        "Data engineering and analytics platform builds",
+        "Predictive modelling and decision intelligence systems",
+        "Research, experimentation, and proof-of-concept validation",
       ],
+      highlightLabel: "Microsoft ecosystem specialisation:",
+      highlightText:
+        "We have deep expertise in Microsoft Azure AI, Azure Machine Learning, and Microsoft Fabric for organisations running on the Microsoft data stack.",
       outcome:
-        "Outcome: Smarter systems, automation at scale, and data-driven decision making.",
-      cta: "Explore AI Capabilities",
-      href: "#services",
+        "Production-ready AI that your operations team uses every day - not a demo that sits in a Confluence page.",
+      cta: "Explore our AI capabilities",
+      href: "/contact",
+    },
+    {
+      title: "Microsoft Fabric & Cloud Migration",
+      sectionHeadline: "Migrate to Microsoft Fabric. Faster than you think.",
+      content:
+        "Microsoft Fabric is the future of enterprise data infrastructure - but most migration projects take longer and cost more than planned. We've built proprietary tooling (MigrateFAST) specifically to solve this, cutting migration time by up to 50% without compromising data integrity or business continuity.",
+      bullets: [
+        "Microsoft Fabric migration assessment and planning",
+        "Data platform migration with MigrateFAST tooling",
+        "Power BI estate migration and optimisation",
+        "Azure cloud architecture and migration",
+        "DevOps transformation and CI/CD pipeline setup",
+        "Infrastructure as Code and containerisation",
+      ],
+      highlightLabel: "Why we're different:",
+      highlightText:
+        "Unlike general cloud consultancies, we're a Microsoft-specialist engineering firm with proprietary tools in the ecosystem. We've done this before - on real enterprise estates, not just sandbox environments.",
+      outcome:
+        "A fully migrated, optimised data platform on Microsoft Fabric - with zero data loss, minimal downtime, and a team that understands Power BI at the code level.",
+      cta: "Book a migration assessment",
+      href: "/contact",
     },
     {
       title: "Quality Engineering & Testing",
-      authority:
-        "Engineering quality into every stage of the product lifecycle.",
+      sectionHeadline: "Quality is not a phase. It's a discipline.",
       content:
-        "We ensure your software performs flawlessly through comprehensive quality assurance strategies, combining automation, performance, and security testing.",
+        "Bolting testing on at the end of a project is how you get last-minute delays, go-live incidents, and post-launch fire drills. We embed quality engineering into every sprint from day one - building the test frameworks, automation pipelines, and quality gates that mean your releases are boring, in the best possible way.",
       bullets: [
-        "Test strategy and quality consulting",
-        "Automated testing frameworks (UI, API, mobile)",
-        "Performance, load, and scalability testing",
-        "Security and compliance validation",
-        "Continuous testing in CI/CD pipelines",
+        "Test strategy design and quality consulting",
+        "Automated UI, API, and mobile testing frameworks",
+        "Performance, load, and stress testing",
+        "Security and compliance validation (OWASP, GDPR)",
+        "Continuous testing integration in CI/CD pipelines",
+        "AI-assisted test generation and maintenance",
       ],
       outcome:
-        "Outcome: Reduced production defects, improved reliability, and superior user experience.",
-      cta: "Strengthen Product Quality",
-      href: "#services",
+        "Faster release cycles. Near-zero production defects. A quality system your team can maintain and extend without us.",
+      cta: "Talk to our QA team",
+      href: "/contact",
     },
     {
-      title: "Cloud, DevOps & Platform Engineering",
-      authority:
-        "Scalable infrastructure engineered for performance and reliability.",
+      title: "Technology Consulting & CTO Advisory",
+      sectionHeadline: "Engineering leadership, without the permanent hire.",
       content:
-        "We help organizations adopt cloud-native technologies, automate deployments, and build resilient infrastructure that supports growth and innovation.",
+        "Sometimes what you need isn't more developers - it's someone who can tell you whether your architecture will survive the next 18 months, evaluate a technology decision before you're locked in, or lead an engineering transformation your internal team can't drive alone.",
       bullets: [
-        "Cloud architecture and migration services",
-        "DevOps transformation and CI/CD pipelines",
-        "Infrastructure as Code (IaC)",
-        "Containerization and orchestration",
-        "Monitoring, optimization, and reliability engineering",
+        "Technology assessment and architecture review",
+        "Digital transformation strategy and roadmapping",
+        "CTO advisory and fractional technical leadership",
+        "Vendor and technology selection support",
+        "Engineering team structure and process design",
+        "Build vs buy analysis and M&A technical due diligence",
       ],
       outcome:
-        "Outcome: Faster releases, lower operational costs, and high system availability.",
-      cta: "Optimize Your Infrastructure",
-      href: "#services",
-    },
-    {
-      title: "Technology Consulting & Digital Strategy",
-      authority: "Aligning technology decisions with business goals.",
-      content:
-        "Our consulting services help organizations make informed technology choices, define roadmaps, and execute transformation initiatives with clarity and confidence.",
-      bullets: [
-        "Technology assessment and roadmap planning",
-        "Architecture reviews and solution design",
-        "Digital transformation consulting",
-        "Process optimization and automation strategy",
-        "CTO advisory and technical leadership support",
-      ],
-      outcome:
-        "Outcome: Clear direction, reduced risk, and optimized technology investments.",
-      cta: "Schedule a Strategy Session",
+        "Clear direction, reduced technology risk, and decisions you can stand behind - made by engineers who've built and scaled real systems.",
+      cta: "Schedule a strategy session",
       href: "/contact",
     },
   ];
@@ -93,66 +103,66 @@ export default function CoreServices() {
   return (
     <section id="core-services" className="bg-gray-100 py-16 md:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <h2 className="text-3xl font-semibold text-gray-900 md:text-4xl">
-          End-to-End Technology Services Under One Roof
-        </h2>
-
-        <h3 className="mt-4 max-w-5xl text-lg font-medium text-slate-600">
-          From strategy and research to development, deployment, and quality
-          engineering - Techvisr delivers comprehensive technology services that
-          help organizations build, scale, and innovate with confidence.
-        </h3>
-
-        <div className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-2">
+        <div className="space-y-6">
           {services.map((service) => (
             <article
               key={service.title}
-              className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
+              className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm md:p-8"
             >
-              <h3 className="text-xl font-bold text-gray-900">{service.title}</h3>
-
-              <p className="mt-1.5 text-sm italic text-slate-700">
-                {service.authority}
+              <p className="text-sm font-semibold uppercase tracking-[0.08em] text-red-600">
+                {service.title}
               </p>
 
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
+              <h2 className="mt-2 text-2xl font-bold text-gray-900 md:text-3xl">
+                {service.sectionHeadline}
+              </h2>
+
+              <p className="mt-4 text-base leading-relaxed text-slate-700">
                 {service.content}
               </p>
 
-              <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm text-slate-600">
+              <h3 className="mt-5 text-base font-semibold text-gray-900">
+                What's included:
+              </h3>
+              <ul className="mt-3 list-disc space-y-2 pl-5 text-base text-slate-700">
                 {service.bullets.map((bullet) => (
                   <li key={bullet}>{bullet}</li>
                 ))}
               </ul>
 
-              <p className="mt-4 text-sm font-bold text-gray-900">
+              {service.audience ? (
+                <p className="mt-5 text-base text-slate-700">
+                  <span className="font-semibold text-gray-900">
+                    Who this is for:
+                  </span>{" "}
+                  {service.audience}
+                </p>
+              ) : null}
+
+              {service.highlightLabel && service.highlightText ? (
+                <p className="mt-5 text-base text-slate-700">
+                  <span className="font-semibold text-gray-900">
+                    {service.highlightLabel}
+                  </span>{" "}
+                  {service.highlightText}
+                </p>
+              ) : null}
+
+              <p className="mt-5 text-base text-slate-700">
+                <span className="font-semibold text-gray-900">
+                  Outcome statement:
+                </span>{" "}
                 {service.outcome}
               </p>
 
               <a
                 href={service.href}
-                className="mt-3 inline-flex text-sm font-semibold text-red-600 transition-colors hover:text-red-700"
+                className="mt-5 inline-flex text-base font-semibold text-red-600 transition-colors hover:text-red-700"
               >
                 {service.cta} &rarr;
               </a>
             </article>
           ))}
-        </div>
-
-        <div className="mt-12 rounded-xl bg-red-600 p-8 text-white md:p-10">
-          <h3 className="text-2xl font-bold">
-            Ready to Build, Scale, or Transform Your Technology?
-          </h3>
-          <p className="mt-3 max-w-4xl text-base text-white/95">
-            Partner with Techvisr to turn your ideas, systems, and challenges
-            into high-impact digital solutions.
-          </p>
-          <a
-            href="/contact"
-            className="mt-6 inline-flex items-center justify-center rounded-md bg-white px-5 py-3 text-sm font-semibold text-red-600 transition-colors hover:bg-red-50"
-          >
-            Book a Free Consultation
-          </a>
         </div>
       </div>
     </section>

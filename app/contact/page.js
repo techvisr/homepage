@@ -1,5 +1,6 @@
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import CalendlyPopupButton from "../../components/CalendlyPopupButton";
 
 export const metadata = {
   title: "Contact",
@@ -24,6 +25,18 @@ export default function Contact() {
             <p className="mt-5 max-w-3xl text-lg text-slate-600">
               Share your goals and constraints. We&apos;ll help you define a clear technical path, delivery model, and execution plan.
             </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <CalendlyPopupButton
+                label="Book a Consultation"
+                className="inline-flex items-center justify-center rounded-md bg-red-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-700"
+              />
+              <a
+                href="/services"
+                className="inline-flex items-center justify-center rounded-md border border-red-200 bg-white px-5 py-3 text-sm font-semibold text-red-600 transition-colors hover:bg-red-50"
+              >
+                Explore Our Services
+              </a>
+            </div>
           </div>
         </section>
 
