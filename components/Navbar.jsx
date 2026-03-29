@@ -1,4 +1,5 @@
 import Image from "next/image";
+import CalendlyPopupButton from "./CalendlyPopupButton";
 
 export default function Navbar() {
   const navLinks = [
@@ -12,7 +13,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
+      <div className="mx-auto flex max-w-7xl items-center px-4 py-3 sm:px-6 sm:py-4">
         <a href="/" aria-label="TechVisr home" className="block">
           <Image
             src="/images/logo.png"
@@ -24,19 +25,26 @@ export default function Navbar() {
           />
         </a>
 
-        <nav className="hidden gap-6 text-sm font-medium text-gray-600 lg:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="transition-colors hover:text-red-600"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
+        <div className="ml-auto hidden items-center gap-6 lg:flex">
+          <nav className="flex gap-6 text-sm font-medium text-gray-600">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="transition-colors hover:text-red-600"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
 
-        <details className="relative lg:hidden">
+          <CalendlyPopupButton
+            label="Book a Consultation"
+            className="inline-flex items-center justify-center rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-red-700"
+          />
+        </div>
+
+        <details className="relative ml-auto lg:hidden">
           <summary className="list-none cursor-pointer rounded-md border border-gray-300 px-3 py-2 text-sm font-medium text-gray-700">
             Menu
           </summary>
@@ -52,6 +60,12 @@ export default function Navbar() {
                   </a>
                 </li>
               ))}
+              <li className="pt-2">
+                <CalendlyPopupButton
+                  label="Book a Consultation"
+                  className="w-full rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-red-700"
+                />
+              </li>
             </ul>
           </nav>
         </details>

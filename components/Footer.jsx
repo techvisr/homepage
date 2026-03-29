@@ -2,56 +2,18 @@ export default function Footer() {
   return (
     <footer id="about" className="relative mt-14 overflow-hidden bg-gray-900 py-16 text-gray-300 md:py-20">
       <div className="relative z-10 mx-auto max-w-7xl px-4 pb-24 sm:px-6 sm:pb-28 md:pb-32 lg:pb-36">
-        <div
-          className="grid gap-10  
-                        grid-cols-1 
-                        sm:grid-cols-2 
-                        lg:grid-cols-4"
-        >
-          <div>
-            <h3 className="mb-5 text-base font-semibold text-white md:text-lg">Services</h3>
-            <ul className="space-y-3 text-sm text-gray-300">
-              <li><a href="/services" className="hover:text-white">Software development</a></li>
-              <li><a href="/services" className="hover:text-white">AI engineering</a></li>
-              <li><a href="/services" className="hover:text-white">Quality engineering</a></li>
-              <li><a href="/services" className="hover:text-white">Cloud & DevOps</a></li>
-              <li><a href="/services" className="hover:text-white">Technology consulting</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="mb-5 text-base font-semibold text-white md:text-lg">Products</h3>
-            <ul className="space-y-3 text-sm text-gray-300">
-              <li><a href="/#products" className="hover:text-white">AI-DataLens</a></li>
-              <li><a href="/#products" className="hover:text-white">EmbedFAST</a></li>
-              <li><a href="/#products" className="hover:text-white">CertyFAST</a></li>
-              <li><a href="/#products" className="hover:text-white">LoadFAST</a></li>
-              <li><a href="/#products" className="hover:text-white">MigrateFAST</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="mb-5 text-base font-semibold text-white md:text-lg">Resources</h3>
-            <ul className="space-y-3 text-sm text-gray-300">
-              <li><a href="/case-studies" className="hover:text-white">Case studies</a></li>
-              <li><a href="/services" className="hover:text-white">Service playbooks</a></li>
-              <li><a href="/contact" className="hover:text-white">Consultation offers</a></li>
-              <li><a href="/#community" className="hover:text-white">Industry insights</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="mb-5 text-base font-semibold text-white md:text-lg">About us</h3>
-            <ul className="space-y-3 text-sm text-gray-300">
-              <li><a href="/#why-techvisr" className="hover:text-white">Who we are</a></li>
-              <li><a href="/services" className="hover:text-white">How we work</a></li>
-              <li><a href="/contact" className="hover:text-white">Contact us</a></li>
-              <li><a href="mailto:admin@techvisr.com" className="hover:text-white">admin@techvisr.com</a></li>
-            </ul>
-          </div>
+        <div className="max-w-2xl">
+          <h3 className="mb-4 text-base font-semibold text-white md:text-lg">Office</h3>
+          <p className="text-sm leading-relaxed text-gray-300">
+            Techvisr Private Limited, 11th Floor, Innov8 Prestige Tech Platina 2, Outer Ring Road, Kadabisanahalli, Bangalore South, Bangalore, Karnataka - 560087.
+            <br />
+            <a href="mailto:admin@techvisr.com" className="hover:text-white">
+              admin@techvisr.com
+            </a>
+          </p>
         </div>
 
-        <p className="mt-8 pt-6 text-xs text-gray-400 border-t border-gray-800 ">
+        <p className="mt-8 border-t border-gray-800 pt-6 text-xs text-gray-400">
           &copy; {new Date().getFullYear()} TechVisr. All rights reserved.
         </p>
       </div>
