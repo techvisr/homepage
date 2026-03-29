@@ -35,10 +35,10 @@ export default function Home() {
       <Hero />
       <Services />
       <WhyChooseTechvisr />
-      <CaseStudiesProof />
+      {/* <CaseStudiesProof /> */}
       <ImageContentCards />
       <Community />
-      <Products />
+      {/* <Products /> */}
       <MailToCta />
       <Footer />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />

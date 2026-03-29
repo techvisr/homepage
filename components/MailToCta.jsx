@@ -6,7 +6,7 @@ export default function MailToCta() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="rounded-2xl border border-red-100 bg-gradient-to-r from-red-50 via-white to-red-50 p-8 md:p-12">
           <h2 className="max-w-4xl text-3xl font-semibold leading-tight text-gray-900 md:text-5xl lg:text-6xl">
-            Make the move to Microsoft Fabric
+            Need a team that can build and scale with you?
           </h2>
 
           <p className="mt-5 max-w-2xl text-base text-gray-600 md:text-lg">
