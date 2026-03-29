@@ -1,0 +1,33 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1200" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="up" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="700" fill="url(#bg2)"/>
+  <rect x="120" y="120" width="960" height="460" rx="30" fill="#0B1220" stroke="#334155"/>
+
+  <rect x="180" y="180" width="350" height="320" rx="22" fill="#111827" stroke="#475569"/>
+  <text x="210" y="236" fill="#E2E8F0" font-size="36" font-family="Arial, sans-serif" font-weight="700">+45%</text>
+  <text x="210" y="274" fill="#94A3B8" font-size="22" font-family="Arial, sans-serif">Release speed</text>
+  <text x="210" y="334" fill="#E2E8F0" font-size="36" font-family="Arial, sans-serif" font-weight="700">+60%</text>
+  <text x="210" y="372" fill="#94A3B8" font-size="22" font-family="Arial, sans-serif">Scalability</text>
+  <text x="210" y="432" fill="#E2E8F0" font-size="36" font-family="Arial, sans-serif" font-weight="700">Near 0</text>
+  <text x="210" y="470" fill="#94A3B8" font-size="22" font-family="Arial, sans-serif">Prod defects</text>
+
+  <rect x="560" y="180" width="450" height="320" rx="22" fill="#111827" stroke="#475569"/>
+  <path d="M620 430L700 360L770 390L860 300L950 250" stroke="url(#up)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="620" cy="430" r="10" fill="#22D3EE"/>
+  <circle cx="700" cy="360" r="10" fill="#22D3EE"/>
+  <circle cx="770" cy="390" r="10" fill="#22D3EE"/>
+  <circle cx="860" cy="300" r="10" fill="#22D3EE"/>
+  <circle cx="950" cy="250" r="10" fill="#22D3EE"/>
+
+  <text x="180" y="95" fill="#F8FAFC" font-size="34" font-family="Arial, sans-serif" font-weight="700">Case Study Insights</text>
+</svg>

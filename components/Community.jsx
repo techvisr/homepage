@@ -56,44 +56,38 @@ export default function Community() {
   return (
     <section id="community" className="bg-white py-16 md:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <h2 className="text-3xl font-semibold text-gray-900 md:text-4xl">
+        <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-[36px]">
           Engineering Solutions Across Industries and Business Models
         </h2>
 
-        <h3 className="mt-4 max-w-5xl text-lg font-medium text-slate-600">
+        <p className="mt-4 max-w-4xl text-base font-medium text-slate-600 sm:text-[17px]">
           Our technology expertise spans industries, enabling organizations of all
           sizes to innovate, scale, and operate with confidence in a rapidly
           evolving digital landscape.
-        </h3>
+        </p>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 md:gap-7">
           {industries.map((industry) => {
             const Icon = industry.icon;
 
             return (
               <article
                 key={industry.title}
-                className="rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg md:p-7"
               >
-                <Icon className="mb-4 h-7 w-7 text-red-600" />
+                <Icon className="mb-5 h-7 w-7 text-red-600 md:mb-6 md:h-8 md:w-8" />
 
-                <h3 className="mb-3 text-lg font-bold text-gray-900">
+                <h3 className="mb-3 text-lg font-bold text-gray-900 md:text-xl">
                   {industry.title}
                 </h3>
 
-                <p className="text-sm leading-relaxed text-slate-600">
+                <p className="text-sm leading-relaxed text-slate-600 md:text-base">
                   {industry.desc}
                 </p>
               </article>
             );
           })}
         </div>
-
-        <p className="mx-auto mt-12 max-w-5xl text-center text-lg font-semibold text-gray-900 md:text-xl">
-          No matter the industry, our focus remains the same: build secure,
-          scalable, and future-ready technology that delivers real business
-          value.
-        </p>
       </div>
     </section>
   );
