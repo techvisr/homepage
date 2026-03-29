@@ -1,8 +1,6 @@
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
-import Products from "../components/Products";
 import Services from "../components/Services";
-import CaseStudiesProof from "../components/CaseStudiesProof";
 import MailToCta from "../components/MailToCta";
 import Footer from "../components/Footer";
 import Community from "../components/Community";
@@ -33,10 +31,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Services />
-      {/* <CaseStudiesProof /> */}
       <ImageContentCards />
       <Community />
-      {/* <Products /> */}
       <MailToCta />
       <Footer />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />

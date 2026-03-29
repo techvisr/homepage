@@ -53,42 +53,35 @@ export default function Community() {
     },
   ];
 
-  const metrics = [
-    "8+ Industries",
-    "Enterprise to Startup",
-    "Scalable Architectures",
-    "Future-Ready Delivery",
-  ];
-
   return (
-    <section id="community" className="bg-gray-100 py-16 md:py-20">
+    <section id="community" className="bg-white py-16 md:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <h2 className="text-3xl font-bold text-slate-900 md:text-[36px]">
+        <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-[36px]">
           Engineering Solutions Across Industries and Business Models
         </h2>
 
-        <p className="mt-4 max-w-4xl text-[18px] font-medium text-slate-600">
+        <p className="mt-4 max-w-4xl text-base font-medium text-slate-600 sm:text-[17px]">
           Our technology expertise spans industries, enabling organizations of all
           sizes to innovate, scale, and operate with confidence in a rapidly
           evolving digital landscape.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 md:gap-7">
           {industries.map((industry) => {
             const Icon = industry.icon;
 
             return (
               <article
                 key={industry.title}
-                className="rounded-xl border border-gray-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg md:p-7"
               >
-                <Icon className="mb-6 h-8 w-8 text-red-600" />
+                <Icon className="mb-5 h-7 w-7 text-red-600 md:mb-6 md:h-8 md:w-8" />
 
-                <h3 className="mb-4 text-xl font-bold text-gray-900">
+                <h3 className="mb-3 text-lg font-bold text-gray-900 md:text-xl">
                   {industry.title}
                 </h3>
 
-                <p className="text-base leading-relaxed text-slate-600">
+                <p className="text-sm leading-relaxed text-slate-600 md:text-base">
                   {industry.desc}
                 </p>
               </article>
@@ -96,14 +89,6 @@ export default function Community() {
           })}
         </div>
       </div>
-
-      {/* <div className="mt-12 bg-[#0F172A] py-6">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 px-4 text-center text-sm font-semibold text-white sm:px-6 md:grid-cols-4 md:text-base">
-          {metrics.map((metric) => (
-            <p key={metric}>{metric}</p>
-          ))}
-        </div>
-      </div> */}
     </section>
   );
 }
