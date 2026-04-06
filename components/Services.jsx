@@ -1,57 +1,120 @@
-import { Cpu, FlaskConical, BadgeCheck, CloudCog } from "lucide-react";
+import Image from "next/image";
+import {
+  Boxes,
+  Cpu,
+  CloudCog,
+  BadgeCheck,
+  ArrowRight,
+  Workflow,
+} from "lucide-react";
+
+const tabs = [
+  "For product teams",
+  "For platform modernization",
+  "For AI adoption",
+  "For release quality",
+];
+
+const cards = [
+  {
+    icon: Boxes,
+    title: "Product delivery systems",
+    desc: "Launch web platforms, internal tools, and customer experiences with clearer architecture and faster delivery alignment.",
+  },
+  {
+    icon: Cpu,
+    title: "AI-native workflows",
+    desc: "Operationalize LLM and automation use cases with the engineering needed to move beyond pilots.",
+  },
+  {
+    icon: CloudCog,
+    title: "Cloud execution models",
+    desc: "Modernize infrastructure, CI/CD, and operating foundations without introducing avoidable complexity.",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Quality at every stage",
+    desc: "Strengthen release confidence with automation, validation systems, and quality engineering discipline.",
+  },
+  {
+    icon: Workflow,
+    title: "Cross-functional delivery",
+    desc: "Bring strategy, product, engineering, cloud, and QA under one coordinated execution model.",
+  },
+];
 
 export default function Services() {
-  const pillars = [
-    {
-      icon: Cpu,
-      title: "Product Engineering",
-      desc: "We design and build web, mobile, and SaaS products from idea to launch.",
-    },
-    {
-      icon: FlaskConical,
-      title: "AI & Data",
-      desc: "Production-ready AI, automation, and data platforms that create real business impact.",
-    },
-    {
-      icon: BadgeCheck,
-      title: "Quality Engineering",
-      desc: "Automated testing and quality systems that catch issues before release.",
-    },
-    {
-      icon: CloudCog,
-      title: "Cloud & DevOps",
-      desc: "Cloud migration and CI/CD pipelines for faster, more reliable delivery.",
-    },
-  ];
-
   return (
-    <section id="services" className="bg-white py-16 md:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-[36px]">
-          Services built for speed and scale.
-        </h2>
+    <section id="services" className="bg-[#fbfcfe] py-16 md:py-20">
+      <div className="section-frame">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="eyebrow">Power Every Step Of Your Delivery Journey</p>
+          <h2 className="section-title mt-4">
+            A cleaner, more modular service experience built for modern technology teams.
+          </h2>
+        </div>
 
-        <p className="mt-4 max-w-3xl text-base font-medium text-slate-600 sm:text-[17px]">
-          One engineering partner for product, AI, quality, and cloud delivery.
-        </p>
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
+          {tabs.map((tab, index) => (
+            <div
+              key={tab}
+              className={`rounded-full px-4 py-2 text-sm font-medium ${
+                index === 0
+                  ? "bg-[#0b5bd3] text-white"
+                  : "border border-slate-200 bg-white text-slate-600"
+              }`}
+            >
+              {tab}
+            </div>
+          ))}
+        </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 md:gap-6">
-          {pillars.map((pillar) => {
-            const Icon = pillar.icon;
+        <div className="mt-8 grid gap-4 lg:grid-cols-3">
+          <article className="soft-card overflow-hidden rounded-[28px] lg:col-span-2">
+            <div className="grid h-full gap-0 md:grid-cols-[minmax(0,1.05fr)_minmax(260px,0.95fr)]">
+              <div className="p-6 sm:p-7">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0b5bd3]">
+                  Engineering Partner Model
+                </p>
+                <h3 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-slate-950">
+                  Build software, ship AI systems, and modernize platforms through one accountable team.
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-slate-600">
+                  Instead of stitching together multiple vendors, Techvisr combines discovery, architecture, engineering, QA, and cloud execution into a single delivery model built around outcomes.
+                </p>
+                <a
+                  href="/services"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#0b5bd3] hover:text-[#093f92]"
+                >
+                  Explore all services
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+              <div className="relative min-h-[260px]">
+                <Image
+                  src="/images/team-work-session.jpg"
+                  alt="Technology team working together"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 32vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </article>
+
+          {cards.map((card) => {
+            const Icon = card.icon;
 
             return (
-              <article
-                key={pillar.title}
-                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg md:p-7"
-              >
-                <Icon className="mb-5 h-7 w-7 text-red-600 md:mb-6 md:h-8 md:w-8" />
-
-                <h3 className="mb-3 text-lg font-bold text-gray-900 md:text-xl">
-                  {pillar.title}
+              <article key={card.title} className="soft-card rounded-[28px] p-6">
+                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-50 text-[#0b5bd3]">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-5 text-lg font-semibold tracking-[-0.04em] text-slate-950">
+                  {card.title}
                 </h3>
-
-                <p className="text-sm leading-relaxed text-slate-600 md:text-base">
-                  {pillar.desc}
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  {card.desc}
                 </p>
               </article>
             );

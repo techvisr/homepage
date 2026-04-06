@@ -1,29 +1,73 @@
+const footerGroups = [
+  {
+    title: "Services",
+    links: [
+      { label: "Software development", href: "/services" },
+      { label: "AI engineering", href: "/services" },
+      { label: "Quality engineering", href: "/services" },
+      { label: "Cloud modernization", href: "/services" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "Why Techvisr", href: "/why-techvisr" },
+      { label: "Contact", href: "/contact" },
+      { label: "Industries", href: "/#community" },
+    ],
+  },
+];
+
 export default function Footer() {
   return (
-    <footer id="about" className="relative mt-14 overflow-hidden bg-gray-900 py-16 text-gray-300 md:py-20">
-      <div className="relative z-10 mx-auto max-w-7xl px-4 pb-24 sm:px-6 sm:pb-28 md:pb-32 lg:pb-36">
-        <div className="max-w-2xl">
-          <h3 className="mb-4 text-base font-semibold text-white md:text-lg">Office</h3>
-          <p className="text-sm leading-relaxed text-gray-300">
-            Techvisr Private Limited, 11th Floor, Innov8 Prestige Tech Platina 2, Outer Ring Road, Kadabisanahalli, Bangalore South, Bangalore, Karnataka - 560087.
-            <br />
-            <a href="mailto:admin@techvisr.com" className="hover:text-white">
+    <footer id="about" className="relative overflow-hidden bg-[#0b0f19] text-slate-300">
+      <div className="section-frame relative z-10 py-14">
+        <div className="grid gap-10 border-b border-white/10 pb-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)_minmax(0,0.8fr)]">
+          <div className="max-w-xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/60">
+              Techvisr
+            </p>
+            <h2 className="display-heading mt-4 text-3xl font-semibold text-white sm:text-[2.35rem]">
+              Software, AI, and quality engineering for modern product and enterprise teams.
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-400 sm:text-base">
+              Techvisr Private Limited, 11th Floor, Innov8 Prestige Tech Platina 2, Outer Ring Road, Kadabisanahalli, Bangalore South, Bangalore, Karnataka - 560087.
+            </p>
+            <a
+              href="mailto:admin@techvisr.com"
+              className="mt-4 inline-flex text-sm font-semibold text-white hover:text-slate-300"
+            >
               admin@techvisr.com
             </a>
-          </p>
+          </div>
+
+          {footerGroups.map((group) => (
+            <div key={group.title}>
+              <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
+                {group.title}
+              </h3>
+              <ul className="mt-4 space-y-3 text-sm text-slate-300">
+                {group.links.map((link) => (
+                  <li key={link.label}>
+                    <a href={link.href} className="hover:text-white">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        <p className="mt-8 border-t border-gray-800 pt-6 text-xs text-gray-400">
-          &copy; {new Date().getFullYear()} TechVisr. All rights reserved.
-        </p>
+        <div className="flex flex-col gap-3 pt-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <p>&copy; {new Date().getFullYear()} TechVisr. All rights reserved.</p>
+          <p>Built for sharper digital delivery.</p>
+        </div>
       </div>
 
-      <div className="footer-watermark-wrap pointer-events-none absolute inset-x-0 bottom-1 z-0 select-none px-4 text-center sm:bottom-0 md:bottom-[-4px]">
-        <p
-          data-text="TECHVISR"
-          className="techvisr-watermark text-[clamp(4rem,16vw,14rem)] font-extrabold uppercase tracking-[0.03em]"
-        >
-          TECHVISR
+      <div className="pointer-events-none absolute inset-x-0 bottom-[-24px] z-0 select-none px-4 text-center">
+        <p className="text-[clamp(5rem,20vw,18rem)] font-extrabold tracking-[-0.08em] text-white/[0.04]">
+          Techvisr
         </p>
       </div>
     </footer>

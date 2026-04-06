@@ -2,83 +2,121 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --page-bg: #ffffff;
+  --surface: #ffffff;
+  --surface-soft: #f6f8fb;
+  --line: rgba(15, 23, 42, 0.08);
+  --text: #0f172a;
+  --muted: #5f6b7a;
+  --brand: #0b5bd3;
+  --brand-dark: #093f92;
+  --dark: #0b0f19;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-white text-gray-800 antialiased;
+  min-height: 100vh;
+  background: var(--page-bg);
+  color: var(--text);
+  font-family: var(--font-body), sans-serif;
+  font-feature-settings: "ss01" 1, "cv02" 1, "cv03" 1;
+  @apply antialiased;
 }
 
 section {
-  scroll-margin-top: 88px;
+  scroll-margin-top: 108px;
+}
+
+a,
+button {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
 }
 
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible {
-  outline: 2px solid #dc2626;
+  outline: 2px solid var(--brand);
   outline-offset: 2px;
 }
 
-@keyframes techvisr-sheen {
-  0% {
-    -webkit-mask-position: 170% 0;
-    mask-position: 170% 0;
-    opacity: 0;
+::selection {
+  background: rgba(11, 91, 211, 0.14);
+}
+
+@layer components {
+  .section-frame {
+    @apply mx-auto max-w-7xl px-4 sm:px-6;
   }
-  50% {
-    opacity: 1;
+
+  .eyebrow {
+    color: var(--brand);
+    font-family: var(--font-display), sans-serif;
+    @apply text-[11px] font-semibold uppercase tracking-[0.18em] sm:text-xs;
   }
-  100% {
-    -webkit-mask-position: -170% 0;
-    mask-position: -170% 0;
-    opacity: 0;
+
+  .section-title {
+    font-family: var(--font-display), sans-serif;
+    @apply text-[1.9rem] font-semibold leading-[1.06] tracking-[-0.045em] text-slate-950 sm:text-[2.25rem] lg:text-[2.65rem];
   }
-}
 
-.footer-watermark-wrap {
-  opacity: 0.9;
-}
+  .section-copy {
+    color: var(--muted);
+    @apply text-[15px] leading-[1.8] sm:text-base;
+  }
 
-.techvisr-watermark {
-  position: relative;
-  display: inline-block;
-  line-height: 0.86;
-  color: rgba(148, 163, 184, 0.13);
-  -webkit-text-stroke: 1.2px rgba(148, 163, 184, 0.3);
-  text-shadow: 0 14px 34px rgba(2, 6, 23, 0.52);
-}
+  .soft-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06);
+  }
 
-.techvisr-watermark::before {
-  content: attr(data-text);
-  position: absolute;
-  inset: 0;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(226, 232, 240, 0.22);
-  opacity: 0.55;
-}
+  .soft-panel {
+    background: var(--surface-soft);
+    border: 1px solid var(--line);
+  }
 
-.techvisr-watermark::after {
-  content: attr(data-text);
-  position: absolute;
-  inset: 0;
-  color: transparent;
-  -webkit-text-stroke: 1.35px rgba(255, 255, 255, 0.62);
-  -webkit-mask-image: linear-gradient(
-    108deg,
-    transparent 33%,
-    rgba(0, 0, 0, 0.98) 50%,
-    transparent 67%
-  );
-  mask-image: linear-gradient(
-    108deg,
-    transparent 33%,
-    rgba(0, 0, 0, 0.98) 50%,
-    transparent 67%
-  );
-  -webkit-mask-size: 220% 100%;
-  mask-size: 220% 100%;
-  animation: techvisr-sheen 9s ease-in-out infinite;
-  will-change: mask-position, opacity;
+  .dark-card {
+    background:
+      radial-gradient(circle at top right, rgba(56, 189, 248, 0.12), transparent 28%),
+      linear-gradient(180deg, #111827 0%, var(--dark) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 24px 50px rgba(2, 6, 23, 0.2);
+  }
+
+  .display-heading {
+    font-family: var(--font-display), sans-serif;
+    letter-spacing: -0.05em;
+  }
+
+  .primary-button {
+    background: #111827;
+    color: white;
+    @apply inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold;
+  }
+
+  .primary-button:hover {
+    background: #0b1220;
+    transform: translateY(-1px);
+  }
+
+  .secondary-button {
+    background: white;
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    color: var(--text);
+    @apply inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold;
+  }
+
+  .secondary-button:hover {
+    background: #f8fafc;
+    border-color: rgba(100, 116, 139, 0.44);
+  }
 }

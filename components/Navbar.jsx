@@ -4,71 +4,74 @@ import CalendlyPopupButton from "./CalendlyPopupButton";
 export default function Navbar() {
   const navLinks = [
     { label: "Services", href: "/services" },
-    // { label: "Case Studies", href: "/case-studies" },
-    // { label: "Products", href: "/products" },
-    // { label: "Industries", href: "/community" },
     { label: "Why Techvisr", href: "/why-techvisr" },
     { label: "Contact", href: "/contact" },
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center px-4 py-3 sm:px-6 sm:py-4">
-        <a href="/" aria-label="TechVisr home" className="block">
-          <Image
-            src="/images/logo.png"
-            alt="TechVisr"
-            width={140}
-            height={36}
-            className="h-8 w-auto sm:h-9"
-            priority
-          />
-        </a>
+    <header className="sticky top-0 z-50">
+      <div className="bg-[#0b0f19] text-[11px] text-white">
+        <div className="section-frame flex items-center justify-between gap-4 py-2">
+          <p className="truncate uppercase tracking-[0.14em] text-white/70">
+            Advisory-led software, AI, and quality engineering
+          </p>
+          <a href="mailto:admin@techvisr.com" className="hidden text-white/80 hover:text-white sm:inline-flex">
+            admin@techvisr.com
+          </a>
+        </div>
+      </div>
 
-        <div className="ml-auto hidden items-center gap-6 lg:flex">
-          <nav className="flex gap-6 text-sm font-medium text-gray-600">
+      <div className="border-b border-slate-200 bg-white/95 backdrop-blur">
+        <div className="section-frame flex min-h-[74px] items-center justify-between gap-6">
+          <a href="/" aria-label="TechVisr home" className="flex items-center gap-4">
+            <Image
+              src="/images/logo.png"
+              alt="TechVisr"
+              width={146}
+              height={36}
+              className="h-8 w-auto sm:h-9"
+              priority
+            />
+          </a>
+
+          <nav className="hidden items-center gap-8 text-sm font-medium text-slate-600 lg:flex">
             {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="transition-colors hover:text-red-600"
-              >
+              <a key={link.label} href={link.href} className="hover:text-slate-950">
                 {link.label}
               </a>
             ))}
           </nav>
 
-          <CalendlyPopupButton
-            label="Book a Consultation"
-            className="inline-flex items-center justify-center rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-red-700"
-          />
-        </div>
+          <div className="hidden lg:block">
+            <CalendlyPopupButton
+              label="Book a Demo"
+              className="primary-button px-4 py-2.5"
+            />
+          </div>
 
-        <details className="relative ml-auto lg:hidden">
-          <summary className="list-none cursor-pointer rounded-md border border-gray-300 px-3 py-2 text-sm font-medium text-gray-700">
-            Menu
-          </summary>
-          <nav className="absolute right-0 mt-2 w-56 rounded-lg border border-gray-200 bg-white p-3 shadow-lg">
-            <ul className="flex flex-col gap-1 text-sm text-gray-700">
-              {navLinks.map((link) => (
-                <li key={`mobile-${link.label}`}>
-                  <a
-                    className="block rounded px-2 py-2 hover:bg-red-50"
-                    href={link.href}
-                  >
-                    {link.label}
-                  </a>
+          <details className="relative lg:hidden">
+            <summary className="list-none cursor-pointer rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700">
+              Menu
+            </summary>
+            <nav className="soft-card absolute right-0 mt-3 w-64 rounded-[24px] p-4">
+              <ul className="flex flex-col gap-2 text-sm text-slate-700">
+                {navLinks.map((link) => (
+                  <li key={`mobile-${link.label}`}>
+                    <a className="block rounded-xl px-3 py-2.5 hover:bg-slate-50" href={link.href}>
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+                <li className="pt-2">
+                  <CalendlyPopupButton
+                    label="Book a Demo"
+                    className="primary-button w-full"
+                  />
                 </li>
-              ))}
-              <li className="pt-2">
-                <CalendlyPopupButton
-                  label="Book a Consultation"
-                  className="w-full rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-red-700"
-                />
-              </li>
-            </ul>
-          </nav>
-        </details>
+              </ul>
+            </nav>
+          </details>
+        </div>
       </div>
     </header>
   );

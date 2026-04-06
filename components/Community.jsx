@@ -1,92 +1,74 @@
-import {
-  Landmark,
-  Boxes,
-  HeartPulse,
-  ShoppingBag,
-  Building2,
-  Truck,
-  Lightbulb,
-  Clapperboard,
-} from "lucide-react";
+import Image from "next/image";
+
+const aiCards = [
+  {
+    title: "Automation assistants for daily operations",
+    desc: "Use AI to support repetitive workflows, review queues, and internal delivery operations.",
+    image: "/images/insight-discovery.svg",
+    light: true,
+  },
+  {
+    title: "Search and retrieval experiences",
+    desc: "Connect business documents, knowledge sources, and workflows into faster answers for teams.",
+    image: "/images/platform-review.jpg",
+  },
+  {
+    title: "Product copilots and workflow layers",
+    desc: "Create AI-powered support experiences that fit real user journeys instead of isolated demos.",
+    image: "/images/insight-case-study.svg",
+    light: true,
+  },
+  {
+    title: "Release-ready quality insights",
+    desc: "Use AI and automation to support validation, prioritization, and release confidence.",
+    image: "/images/meeting-presentation.jpg",
+  },
+  {
+    title: "Platform monitoring and decision support",
+    desc: "Improve operational visibility through analytics, alerts, and intelligence-backed workflows.",
+    image: "/images/insight-playbooks.svg",
+    light: true,
+  },
+  {
+    title: "Experience-led system design",
+    desc: "Build tools that feel useful to operators, analysts, product teams, and business stakeholders.",
+    image: "/images/hero-team-collaboration.jpg",
+  },
+];
 
 export default function Community() {
-  const industries = [
-    {
-      icon: Landmark,
-      title: "Fintech & Financial Services",
-      desc: "Secure, compliant, and high-performance platforms for payments, lending, banking, risk management, and financial automation systems.",
-    },
-    {
-      icon: Boxes,
-      title: "SaaS & Technology Products",
-      desc: "Scalable SaaS platforms, multi-tenant architectures, subscription systems, APIs, and product engineering tailored for high-growth technology companies.",
-    },
-    {
-      icon: HeartPulse,
-      title: "Healthcare & Life Sciences",
-      desc: "Reliable, secure, and data-driven healthcare systems including patient platforms, analytics solutions, compliance-ready applications, and digital health innovations.",
-    },
-    {
-      icon: ShoppingBag,
-      title: "E-Commerce & Retail",
-      desc: "High-conversion e-commerce platforms, inventory systems, payment integrations, performance optimization, and personalized customer experience solutions.",
-    },
-    {
-      icon: Building2,
-      title: "Enterprise Digital Transformation",
-      desc: "Modernization of legacy systems, cloud migration, process automation, data platforms, and enterprise-grade application engineering.",
-    },
-    {
-      icon: Truck,
-      title: "Manufacturing, Logistics & Supply Chain",
-      desc: "Intelligent systems for operations management, supply chain visibility, analytics dashboards, automation, and predictive insights.",
-    },
-    {
-      icon: Lightbulb,
-      title: "AI-Driven Startups & Innovation Labs",
-      desc: "Rapid prototyping, MVP development, AI model implementation, experimentation platforms, and innovation-focused engineering support.",
-    },
-    {
-      icon: Clapperboard,
-      title: "Media, Entertainment & Platforms",
-      desc: "High-scale digital platforms, content systems, streaming architectures, user engagement analytics, and performance-optimized applications.",
-    },
-  ];
-
   return (
-    <section id="community" className="bg-white py-16 md:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-[36px]">
-          Engineering Solutions Across Industries and Business Models
-        </h2>
+    <section id="community" className="bg-[#fbfcfe] py-16 md:py-20">
+      <div className="section-frame">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="eyebrow">Intelligent AI Tools Designed For Speed, Accuracy And Scale</p>
+          <h2 className="section-title mt-4">
+            Applied AI cards arranged like a product-led capability showcase.
+          </h2>
+        </div>
 
-        <p className="mt-4 max-w-4xl text-base font-medium text-slate-600 sm:text-[17px]">
-          Our technology expertise spans industries, enabling organizations of all
-          sizes to innovate, scale, and operate with confidence in a rapidly
-          evolving digital landscape.
-        </p>
-
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 md:gap-7">
-          {industries.map((industry) => {
-            const Icon = industry.icon;
-
-            return (
-              <article
-                key={industry.title}
-                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg md:p-7"
-              >
-                <Icon className="mb-5 h-7 w-7 text-red-600 md:mb-6 md:h-8 md:w-8" />
-
-                <h3 className="mb-3 text-lg font-bold text-gray-900 md:text-xl">
-                  {industry.title}
+        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {aiCards.map((card) => (
+            <article key={card.title} className="soft-card overflow-hidden rounded-[28px]">
+              <div className={`relative h-56 ${card.light ? "bg-[#f7f9fe]" : ""}`}>
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className={card.light ? "object-contain p-5" : "object-cover"}
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-semibold tracking-[-0.04em] text-slate-950">
+                  {card.title}
                 </h3>
-
-                <p className="text-sm leading-relaxed text-slate-600 md:text-base">
-                  {industry.desc}
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  {card.desc}
                 </p>
-              </article>
-            );
-          })}
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

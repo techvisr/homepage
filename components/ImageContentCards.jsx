@@ -1,62 +1,120 @@
-const highlights = [
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+
+const compactCards = [
   {
-    image: "/images/insight-playbooks.svg",
-    alt: "Engineering playbooks visual",
-    title: "Engineering Playbooks",
-    desc: "Actionable guides on architecture, delivery workflows, quality, and scaling practices for modern teams.",
-    href: "/services",
-    cta: "View Services",
+    title: "Architecture strategy",
+    desc: "Guide platform decisions with a clearer operating model and delivery structure.",
   },
   {
-    image: "/images/insight-case-study.svg",
-    alt: "Case study metrics and impact visual",
-    title: "Case Study Insights",
-    desc: "How we solved platform modernization, AI automation, and enterprise engineering challenges with measurable outcomes.",
-    href: "/case-studies",
-    cta: "Read Case Studies",
+    title: "Release quality",
+    desc: "Improve confidence with QA systems, automation, and validation built into delivery.",
   },
   {
-    image: "/images/insight-discovery.svg",
-    alt: "Consultation and discovery planning visual",
-    title: "Consultation & Discovery",
-    desc: "Book a discovery call to map scope, architecture, timelines, and delivery plans with our engineering team.",
-    href: "/contact",
-    cta: "Book a Consultation",
+    title: "AI acceleration",
+    desc: "Turn opportunities into working systems with the engineering needed for production use.",
   },
 ];
 
 export default function ImageContentCards() {
   return (
-    <section className="bg-gray-100 py-14 md:py-18">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-[34px]">
-          Insights, Proof, and Next Steps
-        </h2>
-        <p className="mt-4 max-w-3xl text-base text-slate-600 sm:text-[17px]">
-          Explore focused content and resources to evaluate how we can support your product, platform, and AI roadmap.
-        </p>
+    <section className="py-16 md:py-20">
+      <div className="section-frame">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="eyebrow">Success Stories With Real Impact</p>
+          <h2 className="section-title mt-4">
+            Proof blocks that feel closer to product and consulting leaders.
+          </h2>
+        </div>
 
-        <div className="mt-9 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
-          {highlights.map((item) => (
-            <article
-              key={item.title}
-              className="overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+        <div className="mt-8 grid gap-4 lg:grid-cols-12">
+          <article className="soft-card overflow-hidden rounded-[28px] lg:col-span-7">
+            <div className="grid gap-0 md:grid-cols-[220px_minmax(0,1fr)]">
+              <div className="relative min-h-[240px]">
+                <Image
+                  src="/images/meeting-presentation.jpg"
+                  alt="Business strategy session"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 26vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6 sm:p-7">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0b5bd3]">
+                  Delivery Story
+                </p>
+                <h3 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-slate-950">
+                  From early alignment to release readiness, every step stays tied to business outcomes.
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-slate-600">
+                  We work with teams to clarify priorities, shape architecture, align stakeholders, and keep execution clean as the product or platform grows.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article className="soft-card rounded-[28px] p-6 lg:col-span-5">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0b5bd3]">
+              Outcome Focus
+            </p>
+            <div className="mt-5 grid gap-4 sm:grid-cols-3">
+              <div>
+                <p className="text-3xl font-semibold tracking-[-0.05em] text-slate-950">01</p>
+                <p className="mt-2 text-sm leading-6 text-slate-600">Discovery and scope clarity</p>
+              </div>
+              <div>
+                <p className="text-3xl font-semibold tracking-[-0.05em] text-slate-950">02</p>
+                <p className="mt-2 text-sm leading-6 text-slate-600">Build and integrate with discipline</p>
+              </div>
+              <div>
+                <p className="text-3xl font-semibold tracking-[-0.05em] text-slate-950">03</p>
+                <p className="mt-2 text-sm leading-6 text-slate-600">Validate, release, and optimize</p>
+              </div>
+            </div>
+          </article>
+
+          <article className="soft-card overflow-hidden rounded-[28px] lg:col-span-5">
+            <div className="relative h-72">
+              <Image
+                src="/images/platform-review.jpg"
+                alt="Reviewing a platform on a laptop"
+                fill
+                sizes="(max-width: 1024px) 100vw, 32vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-lg font-semibold tracking-[-0.04em] text-slate-950">
+                Platform modernization with a stronger decision-making rhythm.
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                Modernization programs move faster when product, cloud, and delivery decisions are made together.
+              </p>
+            </div>
+          </article>
+
+          <div className="grid gap-4 lg:col-span-7 sm:grid-cols-3">
+            {compactCards.map((card) => (
+              <article key={card.title} className="soft-card rounded-[28px] p-6">
+                <h3 className="text-lg font-semibold tracking-[-0.04em] text-slate-950">
+                  {card.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  {card.desc}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="lg:col-span-12 flex justify-center pt-2">
+            <a
+              href="/case-studies"
+              className="secondary-button"
             >
-              <div className="h-40 w-full overflow-hidden bg-slate-200 md:h-40">
-                <img src={item.image} alt={item.alt} className="h-full w-full object-cover" loading="lazy" />
-              </div>
-              <div className="p-5 md:p-6">
-                <h3 className="text-lg font-bold text-gray-900 md:text-xl">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.desc}</p>
-                <a
-                  href={item.href}
-                  className="mt-3 inline-flex text-sm font-semibold text-red-600 transition-colors hover:text-red-700"
-                >
-                  {item.cta} &rarr;
-                </a>
-              </div>
-            </article>
-          ))}
+              View more stories
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
