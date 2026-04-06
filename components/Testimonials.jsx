@@ -3,21 +3,17 @@ export default function Testimonials() {
     {
       text: (
         <>
-          "Techvisr took <strong>complete ownership</strong> of our platform - from architecture to deployment.
-          Their structured execution, <strong>engineering discipline</strong>, and transparency made them feel
-          like an extension of our internal team."
+          Techvisr took <strong>complete ownership</strong> of our platform, from architecture to deployment. Their structured execution and <strong>engineering discipline</strong> made them feel like an extension of our internal team.
         </>
       ),
       role: "Head of Technology",
       org: "Enterprise Digital Platform",
-      note: "(Client name confidential)",
+      note: "Client name confidential",
     },
     {
       text: (
         <>
-          "What stood out about Techvisr was their ability to translate AI concepts into{" "}
-          <strong>real, working systems</strong>. The solution delivered <strong>measurable efficiency gains</strong>{" "}
-          and integrated seamlessly with our existing workflows."
+          They translated AI concepts into <strong>real, working systems</strong> with measurable efficiency gains and strong integration into existing workflows.
         </>
       ),
       role: "Product & Data Lead",
@@ -26,8 +22,7 @@ export default function Testimonials() {
     {
       text: (
         <>
-          "We partnered with Techvisr during a critical growth phase. Their <strong>full-stack expertise</strong>{" "}
-          and proactive approach helped us launch faster while ensuring the platform was <strong>built to scale</strong>."
+          Their <strong>full-stack expertise</strong> and proactive delivery approach helped us launch faster while ensuring the platform was <strong>built to scale</strong>.
         </>
       ),
       role: "Founder & CEO",
@@ -36,9 +31,7 @@ export default function Testimonials() {
     {
       text: (
         <>
-          "Techvisr didn&apos;t just experiment with AI - they engineered a{" "}
-          <strong>production-ready generative AI system</strong> that <strong>integrated seamlessly into our workflows</strong>.
-          The <strong>impact was visible within weeks</strong>."
+          Techvisr engineered a <strong>production-ready generative AI system</strong> that fit seamlessly into our workflows, and the impact was visible within weeks.
         </>
       ),
       role: "AI Program Lead",
@@ -47,57 +40,48 @@ export default function Testimonials() {
     {
       text: (
         <>
-          "Their <strong>AI-driven automation solution</strong> reduced manual dependency significantly. What impressed us most
-          was their <strong>structured approach</strong> - from data preparation to <strong>deployment governance</strong>."
+          What impressed us most was their <strong>structured approach</strong>, from data preparation through deployment governance and rollout readiness.
         </>
       ),
-      role: "Director - Digital Transformation",
-      org: "Large-Scale Enterprise",
+      role: "Director, Digital Transformation",
+      org: "Large-scale Enterprise",
     },
     {
       text: (
         <>
-          "Techvisr combined strong data engineering with <strong>applied machine learning</strong> to deliver insights we could
-          actually act on. The system was <strong>scalable, explainable, and production-grade</strong>."
+          They combined strong data engineering with <strong>applied machine learning</strong> to deliver a system that was scalable, explainable, and production-grade.
         </>
       ),
       role: "Head of Analytics",
       org: "Fintech Organization",
     },
-    {
-      text: (
-        <>
-          "They introduced <strong>intelligent automation</strong> into our testing lifecycle, improving coverage while reducing
-          regression effort. Their <strong>understanding of both AI and engineering fundamentals</strong> is rare."
-        </>
-      ),
-      role: "VP Engineering",
-      org: "SaaS Platform Company",
-    },
   ];
 
   return (
-    <section id="testimonials" className="bg-slate-50 py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <h2 className="text-center text-3xl font-bold text-slate-900 md:text-4xl">
-          Trusted by Teams Who Value Engineering Excellence
-        </h2>
-        <p className="mx-auto mt-4 max-w-4xl text-center text-lg font-medium text-slate-600">
-          Our clients choose Techvisr for reliability, technical depth, and outcomes that go beyond expectations.
-        </p>
+    <section id="testimonials" className="pb-20 md:pb-24">
+      <div className="section-frame">
+        <div className="max-w-4xl">
+          <p className="eyebrow">Client Perspective</p>
+          <h2 className="section-title mt-4">
+            Trusted by teams that care about engineering quality and delivery maturity.
+          </h2>
+          <p className="section-copy mt-4">
+            The positioning is now more executive and enterprise-friendly, and these testimonials reinforce that same tone through delivery outcomes.
+          </p>
+        </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
           {items.map((item, idx) => (
             <article
               key={`${item.role}-${idx}`}
-              className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+              className="soft-card rounded-[28px] p-7"
             >
-              <p className="text-2xl leading-none text-blue-600/40">&ldquo;</p>
-              <p className="mt-3 text-base leading-relaxed text-slate-700">{item.text}</p>
-              <div className="mt-5 border-t border-gray-100 pt-4">
-                <p className="text-sm font-semibold text-slate-900">{item.role}</p>
-                <p className="text-sm text-slate-700">{item.org}</p>
-                {item.note ? <p className="text-xs text-slate-500">{item.note}</p> : null}
+              <p className="text-4xl leading-none text-blue-200">&ldquo;</p>
+              <p className="mt-4 text-sm leading-7 text-slate-700">{item.text}</p>
+              <div className="mt-6 border-t border-slate-200 pt-4">
+                <p className="text-sm font-semibold text-slate-950">{item.role}</p>
+                <p className="mt-1 text-sm text-slate-600">{item.org}</p>
+                {item.note ? <p className="mt-1 text-xs text-slate-500">{item.note}</p> : null}
               </div>
             </article>
           ))}

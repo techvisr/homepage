@@ -18,19 +18,17 @@ export default function ServicesPage() {
     <>
       <Navbar />
       <main>
-        <section className="bg-gradient-to-br from-white via-red-50 to-white py-16 md:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.12em] text-red-600">
-              End-to-end engineering services
-            </p>
-            <h1 className="mt-3 max-w-4xl text-4xl font-bold leading-tight text-slate-900 md:text-5xl">
-              We own the outcome, not just the task.
-            </h1>
-            <p className="mt-5 max-w-4xl text-lg text-slate-600">
-              From first architecture call to post-launch monitoring - Techvisr
-              delivers technology as a single accountable partner, not a
-              collection of specialist contractors.
-            </p>
+        <section className="page-shell py-10 md:py-14">
+          <div className="section-frame">
+            <div className="glass-panel rounded-[40px] px-6 py-12 sm:px-8 lg:px-12 lg:py-14">
+              <p className="eyebrow">End-to-end Engineering Services</p>
+              <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-5xl">
+                Structured engineering services designed for growth, modernization, and reliable delivery.
+              </h1>
+              <p className="section-copy mt-5 max-w-4xl">
+                From architecture definition to platform scale-up, Techvisr operates as a single accountable partner across engineering, AI, cloud, and quality transformation.
+              </p>
+            </div>
           </div>
         </section>
         <CoreServices />

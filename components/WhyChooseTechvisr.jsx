@@ -12,92 +12,94 @@ export default function WhyChooseTechvisr() {
   const points = [
     {
       icon: Layers,
-      title: "Full-Stack Engineering Ownership",
+      title: "Full-stack ownership",
       content:
-        "From architecture and development to quality engineering, deployment, and optimization, we take complete ownership of your technology - eliminating fragmentation and execution gaps.",
+        "Architecture, engineering, quality, release readiness, and optimization handled as one delivery system rather than fragmented vendor work.",
     },
     {
       icon: Wrench,
-      title: "Engineering-First, Not Sales-First",
+      title: "Engineering-led decision making",
       content:
-        "Our teams are led by experienced engineers and architects who prioritize technical excellence, long-term scalability, and real-world performance over short-term delivery shortcuts.",
+        "We prioritize maintainability, platform resilience, and real delivery constraints instead of surface-level sales narratives.",
     },
     {
       icon: FlaskConical,
-      title: "Research-Driven Innovation",
+      title: "Innovation grounded in execution",
       content:
-        "We integrate applied research, experimentation, and emerging technologies into our solutions - helping clients stay ahead of market and technology shifts.",
+        "Applied research and emerging technology are folded into practical implementation plans your teams can actually adopt.",
     },
     {
       icon: Shield,
-      title: "Quality & Security by Design",
+      title: "Quality and security by design",
       content:
-        "Quality assurance, performance optimization, and security validation are embedded into every stage of our delivery lifecycle - not added as an afterthought.",
+        "Performance, reliability, and validation are integrated from the start so production quality does not depend on end-stage fixes.",
     },
     {
       icon: TrendingUp,
-      title: "Scalable & Future-Ready Solutions",
+      title: "Built for growth",
       content:
-        "We design systems that grow with your business, ensuring adaptability, maintainability, and readiness for future technological evolution.",
+        "We design for future scale, team evolution, and operating maturity so systems stay useful after launch momentum fades.",
     },
     {
       icon: Handshake,
-      title: "Transparent Collaboration & Governance",
+      title: "Transparent collaboration",
       content:
-        "Clear communication, structured processes, milestone-based tracking, and accountability ensure predictability and trust throughout the engagement.",
+        "Structured reporting, milestone clarity, and accountable communication help stakeholders stay aligned without unnecessary noise.",
     },
   ];
 
   return (
-    <section id="why-techvisr" className="bg-white py-16 md:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <h2 className="text-center text-3xl font-bold text-slate-900 md:text-[38px]">
-          Why Organizations Choose Techvisr
-        </h2>
-
-        <h3 className="mx-auto mt-4 max-w-[900px] text-center text-lg font-medium text-slate-600">
-          Because we combine deep engineering expertise, research-driven
-          innovation, and disciplined execution to deliver technology that works
-          - today and at scale.
-        </h3>
-
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {points.map((point) => {
-            const Icon = point.icon;
-
-            return (
-              <article
-                key={point.title}
-                className="rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
-              >
-                <Icon className="mb-4 h-7 w-7 text-red-600" />
-                <h3 className="text-lg font-bold text-gray-900">{point.title}</h3>
-                <p className="mt-3 text-base leading-relaxed text-slate-600">
-                  {point.content}
-                </p>
-              </article>
-            );
-          })}
+    <main>
+      <section className="page-shell py-10 md:py-14">
+        <div className="section-frame">
+          <div className="glass-panel rounded-[40px] px-6 py-12 sm:px-8 lg:px-12 lg:py-14">
+            <p className="eyebrow">Why Techvisr</p>
+            <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-5xl">
+              A technology partner that feels credible, structured, and built for serious delivery.
+            </h1>
+            <p className="section-copy mt-5 max-w-3xl">
+              We combine engineering depth, executive-ready communication, and reliable execution across product, AI, platform modernization, and quality transformation.
+            </p>
+          </div>
         </div>
+      </section>
 
-        <div className="mx-auto mt-12 max-w-5xl text-center">
-          <p className="text-xl font-semibold text-slate-800">
-            Techvisr is not just a technology vendor - we are your
-            <strong> long-term engineering and innovation partner</strong>.
-          </p>
-        </div>
+      <section id="why-techvisr" className="pb-20 md:pb-24">
+        <div className="section-frame">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {points.map((point) => {
+              const Icon = point.icon;
 
-        <div className="mt-10 rounded-xl bg-slate-100 px-6 py-8 text-center">
-          <h3 className="text-2xl font-bold text-slate-900">
-            Ready to Work With a Technology Partner You Can Trust?
-          </h3>
-          <p className="mx-auto mt-3 max-w-4xl text-base text-slate-600">
-            Let&apos;s discuss how Techvisr can help you build, scale, or transform
-            your technology initiatives.
-          </p>
-          <CalendlyPopupButton label="Book a Consultation" className="mt-6 inline-flex items-center justify-center rounded-md bg-red-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-700" />
+              return (
+                <article
+                  key={point.title}
+                  className="soft-card rounded-[28px] p-7 transition duration-300 hover:-translate-y-1"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="mt-5 text-xl font-semibold tracking-[-0.03em] text-slate-950">
+                    {point.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">
+                    {point.content}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="dark-card mt-10 rounded-[32px] px-6 py-8 text-center sm:px-8">
+            <p className="mx-auto max-w-4xl text-lg leading-8 text-slate-300 sm:text-xl">
+              Techvisr is positioned as a long-term engineering and transformation partner, not just a delivery vendor filling short-term capacity gaps.
+            </p>
+            <CalendlyPopupButton
+              label="Book a Consultation"
+              className="primary-button mt-8"
+            />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
   );
 }

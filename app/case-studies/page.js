@@ -18,15 +18,17 @@ export default function CaseStudiesPage() {
     <>
       <Navbar />
       <main>
-        <section className="bg-gradient-to-br from-white via-slate-100 to-white py-16 md:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.12em] text-red-600">Case Studies</p>
-            <h1 className="mt-3 max-w-4xl text-4xl font-bold leading-tight text-slate-900 md:text-5xl">
-              Proven Outcomes Across Modernization, Product Engineering, and AI Systems
-            </h1>
-            <p className="mt-5 max-w-3xl text-lg text-slate-600">
-              Explore examples of how Techvisr teams transformed technology landscapes and delivered measurable impact.
-            </p>
+        <section className="page-shell py-10 md:py-14">
+          <div className="section-frame">
+            <div className="glass-panel rounded-[40px] px-6 py-12 sm:px-8 lg:px-12 lg:py-14">
+              <p className="eyebrow">Case Studies</p>
+              <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-5xl">
+                Proof points across modernization, product engineering, and applied AI delivery.
+              </h1>
+              <p className="section-copy mt-5 max-w-3xl">
+                Explore how Techvisr approaches platform complexity, execution discipline, and measurable business impact across different engagement models.
+              </p>
+            </div>
           </div>
         </section>
         <CaseStudiesProof />

@@ -2,165 +2,171 @@ export default function CoreServices() {
   const services = [
     {
       title: "Product Engineering & Development",
-      sectionHeadline: "Build it right the first time.",
+      sectionHeadline: "Build it with the right architecture from day one.",
       content:
-        "Great software starts with great architecture. We don't just write code to spec - we question the spec, challenge the assumptions, and design systems that will still be maintainable and scalable two years after launch.",
+        "We shape web, mobile, SaaS, and internal platforms with a focus on maintainability, operating clarity, and product velocity that lasts beyond launch.",
       bullets: [
         "Custom web and mobile application development",
         "SaaS product engineering and multi-tenant platforms",
-        "Enterprise software, portals, and internal tooling",
-        "API design, development, and third-party integrations",
-        "Legacy system modernisation and re-architecture",
-        "Cloud-native applications on AWS, Azure, and GCP",
+        "Enterprise portals and internal tooling",
+        "API development and systems integration",
+        "Legacy modernization and re-architecture",
+        "Cloud-native application delivery",
       ],
       audience:
-        "Startups shipping their first product. Scale-ups replacing a fragile MVP. Enterprises modernising a legacy core system.",
+        "Startups launching their first serious product, scale-ups replacing fragile platforms, and enterprises modernizing core systems.",
       outcome:
-        "You get working, tested, documented software - with architecture decisions you can explain to your board and a codebase your next engineer can understand.",
+        "A tested, understandable, and scalable product foundation that supports growth instead of slowing it down.",
       cta: "Talk to our engineering team",
       href: "/contact",
     },
     {
       title: "AI & Data Engineering",
-      sectionHeadline: "AI that works in the real world, not just in demos.",
+      sectionHeadline: "Practical AI systems that fit real operations.",
       content:
-        "Most AI projects fail not because the models are wrong, but because the engineering around them is weak. Data pipelines break. Integrations don't scale. Outputs aren't explainable. We build AI systems end-to-end - from data infrastructure to deployed model to user-facing interface.",
+        "We build the pipelines, integrations, interfaces, and governance around AI so the solution is usable, explainable, and sustainable in production.",
       bullets: [
-        "AI/ML model development, training, and deployment",
-        "Generative AI applications and LLM integrations",
-        "Intelligent document processing and workflow automation",
-        "Data engineering and analytics platform builds",
-        "Predictive modelling and decision intelligence systems",
-        "Research, experimentation, and proof-of-concept validation",
+        "LLM and generative AI applications",
+        "AI workflow automation",
+        "Data engineering and analytics platforms",
+        "Model deployment and experimentation support",
+        "Intelligent document and decision systems",
+        "Microsoft Azure AI and Fabric-aligned implementations",
       ],
-      highlightLabel: "Microsoft ecosystem specialisation:",
+      highlightLabel: "Where we add value:",
       highlightText:
-        "We have deep expertise in Microsoft Azure AI, Azure Machine Learning, and Microsoft Fabric for organisations running on the Microsoft data stack.",
+        "We focus on the engineering layer that determines whether AI becomes part of daily operations or remains a one-time demo.",
       outcome:
-        "Production-ready AI that your operations team uses every day - not a demo that sits in a Confluence page.",
+        "Operational AI systems teams can trust and extend, backed by production-ready delivery discipline.",
       cta: "Explore our AI capabilities",
       href: "/contact",
     },
     {
       title: "Microsoft Fabric & Cloud Migration",
-      sectionHeadline: "Migrate to Microsoft Fabric. Faster than you think.",
+      sectionHeadline: "Modernization without unnecessary platform disruption.",
       content:
-        "Microsoft Fabric is the future of enterprise data infrastructure - but most migration projects take longer and cost more than planned. We've built proprietary tooling (MigrateFAST) specifically to solve this, cutting migration time by up to 50% without compromising data integrity or business continuity.",
+        "Our migration approach balances speed, continuity, and platform readiness so cloud and Fabric transformation efforts move forward with less risk.",
       bullets: [
-        "Microsoft Fabric migration assessment and planning",
-        "Data platform migration with MigrateFAST tooling",
-        "Power BI estate migration and optimisation",
-        "Azure cloud architecture and migration",
-        "DevOps transformation and CI/CD pipeline setup",
-        "Infrastructure as Code and containerisation",
+        "Microsoft Fabric migration planning",
+        "Power BI estate migration and optimization",
+        "Azure architecture and migration support",
+        "DevOps transformation and CI/CD enablement",
+        "Infrastructure as Code and platform automation",
+        "Migration acceleration using repeatable tooling",
       ],
-      highlightLabel: "Why we're different:",
+      highlightLabel: "Why this matters:",
       highlightText:
-        "Unlike general cloud consultancies, we're a Microsoft-specialist engineering firm with proprietary tools in the ecosystem. We've done this before - on real enterprise estates, not just sandbox environments.",
+        "Complex migration work needs a structured engineering model, not just generic cloud consulting language.",
       outcome:
-        "A fully migrated, optimised data platform on Microsoft Fabric - with zero data loss, minimal downtime, and a team that understands Power BI at the code level.",
+        "A cleaner, scalable, and better-governed cloud data platform with minimal disruption to business operations.",
       cta: "Book a migration assessment",
       href: "/contact",
     },
     {
       title: "Quality Engineering & Testing",
-      sectionHeadline: "Quality is not a phase. It's a discipline.",
+      sectionHeadline: "Release quality engineered into the process.",
       content:
-        "Bolting testing on at the end of a project is how you get last-minute delays, go-live incidents, and post-launch fire drills. We embed quality engineering into every sprint from day one - building the test frameworks, automation pipelines, and quality gates that mean your releases are boring, in the best possible way.",
+        "We embed automation, quality controls, and validation workflows directly into delivery so teams can ship faster with fewer production surprises.",
       bullets: [
-        "Test strategy design and quality consulting",
-        "Automated UI, API, and mobile testing frameworks",
-        "Performance, load, and stress testing",
-        "Security and compliance validation (OWASP, GDPR)",
-        "Continuous testing integration in CI/CD pipelines",
-        "AI-assisted test generation and maintenance",
+        "Test strategy and quality consulting",
+        "Automated UI, API, and mobile testing",
+        "Performance and load testing",
+        "Security and compliance validation",
+        "Continuous testing in CI/CD",
+        "AI-assisted testing workflows",
       ],
       outcome:
-        "Faster release cycles. Near-zero production defects. A quality system your team can maintain and extend without us.",
+        "Higher release confidence, fewer production issues, and a quality model your internal team can keep scaling.",
       cta: "Talk to our QA team",
       href: "/contact",
     },
     {
       title: "Technology Consulting & CTO Advisory",
-      sectionHeadline: "Engineering leadership, without the permanent hire.",
+      sectionHeadline: "Senior technical guidance without adding permanent overhead.",
       content:
-        "Sometimes what you need isn't more developers - it's someone who can tell you whether your architecture will survive the next 18 months, evaluate a technology decision before you're locked in, or lead an engineering transformation your internal team can't drive alone.",
+        "For teams navigating growth, transformation, or uncertain architecture choices, we provide strategic engineering direction grounded in delivery reality.",
       bullets: [
-        "Technology assessment and architecture review",
-        "Digital transformation strategy and roadmapping",
-        "CTO advisory and fractional technical leadership",
-        "Vendor and technology selection support",
-        "Engineering team structure and process design",
-        "Build vs buy analysis and M&A technical due diligence",
+        "Architecture reviews and technology assessment",
+        "Transformation roadmaps and prioritization",
+        "Fractional CTO and technical leadership support",
+        "Vendor and stack selection",
+        "Engineering process and team design",
+        "Build-versus-buy and due diligence support",
       ],
       outcome:
-        "Clear direction, reduced technology risk, and decisions you can stand behind - made by engineers who've built and scaled real systems.",
+        "Clearer technical direction, better governance, and decisions leadership teams can stand behind.",
       cta: "Schedule a strategy session",
       href: "/contact",
     },
   ];
 
   return (
-    <section id="core-services" className="bg-gray-100 py-16 md:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+    <section id="core-services" className="pb-20 md:pb-24">
+      <div className="section-frame">
         <div className="space-y-6">
           {services.map((service) => (
             <article
               key={service.title}
-              className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm md:p-8"
+              className="soft-card rounded-[32px] p-7 sm:p-8 lg:p-10"
             >
-              <p className="text-sm font-semibold uppercase tracking-[0.08em] text-red-600">
-                {service.title}
-              </p>
-
-              <h2 className="mt-2 text-2xl font-bold text-gray-900 md:text-3xl">
-                {service.sectionHeadline}
-              </h2>
-
-              <p className="mt-4 text-base leading-relaxed text-slate-700">
-                {service.content}
-              </p>
-
-              <h3 className="mt-5 text-base font-semibold text-gray-900">
-                What's included:
-              </h3>
-              <ul className="mt-3 list-disc space-y-2 pl-5 text-base text-slate-700">
-                {service.bullets.map((bullet) => (
-                  <li key={bullet}>{bullet}</li>
-                ))}
-              </ul>
-
-              {service.audience ? (
-                <p className="mt-5 text-base text-slate-700">
-                  <span className="font-semibold text-gray-900">
-                    Who this is for:
-                  </span>{" "}
-                  {service.audience}
+              <div className="max-w-4xl">
+                <p className="eyebrow">{service.title}</p>
+                <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-slate-950">
+                  {service.sectionHeadline}
+                </h2>
+                <p className="mt-5 text-base leading-8 text-slate-600">
+                  {service.content}
                 </p>
-              ) : null}
+              </div>
 
-              {service.highlightLabel && service.highlightText ? (
-                <p className="mt-5 text-base text-slate-700">
-                  <span className="font-semibold text-gray-900">
-                    {service.highlightLabel}
-                  </span>{" "}
-                  {service.highlightText}
-                </p>
-              ) : null}
+              <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(280px,0.8fr)]">
+                <div>
+                  <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+                    What&apos;s included
+                  </h3>
+                  <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
+                    {service.bullets.map((bullet) => (
+                      <li key={bullet} className="rounded-2xl border border-slate-200 bg-white/70 px-4 py-3">
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-              <p className="mt-5 text-base text-slate-700">
-                <span className="font-semibold text-gray-900">
-                  Outcome statement:
-                </span>{" "}
-                {service.outcome}
-              </p>
+                <div className="rounded-[28px] bg-slate-950 p-6 text-white">
+                  {service.audience ? (
+                    <p className="text-sm leading-7 text-slate-300">
+                      <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-sky-300">
+                        Who this is for
+                      </span>
+                      <span className="mt-3 block">{service.audience}</span>
+                    </p>
+                  ) : null}
 
-              <a
-                href={service.href}
-                className="mt-5 inline-flex text-base font-semibold text-red-600 transition-colors hover:text-red-700"
-              >
-                {service.cta} &rarr;
-              </a>
+                  {service.highlightLabel && service.highlightText ? (
+                    <p className="mt-6 text-sm leading-7 text-slate-300">
+                      <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-sky-300">
+                        {service.highlightLabel}
+                      </span>
+                      <span className="mt-3 block">{service.highlightText}</span>
+                    </p>
+                  ) : null}
+
+                  <p className="mt-6 text-sm leading-7 text-slate-300">
+                    <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-sky-300">
+                      Outcome
+                    </span>
+                    <span className="mt-3 block">{service.outcome}</span>
+                  </p>
+
+                  <a
+                    href={service.href}
+                    className="mt-7 inline-flex text-sm font-semibold text-white hover:text-sky-300"
+                  >
+                    {service.cta}
+                  </a>
+                </div>
+              </div>
             </article>
           ))}
         </div>

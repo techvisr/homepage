@@ -14,158 +14,102 @@ export default function TechnologyStack() {
       icon: Monitor,
       title: "Frontend & Experience Engineering",
       description:
-        "We craft responsive, accessible, and performance-optimized interfaces for web and mobile platforms.",
-      tech: [
-        "React.js",
-        "Next.js",
-        "Angular",
-        "Vue.js",
-        "TypeScript",
-        "Flutter",
-        "React Native",
-        "HTML5",
-        "CSS3",
-      ],
+        "Responsive, accessible, and performance-oriented interfaces for customer, product, and internal user experiences.",
+      tech: ["React.js", "Next.js", "Angular", "Vue.js", "TypeScript", "Flutter", "React Native"],
     },
     {
       icon: Server,
       title: "Backend & API Development",
       description:
-        "Robust backend systems designed for scalability, security, and maintainability.",
-      tech: [
-        "Node.js",
-        "Java (Spring Boot)",
-        ".NET Core",
-        "Python",
-        "REST APIs",
-        "GraphQL",
-        "Microservices Architecture",
-      ],
+        "Secure backend systems and integration layers designed for maintainability and reliable scale.",
+      tech: ["Node.js", "Java", ".NET Core", "Python", "REST APIs", "GraphQL", "Microservices"],
     },
     {
       icon: Brain,
-      title: "AI, Machine Learning & Data Platforms",
+      title: "AI, ML & Data Platforms",
       description:
-        "Advanced intelligence systems that power automation, analytics, and predictive decision-making.",
-      tech: [
-        "Python",
-        "TensorFlow",
-        "PyTorch",
-        "Scikit-learn",
-        "OpenAI APIs",
-        "Data Pipelines",
-        "ETL Systems",
-        "Big Data Processing",
-      ],
+        "Applied intelligence systems powering automation, decision support, and advanced digital workflows.",
+      tech: ["Python", "TensorFlow", "PyTorch", "Scikit-learn", "OpenAI APIs", "ETL Systems", "Data Pipelines"],
     },
     {
       icon: Cloud,
-      title: "Cloud & Infrastructure Engineering",
+      title: "Cloud & Infrastructure",
       description:
-        "Secure, resilient, and scalable cloud-native environments.",
-      tech: [
-        "AWS",
-        "Microsoft Azure",
-        "Google Cloud Platform",
-        "Docker",
-        "Kubernetes",
-        "Terraform",
-        "Infrastructure as Code",
-      ],
+        "Resilient cloud environments and platform foundations built for scale, portability, and governance.",
+      tech: ["AWS", "Microsoft Azure", "Google Cloud", "Docker", "Kubernetes", "Terraform", "IaC"],
     },
     {
       icon: Workflow,
       title: "DevOps & Automation",
       description:
-        "Accelerated delivery pipelines and operational excellence.",
-      tech: [
-        "Jenkins",
-        "GitHub Actions",
-        "Azure DevOps",
-        "CI/CD Pipelines",
-        "Monitoring & Observability",
-        "Container Orchestration",
-      ],
+        "Delivery acceleration through modern pipelines, observability, and repeatable operational workflows.",
+      tech: ["GitHub Actions", "Azure DevOps", "Jenkins", "CI/CD", "Monitoring", "Container Orchestration"],
     },
     {
       icon: ShieldCheck,
       title: "Testing & Quality Automation",
       description:
-        "Comprehensive quality validation across the development lifecycle.",
-      tech: [
-        "Selenium",
-        "Cypress",
-        "Playwright",
-        "Appium",
-        "JUnit",
-        "TestNG",
-        "Performance Testing Tools",
-        "API Testing Frameworks",
-      ],
+        "Comprehensive validation frameworks across release reliability, performance, and regression control.",
+      tech: ["Playwright", "Cypress", "Selenium", "Appium", "JUnit", "TestNG", "API Testing"],
     },
     {
       icon: Database,
       title: "Database & Data Management",
       description:
-        "Secure and optimized data systems for performance and scalability.",
-      tech: [
-        "PostgreSQL",
-        "MySQL",
-        "MongoDB",
-        "Redis",
-        "SQL Server",
-        "NoSQL Databases",
-        "Data Warehousing",
-      ],
+        "Optimized data systems for transactional performance, analytics readiness, and operational resilience.",
+      tech: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "SQL Server", "Data Warehousing", "NoSQL"],
     },
   ];
 
   return (
-    <section id="technology-stack" className="bg-gray-100 py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <h2 className="text-3xl font-semibold text-gray-900 md:text-4xl">
-          Modern Technology Stack. Enterprise-Grade Capabilities.
-        </h2>
+    <section id="technology-stack" className="pb-20 md:pb-24">
+      <div className="section-frame">
+        <div className="max-w-4xl">
+          <p className="eyebrow">Technology Stack</p>
+          <h2 className="section-title mt-4">
+            Modern platforms and enterprise-grade engineering capabilities.
+          </h2>
+          <p className="section-copy mt-4">
+            Our stack choices are driven by architecture fit, team maintainability, and delivery practicality rather than trend-chasing.
+          </p>
+        </div>
 
-        <h3 className="mt-4 max-w-5xl text-lg font-medium text-gray-600">
-          We leverage proven and emerging technologies to build secure,
-          scalable, and high-performance digital ecosystems across industries and
-          platforms.
-        </h3>
-
-        <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <div className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-2">
           {categories.map((category) => {
             const Icon = category.icon;
 
             return (
               <article
                 key={category.title}
-                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="soft-card rounded-[30px] p-7"
               >
-                <Icon className="mb-4 h-7 w-7 text-red-600" />
-                <h3 className="text-xl font-bold text-gray-900">{category.title}</h3>
-                <p className="mt-3 text-base leading-relaxed text-slate-600">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-5 text-2xl font-semibold tracking-[-0.03em] text-slate-950">
+                  {category.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">
                   {category.description}
                 </p>
-                <p className="mt-4 text-base leading-relaxed text-slate-700">
-                  {category.tech.map((item, index) => (
-                    <span key={item}>
-                      <strong>{item}</strong>
-                      {index < category.tech.length - 1 ? ", " : ""}
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {category.tech.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-slate-200 bg-white/90 px-3 py-1.5 text-xs font-medium text-slate-700"
+                    >
+                      {item}
                     </span>
                   ))}
-                </p>
+                </div>
               </article>
             );
           })}
         </div>
 
-        <div className="mt-12 rounded-xl bg-white px-6 py-7 text-center">
-          <p className="text-lg font-semibold text-slate-800">
-            <strong>Architecture-first thinking</strong>,
-            <strong> security-driven development</strong>, and
-            <strong> scalable infrastructure design</strong> power every solution
-            we build.
+        <div className="glass-panel mt-10 rounded-[30px] px-6 py-7 text-center">
+          <p className="text-lg font-medium leading-8 text-slate-700">
+            Architecture-first thinking, secure delivery practices, and scalable infrastructure design sit underneath every solution we build.
           </p>
         </div>
       </div>
