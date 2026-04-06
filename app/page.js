@@ -29,11 +29,13 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <Services />
-      <ImageContentCards />
-      <Community />
-      <MailToCta />
+      <main>
+        <Hero />
+        <Services />
+        <ImageContentCards />
+        <Community />
+        <MailToCta />
+      </main>
       <Footer />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
     </>

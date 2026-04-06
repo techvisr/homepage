@@ -1,68 +1,72 @@
+const footerGroups = [
+  {
+    title: "Services",
+    links: [
+      { label: "Software development", href: "/services" },
+      { label: "AI engineering", href: "/services" },
+      { label: "Quality engineering", href: "/services" },
+      { label: "Cloud & DevOps", href: "/services" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "Why Techvisr", href: "/why-techvisr" },
+      { label: "Contact us", href: "/contact" },
+      { label: "Industry focus", href: "/#community" },
+    ],
+  },
+  {
+    title: "Contact",
+    links: [
+      { label: "admin@techvisr.com", href: "mailto:admin@techvisr.com" },
+      { label: "Book a consultation", href: "/contact" },
+      { label: "Explore services", href: "/services" },
+    ],
+  },
+];
+
 export default function Footer() {
   return (
-    <footer id="about" className="relative mt-14 overflow-hidden bg-gray-900 py-16 text-gray-300 md:py-20">
-      <div className="relative z-10 mx-auto max-w-7xl px-4 pb-24 sm:px-6 sm:pb-28 md:pb-32 lg:pb-36">
-        <div
-          className="grid gap-10  
-                        grid-cols-1 
-                        sm:grid-cols-2 
-                        lg:grid-cols-4"
-        >
-          <div>
-            <h3 className="mb-5 text-base font-semibold text-white md:text-lg">Services</h3>
-            <ul className="space-y-3 text-sm text-gray-300">
-              <li><a href="/services" className="hover:text-white">Software development</a></li>
-              <li><a href="/services" className="hover:text-white">AI engineering</a></li>
-              <li><a href="/services" className="hover:text-white">Quality engineering</a></li>
-              <li><a href="/services" className="hover:text-white">Cloud & DevOps</a></li>
-              <li><a href="/services" className="hover:text-white">Technology consulting</a></li>
-            </ul>
+    <footer id="about" className="bg-[#0f172a] py-14 text-slate-300">
+      <div className="section-frame">
+        <div className="grid gap-10 border-b border-white/10 pb-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
+          <div className="max-w-xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-200">
+              Techvisr
+            </p>
+            <h2 className="mt-4 text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl">
+              Software, AI, and quality engineering for modern businesses.
+            </h2>
+            <p className="mt-4 text-[15px] leading-7 text-slate-400 sm:text-base">
+              We help organizations build products, improve delivery quality, modernize platforms, and bring more structure to technology execution.
+            </p>
           </div>
 
-          <div>
-            <h3 className="mb-5 text-base font-semibold text-white md:text-lg">Products</h3>
-            <ul className="space-y-3 text-sm text-gray-300">
-              <li><a href="/#products" className="hover:text-white">AI-DataLens</a></li>
-              <li><a href="/#products" className="hover:text-white">EmbedFAST</a></li>
-              <li><a href="/#products" className="hover:text-white">CertyFAST</a></li>
-              <li><a href="/#products" className="hover:text-white">LoadFAST</a></li>
-              <li><a href="/#products" className="hover:text-white">MigrateFAST</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="mb-5 text-base font-semibold text-white md:text-lg">Resources</h3>
-            <ul className="space-y-3 text-sm text-gray-300">
-              <li><a href="/case-studies" className="hover:text-white">Case studies</a></li>
-              <li><a href="/services" className="hover:text-white">Service playbooks</a></li>
-              <li><a href="/contact" className="hover:text-white">Consultation offers</a></li>
-              <li><a href="/#community" className="hover:text-white">Industry insights</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="mb-5 text-base font-semibold text-white md:text-lg">About us</h3>
-            <ul className="space-y-3 text-sm text-gray-300">
-              <li><a href="/#why-techvisr" className="hover:text-white">Who we are</a></li>
-              <li><a href="/services" className="hover:text-white">How we work</a></li>
-              <li><a href="/contact" className="hover:text-white">Contact us</a></li>
-              <li><a href="mailto:admin@techvisr.com" className="hover:text-white">admin@techvisr.com</a></li>
-            </ul>
+          <div className="grid gap-8 sm:grid-cols-3">
+            {footerGroups.map((group) => (
+              <div key={group.title}>
+                <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
+                  {group.title}
+                </h3>
+                <ul className="mt-4 space-y-3 text-sm text-slate-300">
+                  {group.links.map((link) => (
+                    <li key={link.label}>
+                      <a href={link.href} className="hover:text-white">
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
 
-        <p className="mt-8 pt-6 text-xs text-gray-400 border-t border-gray-800 ">
-          &copy; {new Date().getFullYear()} TechVisr. All rights reserved.
-        </p>
-      </div>
-
-      <div className="footer-watermark-wrap pointer-events-none absolute inset-x-0 bottom-1 z-0 select-none px-4 text-center sm:bottom-0 md:bottom-[-4px]">
-        <p
-          data-text="TECHVISR"
-          className="techvisr-watermark text-[clamp(4rem,16vw,14rem)] font-extrabold uppercase tracking-[0.03em]"
-        >
-          TECHVISR
-        </p>
+        <div className="flex flex-col gap-3 pt-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <p>&copy; {new Date().getFullYear()} TechVisr. All rights reserved.</p>
+          <p>Professional engineering services for product and enterprise teams.</p>
+        </div>
       </div>
     </footer>
   );

@@ -5,8 +5,6 @@ import {
   ShoppingBag,
   Building2,
   Truck,
-  Lightbulb,
-  Clapperboard,
 } from "lucide-react";
 
 export default function Community() {
@@ -14,79 +12,71 @@ export default function Community() {
     {
       icon: Landmark,
       title: "Fintech & Financial Services",
-      desc: "Secure, compliant, and high-performance platforms for payments, lending, banking, risk management, and financial automation systems.",
+      desc: "Secure engineering for payments, lending, risk systems, and digital finance platforms.",
     },
     {
       icon: Boxes,
-      title: "SaaS & Technology Products",
-      desc: "Scalable SaaS platforms, multi-tenant architectures, subscription systems, APIs, and product engineering tailored for high-growth technology companies.",
+      title: "SaaS & Product Companies",
+      desc: "Scalable product engineering for growing software businesses and internal platform teams.",
     },
     {
       icon: HeartPulse,
       title: "Healthcare & Life Sciences",
-      desc: "Reliable, secure, and data-driven healthcare systems including patient platforms, analytics solutions, compliance-ready applications, and digital health innovations.",
+      desc: "Reliable systems for regulated workflows, analytics, and digital healthcare experiences.",
     },
     {
       icon: ShoppingBag,
-      title: "E-Commerce & Retail",
-      desc: "High-conversion e-commerce platforms, inventory systems, payment integrations, performance optimization, and personalized customer experience solutions.",
+      title: "Retail & Commerce",
+      desc: "Commerce and operations platforms focused on performance, integration, and customer journeys.",
     },
     {
       icon: Building2,
-      title: "Enterprise Digital Transformation",
-      desc: "Modernization of legacy systems, cloud migration, process automation, data platforms, and enterprise-grade application engineering.",
+      title: "Enterprise Transformation",
+      desc: "Modernization programs, workflow automation, and engineering support for digital change initiatives.",
     },
     {
       icon: Truck,
-      title: "Manufacturing, Logistics & Supply Chain",
-      desc: "Intelligent systems for operations management, supply chain visibility, analytics dashboards, automation, and predictive insights.",
-    },
-    {
-      icon: Lightbulb,
-      title: "AI-Driven Startups & Innovation Labs",
-      desc: "Rapid prototyping, MVP development, AI model implementation, experimentation platforms, and innovation-focused engineering support.",
-    },
-    {
-      icon: Clapperboard,
-      title: "Media, Entertainment & Platforms",
-      desc: "High-scale digital platforms, content systems, streaming architectures, user engagement analytics, and performance-optimized applications.",
+      title: "Logistics & Operations",
+      desc: "Operational visibility, process systems, and delivery platforms for distributed business environments.",
     },
   ];
 
   return (
-    <section id="community" className="bg-white py-16 md:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-[36px]">
-          Engineering Solutions Across Industries and Business Models
-        </h2>
+    <section id="community" className="bg-slate-50 py-20 md:py-24">
+      <div className="section-frame">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] lg:items-start">
+          <div className="max-w-2xl">
+            <p className="eyebrow">Industries We Serve</p>
+            <h2 className="section-title mt-4">
+              Delivery experience across product-led and enterprise environments.
+            </h2>
+            <p className="section-copy mt-5">
+              Techvisr supports organizations with different operating models, compliance needs, and delivery pressures, while keeping the execution approach structured and practical.
+            </p>
+          </div>
 
-        <p className="mt-4 max-w-4xl text-base font-medium text-slate-600 sm:text-[17px]">
-          Our technology expertise spans industries, enabling organizations of all
-          sizes to innovate, scale, and operate with confidence in a rapidly
-          evolving digital landscape.
-        </p>
+          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            {industries.map((industry) => {
+              const Icon = industry.icon;
 
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 md:gap-7">
-          {industries.map((industry) => {
-            const Icon = industry.icon;
-
-            return (
-              <article
-                key={industry.title}
-                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg md:p-7"
-              >
-                <Icon className="mb-5 h-7 w-7 text-red-600 md:mb-6 md:h-8 md:w-8" />
-
-                <h3 className="mb-3 text-lg font-bold text-gray-900 md:text-xl">
-                  {industry.title}
-                </h3>
-
-                <p className="text-sm leading-relaxed text-slate-600 md:text-base">
-                  {industry.desc}
-                </p>
-              </article>
-            );
-          })}
+              return (
+                <article
+                  key={industry.title}
+                  className="soft-card rounded-2xl p-6"
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-900 text-white">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="mt-5 text-lg font-semibold tracking-[-0.03em] text-slate-950">
+                    {industry.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">
+                    {industry.desc}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
