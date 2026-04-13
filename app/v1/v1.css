@@ -1,0 +1,81 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #1f2937;
+}
+
+section {
+  scroll-margin-top: 88px;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #dc2626;
+  outline-offset: 2px;
+}
+
+@keyframes techvisr-sheen {
+  0% {
+    -webkit-mask-position: 170% 0;
+    mask-position: 170% 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-mask-position: -170% 0;
+    mask-position: -170% 0;
+    opacity: 0;
+  }
+}
+
+.footer-watermark-wrap {
+  opacity: 0.9;
+}
+
+.techvisr-watermark {
+  position: relative;
+  display: inline-block;
+  line-height: 0.86;
+  color: rgba(148, 163, 184, 0.13);
+  -webkit-text-stroke: 1.2px rgba(148, 163, 184, 0.3);
+  text-shadow: 0 14px 34px rgba(2, 6, 23, 0.52);
+}
+
+.techvisr-watermark::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(226, 232, 240, 0.22);
+  opacity: 0.55;
+}
+
+.techvisr-watermark::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  -webkit-text-stroke: 1.35px rgba(255, 255, 255, 0.62);
+  -webkit-mask-image: linear-gradient(
+    108deg,
+    transparent 33%,
+    rgba(0, 0, 0, 0.98) 50%,
+    transparent 67%
+  );
+  mask-image: linear-gradient(
+    108deg,
+    transparent 33%,
+    rgba(0, 0, 0, 0.98) 50%,
+    transparent 67%
+  );
+  -webkit-mask-size: 220% 100%;
+  mask-size: 220% 100%;
+  animation: techvisr-sheen 9s ease-in-out infinite;
+  will-change: mask-position, opacity;
+}
