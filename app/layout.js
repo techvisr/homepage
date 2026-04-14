@@ -1,5 +1,18 @@
 import "./globals.css";
 import Script from "next/script";
+import { Manrope, Plus_Jakarta_Sans } from "next/font/google";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-body",
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-display",
+});
 
 export const metadata = {
   metadataBase: new URL("https://techvisr.com"),
@@ -59,7 +72,7 @@ export default function RootLayout({ children }) {
           href="https://assets.calendly.com/assets/external/widget.css"
         />
       </head>
-      <body>
+      <body className={`${manrope.variable} ${plusJakartaSans.variable}`}>
         {children}
         <Script
           src="https://assets.calendly.com/assets/external/widget.js"
