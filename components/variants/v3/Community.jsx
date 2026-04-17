@@ -38,7 +38,7 @@ const aiCards = [
 
 export default function Community() {
   return (
-    <section id="community" className="bg-[#fbfcfe] py-16 md:py-20">
+    <section id="community" className="bg-[#fbfcfe] py-14 md:py-18 xl:py-16">
       <div className="section-frame">
         <div className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">Intelligent AI Tools Designed For Speed, Accuracy And Scale</p>
@@ -47,7 +47,7 @@ export default function Community() {
           </h2>
         </div>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3 xl:gap-5">
           {aiCards.map((card) => (
             <article key={card.title} className="soft-card overflow-hidden rounded-[28px]">
               <div className={`relative h-56 ${card.light ? "bg-[#f7f9fe]" : ""}`}>
@@ -59,8 +59,8 @@ export default function Community() {
                   className={card.light ? "object-contain p-5" : "object-cover"}
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-lg font-semibold tracking-[-0.04em] text-slate-950">
+              <div className="p-6 xl:p-5">
+                <h3 className="text-[1.02rem] font-semibold tracking-[-0.03em] text-slate-950 xl:text-[1.08rem]">
                   {card.title}
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-slate-600">

@@ -1,6 +1,10 @@
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
-import CalendlyPopupButton from "../../components/CalendlyPopupButton";
+import Navbar from "../../components/variants/v3/Navbar";
+import Footer from "../../components/variants/v3/Footer";
+import {
+  ContactCards,
+  HighlightPanel,
+  PageHero,
+} from "../../components/variants/v3/InnerPageSections";
 
 export const metadata = {
   title: "Contact",
@@ -11,66 +15,76 @@ export const metadata = {
   },
 };
 
+const heroStats = [
+  { value: "Fast alignment", label: "Talk through scope, constraints, and the right starting point." },
+  { value: "Flexible models", label: "Project delivery, advisory, or specialist engineering support." },
+  { value: "Techvisr fit", label: "Best for product, modernization, AI, and quality-led initiatives." },
+];
+
+const cards = [
+  {
+    kicker: "Direct Contact",
+    title: "Project inquiries and partnership discussions",
+    description:
+      "Use email when you want to share context, requirements, or a rough scope before the first call.",
+    lines: ["admin@techvisr.com"],
+    href: "mailto:admin@techvisr.com",
+    cta: "Email Techvisr",
+  },
+  {
+    kicker: "Typical Focus Areas",
+    title: "Where conversations usually start",
+    description:
+      "Most enquiries are around digital product engineering, AI systems, quality automation, and cloud modernization.",
+    lines: [
+      "Software and product engineering",
+      "AI and data systems",
+      "Quality engineering and test automation",
+      "Cloud migration and DevOps",
+    ],
+  },
+  {
+    kicker: "Engagement Patterns",
+    title: "The kinds of work we usually support",
+    description:
+      "We can step in for focused discovery, complete delivery ownership, or engineering support during a high-stakes growth phase.",
+    lines: [
+      "MVP and product launch acceleration",
+      "Platform modernization and scale-up",
+      "AI adoption and intelligent automation",
+      "Quality and release engineering uplift",
+    ],
+  },
+];
+
 export default function Contact() {
   return (
     <>
       <Navbar />
-      <main>
-        <section className="bg-gradient-to-br from-white via-red-50 to-white py-16 md:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.12em] text-red-600">Contact Techvisr</p>
-            <h1 className="mt-3 max-w-4xl text-4xl font-bold leading-tight text-slate-900 md:text-5xl">
-              Let&apos;s Plan Your Next Digital Product, Platform, or AI Initiative
-            </h1>
-            <p className="mt-5 max-w-3xl text-lg text-slate-600">
-              Share your goals and constraints. We&apos;ll help you define a clear technical path, delivery model, and execution plan.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <CalendlyPopupButton
-                label="Book a Consultation"
-                className="inline-flex items-center justify-center rounded-md bg-red-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-700"
-              />
-              <a
-                href="/services"
-                className="inline-flex items-center justify-center rounded-md border border-red-200 bg-white px-5 py-3 text-sm font-semibold text-red-600 transition-colors hover:bg-red-50"
-              >
-                Explore Our Services
-              </a>
-            </div>
-          </div>
-        </section>
+      <main className="overflow-hidden bg-white">
+        <PageHero
+          eyebrow="Contact Techvisr"
+          title="Let’s plan your next product, platform, or AI initiative."
+          description="The contact page now sits on the same v3 theme as the homepage and keeps the practical detail from the old version. The tone is more premium, but still straightforward enough for a serious first conversation."
+          primaryLabel="Book a Consultation"
+          secondaryLabel="Explore services"
+          secondaryHref="/services"
+          stats={heroStats}
+        />
 
-        <section className="bg-white py-14 md:py-16">
-          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 sm:px-6 lg:grid-cols-3">
-            <article className="rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-sm">
-              <h2 className="text-xl font-bold text-slate-900">Email</h2>
-              <p className="mt-3 text-slate-600">For project inquiries, proposals, and partnership discussions.</p>
-              <a href="mailto:admin@techvisr.com" className="mt-4 inline-flex text-sm font-semibold text-red-600 hover:text-red-700">
-                admin@techvisr.com
-              </a>
-            </article>
+        <ContactCards items={cards} />
 
-            <article className="rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-sm">
-              <h2 className="text-xl font-bold text-slate-900">Service Focus</h2>
-              <ul className="mt-3 space-y-2 text-sm text-slate-600">
-                <li>Software and product engineering</li>
-                <li>AI and data systems</li>
-                <li>Quality engineering and test automation</li>
-                <li>Cloud migration and DevOps</li>
-              </ul>
-            </article>
-
-            <article className="rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-sm">
-              <h2 className="text-xl font-bold text-slate-900">Typical Engagements</h2>
-              <ul className="mt-3 space-y-2 text-sm text-slate-600">
-                <li>MVP and product launch acceleration</li>
-                <li>Platform modernization and scale-up</li>
-                <li>AI adoption and intelligent automation</li>
-                <li>Quality and release engineering uplift</li>
-              </ul>
-            </article>
-          </div>
-        </section>
+        <HighlightPanel
+          eyebrow="What Happens Next"
+          title="We help you get to a clearer execution path, not just a sales call."
+          description="A good first conversation should leave you with sharper thinking on scope, delivery approach, team shape, and where the biggest risks actually are."
+          bullets={[
+            "Discuss goals, constraints, and delivery expectations",
+            "Map the right engagement model for your stage",
+            "Leave with a clearer technical and execution direction",
+          ]}
+          ctaLabel="Schedule the First Call"
+        />
       </main>
       <Footer />
     </>

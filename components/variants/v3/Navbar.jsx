@@ -4,6 +4,7 @@ import CalendlyPopupButton from "./CalendlyPopupButton";
 export default function Navbar() {
   const navLinks = [
     { label: "Services", href: "/services" },
+    { label: "Case Studies", href: "/case-studies" },
     { label: "Why Techvisr", href: "/why-techvisr" },
     { label: "Contact", href: "/contact" },
   ];
