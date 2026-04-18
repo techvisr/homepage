@@ -52,9 +52,19 @@ summary:focus-visible {
   background: rgba(11, 91, 211, 0.14);
 }
 
+@keyframes footerDiagonalSweep {
+  0% {
+    background-position: 220% 220%;
+  }
+
+  100% {
+    background-position: -140% -140%;
+  }
+}
+
 @layer components {
   .section-frame {
-    @apply mx-auto max-w-7xl px-4 sm:px-6;
+    @apply mx-auto max-w-7xl px-4 sm:px-6 xl:px-8;
   }
 
   .eyebrow {
@@ -65,7 +75,7 @@ summary:focus-visible {
 
   .section-title {
     font-family: var(--font-display), sans-serif;
-    @apply text-[1.9rem] font-semibold leading-[1.06] tracking-[-0.045em] text-slate-950 sm:text-[2.25rem] lg:text-[2.65rem];
+    @apply text-[1.55rem] font-semibold leading-[1.1] tracking-[-0.035em] text-slate-950 sm:text-[1.85rem] lg:text-[2rem] xl:text-[2.1rem] 2xl:text-[2.3rem];
   }
 
   .section-copy {
@@ -118,5 +128,28 @@ summary:focus-visible {
   .secondary-button:hover {
     background: #f8fafc;
     border-color: rgba(100, 116, 139, 0.44);
+  }
+
+  .footer-wordmark-base {
+    color: rgba(255, 255, 255, 0.04);
+  }
+
+  .footer-wordmark-sweep {
+    color: transparent;
+    background-image: linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 46%,
+      rgba(255, 255, 255, 0.012) 48%,
+      rgba(255, 255, 255, 0.055) 50%,
+      rgba(255, 255, 255, 0.012) 52%,
+      transparent 54%,
+      transparent 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: footerDiagonalSweep 8s linear infinite;
   }
 }

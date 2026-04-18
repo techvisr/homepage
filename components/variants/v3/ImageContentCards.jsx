@@ -18,7 +18,7 @@ const compactCards = [
 
 export default function ImageContentCards() {
   return (
-    <section className="py-16 md:py-20">
+    <section className="py-14 md:py-18 xl:py-16">
       <div className="section-frame">
         <div className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">Success Stories With Real Impact</p>
@@ -27,7 +27,7 @@ export default function ImageContentCards() {
           </h2>
         </div>
 
-        <div className="mt-8 grid gap-4 lg:grid-cols-12">
+        <div className="mt-8 grid gap-4 lg:grid-cols-12 xl:gap-5">
           <article className="soft-card overflow-hidden rounded-[28px] lg:col-span-7">
             <div className="grid gap-0 md:grid-cols-[220px_minmax(0,1fr)]">
               <div className="relative min-h-[240px]">
@@ -39,11 +39,11 @@ export default function ImageContentCards() {
                   className="object-cover"
                 />
               </div>
-              <div className="p-6 sm:p-7">
+              <div className="p-6 sm:p-7 xl:p-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0b5bd3]">
                   Delivery Story
                 </p>
-                <h3 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-slate-950">
+                <h3 className="mt-3 text-[1.32rem] font-semibold tracking-[-0.03em] text-slate-950 sm:text-[1.48rem] xl:text-[1.56rem]">
                   From early alignment to release readiness, every step stays tied to business outcomes.
                 </h3>
                 <p className="mt-4 text-sm leading-7 text-slate-600">
@@ -59,15 +59,15 @@ export default function ImageContentCards() {
             </p>
             <div className="mt-5 grid gap-4 sm:grid-cols-3">
               <div>
-                <p className="text-3xl font-semibold tracking-[-0.05em] text-slate-950">01</p>
+                <p className="text-[1.85rem] font-semibold tracking-[-0.045em] text-slate-950 xl:text-[2rem]">01</p>
                 <p className="mt-2 text-sm leading-6 text-slate-600">Discovery and scope clarity</p>
               </div>
               <div>
-                <p className="text-3xl font-semibold tracking-[-0.05em] text-slate-950">02</p>
+                <p className="text-[1.85rem] font-semibold tracking-[-0.045em] text-slate-950 xl:text-[2rem]">02</p>
                 <p className="mt-2 text-sm leading-6 text-slate-600">Build and integrate with discipline</p>
               </div>
               <div>
-                <p className="text-3xl font-semibold tracking-[-0.05em] text-slate-950">03</p>
+                <p className="text-[1.85rem] font-semibold tracking-[-0.045em] text-slate-950 xl:text-[2rem]">03</p>
                 <p className="mt-2 text-sm leading-6 text-slate-600">Validate, release, and optimize</p>
               </div>
             </div>
@@ -84,7 +84,7 @@ export default function ImageContentCards() {
               />
             </div>
             <div className="p-6">
-              <h3 className="text-lg font-semibold tracking-[-0.04em] text-slate-950">
+              <h3 className="text-[1.02rem] font-semibold tracking-[-0.03em] text-slate-950 xl:text-[1.08rem]">
                 Platform modernization with a stronger decision-making rhythm.
               </h3>
               <p className="mt-3 text-sm leading-7 text-slate-600">
@@ -95,8 +95,8 @@ export default function ImageContentCards() {
 
           <div className="grid gap-4 lg:col-span-7 sm:grid-cols-3">
             {compactCards.map((card) => (
-              <article key={card.title} className="soft-card rounded-[28px] p-6">
-                <h3 className="text-lg font-semibold tracking-[-0.04em] text-slate-950">
+              <article key={card.title} className="soft-card rounded-[28px] p-6 xl:p-5">
+                <h3 className="text-[1.02rem] font-semibold tracking-[-0.03em] text-slate-950 xl:text-[1.08rem]">
                   {card.title}
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-slate-600">

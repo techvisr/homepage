@@ -45,7 +45,7 @@ const cards = [
 
 export default function Services() {
   return (
-    <section id="services" className="bg-[#fbfcfe] py-16 md:py-20">
+    <section id="services" className="bg-[#fbfcfe] py-14 md:py-18 xl:py-16">
       <div className="section-frame">
         <div className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">Power Every Step Of Your Delivery Journey</p>
@@ -69,14 +69,14 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="mt-8 grid gap-4 lg:grid-cols-3">
+        <div className="mt-8 grid gap-4 lg:grid-cols-3 xl:gap-5">
           <article className="soft-card overflow-hidden rounded-[28px] lg:col-span-2">
             <div className="grid h-full gap-0 md:grid-cols-[minmax(0,1.05fr)_minmax(260px,0.95fr)]">
-              <div className="p-6 sm:p-7">
+              <div className="p-6 sm:p-7 xl:p-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0b5bd3]">
                   Engineering Partner Model
                 </p>
-                <h3 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-slate-950">
+                <h3 className="mt-3 text-[1.35rem] font-semibold tracking-[-0.03em] text-slate-950 sm:text-[1.5rem] xl:text-[1.58rem]">
                   Build software, ship AI systems, and modernize platforms through one accountable team.
                 </h3>
                 <p className="mt-4 text-sm leading-7 text-slate-600">
@@ -106,7 +106,7 @@ export default function Services() {
             const Icon = card.icon;
 
             return (
-              <article key={card.title} className="soft-card rounded-[28px] p-6">
+              <article key={card.title} className="soft-card rounded-[28px] p-6 xl:p-5">
                 <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-50 text-[#0b5bd3]">
                   <Icon className="h-5 w-5" />
                 </div>

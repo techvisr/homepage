@@ -27,7 +27,7 @@ export default function Footer() {
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/60">
               Techvisr
             </p>
-            <h2 className="display-heading mt-4 text-3xl font-semibold text-white sm:text-[2.35rem]">
+            <h2 className="display-heading mt-4 text-2xl font-semibold text-white sm:text-[2rem]">
               Software, AI, and quality engineering for modern product and enterprise teams.
             </h2>
             <p className="mt-4 text-sm leading-7 text-slate-400 sm:text-base">
@@ -66,9 +66,14 @@ export default function Footer() {
       </div>
 
       <div className="pointer-events-none absolute inset-x-0 bottom-[-24px] z-0 select-none px-4 text-center">
-        <p className="text-[clamp(5rem,20vw,18rem)] font-extrabold tracking-[-0.08em] text-white/[0.04]">
-          Techvisr
-        </p>
+        <div className="relative inline-block">
+          <p className="footer-wordmark-base text-[clamp(5rem,20vw,18rem)] font-extrabold tracking-[-0.08em]">
+            Techvisr
+          </p>
+          <p className="footer-wordmark-sweep absolute inset-0 text-[clamp(5rem,20vw,18rem)] font-extrabold tracking-[-0.08em]">
+            Techvisr
+          </p>
+        </div>
       </div>
     </footer>
   );

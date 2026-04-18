@@ -19,19 +19,19 @@ const trustLabels = [
 
 export default function Hero() {
   return (
-    <section className="bg-white pb-14 pt-8 sm:pb-18 lg:pt-10">
+    <section className="bg-white pb-12 pt-6 sm:pb-16 lg:pt-8 xl:pb-14 xl:pt-7">
       <div className="section-frame">
-        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.88fr)_minmax(420px,1.12fr)]">
-          <div className="max-w-2xl">
+        <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,0.96fr)_minmax(460px,1.04fr)] xl:grid-cols-[minmax(0,1.02fr)_minmax(520px,0.98fr)] xl:gap-10">
+          <div className="max-w-xl xl:max-w-[34rem]">
             <p className="eyebrow">Grow Faster. Reduce Risk. Deliver Better.</p>
-            <h1 className="display-heading mt-4 text-[2.25rem] font-semibold leading-[1.02] text-slate-950 sm:text-[3rem] lg:text-[3.8rem]">
-              One engineering partner for software, AI, quality, and cloud execution.
+            <h1 className="display-heading mt-4 text-[1.75rem] font-semibold leading-[1.06] tracking-[-0.04em] text-slate-950 sm:text-[2.0rem] lg:text-[2.25rem] xl:text-[2.5rem] 2xl:text-[3.15rem]">
+              One Engineering Partner for software, AI, quality, and cloud.
             </h1>
-            <p className="mt-5 max-w-xl text-[15px] leading-[1.8] text-slate-600 sm:text-base">
+            <p className="mt-4 max-w-[36rem] text-[14px] leading-[1.8] text-slate-600 sm:text-[15px] xl:text-[15.5px]">
               Techvisr helps businesses build digital products, modernize platforms, and launch intelligent systems with a sharper delivery model and a more enterprise-ready operating style.
             </p>
 
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <CalendlyPopupButton
                 label="Book a Demo"
                 className="primary-button"
@@ -43,9 +43,9 @@ export default function Hero() {
           </div>
 
           <div className="relative">
-            <div className="soft-panel relative overflow-hidden rounded-[34px] px-4 py-4 sm:px-5 sm:py-5">
-              <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_200px]">
-                <div className="relative min-h-[340px] overflow-hidden rounded-[30px] bg-white shadow-[0_18px_40px_rgba(15,23,42,0.08)] sm:min-h-[420px]">
+            <div className="soft-panel relative overflow-hidden rounded-[34px] px-4 py-4 sm:px-5 sm:py-5 xl:px-4 xl:py-4">
+              <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_190px] xl:grid-cols-[minmax(0,1fr)_210px]">
+                <div className="relative min-h-[320px] overflow-hidden rounded-[30px] bg-white shadow-[0_18px_40px_rgba(15,23,42,0.08)] sm:min-h-[380px] xl:min-h-[400px]">
                   <Image
                     src="/images/hero-team-collaboration.jpg"
                     alt="Professional team collaborating in a modern office"
@@ -58,7 +58,7 @@ export default function Hero() {
 
                 <div className="grid gap-4">
                   <div className="soft-card rounded-[26px] p-4">
-                    <div className="relative h-32 overflow-hidden rounded-[22px]">
+                    <div className="relative h-28 overflow-hidden rounded-[22px] xl:h-32">
                       <Image
                         src="/images/platform-review.jpg"
                         alt="Platform review in progress"
@@ -76,7 +76,7 @@ export default function Hero() {
                   </div>
 
                   <div className="soft-card rounded-[26px] p-4">
-                    <div className="relative h-32 overflow-hidden rounded-[22px]">
+                    <div className="relative h-28 overflow-hidden rounded-[22px] xl:h-32">
                       <Image
                         src="/images/meeting-presentation.jpg"
                         alt="Business meeting and presentation"
@@ -102,8 +102,8 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="mt-8 rounded-[28px] border border-slate-200 bg-[#fbfcfe] px-5 py-5 shadow-[0_12px_30px_rgba(15,23,42,0.04)] sm:px-6">
-          <div className="grid gap-4 border-b border-slate-200 pb-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-7 rounded-[28px] border border-slate-200 bg-[#fbfcfe] px-5 py-5 shadow-[0_12px_30px_rgba(15,23,42,0.04)] sm:px-6 xl:px-7">
+          <div className="grid gap-4 border-b border-slate-200 pb-5 sm:grid-cols-2 lg:grid-cols-4 xl:gap-5">
             {quickStats.map((stat) => (
               <div key={stat.value}>
                 <p className="text-base font-semibold tracking-[-0.03em] text-slate-950">
