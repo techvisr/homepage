@@ -1,6 +1,6 @@
 import "./globals.css";
 import Script from "next/script";
-import { Manrope, Plus_Jakarta_Sans } from "next/font/google";
+import { Barlow, Manrope, Plus_Jakarta_Sans, Roboto } from "next/font/google";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -12,6 +12,20 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-display",
+});
+
+const barlow = Barlow({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-figma-display",
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-figma-body",
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata = {
@@ -72,7 +86,7 @@ export default function RootLayout({ children }) {
           href="https://assets.calendly.com/assets/external/widget.css"
         />
       </head>
-      <body className={`${manrope.variable} ${plusJakartaSans.variable}`}>
+      <body className={`${manrope.variable} ${plusJakartaSans.variable} ${barlow.variable} ${roboto.variable}`}>
         {children}
         <Script
           src="https://assets.calendly.com/assets/external/widget.js"

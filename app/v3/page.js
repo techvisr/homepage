@@ -1,11 +1,5 @@
 import "./v3.css";
-import Hero from "../../components/variants/v3/Hero";
-import Navbar from "../../components/variants/v3/Navbar";
-import Services from "../../components/variants/v3/Services";
-import MailToCta from "../../components/variants/v3/MailToCta";
-import Footer from "../../components/variants/v3/Footer";
-import Community from "../../components/variants/v3/Community";
-import ImageContentCards from "../../components/variants/v3/ImageContentCards";
+import FigmaHomepage from "../../components/variants/v3/FigmaHomepage";
 
 export const metadata = {
   title: "Homepage Demo V3",
@@ -28,15 +22,7 @@ export default function V3Page() {
 
   return (
     <>
-      <Navbar />
-      <main className="overflow-hidden">
-        <Hero />
-        <Services />
-        <ImageContentCards />
-        <Community />
-        <MailToCta />
-      </main>
-      <Footer />
+      <FigmaHomepage />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
     </>
   );
