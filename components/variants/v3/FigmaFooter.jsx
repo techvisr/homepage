@@ -65,7 +65,7 @@ export default function FigmaFooter({ asset }) {
             aria-hidden="true"
           />
           <img
-            className="absolute inset-0 h-full w-full object-contain opacity-[0.18] brightness-0 invert drop-shadow-[0_0_26px_rgba(255,255,255,0.46)]"
+            className="absolute inset-0 h-full w-full object-contain opacity-[0.15] brightness-0 invert drop-shadow-[0_0_26px_rgba(255,255,255,0.46)]"
             src={logoSrc}
             alt=""
             aria-hidden="true"
