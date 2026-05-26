@@ -415,14 +415,28 @@ summary:focus-visible {
 }
 
 @keyframes footerLogoShine {
-  0%,
-  34% {
+  0% {
+    opacity: 0;
     transform: translateX(0) rotate(12deg);
   }
 
-  72%,
+  8% {
+    opacity: 0;
+  }
+
+  16%,
+  82% {
+    opacity: 0.72;
+  }
+
+  94% {
+    opacity: 0;
+    transform: translateX(470%) rotate(12deg);
+  }
+
   100% {
-    transform: translateX(520%) rotate(12deg);
+    opacity: 0;
+    transform: translateX(470%) rotate(12deg);
   }
 }
 

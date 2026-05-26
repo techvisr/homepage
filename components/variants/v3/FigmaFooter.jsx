@@ -74,7 +74,7 @@ export default function FigmaFooter({ asset }) {
             className="pointer-events-none absolute inset-0 overflow-hidden opacity-[0.52] mix-blend-screen [mask-image:url('/images/figma-raw/58c76896b6e7aaa2c5446fbb80905b6b30ed7778.png')] [mask-position:center] [mask-repeat:no-repeat] [mask-size:contain] [-webkit-mask-image:url('/images/figma-raw/58c76896b6e7aaa2c5446fbb80905b6b30ed7778.png')] [-webkit-mask-position:center] [-webkit-mask-repeat:no-repeat] [-webkit-mask-size:contain]"
             aria-hidden="true"
           >
-            <span className="absolute inset-y-[-20%] left-[-35%] w-[24%] rotate-[12deg] bg-[linear-gradient(90deg,transparent_0%,rgba(255,255,255,0.05)_20%,rgba(255,255,255,0.9)_50%,rgba(255,255,255,0.05)_80%,transparent_100%)] blur-[2px] animate-[footerLogoShine_4.8s_ease-in-out_infinite]" />
+            <span className="absolute inset-y-[-22%] left-[-30%] w-[28%] rotate-[12deg] bg-[linear-gradient(90deg,transparent_0%,rgba(255,255,255,0.08)_28%,rgba(255,255,255,0.82)_50%,rgba(255,255,255,0.08)_72%,transparent_100%)] blur-[3px] animate-[footerLogoShine_4.6s_linear_infinite]" />
           </div>
         </div>
       </div>
