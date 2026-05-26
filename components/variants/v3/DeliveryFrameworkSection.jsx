@@ -85,7 +85,7 @@ export default function DeliveryFrameworkSection({ steps }) {
           <br className="md:hidden" /> Framework
         </h2>
         <p className="mx-auto m-0 max-w-[1010px] text-[16px] leading-[1.42] text-[rgba(22,24,33,0.58)] md:text-[21px] md:leading-[1.42] lg:text-[24px]">
-          TechVisr, an AI software development company offers a strategic delivery framework
+          Techvisr, an AI software development company offers a strategic delivery framework
           focused on speed, scalability, governance, and operational visibility across every
           engagement to help enterprises accelerate transformation and achieve measurable
           business outcomes.

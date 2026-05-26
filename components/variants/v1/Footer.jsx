@@ -14,7 +14,7 @@ export default function Footer() {
         </div>
 
         <p className="mt-8 border-t border-gray-800 pt-6 text-xs text-gray-400">
-          &copy; {new Date().getFullYear()} TechVisr. All rights reserved.
+          &copy; {new Date().getFullYear()} Techvisr. All rights reserved.
         </p>
       </div>
 

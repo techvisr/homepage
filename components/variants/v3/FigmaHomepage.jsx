@@ -14,6 +14,7 @@ import {
   UserRoundCog,
 } from "lucide-react";
 import HeaderActionButton from "./HeaderActionButton";
+import AdvantageSection from "./AdvantageSection";
 import CapabilitiesSection from "./CapabilitiesSection";
 import DeliveryFrameworkSection from "./DeliveryFrameworkSection";
 import EnterpriseServicesSection from "./EnterpriseServicesSection";
@@ -174,10 +175,10 @@ const industries = [
 const advantages = [
   ["Engineering-Led Delivery", "Engineering execution built for scale and business impact"],
   ["AI-First Innovation", "AI-driven automation focused on operational efficiency"],
+  ["Enterprise-Grade Security", "ISO-aligned delivery frameworks with enterprise-grade governance"],
   ["End-to-End Technology Expertise", "End-to-end delivery from strategy to optimization"],
   ["Industry-Focused Execution", "Cross-industry transformation expertise across enterprise ecosystems"],
   ["Scalable Engagement Models", "Flexible engagement models for startups and enterprises"],
-  ["Enterprise-Grade Security", "ISO-aligned delivery frameworks with enterprise-grade governance"],
 ];
 
 const resources = [
@@ -202,7 +203,7 @@ const faqs = [
   {
     question: "What makes Techvisr different from a traditional software development company?",
     answer:
-      "TechVisr is an AI software development company and digital transformation company that combines AI-driven engineering, intelligent automation, cloud modernization, and enterprise software development to help businesses accelerate innovation, improve operational efficiency, and build scalable digital ecosystems with faster and more reliable delivery.",
+      "Techvisr is an AI software development company and digital transformation company that combines AI-driven engineering, intelligent automation, cloud modernization, and enterprise software development to help businesses accelerate innovation, improve operational efficiency, and build scalable digital ecosystems with faster and more reliable delivery.",
   },
   { question: "Does Techvisr provide AI automation services for enterprises?" },
   { question: "Can Techvisr help modernize legacy enterprise applications?" },
@@ -233,23 +234,7 @@ export default function FigmaHomepage() {
         <SuccessStoriesSection asset={asset} stories={successStories} />
         <IndustriesSection asset={asset} industries={industries} />
 
-        <section id="why-techvisr-" className="advantage-section section-light">
-          <SectionTitle>The TechVisr Advantage</SectionTitle>
-          <div className="advantage-orbit">
-            <div className="advantage-brand">
-              <img src={asset("0b24c7c2d782973d27bd119c9b63dbddc971b776.png")} alt="" />
-              <img src={asset("2b505ce3b912ab094138fc521132f921a2ec04b8.png")} alt="Techvisr" />
-            </div>
-            <div className="advantage-list">
-              {advantages.map(([title, text]) => (
-                <article key={title}>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+        <AdvantageSection asset={asset} advantages={advantages} />
 
         <section id="blogs" className="resources-section section-light">
           <SectionTitle>Resources</SectionTitle>

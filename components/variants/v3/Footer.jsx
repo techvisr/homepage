@@ -60,7 +60,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-3 pt-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-          <p>&copy; {new Date().getFullYear()} TechVisr. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Techvisr. All rights reserved.</p>
           <p>Built for sharper digital delivery.</p>
         </div>
       </div>
