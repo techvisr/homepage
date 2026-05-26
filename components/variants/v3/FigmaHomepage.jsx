@@ -1,25 +1,15 @@
 "use client";
 
-import {
-  CloudUpload,
-  Compass,
-  Facebook,
-  Instagram,
-  Linkedin,
-  Mail,
-  Plus,
-  Puzzle,
-  Settings,
-  Twitter,
-  UserRoundCog,
-} from "lucide-react";
-import HeaderActionButton from "./HeaderActionButton";
+import { CloudUpload, Compass, Puzzle, Settings, UserRoundCog } from "lucide-react";
 import AdvantageSection from "./AdvantageSection";
 import CapabilitiesSection from "./CapabilitiesSection";
 import DeliveryFrameworkSection from "./DeliveryFrameworkSection";
 import EnterpriseServicesSection from "./EnterpriseServicesSection";
+import FaqSection from "./FaqSection";
+import FigmaFooter from "./FigmaFooter";
 import HeroSection from "./HeroSection";
 import IndustriesSection from "./IndustriesSection";
+import ResourcesSection from "./ResourcesSection";
 import SiteHeader from "./SiteHeader";
 import StorySection from "./StorySection";
 import SuccessStoriesSection from "./SuccessStoriesSection";
@@ -214,10 +204,6 @@ const faqs = [
   { question: "Can Techvisr integrate AI into existing business systems?" },
 ];
 
-function SectionTitle({ children, light = false }) {
-  return <h2 className={`figma-section-title ${light ? "figma-section-title--light" : ""}`}>{children}</h2>;
-}
-
 export default function FigmaHomepage() {
   return (
     <div className="figma-site">
@@ -236,69 +222,12 @@ export default function FigmaHomepage() {
 
         <AdvantageSection asset={asset} advantages={advantages} />
 
-        <section id="blogs" className="resources-section section-light">
-          <SectionTitle>Resources</SectionTitle>
-          <div className="resource-grid">
-            {resources.map((resource) => (
-              <article className="resource-card reveal-card" key={resource.title}>
-                <img src={asset(resource.image)} alt="" />
-                <h3>{resource.title}</h3>
-                <p>{resource.text}</p>
-                <a href="/case-studies">View Blog</a>
-              </article>
-            ))}
-          </div>
-        </section>
+        <ResourcesSection asset={asset} resources={resources} />
 
-        <section className="faq-section section-light">
-          <div className="faq-layout">
-            <SectionTitle>Frequently Asked Questions</SectionTitle>
-            <div className="faq-list">
-              {faqs.map((faq, index) => (
-                <details key={faq.question} open={index === 0}>
-                  <summary>
-                    {faq.question}
-                    <Plus size={22} />
-                  </summary>
-                  {faq.answer ? <p>{faq.answer}</p> : null}
-                </details>
-              ))}
-              <HeaderActionButton>Load more</HeaderActionButton>
-            </div>
-          </div>
-        </section>
+        <FaqSection faqs={faqs} />
       </main>
 
-      <footer className="figma-footer">
-        <div className="figma-footer__brand">
-          <img src={asset("58c76896b6e7aaa2c5446fbb80905b6b30ed7778.png")} alt="Techvisr" />
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-          <span>Copyright ⓒ 2026 Techvisr</span>
-        </div>
-
-        <nav>
-          <a href="/services">Services</a>
-          <a href="/case-studies">Case Studies</a>
-          <a href="/why-techvisr">Why Techvisr?</a>
-          <a href="/blogs">Blogs</a>
-          <a href="/contact">Contact Us</a>
-        </nav>
-
-        <div className="figma-footer__contact">
-          <h3>Get in touch</h3>
-          <a href="mailto:techvisr@gmail.com">
-            <Mail size={18} />
-            techvisr@gmail.com
-          </a>
-          <div>
-            <Facebook size={22} />
-            <Twitter size={22} />
-            <Instagram size={22} />
-            <Linkedin size={22} />
-          </div>
-          <span>Terms And Condition | Privacy Policy</span>
-        </div>
-      </footer>
+      <FigmaFooter asset={asset} />
     </div>
   );
 }

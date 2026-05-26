@@ -95,7 +95,7 @@ export default function IndustriesSection({ asset, industries }) {
   }, [industries.length]);
 
   return (
-    <section id="industries" ref={sectionRef} className="relative bg-white lg:min-h-[190vh]" aria-label="Industries we serve">
+    <section id="industries" ref={sectionRef} className="relative bg-white lg:min-h-[108vh]" aria-label="Industries we serve">
       <svg className="absolute h-0 w-0" aria-hidden="true" focusable="false">
         <defs>
           <filter id="industry-gooeyness">
@@ -111,7 +111,7 @@ export default function IndustriesSection({ asset, industries }) {
         </defs>
       </svg>
 
-      <div className="relative isolate grid content-start justify-items-center overflow-hidden px-5 pb-12 pt-[112px] md:px-8 md:pt-[118px] lg:sticky lg:top-[80px] lg:min-h-[calc(100vh-80px)] lg:px-12 lg:pb-8 lg:pt-[52px]">
+      <div className="relative isolate grid content-start justify-items-center overflow-hidden px-5 pb-12 pt-[112px] md:px-8 md:pt-[118px] lg:sticky lg:top-[80px] lg:min-h-[calc(100vh-80px)] lg:px-12 lg:pb-8 lg:pt-[72px]">
         <img
           className="pointer-events-none absolute left-[-340px] top-[-360px] z-0 h-auto w-[1780px] max-w-none opacity-[0.14] md:left-[-220px] md:top-[-370px] md:w-[1900px] lg:left-[-130px] lg:top-[-430px] lg:w-[2040px]"
           src="/images/story-wave-pattern.svg"
@@ -119,25 +119,25 @@ export default function IndustriesSection({ asset, industries }) {
           aria-hidden="true"
         />
 
-        <h2 className="relative z-10 m-0 mb-8 text-center text-[38px] font-extrabold leading-[1.08] tracking-[0] text-[#05060a] md:mb-10 md:text-[58px] lg:mb-[52px] lg:text-[60px] xl:mb-[92px] xl:text-[76px]">
+        <h2 className="relative z-10 m-0 mb-8 text-center text-[38px] font-extrabold leading-[1.08] tracking-[0] text-[#05060a] md:mb-10 md:text-[56px] lg:mb-[44px] lg:text-[64px] xl:mb-[54px] xl:text-[70px]">
           Industries We Serve
         </h2>
 
-        <article className="relative z-10 grid w-full max-w-[1816px] overflow-hidden rounded-[28px] border-2 border-[#e57b3f] bg-white shadow-[0_20px_45px_rgba(22,24,33,0.08)] md:rounded-[42px] lg:h-[min(560px,calc(100vh-220px))] lg:min-h-[540px] lg:grid-cols-[0.58fr_0.42fr] lg:rounded-[54px] xl:h-[min(640px,calc(100vh-250px))] xl:min-h-[600px] min-[1800px]:h-[720px] min-[1800px]:min-h-[720px]">
+        <article className="relative z-10 grid w-full max-w-[1360px] overflow-hidden rounded-[26px] border-2 border-[#e57b3f] bg-white shadow-[0_18px_38px_rgba(22,24,33,0.08)] md:rounded-[34px] lg:h-[min(500px,calc(100vh-250px))] lg:min-h-[460px] lg:grid-cols-[0.58fr_0.42fr] lg:rounded-[38px] xl:h-[min(540px,calc(100vh-280px))] xl:min-h-[500px]">
           <div
             key={activeIndustry.title}
-            className="relative z-10 order-2 grid content-start px-7 pb-9 pt-7 md:px-10 md:pb-12 lg:order-1 lg:px-9 lg:py-8 xl:px-[52px] xl:py-[38px] animate-[industryCardSwap_520ms_cubic-bezier(0.22,1,0.36,1)_both]"
+            className="relative z-10 order-2 grid content-start px-7 pb-9 pt-7 md:px-10 md:pb-12 lg:order-1 lg:px-9 lg:py-7 xl:px-11 xl:py-8 animate-[industryCardSwap_520ms_cubic-bezier(0.22,1,0.36,1)_both]"
           >
-            <h3 className="m-0 text-[34px] font-extrabold leading-[1.08] text-black md:text-[42px] lg:text-[38px] xl:text-[44px]">
+            <h3 className="m-0 text-[32px] font-extrabold leading-[1.08] text-black md:text-[38px] lg:text-[34px] xl:text-[40px]">
               {activeTitle}
             </h3>
-            <p className="m-0 mt-6 max-w-[850px] text-[19px] font-bold leading-[1.48] text-black md:text-[26px] md:leading-[1.48] lg:mt-5 lg:text-[20px] lg:leading-[1.42] xl:mt-6 xl:text-[25px] xl:leading-[1.44]">
+            <p className="m-0 mt-5 max-w-[760px] text-[18px] font-bold leading-[1.48] text-black md:text-[22px] md:leading-[1.48] lg:mt-4 lg:text-[17px] lg:leading-[1.42] xl:mt-5 xl:text-[20px] xl:leading-[1.44]">
               {activeIndustry.text}
             </p>
-            <ul className="mt-7 grid gap-4 p-0 lg:mt-5 lg:gap-3 xl:mt-6">
+            <ul className="mt-6 grid gap-3 p-0 lg:mt-4 lg:gap-2.5 xl:mt-5">
               {activeIndustry.bullets.map((bullet) => (
                 <li
-                  className="inline-flex w-fit rounded-full border-2 border-[rgba(5,6,10,0.42)] px-5 py-3 text-[15px] font-extrabold leading-none text-black md:px-7 md:text-[19px] lg:px-5 lg:py-2.5 lg:text-[16px] xl:px-7 xl:py-3 xl:text-[20px]"
+                  className="inline-flex w-fit rounded-full border-2 border-[rgba(5,6,10,0.42)] px-5 py-3 text-[14px] font-extrabold leading-none text-black md:px-6 md:text-[17px] lg:px-4 lg:py-2 lg:text-[13px] xl:px-5 xl:py-2.5 xl:text-[16px]"
                   key={bullet}
                 >
                   {bullet}
@@ -145,7 +145,7 @@ export default function IndustriesSection({ asset, industries }) {
               ))}
             </ul>
             <HeaderActionButton
-              className="mt-8 w-fit justify-self-start border-black text-black hover:bg-black hover:text-white md:mt-9 lg:mt-6 lg:h-[62px] lg:gap-7 lg:rounded-[17px] lg:px-8 lg:text-[22px] xl:mt-[30px] xl:h-[70px] xl:gap-9 xl:px-9 xl:text-[28px]"
+              className="mt-7 w-fit justify-self-start border-black text-black hover:bg-black hover:text-white md:mt-8 lg:mt-5 lg:h-[52px] lg:gap-5 lg:rounded-[13px] lg:px-6 lg:text-[17px] xl:mt-6 xl:h-[58px] xl:gap-6 xl:px-7 xl:text-[19px]"
               href="/services"
               icon="up-right"
               variant="outline"

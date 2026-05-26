@@ -70,7 +70,7 @@ export default function DeliveryFrameworkSection({ steps }) {
     <section
       id="delivery-framework"
       ref={frameworkRef}
-      className="relative isolate grid scroll-mt-0 justify-items-center overflow-hidden bg-white px-5 py-16 md:px-8 md:py-[92px] lg:px-12 lg:pb-[96px] lg:pt-[122px]"
+      className="relative isolate grid scroll-mt-0 justify-items-center overflow-hidden bg-white px-5 py-16 md:px-8 md:py-[86px] lg:px-12 lg:pb-[88px] lg:pt-[104px]"
     >
       <img
         className="pointer-events-none absolute left-[-220px] top-[-430px] z-0 h-auto w-[1720px] max-w-none opacity-[0.18] md:left-[-150px] md:top-[-420px] md:w-[1800px] lg:left-[-80px] lg:top-[-418px] lg:w-[1760px]"
@@ -79,12 +79,12 @@ export default function DeliveryFrameworkSection({ steps }) {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 mx-auto mb-14 grid max-w-[1050px] gap-6 text-center md:mb-[90px] lg:mb-[110px] lg:max-w-[1120px]">
-        <h2 className="m-0 text-[34px] font-extrabold leading-[1.08] tracking-[0] text-[#161821] md:text-[52px] lg:whitespace-nowrap lg:text-[68px]">
+      <div className="relative z-10 mx-auto mb-14 grid max-w-[1050px] gap-6 text-center md:mb-[74px] lg:mb-[86px] lg:max-w-[1120px]">
+        <h2 className="m-0 text-[34px] font-extrabold leading-[1.08] tracking-[0] text-[#161821] md:text-[52px] lg:whitespace-nowrap lg:text-[64px]">
           Intelligent Delivery
           <br className="md:hidden" /> Framework
         </h2>
-        <p className="mx-auto m-0 max-w-[1010px] text-[16px] leading-[1.42] text-[rgba(22,24,33,0.58)] md:text-[21px] md:leading-[1.42] lg:text-[24px]">
+        <p className="mx-auto m-0 max-w-[1010px] text-[16px] leading-[1.42] text-[rgba(22,24,33,0.58)] md:text-[20px] md:leading-[1.42] lg:text-[22px]">
           Techvisr, an AI software development company offers a strategic delivery framework
           focused on speed, scalability, governance, and operational visibility across every
           engagement to help enterprises accelerate transformation and achieve measurable
@@ -92,7 +92,7 @@ export default function DeliveryFrameworkSection({ steps }) {
         </p>
       </div>
 
-      <div className="relative z-10 mb-[72px] grid w-full max-w-[1120px] grid-cols-1 justify-items-center gap-9 md:grid-cols-2 md:gap-x-8 md:gap-y-12 lg:mb-[92px] lg:max-w-[1264px] lg:grid-cols-5 lg:gap-7">
+      <div className="relative z-10 mb-[68px] grid w-full max-w-[1120px] grid-cols-1 justify-items-center gap-9 md:grid-cols-2 md:gap-x-8 md:gap-y-12 lg:mb-[76px] lg:max-w-[1160px] lg:grid-cols-5 lg:gap-6">
         <div
           className={`pointer-events-none absolute left-[9%] right-[9%] top-[142px] z-0 hidden h-[8px] origin-left overflow-hidden rounded-full bg-[linear-gradient(90deg,#f37135_0%,#ff6b3b_42%,#ef4169_100%)] transition-[opacity,transform] duration-[2900ms] ease-linear lg:block ${
             frameworkInView ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"
@@ -118,7 +118,7 @@ export default function DeliveryFrameworkSection({ steps }) {
         ) : null}
         {steps.map((step, index) => (
           <article
-            className={`group relative z-10 grid min-h-[252px] w-full max-w-[238px] content-start rounded-[14px] border border-[rgba(22,24,33,0.12)] bg-white px-6 pb-6 pt-[62px] text-left shadow-[0_18px_26px_rgba(22,24,33,0.18)] transition-[opacity,transform,filter,box-shadow] duration-[680ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform md:min-h-[266px] md:max-w-[248px] lg:min-h-[276px] lg:max-w-[228px] ${
+            className={`group relative z-10 grid min-h-[242px] w-full max-w-[238px] content-start rounded-[14px] border border-[rgba(22,24,33,0.12)] bg-white px-6 pb-6 pt-[60px] text-left shadow-[0_18px_26px_rgba(22,24,33,0.18)] transition-[opacity,transform,filter,box-shadow] duration-[680ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform md:min-h-[252px] md:max-w-[248px] lg:min-h-[250px] lg:max-w-[208px] ${
               frameworkInView
                 ? "translate-x-0 translate-y-0 scale-100 opacity-100 blur-0"
                 : frameworkAnimation === "badge-pop"
@@ -145,10 +145,10 @@ export default function DeliveryFrameworkSection({ steps }) {
               {step.number}
             </span>
             <step.icon className="mb-6 text-black" size={34} strokeWidth={2.2} />
-            <h3 className="m-0 text-[22px] font-extrabold uppercase leading-[1.08] tracking-[0] text-[#161821] md:text-[24px] lg:text-[24px]">
+            <h3 className="m-0 text-[22px] font-extrabold uppercase leading-[1.08] tracking-[0] text-[#161821] md:text-[23px] lg:text-[22px]">
               {step.title}
             </h3>
-            <p className="m-0 mt-5 text-[16px] leading-[1.42] text-[rgba(22,24,33,0.58)] md:text-[17px] lg:text-[16px]">
+            <p className="m-0 mt-5 text-[16px] leading-[1.42] text-[rgba(22,24,33,0.58)] md:text-[16px] lg:text-[15px]">
               {step.text}
             </p>
           </article>

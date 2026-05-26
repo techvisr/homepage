@@ -27,7 +27,7 @@ export default function SuccessStoriesSection({ asset, stories }) {
   return (
     <section
       id="case-studies"
-      className="relative isolate grid scroll-mt-0 justify-items-center overflow-hidden bg-white px-5 pb-16 pt-20 md:px-8 md:pb-[92px] md:pt-[118px] lg:px-12 lg:pb-[118px] lg:pt-[148px]"
+      className="relative isolate grid scroll-mt-0 justify-items-center overflow-hidden bg-white px-5 pb-16 pt-20 md:px-8 md:pb-[86px] md:pt-[104px] lg:px-12 lg:pb-[104px] lg:pt-[120px]"
     >
       <img
         className="pointer-events-none absolute left-[-330px] top-[-250px] z-0 h-auto w-[1640px] max-w-none opacity-[0.16] md:left-[-250px] md:top-[-245px] md:w-[1740px] lg:left-[-160px] lg:top-[-238px] lg:w-[1780px]"
@@ -36,11 +36,11 @@ export default function SuccessStoriesSection({ asset, stories }) {
         aria-hidden="true"
       />
 
-      <h2 className="relative z-10 m-0 mb-12 text-center text-[34px] font-extrabold leading-[1.08] tracking-[0] text-[#161821] md:mb-[72px] md:text-[52px] lg:mb-[88px] lg:text-[68px]">
+      <h2 className="relative z-10 m-0 mb-12 text-center text-[34px] font-extrabold leading-[1.08] tracking-[0] text-[#161821] md:mb-[64px] md:text-[52px] lg:mb-[76px] lg:text-[64px]">
         Our Success Stories
       </h2>
 
-      <div className="relative z-10 flex w-full max-w-[1120px] items-center gap-5 lg:max-w-[1290px] lg:gap-7">
+      <div className="relative z-10 flex w-full max-w-[1120px] items-center gap-5 lg:max-w-[1180px] lg:gap-7">
         <div
           ref={carouselRef}
           className="flex w-full snap-x snap-mandatory gap-8 overflow-x-auto scroll-smooth pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
@@ -56,19 +56,19 @@ export default function SuccessStoriesSection({ asset, stories }) {
                 data-success-card
                 key={`${story.title}-${index}`}
               >
-                <img className="h-[206px] w-full object-cover md:h-[220px] lg:h-[234px]" src={asset(story.image)} alt="" />
-                <div className="px-8 pb-8 pt-7 md:px-9 md:pb-9 md:pt-8 lg:px-9 lg:pb-10">
-                  <h3 className="m-0 max-w-[270px] text-[26px] font-extrabold leading-[1.05] text-[#f37135] md:text-[28px] lg:text-[30px]">
+                <img className="h-[200px] w-full object-cover md:h-[210px] lg:h-[214px]" src={asset(story.image)} alt="" />
+                <div className="px-8 pb-8 pt-7 md:px-9 md:pb-9 md:pt-8 lg:px-8 lg:pb-9">
+                  <h3 className="m-0 max-w-[270px] text-[25px] font-extrabold leading-[1.05] text-[#f37135] md:text-[27px] lg:text-[27px]">
                     {story.title}
                   </h3>
-                  <strong className="mt-5 block text-[62px] font-black leading-[0.95] tracking-[-0.03em] text-[#161821] md:text-[76px] lg:text-[88px]">
+                  <strong className="mt-5 block text-[60px] font-black leading-[0.95] tracking-[-0.03em] text-[#161821] md:text-[72px] lg:text-[76px]">
                     {statValue}
                   </strong>
-                  <p className="m-0 mt-1 text-[24px] font-extrabold leading-[1.12] text-[#161821] md:text-[26px] lg:text-[28px]">
+                  <p className="m-0 mt-1 text-[23px] font-extrabold leading-[1.12] text-[#161821] md:text-[25px] lg:text-[25px]">
                     {statLabel}
                   </p>
                   <div className="mt-6 h-[2px] w-full bg-[linear-gradient(90deg,#f37135_0%,#ef4169_100%)]" />
-                  <p className="m-0 mt-5 min-h-[92px] text-[17px] leading-[1.42] text-[rgba(22,24,33,0.54)] md:text-[18px]">
+                  <p className="m-0 mt-5 min-h-[86px] text-[16px] leading-[1.42] text-[rgba(22,24,33,0.54)] md:text-[17px]">
                     {story.text}
                   </p>
                   <a

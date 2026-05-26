@@ -50,8 +50,9 @@ const activeLiquidColor = "#f75a45";
 const liquidTravelAngle = (fromIndex, toIndex) => {
   const from = polarPoint(innerDotAngles[fromIndex] ?? innerDotAngles[0], INNER_DOT_RADIUS);
   const to = polarPoint(innerDotAngles[toIndex] ?? innerDotAngles[0], INNER_DOT_RADIUS);
+  const angle = (Math.atan2(to.y - from.y, to.x - from.x) * 180) / Math.PI;
 
-  return (Math.atan2(to.y - from.y, to.x - from.x) * 180) / Math.PI;
+  return ((angle % 180) + 180) % 180;
 };
 
 const calloutTextPosition = ({ angle, textOffsetX = 72, textOffsetY = 0 }, radius) => ({
@@ -124,7 +125,7 @@ export default function AdvantageSection({ asset, advantages }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [liquidIndex, setLiquidIndex] = useState(0);
   const [leavingIndex, setLeavingIndex] = useState(null);
-  const [liquidMotion, setLiquidMotion] = useState({ angle: 0, moving: false });
+  const [liquidMotion, setLiquidMotion] = useState({ angle: 0, moving: false, id: 0 });
 
   const setAdvantageIndex = (index) => {
     const currentLiquidIndex = liquidIndexRef.current;
@@ -132,7 +133,11 @@ export default function AdvantageSection({ asset, advantages }) {
     if (currentLiquidIndex !== index) {
       liquidIndexRef.current = index;
       setLeavingIndex(currentLiquidIndex);
-      setLiquidMotion({ angle: liquidTravelAngle(currentLiquidIndex, index), moving: true });
+      setLiquidMotion((currentMotion) => ({
+        angle: liquidTravelAngle(currentLiquidIndex, index),
+        moving: true,
+        id: currentMotion.id + 1,
+      }));
       setLiquidIndex(index);
 
       if (leavingTimerRef.current) {
@@ -181,6 +186,7 @@ export default function AdvantageSection({ asset, advantages }) {
           aria-hidden="true"
         >
           <span
+            key={liquidMotion.id}
             className="absolute inset-0 rounded-full"
             style={{
               background: activeLiquidColor,
@@ -269,7 +275,7 @@ export default function AdvantageSection({ asset, advantages }) {
     <section
       id="why-techvisr-"
       ref={sectionRef}
-      className="relative overflow-hidden bg-white lg:min-h-[118vh]"
+      className="relative overflow-hidden bg-white lg:min-h-0"
       aria-label="The Techvisr Advantage"
     >
       <svg className="absolute h-0 w-0" aria-hidden="true" focusable="false">
@@ -287,7 +293,7 @@ export default function AdvantageSection({ asset, advantages }) {
         </defs>
       </svg>
 
-      <div className="relative isolate grid content-start justify-items-center px-5 pb-16 pt-[88px] md:px-8 md:pt-[108px] lg:sticky lg:top-[80px] lg:min-h-[calc(100vh-80px)] lg:px-12 lg:pb-6 lg:pt-[22px] xl:pt-[28px]">
+      <div className="relative isolate grid content-start justify-items-center px-5 pb-16 pt-[88px] md:px-8 md:pt-[108px] lg:px-12 lg:pb-10 lg:pt-[72px] xl:pt-[76px]">
         <img
           className="pointer-events-none absolute bottom-[-320px] left-[-260px] z-0 h-auto w-[1680px] max-w-none opacity-[0.13] md:bottom-[-360px] md:left-[-170px] lg:bottom-[-420px] lg:left-[-120px] lg:w-[1900px]"
           src="/images/story-wave-pattern.svg"
@@ -295,11 +301,11 @@ export default function AdvantageSection({ asset, advantages }) {
           aria-hidden="true"
         />
 
-        <h2 className="relative z-10 m-0 text-center text-[40px] font-extrabold leading-[1.04] tracking-[-0.03em] text-[#161821] md:text-[62px] lg:text-[66px] xl:text-[76px]">
+        <h2 className="relative z-10 m-0 text-center text-[40px] font-extrabold leading-[1.04] tracking-[-0.03em] text-[#161821] md:text-[58px] lg:text-[68px] xl:text-[72px]">
           The Techvisr Advantage
         </h2>
 
-        <div className="relative z-10 mt-12 w-full max-w-[1260px] lg:mt-[4px] lg:h-[805px] xl:mt-[10px] xl:h-[880px]">
+        <div className="relative z-10 mt-12 w-full max-w-[1180px] lg:mt-4 lg:h-[690px] xl:mt-5 xl:h-[725px]">
           <div className="relative mx-auto aspect-square w-full max-w-[430px] lg:hidden">
             <div className="absolute inset-[5%] rounded-full border-[3px] border-[#8f8f8f]" />
             <div className="absolute inset-[12%] rounded-full border border-white bg-[radial-gradient(circle_at_50%_45%,#f5f5f5_0%,#ebebeb_56%,#f4f4f4_100%)] shadow-[inset_0_0_28px_rgba(0,0,0,0.04)]" />
@@ -371,7 +377,7 @@ export default function AdvantageSection({ asset, advantages }) {
           </div>
 
           <div className="hidden lg:block">
-            <div className="absolute left-[18px] top-[92px] aspect-square w-[500px] xl:left-[34px] xl:top-[104px] xl:w-[520px]">
+            <div className="absolute left-[18px] top-[60px] aspect-square w-[470px] xl:left-[34px] xl:top-[66px] xl:w-[500px]">
               <div className="absolute inset-[5%] rounded-full border-[3px] border-[#8f8f8f]" />
               <div className="absolute inset-[12%] rounded-full border border-white bg-[radial-gradient(circle_at_50%_45%,#f5f5f5_0%,#ebebeb_56%,#f4f4f4_100%)] shadow-[inset_0_0_30px_rgba(0,0,0,0.04)]" />
               <div className="absolute inset-[24%] grid place-items-center rounded-full border border-white bg-[radial-gradient(circle_at_44%_38%,#ffffff_0%,#f4f4f4_68%,#ededed_100%)] shadow-[0_16px_30px_rgba(0,0,0,0.14)]">
@@ -384,7 +390,7 @@ export default function AdvantageSection({ asset, advantages }) {
               {renderInnerDots()}
             </div>
 
-            <div className="absolute left-[18px] top-[92px] aspect-square w-[500px] overflow-visible xl:left-[34px] xl:top-[104px] xl:w-[520px]">
+            <div className="absolute left-[18px] top-[60px] aspect-square w-[470px] overflow-visible xl:left-[34px] xl:top-[66px] xl:w-[500px]">
               {advantages.map(([title, text], index) => {
                 const Icon = advantageIcons[index] ?? GlobeLock;
                 const isActive = index === activeIndex;
