@@ -95,7 +95,7 @@ export default function IndustriesSection({ asset, industries }) {
   }, [industries.length]);
 
   return (
-    <section id="industries" ref={sectionRef} className="relative bg-white lg:min-h-[108vh]" aria-label="Industries we serve">
+    <section id="industries" ref={sectionRef} className="relative bg-white lg:min-h-[100vh]" aria-label="Industries we serve">
       <svg className="absolute h-0 w-0" aria-hidden="true" focusable="false">
         <defs>
           <filter id="industry-gooeyness">
@@ -111,7 +111,7 @@ export default function IndustriesSection({ asset, industries }) {
         </defs>
       </svg>
 
-      <div className="relative isolate grid content-start justify-items-center overflow-hidden px-5 pb-12 pt-[112px] md:px-8 md:pt-[118px] lg:sticky lg:top-[80px] lg:min-h-[calc(100vh-80px)] lg:px-12 lg:pb-8 lg:pt-[72px]">
+      <div className="relative isolate grid content-start justify-items-center overflow-hidden px-5 pb-12 pt-[112px] md:px-8 md:pt-[118px] lg:sticky lg:top-[80px] lg:min-h-[calc(100vh-80px)] lg:px-12 lg:pb-6 lg:pt-[58px]">
         <img
           className="pointer-events-none absolute left-[-340px] top-[-360px] z-0 h-auto w-[1780px] max-w-none opacity-[0.14] md:left-[-220px] md:top-[-370px] md:w-[1900px] lg:left-[-130px] lg:top-[-430px] lg:w-[2040px]"
           src="/images/story-wave-pattern.svg"
@@ -119,25 +119,25 @@ export default function IndustriesSection({ asset, industries }) {
           aria-hidden="true"
         />
 
-        <h2 className="relative z-10 m-0 mb-8 text-center text-[38px] font-extrabold leading-[1.08] tracking-[0] text-[#05060a] md:mb-10 md:text-[56px] lg:mb-[44px] lg:text-[64px] xl:mb-[54px] xl:text-[70px]">
+        <h2 className="relative z-10 m-0 mb-8 text-center text-[38px] font-extrabold leading-[1.08] tracking-[0] text-[#05060a] md:mb-10 md:text-[56px] lg:mb-8 lg:text-[58px] xl:mb-9 xl:text-[62px]">
           Industries We Serve
         </h2>
 
-        <article className="relative z-10 grid w-full max-w-[1360px] overflow-hidden rounded-[26px] border-2 border-[#e57b3f] bg-white shadow-[0_18px_38px_rgba(22,24,33,0.08)] md:rounded-[34px] lg:h-[min(500px,calc(100vh-250px))] lg:min-h-[460px] lg:grid-cols-[0.58fr_0.42fr] lg:rounded-[38px] xl:h-[min(540px,calc(100vh-280px))] xl:min-h-[500px]">
+        <article className="relative z-10 grid w-full max-w-[1180px] overflow-hidden rounded-[26px] border-2 border-[#e57b3f] bg-white shadow-[0_16px_34px_rgba(22,24,33,0.08)] md:rounded-[30px] lg:h-[min(420px,calc(100vh-240px))] lg:min-h-[390px] lg:grid-cols-[0.58fr_0.42fr] lg:rounded-[32px] xl:h-[min(450px,calc(100vh-260px))] xl:min-h-[420px]">
           <div
             key={activeIndustry.title}
-            className="relative z-10 order-2 grid content-start px-7 pb-9 pt-7 md:px-10 md:pb-12 lg:order-1 lg:px-9 lg:py-7 xl:px-11 xl:py-8 animate-[industryCardSwap_520ms_cubic-bezier(0.22,1,0.36,1)_both]"
+            className="relative z-10 order-2 grid content-start px-7 pb-9 pt-7 md:px-10 md:pb-12 lg:order-1 lg:px-7 lg:py-6 xl:px-9 xl:py-7 animate-[industryCardSwap_520ms_cubic-bezier(0.22,1,0.36,1)_both]"
           >
-            <h3 className="m-0 text-[32px] font-extrabold leading-[1.08] text-black md:text-[38px] lg:text-[34px] xl:text-[40px]">
+            <h3 className="m-0 text-[32px] font-extrabold leading-[1.08] text-black md:text-[38px] lg:text-[30px] xl:text-[34px]">
               {activeTitle}
             </h3>
-            <p className="m-0 mt-5 max-w-[760px] text-[18px] font-bold leading-[1.48] text-black md:text-[22px] md:leading-[1.48] lg:mt-4 lg:text-[17px] lg:leading-[1.42] xl:mt-5 xl:text-[20px] xl:leading-[1.44]">
+            <p className="m-0 mt-4 max-w-[680px] text-[18px] font-bold leading-[1.48] text-black md:text-[22px] md:leading-[1.48] lg:mt-3 lg:text-[15px] lg:leading-[1.4] xl:mt-4 xl:text-[17px] xl:leading-[1.42]">
               {activeIndustry.text}
             </p>
-            <ul className="mt-6 grid gap-3 p-0 lg:mt-4 lg:gap-2.5 xl:mt-5">
+            <ul className="mt-5 grid gap-3 p-0 lg:mt-3 lg:gap-2 xl:mt-4">
               {activeIndustry.bullets.map((bullet) => (
                 <li
-                  className="inline-flex w-fit rounded-full border-2 border-[rgba(5,6,10,0.42)] px-5 py-3 text-[14px] font-extrabold leading-none text-black md:px-6 md:text-[17px] lg:px-4 lg:py-2 lg:text-[13px] xl:px-5 xl:py-2.5 xl:text-[16px]"
+                  className="inline-flex w-fit rounded-full border-2 border-[rgba(5,6,10,0.42)] px-5 py-3 text-[14px] font-extrabold leading-none text-black md:px-6 md:text-[17px] lg:px-3.5 lg:py-1.5 lg:text-[12px] xl:px-4 xl:py-2 xl:text-[14px]"
                   key={bullet}
                 >
                   {bullet}
@@ -145,7 +145,7 @@ export default function IndustriesSection({ asset, industries }) {
               ))}
             </ul>
             <HeaderActionButton
-              className="mt-7 w-fit justify-self-start border-black text-black hover:bg-black hover:text-white md:mt-8 lg:mt-5 lg:h-[52px] lg:gap-5 lg:rounded-[13px] lg:px-6 lg:text-[17px] xl:mt-6 xl:h-[58px] xl:gap-6 xl:px-7 xl:text-[19px]"
+              className="mt-6 w-fit justify-self-start border-black text-black hover:bg-black hover:text-white md:mt-8 lg:mt-4 lg:h-[46px] lg:gap-4 lg:rounded-[11px] lg:px-5 lg:text-[15px] xl:mt-5 xl:h-[50px] xl:gap-5 xl:px-6 xl:text-[16px]"
               href="/services"
               icon="up-right"
               variant="outline"
@@ -171,7 +171,7 @@ export default function IndustriesSection({ asset, industries }) {
               return (
                 <button
                   className={`relative z-10 size-[46px] cursor-pointer rounded-full border-[12px] bg-transparent p-0 opacity-100 outline-none transition-[border-color,transform] duration-[800ms] [-webkit-tap-highlight-color:transparent] hover:scale-[1.04] ${
-                    isActive ? "scale-[1.04] border-[#f37135]" : "scale-100 border-[#e3e4e8]"
+                    isActive ? "scale-[1.04] border-[#f75a45]" : "scale-100 border-[#e3e4e8]"
                   }`}
                   key={industry.label}
                   type="button"
@@ -182,7 +182,7 @@ export default function IndustriesSection({ asset, industries }) {
               );
             })}
             <span
-              className="pointer-events-none absolute left-[13px] top-[13px] z-20 size-5 rounded-full bg-[#f37135] transition-transform duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
+              className="pointer-events-none absolute left-[13px] top-[13px] z-20 size-5 rounded-full bg-[#f75a45] transition-transform duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
               style={{ transform: `translateX(${activeIndustryIndex * DOT_STEP}px)` }}
               data-industry-ball
               aria-hidden="true"
