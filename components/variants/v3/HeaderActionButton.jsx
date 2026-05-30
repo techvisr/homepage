@@ -9,6 +9,7 @@ export default function HeaderActionButton({
   size,
   icon = "right",
   className = "",
+  onClick,
 }) {
   const resolvedVariant = variant || (light ? "light" : "gradient");
   const resolvedSize = size || (compact ? "compact" : "default");
@@ -21,10 +22,10 @@ export default function HeaderActionButton({
   };
 
   const sizeClasses = {
-    compact: "h-10 gap-2 rounded-[10px] px-4 text-[16px]",
-    default: "min-h-[56px] gap-4 rounded-[10px] px-6 py-4 text-[18px] font-semibold",
+    compact: "min-h-8 gap-2 rounded-lg px-3 py-1.5 text-xs sm:text-[13px]",
+    default: "min-h-12 gap-3 rounded-[10px] px-5 py-3.5 text-base font-semibold sm:min-h-[54px] sm:gap-4 sm:px-6 sm:text-[17px] lg:min-h-[56px] lg:text-lg",
     large:
-      "h-14 gap-4 rounded-[16px] px-6 text-[16px] font-bold md:h-16 md:gap-5 md:rounded-[18px] md:px-8 md:text-[22px] lg:h-[72px] lg:gap-6 lg:rounded-[20px] lg:px-10 lg:text-[28px]",
+      "min-h-14 gap-4 rounded-[16px] px-6 py-4 text-base font-bold md:min-h-16 md:gap-5 md:rounded-[18px] md:px-8 md:text-xl lg:min-h-[72px] lg:gap-6 lg:rounded-[20px] lg:px-10 lg:text-2xl 2xl:text-[28px]",
   };
 
   const iconSizes = {
@@ -34,14 +35,14 @@ export default function HeaderActionButton({
   };
 
   const classes = [
-    "inline-flex items-center justify-center whitespace-nowrap font-medium leading-none no-underline transition-colors duration-200",
+    "inline-flex max-w-full items-center justify-center whitespace-normal text-center font-medium leading-tight no-underline transition-colors duration-200 sm:whitespace-nowrap",
     variantClasses[resolvedVariant],
     sizeClasses[resolvedSize],
     className,
   ].join(" ");
 
   return (
-    <a className={classes} href={href}>
+    <a className={classes} href={href} onClick={onClick}>
       <span>{children}</span>
       <Icon size={iconSizes[resolvedSize]} strokeWidth={resolvedVariant === "outline" ? 2.4 : 2} />
     </a>

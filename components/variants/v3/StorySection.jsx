@@ -6,6 +6,7 @@ import HeaderActionButton from "./HeaderActionButton";
 const clamp = (value) => Math.min(Math.max(value, 0), 1);
 const STORY_VIDEO_SRC = "/videos/our-story.mp4";
 const STORY_POSTER_SRC = "/images/our-story-video-poster.png";
+const STORY_PLAY_PROGRESS = 0.58;
 
 export default function StorySection() {
   const sectionRef = useRef(null);
@@ -23,6 +24,7 @@ export default function StorySection() {
     }
 
     let frame = 0;
+    let wasInPlaybackRange = false;
 
     const update = () => {
       frame = 0;
@@ -33,19 +35,26 @@ export default function StorySection() {
       const exitProgress = clamp((rect.bottom - viewportHeight * 0.18) / (viewportHeight * 0.58));
       const progress = Math.min(enterProgress, exitProgress);
       const isActive = progress > 0.16;
+      const shouldPlay = progress >= STORY_PLAY_PROGRESS;
 
       media.style.setProperty("--story-progress", progress.toFixed(3));
       media.dataset.active = isActive ? "true" : "false";
 
-      if (video && hasVideo) {
-        if (isActive) {
+      if (video && hasVideo && shouldPlay !== wasInPlaybackRange) {
+        wasInPlaybackRange = shouldPlay;
+
+        if (shouldPlay) {
+          if (video.ended) {
+            video.currentTime = 0;
+          }
+
           const playPromise = video.play();
+
           if (playPromise && typeof playPromise.catch === "function") {
             playPromise.catch(() => {});
           }
         } else {
           video.pause();
-          video.currentTime = 0;
         }
       }
     };
@@ -76,43 +85,50 @@ export default function StorySection() {
     <section
       ref={sectionRef}
       id="our-story"
-      className="relative isolate overflow-hidden bg-white px-5 pb-[72px] pt-16 md:px-8 md:pb-20 md:pt-20 lg:px-20 lg:pb-24 lg:pt-[100px]"
+      className="relative isolate overflow-hidden bg-[#fffaf7] px-4 pb-20 pt-14 sm:px-6 sm:pb-24 sm:pt-16 md:px-8 md:pb-28 md:pt-20 lg:px-12 lg:pb-32 lg:pt-24 2xl:px-20"
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_70%_at_50%_100%,rgba(243,113,53,0.12)_0%,rgba(255,255,255,0)_58%),linear-gradient(180deg,#ffffff_0%,#fffaf7_100%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(95%_54%_at_48%_4%,#ffffff_0%,rgba(255,250,247,0.92)_58%,rgba(255,246,241,0.88)_100%),linear-gradient(180deg,#ffffff_0%,#fffaf7_48%,#ffffff_100%)]"
       />
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-0 overflow-hidden opacity-20"
+        className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
       >
+        <div className="absolute left-1/2 top-[-28%] h-[52%] w-[145%] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(243,113,53,0.12)_0%,rgba(243,113,53,0.05)_45%,rgba(255,255,255,0)_72%)]" />
+        <div className="absolute bottom-[-18%] right-[-18%] h-[46%] w-[76%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(243,113,53,0.10)_0%,rgba(255,232,221,0.24)_42%,rgba(255,255,255,0)_70%)]" />
         <img
-          className="absolute left-[-22vw] top-[-42px] h-[560px] w-[210vw] max-w-none object-fill md:left-[-16vw] md:top-[-80px] md:h-[680px] md:w-[185vw] lg:left-[0vw] lg:top-[-220px] lg:h-[820px] lg:w-[160vw] "
+          className="story-wave-layer absolute left-[-70vw] top-[-96px] h-[470px] w-[230vw] max-w-none -rotate-[2deg] object-fill opacity-[0.30] mix-blend-multiply sm:left-[-55vw] sm:top-[-120px] sm:h-[560px] sm:w-[210vw] md:left-[-38vw] md:top-[-150px] md:h-[680px] md:w-[180vw] lg:left-[-16vw] lg:top-[-260px] lg:h-[860px] lg:w-[142vw] 2xl:left-[-8vw] 2xl:h-[940px] 2xl:w-[128vw]"
           src="/images/story-wave-pattern.svg"
           alt=""
           draggable={false}
         />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,#fffaf7_0%,rgba(255,250,247,0.86)_8%,rgba(255,250,247,0)_24%,rgba(255,250,247,0)_76%,rgba(255,250,247,0.86)_92%,#fffaf7_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,#fffaf7_0%,rgba(255,250,247,0.62)_8%,rgba(255,250,247,0)_22%,rgba(255,250,247,0)_78%,rgba(255,250,247,0.62)_92%,#fffaf7_100%)] opacity-70" />
+        <div className="absolute inset-x-0 bottom-0 h-[28%] bg-[linear-gradient(180deg,rgba(255,250,247,0)_0%,rgba(255,246,241,0.72)_42%,#fff2ec_100%)]" />
       </div>
 
       <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col items-center">
-        <h2 className="relative z-10 m-0 w-full max-w-[940px] text-center text-[42px] font-bold leading-[1.2] tracking-[0] text-[#161821] [font-family:var(--font-figma-body),Roboto,sans-serif] md:text-[56px] lg:text-[62px]">
+        <h2 className="relative z-10 m-0 w-full max-w-[940px] text-center text-4xl font-bold leading-[1.12] tracking-[0] text-[#161821] [font-family:var(--font-figma-body),Roboto,sans-serif] sm:text-5xl md:text-[3.25rem] lg:text-[3.75rem] 2xl:text-[4rem]">
           Our Story
         </h2>
 
         <div
           ref={mediaRef}
-          className="story-media-frame relative z-10 mt-10 w-full select-none overflow-hidden bg-black md:mt-[52px] lg:mt-[62px]"
+          className="story-media-frame relative z-10 mt-8 w-full max-w-[1180px] select-none overflow-hidden bg-black sm:mt-10 md:mt-12 lg:mt-14"
         >
           {hasVideo ? (
             <video
               ref={videoRef}
               className="aspect-[848/486] w-full select-none object-cover"
               poster={STORY_POSTER_SRC}
+              controls
+              controlsList="nodownload"
               muted
               playsInline
-              loop
               preload="metadata"
+              aria-label="TechVisr company overview video"
               onError={() => setHasVideo(false)}
             >
               <source src={STORY_VIDEO_SRC} type="video/mp4" />

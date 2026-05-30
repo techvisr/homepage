@@ -28,7 +28,7 @@ export default function ResourcesSection({ asset, resources }) {
   return (
     <section
       id="blogs"
-      className="relative isolate grid justify-items-center overflow-hidden bg-white px-5 pb-16 pt-16 md:px-8 md:pb-[86px] md:pt-[96px] lg:px-12 lg:pb-[104px] lg:pt-[116px]"
+      className="relative isolate grid justify-items-center overflow-hidden bg-white px-4 py-14 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-12 lg:py-24 2xl:px-20"
     >
       <img
         className="pointer-events-none absolute left-[-330px] top-[-250px] z-0 h-auto w-[1640px] max-w-none rotate-180 opacity-[0.16] md:left-[-250px] md:top-[-245px] md:w-[1740px] lg:left-[-160px] lg:top-[-238px] lg:w-[1780px]"
@@ -43,33 +43,34 @@ export default function ResourcesSection({ asset, resources }) {
         aria-hidden="true"
       />
 
-      <h2 className="relative z-10 m-0 mb-12 text-center text-[44px] font-black leading-[1.02] tracking-[-0.035em] text-[#161821] md:mb-[64px] md:text-[60px] lg:mb-[78px] lg:text-[72px]">
+      <h2 className="relative z-10 m-0 mb-10 w-full text-center text-4xl font-black leading-[1.04] tracking-[0] text-[#161821] sm:text-5xl md:mb-14 md:text-[3.5rem] lg:mb-16 lg:text-[4rem] xl:text-[4.5rem]">
         Resources
       </h2>
 
-      <div className="relative z-10 flex w-full max-w-[1120px] items-center gap-5 lg:max-w-[1320px] lg:gap-7">
+      <div className="relative z-10 flex w-full min-w-0 max-w-[1180px] items-center gap-4 overflow-hidden lg:max-w-[1320px] lg:gap-6">
         <div
           ref={carouselRef}
-          className="flex w-full snap-x snap-mandatory gap-8 overflow-x-auto scroll-smooth pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:gap-12"
+          className="flex w-full min-w-0 snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 sm:gap-6 lg:gap-10 xl:gap-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           aria-label="Resources carousel"
         >
           {carouselResources.map((resource, index) => (
             <article
-              className="reveal-card flex min-h-[540px] w-full flex-[0_0_100%] snap-start flex-col overflow-hidden rounded-[20px] border border-[rgba(22,24,33,0.14)] bg-white md:flex-[0_0_calc((100%_-_2rem)/2)] lg:min-h-[560px] lg:flex-[0_0_calc((100%_-_6rem)/3)]"
+              className="reveal-card flex min-h-[360px] w-full flex-[0_0_82%] snap-start flex-col overflow-hidden rounded-xl border border-[rgba(22,24,33,0.14)] bg-white sm:min-h-[470px] sm:flex-[0_0_calc((100%_-_1.5rem)/2)] sm:rounded-2xl md:min-h-[520px] lg:flex-[0_0_calc((100%_-_5rem)/3)] xl:min-h-[550px] xl:flex-[0_0_calc((100%_-_6rem)/3)]"
               data-resource-card
               key={`${resource.title}-${index}`}
+              style={{ "--reveal-delay": `${(index % resources.length) * 70}ms` }}
             >
-              <img className="h-[210px] w-full object-cover lg:h-[220px]" src={asset(resource.image)} alt="" />
-              <div className="flex flex-1 flex-col px-8 pb-8 pt-8 md:px-9 md:pb-9 lg:px-9 lg:pb-10 lg:pt-9">
-                <h3 className="m-0 text-[28px] font-extrabold leading-[1.16] tracking-[-0.025em] text-[#f36b35] lg:text-[32px]">
+              <img className="h-32 w-full object-cover min-[360px]:h-36 sm:h-48 md:h-52 lg:h-[220px]" src={asset(resource.image)} alt="" />
+              <div className="flex flex-1 flex-col px-4 pb-5 pt-4 sm:px-6 sm:pb-6 sm:pt-6 md:px-8 md:pb-8 md:pt-8 lg:px-8 lg:pb-9 lg:pt-8 xl:px-9 xl:pb-10 xl:pt-9">
+                <h3 className="m-0 text-lg font-extrabold leading-[1.16] tracking-[0] text-[#f36b35] min-[360px]:text-xl sm:text-[1.6rem] lg:text-[1.8rem] xl:text-[2rem]">
                   {resource.title}
                 </h3>
-                <p className="m-0 mt-6 text-[18px] leading-[1.5] text-[#858585] md:text-[20px] lg:text-[21px]">
+                <p className="m-0 mt-3 text-sm leading-6 text-[#858585] sm:mt-5 sm:text-base sm:leading-7 md:text-lg lg:text-[1.15rem] xl:text-xl">
                   {resource.text}
                 </p>
                 <div className="mt-auto h-[3px] w-full bg-[linear-gradient(90deg,#f36b35_0%,#f04c68_100%)]" />
                 <a
-                  className="mt-10 inline-flex min-h-[54px] w-[174px] items-center justify-center gap-5 rounded-[8px] border-2 border-[#161821] bg-white text-[20px] font-extrabold leading-none text-[#161821] no-underline transition-colors duration-200 hover:bg-[#161821] hover:text-white lg:min-h-[56px] lg:w-[184px] lg:text-[21px]"
+                  className="mt-6 inline-flex min-h-9 w-fit items-center justify-center gap-3 rounded-[8px] border border-[#161821] bg-white px-3 text-xs font-extrabold leading-none text-[#161821] no-underline transition-colors duration-200 hover:bg-[#161821] hover:text-white sm:mt-8 sm:min-h-12 sm:gap-4 sm:border-2 sm:px-5 sm:text-base md:min-h-[54px] md:text-lg lg:min-h-[56px] lg:text-xl"
                   href="/case-studies"
                 >
                   <span>View Blog</span>
@@ -80,7 +81,7 @@ export default function ResourcesSection({ asset, resources }) {
           ))}
         </div>
         <button
-          className="hidden shrink-0 text-[96px] font-light leading-none text-[#05060a] transition-transform duration-200 hover:translate-x-1 lg:inline-flex lg:pl-1"
+          className="hidden shrink-0 text-7xl font-light leading-none text-[#05060a] transition-transform duration-200 hover:translate-x-1 lg:inline-flex lg:pl-1 xl:text-8xl"
           type="button"
           onClick={scrollCarousel}
           aria-label="Next resource"

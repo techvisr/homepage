@@ -51,14 +51,9 @@ const capabilities = [
     image: "8b2bd57fd3043d12b5de385b51394be6f1d6b225.jpg",
   },
   {
-    title: "Cloud & Infrastructure Modernisation",
+    title: "Cloud & Infrastructure Modernization",
     text: "Modernize legacy systems with secure cloud migration services and scalable infrastructure.",
     image: "0e8d1610d3fb7aa7ec69ebb04aed5028cfedcb75.jpg",
-  },
-  {
-    title: "Quality & Performance Engineering",
-    text: "Deliver reliable applications with automated testing and continuous quality validation.",
-    image: "c242a94ccb6b0901049bda70432a2ef91aaaf6f3.jpg",
   },
   {
     title: "Product & Platform Engineering",
@@ -67,8 +62,13 @@ const capabilities = [
   },
   {
     title: "UI/UX Strategy & Experience Design",
-    text: "Deliver reliable applications with automated testing and continuous quality validation.",
+    text: "Create intuitive digital experiences that improve engagement and usability.",
     image: "12dd5529610a67368202640a2c58fd8bfcf6ff0b.jpg",
+  },
+  {
+    title: "Quality & Performance Engineering",
+    text: "Deliver reliable applications with automated testing and continuous quality validation.",
+    image: "c242a94ccb6b0901049bda70432a2ef91aaaf6f3.jpg",
   },
 ];
 
@@ -152,13 +152,79 @@ const industries = [
   {
     label: "Retail &\nEcommerce",
     title: "Retail & Ecommerce",
-    text: "Create intelligent commerce ecosystems that connect customer experiences, inventory visibility, marketing workflows, and operational execution across modern digital retail businesses.",
+    text: "Drive personalized shopping experiences and scalable commerce operations with intelligent digital platforms that improve customer engagement, automate workflows, and optimize retail performance across omnichannel ecosystems.",
     bullets: [
-      "Personalized customer engagement",
-      "Connected ecommerce operations",
-      "AI-assisted retail workflow optimization",
+      "AI-powered customer engagement platforms",
+      "Ecommerce modernization and automation",
+      "Intelligent inventory optimization systems",
     ],
     image: "8c9ee62226affce2c6889f89dea377072a20965f.jpg",
+  },
+  {
+    label: "EdTech",
+    title: "EdTech",
+    text: "Build scalable digital learning ecosystems that improve student engagement, personalize learning experiences, and streamline educational operations with intelligent AI-powered education technology solutions.",
+    bullets: [
+      "Personalized AI-driven learning platforms",
+      "Scalable LMS and mobile solutions",
+      "Intelligent student analytics systems",
+    ],
+    image: "c1f862eec620b62cfeb3d36eb5c88c530f61171a.jpg",
+  },
+  {
+    label: "Government IT\nServices",
+    title: "Government IT Services",
+    text: "Modernize public sector operations with secure digital platforms that streamline citizen services, automate workflows, and improve operational transparency across government ecosystems and infrastructure.",
+    bullets: [
+      "Citizen-centric digital transformation solutions",
+      "Secure workflow automation systems",
+      "Intelligent public service modernization",
+    ],
+    image: "0e8d1610d3fb7aa7ec69ebb04aed5028cfedcb75.jpg",
+  },
+  {
+    label: "SaaS & Technology\nStartups",
+    title: "SaaS & Technology Startups",
+    text: "Accelerate product innovation and scalable growth with AI-powered engineering solutions that streamline development workflows, optimize deployment cycles, and improve operational agility.",
+    bullets: [
+      "Cloud-native product engineering solutions",
+      "AI-powered development automation",
+      "DevOps acceleration and scalability systems",
+    ],
+    image: "0b9cce3595b669a8aaca5c0aaee9d500cccf4424.jpg",
+  },
+  {
+    label: "Manufacturing",
+    title: "Manufacturing",
+    text: "Optimize industrial operations with intelligent automation systems that improve production visibility, streamline manufacturing workflows, and enhance operational efficiency across connected industrial environments.",
+    bullets: [
+      "Intelligent manufacturing automation systems",
+      "Predictive operational analytics solutions",
+      "Scalable industrial workflow optimization",
+    ],
+    image: "a1436e76b433d9cd33a19386748dfa42f79f80c2.jpg",
+  },
+  {
+    label: "Logistics",
+    title: "Logistics",
+    text: "Streamline supply chain operations with intelligent logistics systems that improve operational visibility, automate workflows, and optimize delivery performance across complex logistics networks.",
+    bullets: [
+      "AI-powered logistics optimization solutions",
+      "Real-time supply chain visibility",
+      "Intelligent warehouse automation systems",
+    ],
+    image: "5237973d508c91db229995638f0aa07f3743cacd.png",
+  },
+  {
+    label: "Real Estate",
+    title: "Real Estate",
+    text: "Digitize real estate operations with intelligent platforms that improve customer engagement, automate property workflows, and streamline document management across modern real estate ecosystems.",
+    bullets: [
+      "Smart property management platforms",
+      "AI-powered customer engagement systems",
+      "Intelligent document automation solutions",
+    ],
+    image: "c73de4d7495850eec11d832ed7447c4972c283cf.png",
   },
 ];
 
@@ -195,13 +261,41 @@ const faqs = [
     answer:
       "Techvisr is an AI software development company and digital transformation company that combines AI-driven engineering, intelligent automation, cloud modernization, and enterprise software development to help businesses accelerate innovation, improve operational efficiency, and build scalable digital ecosystems with faster and more reliable delivery.",
   },
-  { question: "Does Techvisr provide AI automation services for enterprises?" },
-  { question: "Can Techvisr help modernize legacy enterprise applications?" },
-  { question: "What industries does Techvisr work with?" },
-  { question: "Does Techvisr build scalable SaaS and web applications?" },
-  { question: "How does Techvisr support cloud and DevOps transformation?" },
-  { question: "Does Techvisr offer mobile app development services?" },
-  { question: "Can Techvisr integrate AI into existing business systems?" },
+  {
+    question: "Does Techvisr provide AI automation services for enterprises?",
+    answer:
+      "Yes. Techvisr delivers AI automation services and AI integration services including intelligent workflows, enterprise AI solutions, document processing, business process automation, predictive analytics, and operational automation systems designed for modern enterprises.",
+  },
+  {
+    question: "Can Techvisr help modernize legacy enterprise applications?",
+    answer:
+      "Yes. Techvisr specializes in enterprise software development, cloud migration services, infrastructure modernization, digital engineering services, and scalable platform transformation to help enterprises modernize legacy systems and migrate toward cloud-native architectures.",
+  },
+  {
+    question: "What industries does Techvisr work with?",
+    answer:
+      "Techvisr works with organizations across healthcare, BFSI, manufacturing, retail & ecommerce, logistics, EdTech, SaaS, real estate, and government sectors, delivering industry-focused digital transformation solutions, AI consulting services, and enterprise technology solutions.",
+  },
+  {
+    question: "Does Techvisr build scalable SaaS and web applications?",
+    answer:
+      "Yes. As a custom software development company and web application development company, Techvisr builds scalable SaaS product development solutions, enterprise portals, AI-powered platforms, and cloud-native digital applications designed for long-term business growth.",
+  },
+  {
+    question: "Does Techvisr offer mobile app development services?",
+    answer:
+      "Yes. Techvisr provides mobile app development company services focused on secure, scalable, and user-centric mobile applications for startups, enterprises, and customer-facing digital platforms across iOS, Android, and cross-platform ecosystems.",
+  },
+  {
+    question: "How does Techvisr support cloud and DevOps transformation?",
+    answer:
+      "Techvisr provides cloud migration services, DevOps consulting services, CI/CD implementation, infrastructure automation, cloud-native deployment strategies, and enterprise cloud solutions to improve agility, scalability, and deployment efficiency.",
+  },
+  {
+    question: "Can Techvisr integrate AI into existing business systems?",
+    answer:
+      "Yes. Techvisr offers AI integration services and AI consulting services that connect intelligent automation, analytics, and machine learning capabilities with enterprise workflows, operational systems, customer platforms, and business applications.",
+  },
 ];
 
 export default function FigmaHomepage() {

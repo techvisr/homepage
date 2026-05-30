@@ -4,32 +4,32 @@ import HeaderActionButton from "./HeaderActionButton";
 const metrics = [
   {
     desktopClass:
-      "left-[10%] top-0 w-[92px] rotate-[-8deg] sm:left-[18%] sm:w-[104px] md:left-[5%] md:w-[132px] lg:left-[4%] lg:top-3 lg:w-[138px] xl:left-0 xl:w-[185px]",
-    compactClass: "w-[78px] rotate-[-8deg] min-[360px]:w-[92px] md:w-[108px]",
+      "left-[10%] top-0 w-[92px] rotate-[-8deg] sm:left-[18%] sm:w-[104px] md:left-[5%] md:w-[132px] lg:left-[6%] lg:top-1 lg:w-[124px] xl:left-[3%] xl:w-[158px] 2xl:left-0 2xl:w-[185px] min-[1800px]:w-[205px]",
+    compactClass: "w-[46px] rotate-[-8deg] min-[360px]:w-[52px] sm:w-[68px] md:w-[84px]",
     motionClass: "hero-drift-down-right",
     image: "/images/hero-metric-launches.png",
     alt: "3X faster product launches",
   },
   {
     desktopClass:
-      "left-[4%] top-[128px] w-[174px] rotate-[5deg] sm:left-[16%] sm:top-[136px] sm:w-[200px] md:left-[18%] md:top-[104px] md:w-[250px] lg:left-[18%] lg:top-[118px] lg:w-[250px] xl:w-[360px]",
-    compactClass: "w-[142px] rotate-[5deg] min-[360px]:w-[174px] md:w-[210px]",
+      "left-[4%] top-[128px] w-[174px] rotate-[5deg] sm:left-[16%] sm:top-[136px] sm:w-[200px] md:left-[18%] md:top-[104px] md:w-[250px] lg:left-[24%] lg:top-[104px] lg:w-[220px] xl:left-[19%]  xl:w-[300px] 2xl:w-[360px] min-[1800px]:w-[400px]",
+    compactClass: "w-[80px] rotate-[5deg] min-[360px]:w-[92px] sm:w-[126px] md:w-[158px]",
     motionClass: "hero-drift-down-right",
     image: "/images/hero-metric-reliability.png",
     alt: "99.9% infrastructure reliability",
   },
   {
     desktopClass:
-      "right-[4%] top-[130px] w-[168px] rotate-[-7deg] sm:right-[14%] sm:top-[138px] sm:w-[194px] md:left-auto md:right-[11%] md:top-[102px] md:w-[242px] lg:right-[18%] lg:top-[116px] lg:w-[240px] xl:right-[17%] xl:w-[342px]",
-    compactClass: "w-[138px] rotate-[-7deg] min-[360px]:w-[168px] md:w-[204px]",
+      "right-[4%] top-[130px] w-[168px] rotate-[-7deg] sm:right-[14%] sm:top-[138px] sm:w-[194px] md:left-auto md:right-[18%] md:top-[102px] md:w-[242px] lg:right-[24%] lg:top-[104px] lg:w-[214px] xl:right-[19%] xl:right-[17%] xl:w-[290px] 2xl:w-[342px] min-[1800px]:w-[380px]",
+    compactClass: "w-[78px] rotate-[-7deg] min-[360px]:w-[90px] sm:w-[124px] md:w-[154px]",
     motionClass: "hero-drift-up-left",
     image: "/images/hero-metric-velocity.png",
     alt: "40% faster release velocity",
   },
   {
     desktopClass:
-      "right-[10%] top-[12px] w-[92px] rotate-[2deg] sm:right-[18%] sm:w-[104px] md:right-[7%] md:w-[132px] lg:right-[4%] lg:top-[68px] lg:w-[136px] xl:right-0 xl:w-[181px]",
-    compactClass: "w-[78px] rotate-[2deg] min-[360px]:w-[92px] md:w-[108px]",
+      "right-[10%] top-[12px] w-[92px] rotate-[2deg] sm:right-[18%] sm:w-[104px] md:right-[7%] md:w-[132px] lg:right-[6%] lg:top-[54px] lg:w-[120px] xl:right-[3%] xl:w-[154px] 2xl:right-0 2xl:w-[181px] min-[1800px]:w-[200px]",
+    compactClass: "w-[46px] rotate-[2deg] min-[360px]:w-[52px] sm:w-[68px] md:w-[84px]",
     motionClass: "hero-drift-down-right-soft",
     image: "/images/hero-metric-efficiency.png",
     alt: "65% operational efficiency gains",
@@ -38,9 +38,9 @@ const metrics = [
 
 export default function HeroSection() {
   return (
-    <section className="relative max-w-[100vw] overflow-hidden bg-black text-white lg:min-h-[790px] xl:min-h-[860px]">
+    <section className="relative max-w-[100vw] overflow-hidden bg-black text-white">
       <video
-        className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+        className="absolute inset-0 z-0 h-full w-full object-cover object-center brightness-[0.68] saturate-[0.95]"
         autoPlay
         muted
         loop
@@ -53,7 +53,7 @@ export default function HeroSection() {
       </video>
 
       <div
-        className="pointer-events-none absolute inset-x-0 top-[390px] z-30 mx-auto hidden h-[300px] w-full max-w-[980px] select-none lg:block xl:top-[430px] xl:h-[330px] xl:max-w-[1180px]"
+        className="pointer-events-none absolute inset-x-0 top-[286px] z-30 mx-auto hidden h-[235px] w-full max-w-[900px] select-none lg:block xl:top-[318px] xl:h-[280px] xl:max-w-[1100px] 2xl:top-[360px] 2xl:h-[310px] 2xl:max-w-[1180px] min-[1800px]:top-[390px] min-[1800px]:h-[340px] min-[1800px]:max-w-[1320px]"
         aria-label="Business outcome metrics"
       >
         {metrics.map((metric, index) => (
@@ -73,29 +73,33 @@ export default function HeroSection() {
       </div>
 
       <div
-        className="pointer-events-none absolute inset-0 z-20 bg-[linear-gradient(180deg,rgba(0,0,0,0.5)_0%,rgba(0,0,0,0.36)_34%,rgba(0,0,0,0.22)_100%)]"
+        className="pointer-events-none absolute inset-0 z-20 bg-[radial-gradient(75%_62%_at_50%_24%,rgba(10,9,16,0.08)_0%,rgba(4,4,7,0.48)_62%,rgba(0,0,0,0.78)_100%),linear-gradient(180deg,rgba(0,0,0,0.44)_0%,rgba(0,0,0,0.26)_46%,rgba(0,0,0,0.52)_100%)]"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute inset-0 z-20 bg-[linear-gradient(90deg,rgba(0,0,0,0.42)_0%,transparent_24%,transparent_76%,rgba(0,0,0,0.4)_100%)]"
         aria-hidden="true"
       />
 
-      <div className="relative z-40 grid content-start px-3 pb-5 pt-[72px] min-[360px]:px-6 md:pb-6 md:pt-[76px] lg:min-h-[790px] lg:px-16 lg:pt-[86px] xl:min-h-[860px] xl:px-[100px]">
-        <div className="mx-auto grid w-full min-w-0 max-w-[1120px] justify-items-center gap-6 text-center md:gap-[30px]">
-          <h1 className="m-0 max-w-full text-[34px] font-extrabold leading-[1.03] tracking-[0] [font-family:var(--font-figma-display),Barlow,sans-serif] [text-shadow:0_8px_32px_rgba(0,0,0,0.32)] motion-safe:animate-[heroReveal_800ms_ease_both] min-[360px]:text-[38px] sm:text-[52px] lg:max-w-[1120px] lg:text-[70px] lg:leading-[0.99] xl:text-[84px]">
+      <div className="relative z-40 grid min-h-[clamp(400px,52svh,480px)] content-start px-4 pb-4 pt-6 min-[360px]:px-5 sm:px-8 sm:pt-10 md:min-h-[clamp(500px,62svh,600px)] md:pb-6 md:pt-12 lg:min-h-[clamp(540px,72svh,620px)] lg:px-12 lg:pt-14 xl:min-h-[clamp(620px,70svh,700px)] xl:px-16 xl:pt-16 2xl:min-h-[clamp(700px,70svh,780px)] 2xl:px-24 2xl:pt-20 min-[1800px]:min-h-[clamp(760px,82svh,860px)] min-[1800px]:pt-24">
+        <div className="mx-auto grid w-full min-w-0 max-w-[1040px] justify-items-center gap-3 text-center sm:gap-5 md:gap-6 lg:gap-6">
+          <h1 className="m-0 max-w-full text-[1.62rem] font-extrabold leading-[1.04] tracking-[0] [font-family:var(--font-figma-display),Barlow,sans-serif] [text-shadow:0_8px_32px_rgba(0,0,0,0.38)] motion-safe:animate-[heroReveal_800ms_ease_both] min-[360px]:text-[1.78rem] sm:text-[2.45rem] md:text-[3.1rem] lg:max-w-[900px] lg:text-[3.35rem] lg:leading-[1] xl:text-[4rem] 2xl:text-[4.6rem]">
             AI-Native Engineering for Modern Digital Enterprises
           </h1>
-          <p className="m-0 max-w-full text-[15px] leading-[1.32] [text-shadow:0_5px_22px_rgba(0,0,0,0.38)] motion-safe:animate-[heroReveal_800ms_120ms_ease_both] min-[360px]:text-[16px] sm:text-[21px] sm:leading-[1.22] lg:max-w-[908px] xl:text-[27px] xl:leading-[1.18]">
+          <p className="m-0 max-w-[38rem] text-xs leading-[1.42] [text-shadow:0_5px_22px_rgba(0,0,0,0.42)] motion-safe:animate-[heroReveal_800ms_120ms_ease_both] min-[360px]:text-[13px] sm:text-[15px] md:max-w-[46rem] md:text-base lg:max-w-[52rem] lg:text-base lg:leading-[1.32] xl:text-lg 2xl:text-xl">
             A digital transformation company focused on building scalable software, intelligent
             automation, and cloud-driven ecosystems for modern enterprises.
           </p>
           <HeaderActionButton
             light
-            className="h-12 max-w-full rounded-[13px] px-4 text-[15px] font-semibold motion-safe:animate-[heroReveal_800ms_220ms_ease_both] min-[360px]:h-[50px] min-[360px]:px-6 min-[360px]:text-[16px] xl:h-[52px] xl:rounded-[14px] xl:text-[17px]"
+            className="max-w-full rounded-xl !min-h-11 !px-5 !py-3 text-sm font-semibold motion-safe:animate-[heroReveal_800ms_220ms_ease_both] sm:text-base xl:rounded-[14px]"
           >
             Start Your Transformation
           </HeaderActionButton>
         </div>
 
         <div
-          className="pointer-events-none mx-auto mt-7 grid w-full min-w-0 max-w-[294px] grid-cols-[auto_auto] items-center justify-center gap-x-4 gap-y-3 select-none min-[360px]:max-w-[360px] min-[360px]:gap-x-5 md:mt-8 md:max-w-[760px] md:grid-cols-[auto_auto_auto_auto] md:gap-x-4 md:gap-y-0 lg:hidden"
+          className="pointer-events-none mx-auto mt-3 grid w-full min-w-0 max-w-[184px] grid-cols-[auto_auto] items-center justify-center gap-x-2.5 gap-y-1.5 select-none min-[360px]:max-w-[216px] min-[360px]:gap-x-3 sm:max-w-[320px] md:mt-5 md:max-w-[600px] md:grid-cols-[auto_auto_auto_auto] md:gap-x-4 md:gap-y-0 lg:hidden"
           aria-label="Business outcome metrics"
         >
           {metrics.map((metric, index) => (
@@ -115,7 +119,7 @@ export default function HeroSection() {
         </div>
 
         <a
-          className="mx-auto mt-4 inline-flex animate-[scrollBounce_1.6s_ease-in-out_infinite] items-center gap-2 text-[13px] font-medium tracking-[0.08em] text-white lg:absolute lg:bottom-5 lg:left-1/2 lg:mt-0 lg:-translate-x-1/2"
+          className="mx-auto mt-2 hidden animate-[scrollBounce_1.6s_ease-in-out_infinite] items-center gap-2 text-[10px] font-medium tracking-[0.08em] text-white/90 lg:absolute lg:bottom-4 lg:left-1/2 lg:mt-0 lg:inline-flex lg:-translate-x-1/2"
           href="#our-story"
         >
           <span>SCROLL</span>

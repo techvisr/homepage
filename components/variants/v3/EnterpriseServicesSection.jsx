@@ -4,36 +4,57 @@ export default function EnterpriseServicesSection({ asset, services }) {
   return (
     <section
       id="enterprise-services"
-      className="relative grid justify-items-center overflow-hidden bg-[radial-gradient(85%_48%_at_50%_0%,rgba(243,113,53,0.11),transparent_58%),radial-gradient(78%_52%_at_50%_100%,rgba(239,65,105,0.08),transparent_64%),linear-gradient(180deg,#ffffff_0%,#fff9f6_48%,#ffffff_100%)] px-5 py-14 md:px-8 md:py-[72px] lg:px-20 lg:py-[88px]"
+      className="relative isolate -mt-px grid justify-items-center overflow-hidden bg-[#fff2ec] px-4 pb-14 pt-12 sm:px-6 sm:pb-16 sm:pt-14 md:px-8 md:pb-20 md:pt-16 lg:px-12 lg:pb-24 lg:pt-20 2xl:px-20"
     >
-      <div className="relative z-10 mx-auto mb-9 grid max-w-[1040px] gap-4 text-center md:mb-11 md:gap-5 lg:mb-12">
-        <h2 className="m-0 max-w-[980px] text-[32px] font-extrabold leading-[1.1] tracking-[0] text-[#161821] md:text-[44px] lg:text-[58px]">
-          Turning Operational Complexity Into Digital Advantage
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(90%_48%_at_50%_-6%,rgba(243,113,53,0.18),rgba(255,242,236,0.84)_44%,rgba(255,250,247,0)_72%),radial-gradient(72%_52%_at_50%_108%,rgba(239,65,105,0.07),transparent_68%),linear-gradient(180deg,#fff2ec_0%,#fff7f3_26%,#fffaf7_50%,#ffffff_100%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-32 bg-[linear-gradient(180deg,#fff2ec_0%,rgba(255,242,236,0.86)_46%,rgba(255,242,236,0)_100%)] sm:h-40 lg:h-48"
+      />
+      <img
+        aria-hidden="true"
+        className="enterprise-separator-wave pointer-events-none absolute left-1/2 top-[-118px] -z-10 h-[360px] w-[220vw] max-w-none -translate-x-1/2 object-fill opacity-[0.16] mix-blend-multiply sm:top-[-150px] sm:h-[450px] sm:w-[190vw] md:w-[165vw] lg:top-[-230px] lg:h-[660px] lg:w-[132vw] 2xl:w-[112vw]"
+        src="/images/story-wave-pattern.svg"
+        alt=""
+        draggable={false}
+      />
+      <div className="relative z-10 mx-auto mb-8 grid max-w-[1040px] gap-4 text-center sm:mb-10 md:mb-11 md:gap-5 lg:mb-12">
+        <h2 className="m-0 max-w-[980px] text-3xl font-extrabold leading-[1.12] tracking-[0] text-[#161821] sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.625rem] 2xl:text-[4rem]">
+          Turning Operational Complexity into Digital Advantage
         </h2>
-        <p className="mx-auto m-0 max-w-[820px] text-[16px] leading-[1.42] text-[rgba(22,24,33,0.68)] md:text-[19px] md:leading-[1.34] lg:text-[22px]">
+        <p className="mx-auto m-0 max-w-[820px] text-base leading-7 text-[rgba(22,24,33,0.68)] md:text-lg md:leading-8 lg:text-xl">
           Modernizing enterprises with AI-powered automation and next-generation digital engineering.
         </p>
-        <h3 className="m-0 mt-7 text-[26px] font-bold leading-[1.18] tracking-[0] text-[#161821] md:mt-8 md:text-[31px] lg:mt-9 lg:text-[36px]">
-          Enterprise Services Built For Scale
+        <h3 className="m-0 mt-5 text-2xl font-bold leading-[1.18] tracking-[0] text-[#161821] sm:text-[1.7rem] md:mt-7 md:text-3xl lg:mt-8 lg:text-[2.15rem]">
+          Enterprise Services Built for Scale
         </h3>
       </div>
 
-      <div className="relative z-10 mb-9 grid w-full max-w-[1020px] grid-cols-1 gap-4 min-[560px]:grid-cols-2 md:mb-11 md:gap-6 lg:mb-12 lg:grid-cols-6 lg:gap-7">
+      <div className="relative z-10 mb-8 grid w-full max-w-[1120px] grid-cols-1 gap-3 min-[420px]:grid-cols-2 md:mb-11 md:gap-6 lg:mb-12 lg:grid-cols-6 lg:gap-6 xl:gap-7">
         {services.map((service, index) => (
           <article
-            className={`reveal-card flex min-h-[148px] flex-col items-center justify-center gap-4 rounded-[12px] border border-[rgba(22,24,33,0.08)] bg-white px-3 py-5 text-center shadow-[0_14px_34px_rgba(22,24,33,0.07)] md:min-h-[190px] md:gap-5 md:rounded-[14px] md:px-5 md:py-6 lg:min-h-[240px] lg:gap-6 lg:rounded-2xl lg:px-6 lg:py-7 lg:shadow-[0_18px_46px_rgba(22,24,33,0.08)] ${
+            className={`reveal-card flex min-h-[104px] flex-col items-center justify-center gap-2.5 rounded-xl border border-[rgba(22,24,33,0.08)] bg-white px-3 py-4 text-center shadow-[0_10px_24px_rgba(22,24,33,0.07)] min-[420px]:min-h-[118px] sm:min-h-[142px] sm:gap-4 md:min-h-[178px] md:gap-5 md:rounded-[14px] md:px-5 md:py-6 lg:min-h-[216px] lg:gap-6 lg:rounded-2xl lg:px-6 lg:py-7 lg:shadow-[0_18px_46px_rgba(22,24,33,0.08)] xl:min-h-[236px] ${
               index < 3
                 ? "lg:col-span-2"
                 : index === 3
                   ? "lg:col-span-2 lg:col-start-2"
-                  : "min-[560px]:col-span-2 min-[560px]:mx-auto min-[560px]:w-[calc((100%_-_1rem)/2)] md:w-[calc((100%_-_1.5rem)/2)] lg:col-span-2 lg:col-start-4 lg:mx-0 lg:w-auto"
+                  : "min-[420px]:col-span-2 min-[420px]:mx-auto min-[420px]:w-[calc((100%_-_0.75rem)/2)] md:w-[calc((100%_-_1.5rem)/2)] lg:col-span-2 lg:col-start-4 lg:mx-0 lg:w-auto"
             }`}
             key={service.title}
+            style={{ "--reveal-delay": `${index * 70}ms` }}
           >
-            <h4 className="order-1 m-0 whitespace-pre-wrap text-[14px] font-bold leading-[1.28] tracking-[0] text-[#161821] min-[360px]:text-[15px] md:text-[17px] lg:text-[19px]">
+            <h4 className="order-1 m-0 whitespace-pre-wrap text-[12px] font-bold leading-[1.24] tracking-[0] text-[#161821] min-[360px]:text-[13px] sm:text-sm md:text-base lg:text-lg xl:text-[19px]">
               {service.title}
             </h4>
-            <img className="order-2 aspect-square w-[58px] object-contain md:w-[82px] lg:w-[108px]" src={asset(service.image)} alt="" />
+            <span
+              className="service-icon-stage order-2 grid aspect-square w-12 place-items-center min-[360px]:w-14 sm:w-16 md:w-20 lg:w-24 xl:w-[108px]"
+              style={{ "--service-icon-delay": `${index * 180}ms` }}
+            >
+              <img className="service-icon-image aspect-square w-full object-contain" src={asset(service.image)} alt="" />
+            </span>
           </article>
         ))}
       </div>
@@ -41,7 +62,7 @@ export default function EnterpriseServicesSection({ asset, services }) {
       <HeaderActionButton
         variant="outline"
         size="default"
-        className="relative z-10 min-h-[54px] border-2 px-6 text-[17px] md:min-h-[58px] md:px-7 md:text-[18px]"
+        className="relative z-10 border-2"
       >
         Talk to Our Experts
       </HeaderActionButton>
