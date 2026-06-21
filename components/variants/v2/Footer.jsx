@@ -20,6 +20,8 @@ const footerGroups = [
     title: "Contact",
     links: [
       { label: "admin@techvisr.com", href: "mailto:admin@techvisr.com" },
+      { label: "+91 89043 61600", href: "tel:+918904361600" },
+      { label: "+91 94384 33644", href: "tel:+919438433644" },
       { label: "Book a consultation", href: "/contact" },
       { label: "Explore services", href: "/services" },
     ],
@@ -64,7 +66,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-3 pt-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-          <p>&copy; {new Date().getFullYear()} TechVisr. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Techvisr. All rights reserved.</p>
           <p>Professional engineering services for product and enterprise teams.</p>
         </div>
       </div>

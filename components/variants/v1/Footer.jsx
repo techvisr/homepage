@@ -10,11 +10,19 @@ export default function Footer() {
             <a href="mailto:admin@techvisr.com" className="hover:text-white">
               admin@techvisr.com
             </a>
+            <br />
+            <a href="tel:+918904361600" className="hover:text-white">
+              +91 89043 61600
+            </a>
+            <br />
+            <a href="tel:+919438433644" className="hover:text-white">
+              +91 94384 33644
+            </a>
           </p>
         </div>
 
         <p className="mt-8 border-t border-gray-800 pt-6 text-xs text-gray-400">
-          &copy; {new Date().getFullYear()} TechVisr. All rights reserved.
+          &copy; {new Date().getFullYear()} Techvisr. All rights reserved.
         </p>
       </div>
 

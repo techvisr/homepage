@@ -1,15 +1,10 @@
 import "./v3.css";
-import Hero from "../../components/variants/v3/Hero";
-import Navbar from "../../components/variants/v3/Navbar";
-import Services from "../../components/variants/v3/Services";
-import MailToCta from "../../components/variants/v3/MailToCta";
-import Footer from "../../components/variants/v3/Footer";
-import Community from "../../components/variants/v3/Community";
-import ImageContentCards from "../../components/variants/v3/ImageContentCards";
+import FigmaHomepage from "../../components/variants/v3/FigmaHomepage";
 
 export const metadata = {
-  title: "Homepage Demo V3",
-  description: "Homepage variant sourced from the reference refresh branch.",
+  title: "AI Software Development Company for Enterprise Transformation | Techvisr",
+  description:
+    "Techvisr helps startups and enterprises build scalable digital products, AI-powered platforms, cloud-native systems, and modern applications through strategic engineering, automation, and transformation services.",
 };
 
 export default function V3Page() {
@@ -23,20 +18,13 @@ export default function V3Page() {
       "@type": "ContactPoint",
       contactType: "customer support",
       email: "admin@techvisr.com",
+      telephone: "+91 89043 61600",
     },
   };
 
   return (
     <>
-      <Navbar />
-      <main className="overflow-hidden">
-        <Hero />
-        <Services />
-        <ImageContentCards />
-        <Community />
-        <MailToCta />
-      </main>
-      <Footer />
+      <FigmaHomepage />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
     </>
   );

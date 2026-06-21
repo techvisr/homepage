@@ -1,2 +1,4 @@
 node_modules
 .next
+.artifacts/*/*
+.DS_Store

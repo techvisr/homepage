@@ -12,6 +12,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -20,6 +21,7 @@ body {
   color: var(--text);
   font-family: var(--font-body), sans-serif;
   font-feature-settings: "ss01" 1, "cv02" 1, "cv03" 1;
+  overflow-x: clip;
 }
 
 section {
@@ -160,5 +162,1813 @@ summary:focus-visible {
 @media (min-width: 1024px) {
   .section-title {
     font-size: 2.65rem;
+  }
+}
+
+.figma-site {
+  --figma-black: #000000;
+  --figma-ink: #161821;
+  --figma-muted: rgba(22, 24, 33, 0.68);
+  --figma-orange: #f37135;
+  --figma-pink: #ef4169;
+  --figma-gradient: linear-gradient(90deg, var(--figma-orange), var(--figma-pink));
+  background: #ffffff;
+  color: var(--figma-ink);
+  font-family: var(--font-figma-body), Roboto, sans-serif;
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.figma-site * {
+  box-sizing: border-box;
+}
+
+.figma-site a {
+  text-decoration: none;
+}
+
+.figma-site img {
+  display: block;
+  max-width: 100%;
+}
+
+.figma-site main {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #f3f3f3 50%);
+}
+
+.figma-site main > section:not(.figma-hero) {
+  background: white;
+}
+
+.our-story-section {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 976px;
+  padding: 100px;
+  gap: 80px;
+  overflow: hidden;
+}
+
+.figma-site main > section.our-story-section {
+  background: linear-gradient(#fff0 0%, #f3f3f3 50%);
+}
+
+.our-story-wave {
+  z-index: 0;
+  opacity: 0.4;
+  transform-origin: center;
+  pointer-events: none;
+  user-select: none;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  position: absolute;
+  top: -40%;
+  transform: rotate(0);
+  -webkit-mask-image: linear-gradient(#000 0% 46%, #0000008c 58%, #0000 74%);
+  mask-image: linear-gradient(#000 0% 46%, #0000008c 58%, #0000 74%);
+}
+
+.capabilities-wave {
+  z-index: 0;
+  opacity: 0.4;
+  transform-origin: center;
+  pointer-events: none;
+  user-select: none;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  position: absolute;
+  top: -87%;
+  left: 0%;
+  transform: rotate(0);
+}
+
+.figma-site main > section.capabilities-section {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #f3f3f3 50%);
+}
+
+.figma-site main > section.advantage-section {
+  background: linear-gradient(180deg, rgba(251, 251, 251, 0) 0%, #f3f3f3 50%);
+}
+
+.figma-site main > section.faq-section {
+  background: linear-gradient(#fff, #f3f3f3 50%);
+}
+
+.advantage-partner-wave {
+  z-index: 0;
+  opacity: 0.4;
+  transform-origin: center;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  position: absolute;
+  top: -142%;
+  left: 0;
+  transform: rotate(0);
+}
+
+.figma-site main > section.delivery-framework-section,
+.figma-site main > section#industries {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb00 100%);
+}
+
+.industries-partner-wave {
+  z-index: 0;
+  opacity: 0.4;
+  transform-origin: center;
+  pointer-events: none;
+  user-select: none;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  position: absolute;
+  top: -59%;
+  left: 0;
+  transform: rotate(0);
+}
+
+.industries-capabilities-wave {
+  z-index: 0;
+  opacity: 0.4;
+  transform-origin: center;
+  pointer-events: none;
+  user-select: none;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  position: absolute;
+  top: -161%;
+  left: 11%;
+  transform: rotate(0);
+}
+
+.our-story-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  width: min(1080px, 100%);
+  height: 74px;
+  margin: 0 auto;
+  padding: 0 70px;
+  gap: 16px;
+}
+
+.our-story-header h2 {
+  flex: none;
+  align-self: stretch;
+  width: 100%;
+  max-width: 940px;
+  min-height: 74px;
+  margin: 0 auto;
+  color: #161821;
+  font-family: var(--font-figma-body), Roboto, sans-serif;
+  font-size: 62px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.our-story-media {
+  --story-progress: 0;
+  position: relative;
+  z-index: 1;
+  flex: none;
+  width: 100%;
+  max-width: 848px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #161821;
+  opacity: calc(0.78 + 0.22 * var(--story-progress));
+  transform: translate3d(0, calc(36px * (1 - var(--story-progress))), 0)
+    scale(calc(0.9 + 0.1 * var(--story-progress)));
+  transition:
+    width 220ms linear,
+    opacity 220ms linear,
+    transform 220ms linear;
+  will-change: width, opacity, transform;
+}
+
+.our-story-media video,
+.our-story-media img {
+  display: block;
+  aspect-ratio: 848 / 486;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  user-select: none;
+  transform: scale(calc(1 + 0.06 * var(--story-progress)));
+  transform-origin: center center;
+  transition: transform 220ms linear;
+  will-change: transform;
+}
+
+.our-story-media[data-active="true"] {
+  pointer-events: auto;
+}
+
+@media (min-width: 1024px) {
+  .our-story-media {
+    width: calc(848px + 232px * var(--story-progress));
+    max-width: min(1080px, calc(100vw - 160px));
+  }
+}
+
+.our-story-button {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  display: flex;
+  flex: none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 318px;
+  height: 56px;
+  padding: 16px 24px;
+  gap: 16px;
+  border: 2px solid #161821;
+  border-radius: 12px;
+  color: #161821;
+  background: transparent;
+  font-family: var(--font-figma-body), Roboto, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+}
+
+.our-story-button:hover {
+  background: #161821;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.our-story-button span {
+  flex: none;
+  width: 234px;
+  height: 24px;
+  white-space: nowrap;
+}
+
+.our-story-button svg {
+  flex: none;
+  width: 20px;
+  height: 20px;
+}
+
+.enterprise-services-section {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  width: 100%;
+  min-height: 1316px;
+  padding: 100px;
+  gap: 40px;
+  overflow: hidden;
+}
+
+.figma-site main > section.enterprise-services-section {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #f3f3f3 50%);
+}
+
+.enterprise-services-header {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  width: min(1080px, 100%);
+  min-height: 192px;
+  margin: 0 auto;
+  padding: 0 70px;
+  gap: 16px;
+}
+
+.enterprise-services-header h2 {
+  flex: none;
+  align-self: stretch;
+  width: 100%;
+  max-width: 940px;
+  min-height: 148px;
+  margin: 0 auto;
+  color: #161821;
+  font-family: var(--font-figma-body), Roboto, sans-serif;
+  font-size: 62px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.enterprise-services-header p {
+  flex: none;
+  width: 100%;
+  max-width: 842px;
+  min-height: 28px;
+  margin: 0;
+  color: #858585;
+  font-family: var(--font-figma-body), Roboto, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  text-align: center;
+}
+
+.enterprise-services-content {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  width: min(1080px, 100%);
+  min-height: 884px;
+  margin: 0 auto;
+  padding: 0;
+  gap: 40px;
+}
+
+.enterprise-services-content h3 {
+  flex: none;
+  align-self: stretch;
+  width: 100%;
+  min-height: 48px;
+  margin: 0;
+  color: #161821;
+  font-family: var(--font-figma-body), Roboto, sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.enterprise-services-grid {
+  display: flex;
+  flex: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: center;
+  align-self: stretch;
+  width: 100%;
+  min-height: 660px;
+  padding: 0;
+  gap: 24px;
+}
+
+.enterprise-service-card {
+  box-sizing: border-box;
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 344px;
+  height: 318px;
+  padding: 40px;
+  border: 1px solid #dddddd;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+.enterprise-service-card-inner {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  width: 264px;
+  min-height: 238px;
+  padding: 0;
+  gap: 24px;
+}
+
+.enterprise-service-card h4 {
+  flex: none;
+  align-self: stretch;
+  width: 264px;
+  min-height: 64px;
+  margin: 0;
+  color: #161821;
+  font-family: var(--font-figma-body), Roboto, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.0703125px;
+  line-height: 32px;
+  text-align: center;
+  white-space: pre-wrap;
+}
+
+.enterprise-service-icon {
+  box-sizing: border-box;
+  display: flex;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  padding: 0 14px;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.enterprise-service-icon img {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.enterprise-service-icon::before {
+  z-index: 0;
+}
+
+.enterprise-services-button {
+  box-sizing: border-box;
+  display: flex;
+  flex: none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 255px;
+  height: 56px;
+  padding: 16px 24px;
+  gap: 16px;
+  border: 2px solid #161821;
+  border-radius: 12px;
+  color: #161821;
+  background: transparent;
+  font-family: var(--font-figma-body), Roboto, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+}
+
+.enterprise-services-button:hover {
+  background: #161821;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.enterprise-services-button span {
+  flex: none;
+  width: 171px;
+  height: 24px;
+  white-space: nowrap;
+}
+
+.enterprise-services-button svg {
+  flex: none;
+  width: 20px;
+  height: 20px;
+}
+
+.figma-section-title {
+  margin: 0;
+  font-family: var(--font-figma-display), Barlow, sans-serif;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.hero-drift-down-right {
+  animation: heroDriftDownRight 6.4s ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+.hero-drift-down-right-soft {
+  animation: heroDriftDownRightSoft 6s ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+.hero-drift-up-left {
+  animation: heroDriftUpLeft 6.6s ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+@media (min-width: 1024px) {
+  .figma-site-header {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 81px;
+    padding: 0 clamp(40px, 10.9375vw, 140px) 1px;
+    background: #000000;
+    border-radius: 0;
+  }
+
+  .figma-site-header__container {
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    width: min(1000px, 100%);
+    max-width: 1000px;
+    height: 80px;
+    min-height: 80px;
+    margin: 0 auto;
+    padding: 0;
+    gap: 102.84px;
+    border-radius: 0;
+  }
+
+  .figma-site-header__logo {
+    flex: none;
+    width: 159px;
+    height: 40px;
+  }
+
+  .figma-site-header__logo img {
+    width: 159px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  .figma-site-header__nav {
+    display: flex !important;
+    flex: none;
+    flex-direction: row;
+    align-items: center;
+    width: 474px;
+    height: 24px;
+    padding: 0;
+    gap: 54px;
+    border-radius: 0;
+  }
+
+  .figma-site-header__nav-link {
+    flex: none;
+    height: 24px;
+    color: #ffffff;
+    font-family: var(--font-figma-nav), Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: -0.3125px;
+    line-height: 24px;
+  }
+
+  .figma-site-header__nav-link:nth-child(1) {
+    width: 64px;
+  }
+
+  .figma-site-header__nav-link:nth-child(2) {
+    width: 98px;
+  }
+
+  .figma-site-header__nav-link:nth-child(3) {
+    width: 110px;
+  }
+
+  .figma-site-header__nav-link:nth-child(4) {
+    width: 42px;
+  }
+
+  .figma-site-header__button {
+    display: flex !important;
+    flex: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 143px;
+    height: 39px;
+    min-height: 39px;
+    padding: 10px 16px;
+    gap: 16px;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #000000;
+    font-family: var(--font-figma-body), Roboto, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+  }
+
+  .figma-site-header__button span {
+    flex: none;
+    width: 79px;
+    height: 19px;
+  }
+
+  .figma-site-header__button svg {
+    flex: none;
+    width: 16px;
+    height: 16px;
+    stroke-width: 1.6667;
+  }
+
+  .figma-site-header__mobile {
+    display: none !important;
+  }
+
+  .figma-hero {
+    height: calc(100svh - 81px);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .figma-site-header {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .figma-site-header__container {
+    gap: 40px;
+  }
+
+  .figma-site-header__nav {
+    width: auto;
+    gap: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .figma-hero {
+    height: calc(100svh - 81px);
+    min-height: 720px;
+    /* max-height: 920px; */
+  }
+
+  .figma-hero-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .figma-hero-header {
+    position: absolute;
+    top: clamp(58px, 10.8svh, 88px);
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: none;
+    height: clamp(286px, 41.6svh, 340px);
+    padding: 0 clamp(48px, 7.8vw, 100px);
+    gap: clamp(24px, 4.4svh, 36px);
+  }
+
+  .figma-hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: min(1080px, calc(100vw - 96px));
+    height: clamp(208px, 30.6svh, 250px);
+    padding: 0;
+    gap: clamp(20px, 3.2svh, 26px);
+  }
+
+  .figma-hero-title-frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    height: clamp(126px, 18.8svh, 154px);
+    gap: 10px;
+  }
+
+  .figma-hero-title {
+    width: 100%;
+    height: auto;
+    max-width: 1080px;
+    color: #ffffff;
+    font-family: var(--font-figma-display), Barlow, sans-serif;
+    font-size: clamp(58px, 6.1vw, 78px);
+    font-style: normal;
+    font-weight: 800;
+    line-height: 100%;
+    text-align: center;
+    text-shadow: none;
+  }
+
+  .figma-hero-body-frame {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    height: clamp(54px, 7.8svh, 64px);
+    gap: 10px;
+  }
+
+  .figma-hero-body {
+    width: min(904px, 100%);
+    max-width: 904px;
+    color: #ffffff;
+    font-family: var(--font-figma-body), Roboto, sans-serif;
+    font-size: clamp(20px, 1.9vw, 24px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 135%;
+    text-align: center;
+    text-shadow: none;
+  }
+
+  .figma-hero-cta {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 318px;
+    height: 56px;
+    min-height: 56px;
+    padding: 16px 24px;
+    gap: 16px;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #000000;
+    font-family: var(--font-figma-body), Roboto, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+  }
+
+  .figma-hero-cta span {
+    width: 234px;
+    height: 24px;
+  }
+
+  .figma-hero-cta svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 1.6667;
+  }
+
+  .figma-hero-metrics {
+    top: auto;
+    bottom: clamp(96px, 12.2svh, 118px);
+    width: min(1280px, 100vw);
+    max-width: 1280px;
+    height: clamp(160px, 24svh, 198px);
+  }
+
+  .figma-hero-metric {
+    transform-origin: center;
+  }
+
+  .figma-hero-metric--launches {
+    left: clamp(70px, 7.2vw, 92px);
+    top: clamp(10px, 1.4svh, 12px);
+    width: clamp(124px, 11.4vw, 146px);
+    transform: rotate(-7.96deg);
+  }
+
+  .figma-hero-metric--reliability {
+    left: clamp(260px, 24vw, 300px);
+    top: clamp(66px, 8.2svh, 80px);
+    width: clamp(248px, 22.6vw, 290px);
+    transform: rotate(5.39deg);
+  }
+
+  .figma-hero-metric--velocity {
+    left: clamp(560px, 51.2vw, 644px);
+    right: auto;
+    top: clamp(92px, 11.3svh, 108px);
+    width: clamp(238px, 22vw, 282px);
+    transform: rotate(-6.86deg);
+  }
+
+  .figma-hero-metric--efficiency {
+    left: clamp(918px, 79vw, 1000px);
+    right: auto;
+    top: clamp(42px, 5.1svh, 52px);
+    width: clamp(140px, 12.9vw, 165px);
+    transform: none;
+  }
+
+  .figma-hero-scroll {
+    bottom: 8px;
+    left: 50%;
+    gap: 26px;
+    min-width: 162px;
+    min-height: 48px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: var(--font-figma-body), Roboto, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 120%;
+    animation-name: figmaHeroScrollBounce;
+  }
+
+  .figma-hero-scroll svg {
+    width: 21px;
+    height: 21px;
+    stroke-width: 3;
+  }
+}
+
+@media (min-width: 1024px) and (max-height: 760px) {
+  .figma-hero {
+    min-height: calc(100svh - 81px);
+  }
+
+  .figma-hero-header {
+    top: 42px;
+    height: 278px;
+    gap: 20px;
+  }
+
+  .figma-hero-title {
+    font-size: clamp(48px, 5.3vw, 66px);
+  }
+
+  .figma-hero-body {
+    font-size: clamp(18px, 1.65vw, 21px);
+  }
+
+  .figma-hero-metrics {
+    bottom: 74px;
+    height: 164px;
+  }
+
+  .figma-hero-scroll {
+    transform-origin: bottom center;
+  }
+}
+
+.section-light {
+  position: relative;
+  padding: clamp(78px, 7.8vw, 100px) clamp(24px, 7.8vw, 100px);
+  background: #ffffff;
+}
+
+.figma-section-title {
+  position: relative;
+  z-index: 1;
+  max-width: 920px;
+  margin-inline: auto;
+  color: var(--figma-ink);
+  font-size: clamp(44px, 5.78vw, 74px);
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+.figma-section-title--light {
+  color: #ffffff;
+}
+
+.wave-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.wave-field span {
+  position: absolute;
+  left: -16%;
+  bottom: 20%;
+  width: 68%;
+  aspect-ratio: 3 / 1;
+  border-top: 1px solid rgba(243, 113, 53, 0.18);
+  border-radius: 50%;
+  transform: translateY(calc(var(--i) * 13px)) rotate(15deg);
+  animation: waveSlide 7s ease-in-out infinite alternate;
+  animation-delay: calc(var(--i) * 130ms);
+}
+
+.wave-field--dark span {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.story-wave-layer {
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    #000 0%,
+    #000 44%,
+    rgba(0, 0, 0, 0.45) 60%,
+    transparent 76%
+  );
+  mask-image: radial-gradient(
+    ellipse at center,
+    #000 0%,
+    #000 44%,
+    rgba(0, 0, 0, 0.45) 60%,
+    transparent 76%
+  );
+}
+
+.delivery-framework-wave {
+  z-index: 0;
+  opacity: 0.4;
+  transform-origin: center;
+  pointer-events: none;
+  user-select: none;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  position: absolute;
+  top: -94%;
+}
+
+.enterprise-separator-wave {
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    #000 20%,
+    #000 66%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(180deg, transparent 0%, #000 20%, #000 66%, transparent 100%);
+}
+
+.delivery-wave-layer {
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    #000 0%,
+    rgba(0, 0, 0, 0.86) 48%,
+    transparent 76%
+  );
+  mask-image: radial-gradient(
+    ellipse at center,
+    #000 0%,
+    rgba(0, 0, 0, 0.86) 48%,
+    transparent 76%
+  );
+}
+
+.story-media-frame {
+  --story-progress: 0;
+  width: 100%;
+  max-width: 848px;
+  margin-top: 40px;
+  border-radius: 24px;
+  opacity: calc(0.78 + 0.22 * var(--story-progress));
+  transform: translate3d(0, calc(36px * (1 - var(--story-progress))), 0)
+    scale(calc(0.9 + 0.1 * var(--story-progress)));
+  transition:
+    width 220ms linear,
+    opacity 220ms linear,
+    transform 220ms linear;
+  will-change: width, opacity, transform;
+}
+
+.story-media-frame video,
+.story-media-frame img {
+  display: block;
+  transform: scale(calc(1 + 0.06 * var(--story-progress)));
+  transform-origin: center center;
+  transition: transform 220ms linear;
+  will-change: transform;
+}
+
+.story-media-frame[data-active="true"] {
+  pointer-events: auto;
+}
+
+.service-icon-stage {
+  position: relative;
+  isolation: isolate;
+  animation: serviceIconStageDrift 5.8s ease-in-out infinite;
+  animation-delay: var(--service-icon-delay, 0ms);
+}
+
+.service-icon-stage::before {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  z-index: -1;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 34% 34%, rgba(243, 113, 53, 0.18), transparent 34%),
+    radial-gradient(circle at 64% 62%, rgba(239, 65, 105, 0.14), transparent 42%);
+  filter: blur(10px);
+  opacity: 0.66;
+  transform: scale(0.88);
+  animation: serviceIconHalo 4.8s ease-in-out infinite;
+  animation-delay: calc(var(--service-icon-delay, 0ms) + 120ms);
+}
+
+.service-icon-image {
+  display: block;
+  transform-origin: center center;
+  animation: serviceIconFloat 4.9s ease-in-out infinite;
+  animation-delay: calc(var(--service-icon-delay, 0ms) + 80ms);
+  will-change: transform, filter;
+}
+
+@keyframes serviceIconStageDrift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -5px, 0);
+  }
+}
+
+@keyframes serviceIconHalo {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.86);
+  }
+
+  50% {
+    opacity: 0.78;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes serviceIconFloat {
+  0%,
+  100% {
+    filter: drop-shadow(0 8px 10px rgba(22, 24, 33, 0.05));
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+
+  35% {
+    transform: translate3d(2px, -4px, 0) rotate(1.6deg) scale(1.025);
+  }
+
+  68% {
+    filter: drop-shadow(0 14px 16px rgba(22, 24, 33, 0.09));
+    transform: translate3d(-2px, 2px, 0) rotate(-1.2deg) scale(0.99);
+  }
+}
+
+.framework-step-card:hover {
+  border-color: rgba(243, 113, 53, 0.24);
+  box-shadow: 0 18px 34px rgba(22, 24, 33, 0.15);
+  transform: translateY(-4px);
+}
+
+@media (min-width: 768px) {
+  .story-media-frame {
+    max-width: calc(100vw - 96px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .story-media-frame {
+    width: calc(848px + 232px * var(--story-progress));
+    max-width: min(1080px, calc(100vw - 160px));
+  }
+}
+
+.section-copy-block {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 16px;
+  max-width: 980px;
+  margin: 0 auto 74px;
+  text-align: center;
+}
+
+.section-copy-block p {
+  max-width: 850px;
+  margin: 0 auto;
+  color: var(--figma-muted);
+  font-size: clamp(19px, 2vw, 28px);
+  line-height: 1.35;
+}
+
+.section-copy-block h3 {
+  margin: 0;
+  color: var(--figma-ink);
+  font-family: var(--font-figma-display), Barlow, sans-serif;
+  font-size: clamp(30px, 3.75vw, 48px);
+  font-weight: 700;
+}
+
+.reveal-card {
+  opacity: 1;
+  transform: none;
+  animation: figmaRevealSoft 680ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--reveal-delay, 0ms);
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease,
+    border-color 260ms ease;
+}
+
+.reveal-card:hover {
+  transform: translateY(-4px);
+}
+
+@keyframes figmaReveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes figmaRevealSoft {
+  from {
+    opacity: 0.82;
+    transform: translateY(14px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroDriftDownRight {
+  0%,
+  100% {
+    translate: -12px -12px;
+  }
+
+  50% {
+    translate: 14px 14px;
+  }
+}
+
+@keyframes heroDriftDownRightSoft {
+  0%,
+  100% {
+    translate: -8px -8px;
+  }
+
+  50% {
+    translate: 10px 10px;
+  }
+}
+
+@keyframes heroDriftUpLeft {
+  0%,
+  100% {
+    translate: 14px 14px;
+  }
+
+  50% {
+    translate: -14px -14px;
+  }
+}
+
+@keyframes figmaHeroScrollBounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(7px);
+  }
+}
+
+@keyframes figmaBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(7px);
+  }
+}
+
+@keyframes scrollBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(7px);
+  }
+}
+
+@keyframes footerLogoShine {
+  0% {
+    opacity: 0;
+    transform: translateX(0) rotate(12deg);
+  }
+
+  8% {
+    opacity: 0;
+  }
+
+  16%,
+  82% {
+    opacity: 0.72;
+  }
+
+  94% {
+    opacity: 0;
+    transform: translateX(470%) rotate(12deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(470%) rotate(12deg);
+  }
+}
+
+@keyframes waveSlide {
+  from {
+    translate: -18px 0;
+  }
+
+  to {
+    translate: 26px -12px;
+  }
+}
+
+@keyframes frameworkStepRunner {
+  from {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+
+  18%,
+  78% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(520%);
+    opacity: 0;
+  }
+}
+
+@keyframes frameworkSpotlightSweep {
+  from {
+    transform: translateX(-58%) skewX(-10deg);
+    opacity: 0;
+  }
+
+  22%,
+  72% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(58%) skewX(-10deg);
+    opacity: 0;
+  }
+}
+
+@keyframes industryCardSwap {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes industryImageSwap {
+  from {
+    opacity: 0;
+    transform: scale(1.035);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes industryDotRelease {
+  from {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+.service-reveal {
+  --service-reveal-delay: 0ms;
+  opacity: 0.9;
+  transform: translate3d(0, 22px, 0) scale(0.99);
+  transition:
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms ease,
+    border-color 220ms ease,
+    color 180ms ease,
+    background-color 180ms ease;
+  transition-delay: var(--service-reveal-delay);
+  will-change: opacity, transform;
+}
+
+.service-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.case-reveal {
+  --case-reveal-delay: 0ms;
+  opacity: 0.9;
+  transform: translate3d(0, 22px, 0) scale(0.99);
+  transition:
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms ease,
+    border-color 220ms ease,
+    color 180ms ease,
+    background-color 180ms ease;
+  transition-delay: var(--case-reveal-delay);
+  will-change: opacity, transform;
+}
+
+.case-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.service-metric-card,
+.service-goal-button {
+  transform-origin: center;
+}
+
+.service-metric-card:hover {
+  border-color: rgba(243, 113, 53, 0.38);
+  box-shadow: 0 18px 34px rgba(22, 24, 33, 0.1);
+  transform: translate3d(0, -4px, 0);
+}
+
+.service-goal-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.figma-services-page main a.inline-flex,
+.figma-services-page main button.inline-flex {
+  min-height: 40px !important;
+  gap: 10px !important;
+  border-radius: 8px !important;
+  padding: 0 16px !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+}
+
+.figma-services-page main a.inline-flex svg,
+.figma-services-page main button.inline-flex svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.service-tech-logo {
+  animation: serviceTechFloat 4.8s ease-in-out infinite;
+  animation-delay: var(--service-tech-delay, 0ms);
+}
+
+.service-scanline {
+  animation: serviceScanline 7s ease-in-out infinite;
+}
+
+@keyframes serviceTechFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
+@keyframes serviceScanline {
+  0%,
+  100% {
+    opacity: 0.22;
+    transform: translate3d(-10%, -18px, 0) scaleX(0.72);
+  }
+
+  45%,
+  58% {
+    opacity: 0.86;
+  }
+
+  50% {
+    transform: translate3d(10%, 20px, 0) scaleX(1);
+  }
+}
+
+.contact-reveal {
+  --contact-reveal-delay: 0ms;
+  opacity: 0.92;
+  transform: translate3d(0, 20px, 0) scale(0.99);
+  transition:
+    opacity 680ms ease,
+    transform 680ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+  transition-delay: var(--contact-reveal-delay);
+  will-change: opacity, transform;
+}
+
+.contact-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.contact-card-lift {
+  transform-origin: center;
+}
+
+.contact-card-lift:hover {
+  box-shadow: 0 22px 46px rgba(22, 24, 33, 0.1);
+  transform: translate3d(0, -4px, 0);
+}
+
+.contact-button-lift:hover {
+  transform: translate3d(0, -2px, 0);
+}
+
+.contact-image-float {
+  transform-origin: center;
+  animation: contactImageFloat 7s ease-in-out infinite;
+}
+
+.contact-icon-breathe {
+  transform-origin: center;
+  animation: contactIconBreathe 4.8s ease-in-out infinite;
+}
+
+.blog-reveal {
+  --blog-reveal-delay: 0ms;
+  opacity: 0.92;
+  transform: translate3d(0, 20px, 0) scale(0.99);
+  transition:
+    opacity 680ms ease,
+    transform 680ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+  transition-delay: var(--blog-reveal-delay);
+  will-change: opacity, transform;
+}
+
+.blog-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.blog-card-lift {
+  transform-origin: center;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.blog-card-lift:hover {
+  border-color: rgba(243, 113, 53, 0.32);
+  box-shadow: 0 22px 46px rgba(22, 24, 33, 0.1);
+  transform: translate3d(0, -4px, 0);
+}
+
+.blog-button-lift:hover {
+  transform: translate3d(0, -2px, 0);
+}
+
+.blog-search-input::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
+.blog-article-shell {
+  background:
+    linear-gradient(180deg, #ffffff 0%, #ffffff 58%, #f8fafc 100%),
+    #ffffff;
+}
+
+.blog-article-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(90deg, rgba(22, 24, 33, 0.044) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(22, 24, 33, 0.036) 1px, transparent 1px),
+    linear-gradient(135deg, transparent 0 48%, rgba(243, 113, 53, 0.055) 48% 49%, transparent 49% 100%);
+  background-position:
+    center top,
+    center top,
+    center top;
+  background-size:
+    72px 72px,
+    72px 72px,
+    180px 180px;
+  opacity: 0.75;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 72%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 72%, transparent 100%);
+}
+
+.blog-article-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(243, 113, 53, 0.08), transparent 28%, transparent 72%, rgba(29, 113, 170, 0.08)),
+    linear-gradient(180deg, transparent, rgba(22, 24, 33, 0.025) 52%, transparent);
+  opacity: 0.72;
+}
+
+.blog-category-rail {
+  overscroll-behavior-inline: contain;
+  scrollbar-color: rgba(243, 113, 53, 0.55) rgba(22, 24, 33, 0.08);
+  scrollbar-width: thin;
+}
+
+.blog-category-rail::-webkit-scrollbar {
+  height: 6px;
+}
+
+.blog-category-rail::-webkit-scrollbar-track {
+  background: rgba(22, 24, 33, 0.06);
+  border-radius: 999px;
+}
+
+.blog-category-rail::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #f37135, #ef4169);
+  border-radius: 999px;
+}
+
+.blog-article-body {
+  color: #343846;
+  font-family: var(--font-figma-body), Roboto, sans-serif;
+}
+
+.blog-article-lede {
+  margin: 0;
+  color: #161821;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.blog-article-section {
+  margin-top: clamp(2.75rem, 5vw, 4.5rem);
+}
+
+.blog-article-section h2 {
+  margin: 0;
+  color: #161821;
+  font-family: var(--font-figma-display), Barlow, sans-serif;
+  font-size: clamp(2rem, 4vw, 3.05rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.08;
+}
+
+.blog-article-section p {
+  margin: 1.15rem 0 0;
+  color: #5f5f5f;
+  font-size: clamp(1rem, 1.55vw, 1.16rem);
+  font-weight: 500;
+  line-height: 1.82;
+}
+
+.blog-article-section ul {
+  display: grid;
+  gap: 0.85rem;
+  margin: 1.35rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.blog-article-section li {
+  position: relative;
+  padding-left: 1.55rem;
+  color: #404553;
+  font-size: clamp(1rem, 1.45vw, 1.12rem);
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+.blog-article-section li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #f37135, #ef4169);
+}
+
+@keyframes contactImageFloat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.025);
+  }
+}
+
+@keyframes contactIconBreathe {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-2px) scale(1.035);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .figma-site *,
+  .reveal-card,
+  .service-reveal,
+  .service-tech-logo,
+  .service-scanline,
+  .blog-reveal,
+  .contact-reveal,
+  .contact-image-float,
+  .contact-icon-breathe {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+@media (max-width: 820px) {
+  .section-light {
+    padding: 68px 20px;
+  }
+
+  .industries-partner-wave {
+    width: 1320px;
+  }
+
+  .industries-capabilities-wave {
+    top: -18%;
+    left: -42%;
+    width: 184%;
+  }
+
+  .our-story-section {
+    min-height: auto;
+    padding: 68px 20px 84px;
+    gap: 42px;
+  }
+
+  .our-story-wave {
+    top: -24%;
+    left: -38%;
+    width: 176%;
+  }
+
+  .our-story-header {
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+
+  .our-story-header h2 {
+    min-height: 0;
+    font-size: clamp(42px, 13vw, 62px);
+  }
+
+  .our-story-media {
+    width: 100%;
+    max-width: 848px;
+    border-radius: 18px;
+  }
+
+  .our-story-button {
+    width: min(318px, 100%);
+  }
+
+  .enterprise-services-section {
+    min-height: auto;
+    padding: 68px 20px 84px;
+    gap: 34px;
+  }
+
+  .enterprise-services-header {
+    width: 100%;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .enterprise-services-header h2 {
+    min-height: 0;
+    font-size: clamp(40px, 11.5vw, 62px);
+  }
+
+  .enterprise-services-header p {
+    min-height: 0;
+    font-size: clamp(16px, 4.4vw, 20px);
+  }
+
+  .enterprise-services-content {
+    width: 100%;
+    min-height: 0;
+    gap: 28px;
+  }
+
+  .enterprise-services-content h3 {
+    min-height: 0;
+    font-size: clamp(30px, 8.4vw, 40px);
+  }
+
+  .enterprise-services-grid {
+    min-height: 0;
+    gap: 18px;
+  }
+
+  .enterprise-service-card {
+    width: min(344px, 100%);
+    height: auto;
+    min-height: 284px;
+    padding: 32px;
+  }
+
+  .enterprise-service-card-inner {
+    width: 100%;
+    min-height: 0;
+  }
+
+  .enterprise-service-card h4 {
+    width: 100%;
+    min-height: 0;
+    font-size: clamp(20px, 6.2vw, 24px);
+  }
+
+  .enterprise-services-button {
+    width: min(255px, 100%);
+  }
+
+  .figma-section-title {
+    max-width: 100%;
+    font-size: clamp(38px, 12vw, 56px);
+  }
+}
+
+@media (max-width: 520px) {
+  .section-copy-block {
+    margin-bottom: 42px;
   }
 }

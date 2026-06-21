@@ -101,6 +101,114 @@ summary:focus-visible {
   box-shadow: 0 18px 40px rgba(2, 6, 23, 0.22);
 }
 
+.v2-hero {
+  background: #000000;
+  color: #ffffff;
+}
+
+.v2-hero__inner {
+  width: min(100%, 1280px);
+  margin: 0 auto;
+  padding: 88px 24px 48px;
+}
+
+.v2-hero__copy-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: min(100%, 1080px);
+  margin: 0 auto;
+  padding: 0;
+  gap: 32px;
+}
+
+.v2-hero__title-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  gap: 10px;
+}
+
+.v2-hero__title {
+  width: 100%;
+  margin: 0;
+  color: #ffffff;
+  font-family: var(--font-figma-display), Barlow, sans-serif;
+  font-size: clamp(42px, 8vw, 84px);
+  font-style: normal;
+  font-weight: 800;
+  line-height: 100%;
+  text-align: center;
+}
+
+.v2-hero__body-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  gap: 10px;
+}
+
+.v2-hero__body {
+  width: min(100%, 904px);
+  margin: 0;
+  color: #ffffff;
+  font-family: var(--font-figma-body), Roboto, sans-serif;
+  font-size: clamp(18px, 2.7vw, 26px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 135%;
+  text-align: center;
+}
+
+.v2-hero__actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.v2-hero__button.primary-button {
+  background: #ffffff;
+  color: #000000;
+}
+
+.v2-hero__button.primary-button:hover {
+  background: #e5e7eb;
+}
+
+.v2-hero__button.secondary-button {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+.v2-hero__button.secondary-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.v2-hero__service-focus {
+  margin-top: 48px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  padding-top: 24px;
+}
+
+.v2-hero__service-focus > p {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.v2-hero__service-focus div div {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
 .primary-button {
   display: inline-flex;
   align-items: center;
@@ -157,5 +265,45 @@ summary:focus-visible {
 @media (min-width: 1024px) {
   .section-title {
     font-size: 2.3rem;
+  }
+
+  .v2-hero__inner {
+    padding-top: 96px;
+  }
+
+  .v2-hero__copy-frame {
+    height: 270px;
+  }
+
+  .v2-hero__title-wrap {
+    height: 168px;
+  }
+
+  .v2-hero__title {
+    height: 168px;
+    font-size: 84px;
+  }
+
+  .v2-hero__body-wrap {
+    height: 70px;
+  }
+
+  .v2-hero__body {
+    height: 70px;
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 639px) {
+  .v2-hero__inner {
+    padding: 64px 16px 36px;
+  }
+
+  .v2-hero__copy-frame {
+    gap: 22px;
+  }
+
+  .v2-hero__actions {
+    flex-direction: column;
   }
 }

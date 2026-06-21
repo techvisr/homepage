@@ -14,10 +14,10 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center px-4 py-3 sm:px-6 sm:py-4">
-        <a href="/" aria-label="TechVisr home" className="block">
+        <a href="/" aria-label="Techvisr home" className="block">
           <Image
             src="/images/logo.png"
-            alt="TechVisr"
+            alt="Techvisr"
             width={140}
             height={36}
             className="h-8 w-auto sm:h-9"

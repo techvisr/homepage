@@ -23,6 +23,7 @@ export default function V1Page() {
       "@type": "ContactPoint",
       contactType: "customer support",
       email: "admin@techvisr.com",
+      telephone: "+91 89043 61600",
     },
   };
 

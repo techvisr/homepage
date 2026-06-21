@@ -11,10 +11,10 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
       <div className="section-frame">
         <div className="flex min-h-[78px] items-center justify-between gap-6">
-          <a href="/" aria-label="TechVisr home" className="flex items-center gap-4">
+          <a href="/" aria-label="Techvisr home" className="flex items-center gap-4">
             <Image
               src="/images/logo.png"
-              alt="TechVisr"
+              alt="Techvisr"
               width={150}
               height={38}
               className="h-8 w-auto sm:h-9"
