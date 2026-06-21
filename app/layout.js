@@ -82,6 +82,11 @@ export const metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: "/images/figma-raw/0b24c7c2d782973d27bd119c9b63dbddc971b776.png",
+    shortcut: "/images/figma-raw/0b24c7c2d782973d27bd119c9b63dbddc971b776.png",
+    apple: "/images/figma-raw/0b24c7c2d782973d27bd119c9b63dbddc971b776.png",
+  },
 };
 
 export default function RootLayout({ children }) {
