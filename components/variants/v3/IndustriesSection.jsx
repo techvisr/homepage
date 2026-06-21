@@ -15,7 +15,13 @@ const linearDotPosition = (index, count) => ({
   transform: "translate(-50%, -50%)",
 });
 
-export default function IndustriesSection({ asset, industries }) {
+export default function IndustriesSection({
+  asset,
+  industries,
+  ctaHref = "/services",
+  ctaLabel = "Explore solutions",
+  spotlight = false,
+}) {
   const carouselRef = useRef(null);
   const liquidIndexRef = useRef(0);
   const leavingTimerRef = useRef(null);
@@ -191,17 +197,23 @@ export default function IndustriesSection({ asset, industries }) {
 
         <div
           ref={carouselRef}
-          className="relative z-10 flex w-full max-w-[1180px] snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-4 sm:gap-6 md:gap-8 lg:gap-9 2xl:max-w-[1320px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className={`relative z-10 flex w-full snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-4 sm:gap-6 md:gap-8 lg:gap-9 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
+            spotlight ? "max-w-[820px] 2xl:max-w-[880px]" : "max-w-[1180px] 2xl:max-w-[1320px]"
+          }`}
           onWheel={handleCarouselWheel}
           aria-label="Industries carousel"
         >
           {industries.map((industry, index) => {
             const isActive = activeIndustryIndex === index;
             const industryTitle = displayIndustryTitle(industry.title);
+            const industryCtaLabel =
+              typeof ctaLabel === "function" ? ctaLabel(industry, index, industryTitle) : ctaLabel;
 
             return (
               <article
-                className={`relative z-10 grid w-full flex-[0_0_86%] snap-start overflow-hidden rounded-2xl border-2 border-transparent bg-white shadow-[0_18px_44px_rgba(22,24,33,0.1)] transition-[box-shadow,transform] duration-500 min-[460px]:flex-[0_0_80%] sm:flex-[0_0_72%] md:min-h-[390px] md:flex-[0_0_78%] md:grid-cols-[0.58fr_0.42fr] md:rounded-[24px] lg:min-h-[430px] lg:rounded-[28px] xl:min-h-[460px] xl:flex-[0_0_74%] ${
+                className={`relative z-10 grid w-full flex-[0_0_86%] snap-start overflow-hidden rounded-2xl border-2 border-transparent bg-white shadow-[0_18px_44px_rgba(22,24,33,0.1)] transition-[box-shadow,transform] duration-500 min-[460px]:flex-[0_0_80%] sm:flex-[0_0_72%] md:min-h-[390px] md:flex-[0_0_78%] md:grid-cols-[0.58fr_0.42fr] md:rounded-[24px] lg:min-h-[430px] lg:rounded-[28px] xl:min-h-[460px] ${
+                  spotlight ? "lg:flex-[0_0_100%] xl:flex-[0_0_100%]" : "xl:flex-[0_0_74%]"
+                } ${
                   isActive
                     ? "shadow-[0_20px_48px_rgba(22,24,33,0.12)]"
                     : "shadow-[0_12px_30px_rgba(22,24,33,0.08)]"
@@ -235,12 +247,12 @@ export default function IndustriesSection({ asset, industries }) {
                   </ul>
                   <HeaderActionButton
                     className="mt-5 w-fit justify-self-start border-2 border-black px-4 text-[13px] text-black hover:bg-black hover:text-white sm:mt-5 sm:text-sm md:mt-6 lg:mt-4 lg:min-h-10 lg:gap-3 lg:rounded-[9px] lg:px-4 lg:text-sm xl:mt-5 xl:min-h-11 xl:gap-3 xl:px-5 xl:text-[15px]"
-                    href="/services"
+                    href={ctaHref}
                     icon="up-right"
                     size="compact"
                     variant="outline"
                   >
-                    Explore solutions
+                    {industryCtaLabel}
                   </HeaderActionButton>
                 </div>
 
@@ -253,10 +265,12 @@ export default function IndustriesSection({ asset, industries }) {
               </article>
             );
           })}
-          <div
-            className="shrink-0 basis-[12%] sm:basis-[16%] lg:basis-[18%]"
-            aria-hidden="true"
-          />
+          {spotlight ? null : (
+            <div
+              className="shrink-0 basis-[12%] sm:basis-[16%] lg:basis-[18%]"
+              aria-hidden="true"
+            />
+          )}
         </div>
 
         <div className="relative z-20 mt-5 flex w-full items-center justify-center md:mt-6" aria-label="Select industry">

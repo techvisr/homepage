@@ -129,7 +129,7 @@ export default function SuccessStoriesSection({ asset, stories }) {
                   </p>
                   <a
                     className="mt-auto inline-flex min-h-9 w-max items-center justify-center gap-2.5 rounded-[7px] border border-[#161821] bg-white px-3 text-xs font-bold leading-none text-[#161821] no-underline transition-[background-color,color,transform] duration-200 hover:-translate-y-0.5 hover:bg-[#161821] hover:text-white sm:min-h-11 sm:gap-3 sm:px-4 sm:text-base md:min-h-[46px] md:px-5 md:text-[17px]"
-                    href="/case-studies"
+                    href={story.href || "/case-studies"}
                   >
                     <span>Read More</span>
                     <ArrowRight aria-hidden="true" className="size-4 shrink-0 sm:size-5" strokeWidth={2.4} />

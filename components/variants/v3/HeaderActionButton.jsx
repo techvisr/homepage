@@ -10,6 +10,7 @@ export default function HeaderActionButton({
   icon = "right",
   className = "",
   onClick,
+  ...rest
 }) {
   const resolvedVariant = variant || (light ? "light" : "gradient");
   const resolvedSize = size || (compact ? "compact" : "default");
@@ -42,7 +43,7 @@ export default function HeaderActionButton({
   ].join(" ");
 
   return (
-    <a className={classes} href={href} onClick={onClick}>
+    <a className={classes} href={href} onClick={onClick} {...rest}>
       <span>{children}</span>
       <Icon size={iconSizes[resolvedSize]} strokeWidth={resolvedVariant === "outline" ? 2.4 : 2} />
     </a>

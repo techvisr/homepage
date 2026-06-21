@@ -6,9 +6,9 @@ import { useEffect, useRef, useState } from "react";
 import HeaderActionButton from "./HeaderActionButton";
 
 const navItems = [
-  { label: "Services", href: "/#services" },
-  { label: "Case Studies", href: "/#case-studies" },
-  { label: "Why Techvisr?", href: "/#why-techvisr-" },
+  { label: "Services", href: "/services" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "Why Techvisr?", href: "/why-techvisr" },
   { label: "Blogs", href: "/blogs" },
 ];
 

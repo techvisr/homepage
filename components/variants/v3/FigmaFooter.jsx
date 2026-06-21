@@ -11,13 +11,19 @@ const socialLinks = [
   [FaTwitter, "Twitter"],
 ];
 
-export default function FigmaFooter({ asset, certificationBadges = [], showDescription = true }) {
+export default function FigmaFooter({
+  asset,
+  certificationBadges = [],
+  copyrightText = "Copyright © 2026 Techvisr",
+  showDescription = true,
+  showWatermark = true,
+}) {
   const logoSrc = asset("58c76896b6e7aaa2c5446fbb80905b6b30ed7778.png");
   const watermarkRef = useRef(null);
 
   useEffect(() => {
     const node = watermarkRef.current;
-    if (!node) return;
+    if (!node || !showWatermark) return;
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let frame = 0;
@@ -66,7 +72,7 @@ export default function FigmaFooter({ asset, certificationBadges = [], showDescr
       window.removeEventListener("resize", requestUpdate);
       reduceMotion.removeEventListener?.("change", requestUpdate);
     };
-  }, []);
+  }, [showWatermark]);
 
   return (
     <footer id="footer" className="relative bg-[linear-gradient(90deg,#ff7436_0%,#f33a74_100%)] text-[#171a27]">
@@ -91,7 +97,7 @@ export default function FigmaFooter({ asset, certificationBadges = [], showDescr
                 Building scalable software, intelligent automation, and cloud-driven ecosystems for modern enterprises.
               </p>
             ) : null}
-            <span className="text-sm font-semibold leading-6 text-[#8d8d8d] sm:text-base md:mt-6">Copyright © 2026 Techvisr</span>
+            <span className="text-sm font-semibold leading-6 text-[#8d8d8d] sm:text-base md:mt-6">{copyrightText}</span>
           </div>
 
           <nav className="grid grid-cols-2 content-start gap-x-8 gap-y-4 pt-1 text-base font-semibold leading-none text-[#181b27] md:grid-cols-1 md:justify-self-center lg:gap-[19px]">
@@ -129,6 +135,7 @@ export default function FigmaFooter({ asset, certificationBadges = [], showDescr
         <span className="text-[#181b27] md:justify-self-end">Terms And Condition | Privacy Policy</span>
       </div> */}
 
+      {showWatermark ? (
       <div
         ref={watermarkRef}
         className="sticky bottom-0 z-0 isolate grid min-h-[190px] place-items-center overflow-hidden bg-[#fff1e8] px-4 py-10 [--footer-logo-y:0px] sm:px-6 md:min-h-[300px] md:px-10 md:py-16 lg:min-h-[430px] lg:px-[9vw] lg:py-20"
@@ -180,6 +187,7 @@ export default function FigmaFooter({ asset, certificationBadges = [], showDescr
           </div>
         </div>
       </div>
+      ) : null}
     </footer>
   );
 }

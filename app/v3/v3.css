@@ -1035,6 +1035,96 @@ summary:focus-visible {
   }
 }
 
+.service-reveal {
+  --service-reveal-delay: 0ms;
+  opacity: 0.9;
+  transform: translate3d(0, 22px, 0) scale(0.99);
+  transition:
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms ease,
+    border-color 220ms ease,
+    color 180ms ease,
+    background-color 180ms ease;
+  transition-delay: var(--service-reveal-delay);
+  will-change: opacity, transform;
+}
+
+.service-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.service-metric-card,
+.service-goal-button {
+  transform-origin: center;
+}
+
+.service-metric-card:hover {
+  border-color: rgba(243, 113, 53, 0.38);
+  box-shadow: 0 18px 34px rgba(22, 24, 33, 0.1);
+  transform: translate3d(0, -4px, 0);
+}
+
+.service-goal-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.figma-services-page main a.inline-flex,
+.figma-services-page main button.inline-flex {
+  min-height: 40px !important;
+  gap: 10px !important;
+  border-radius: 8px !important;
+  padding: 0 16px !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+}
+
+.figma-services-page main a.inline-flex svg,
+.figma-services-page main button.inline-flex svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.service-tech-logo {
+  animation: serviceTechFloat 4.8s ease-in-out infinite;
+  animation-delay: var(--service-tech-delay, 0ms);
+}
+
+.service-scanline {
+  animation: serviceScanline 7s ease-in-out infinite;
+}
+
+@keyframes serviceTechFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
+@keyframes serviceScanline {
+  0%,
+  100% {
+    opacity: 0.22;
+    transform: translate3d(-10%, -18px, 0) scaleX(0.72);
+  }
+
+  45%,
+  58% {
+    opacity: 0.86;
+  }
+
+  50% {
+    transform: translate3d(10%, 20px, 0) scaleX(1);
+  }
+}
+
 .contact-reveal {
   --contact-reveal-delay: 0ms;
   opacity: 0.92;
@@ -1265,6 +1355,9 @@ summary:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   .figma-site *,
   .reveal-card,
+  .service-reveal,
+  .service-tech-logo,
+  .service-scanline,
   .blog-reveal,
   .contact-reveal,
   .contact-image-float,

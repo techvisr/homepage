@@ -18,6 +18,180 @@ export const blogCategories = [
 
 export const blogPosts = [
   {
+    slug: "autonomous-workflow-intelligence-enterprise-ai-automation",
+    title: "Autonomous Workflow Intelligence",
+    category: "AI & Data Engineering",
+    displayDate: "June 22, 2026",
+    published: "2026-06-22",
+    readTime: "8 min read",
+    image: "/images/blogs/ai-automation-services.avif",
+    imageAlt: "AI automation engine routing enterprise workflows through intelligent decision paths",
+    excerpt:
+      "Transform manual business operations into AI-driven workflows that improve efficiency, reduce repetitive effort, and enable faster enterprise execution.",
+    summary:
+      "Autonomous workflow intelligence helps enterprises move from manual coordination to AI-assisted execution, where systems can classify work, route decisions, trigger actions, and surface exceptions with measurable control.",
+    tags: ["workflow intelligence", "AI automation", "enterprise operations"],
+    keyTakeaways: [
+      "Autonomous workflows should be designed around measurable operational bottlenecks.",
+      "Human oversight, auditability, and exception handling are essential for enterprise trust.",
+      "The best automation programs connect AI decisions directly into business systems.",
+    ],
+    sections: [
+      {
+        heading: "From task automation to workflow intelligence",
+        paragraphs: [
+          "Many enterprises have automated isolated tasks, but the larger workflow often remains manual. Teams still move requests between systems, interpret documents, chase approvals, update records, and resolve exceptions through email or spreadsheets.",
+          "Autonomous workflow intelligence changes the operating model. AI can understand incoming work, classify intent, extract relevant information, recommend or trigger next steps, and keep the workflow moving while escalating cases that need human judgment.",
+        ],
+      },
+      {
+        heading: "Start with the flow of work",
+        paragraphs: [
+          "Strong automation starts by mapping the actual path work follows across teams, systems, data sources, approvals, and handoffs. The goal is not to add AI everywhere. The goal is to identify where manual effort slows execution or creates inconsistent outcomes.",
+          "Once the workflow is visible, teams can decide what should be automated, what should be recommended, and what should remain under human control. This keeps the solution practical and avoids automating weak process design.",
+        ],
+        bullets: [
+          "Identify high-volume work with repeated decision patterns.",
+          "Measure cycle time, backlog, error rate, and manual touchpoints.",
+          "Separate simple automation from high-impact decisions that need review.",
+          "Design exception paths before scaling the workflow.",
+        ],
+      },
+      {
+        heading: "Connect intelligence to execution",
+        paragraphs: [
+          "Workflow intelligence becomes valuable when it is connected to operational systems. An AI model that only summarizes a request is useful. A workflow that summarizes, validates, routes, updates records, notifies owners, and tracks outcomes is transformative.",
+          "This requires integration with CRMs, ERPs, ticketing systems, document repositories, data platforms, and internal applications. The AI layer should sit inside the workflow, not outside it as another place for teams to check.",
+        ],
+      },
+      {
+        heading: "Build trust through controls",
+        paragraphs: [
+          "Autonomous systems need strong guardrails. Enterprises should define approval thresholds, confidence scoring, escalation rules, logging, and monitoring before expanding automation to sensitive processes.",
+          "The most successful programs treat autonomy as a spectrum. Start with recommendations and assisted execution, then allow more automated action as accuracy, adoption, and operational confidence improve.",
+        ],
+      },
+    ],
+    closing:
+      "Autonomous workflow intelligence is not about replacing teams. It is about removing the drag around teams so enterprise execution becomes faster, clearer, and easier to measure.",
+  },
+  {
+    slug: "enterprise-ai-copilots-decision-knowledge-productivity",
+    title: "Enterprise AI Copilots",
+    category: "AI & Data Engineering",
+    displayDate: "June 22, 2026",
+    published: "2026-06-22",
+    readTime: "8 min read",
+    image: "/images/blogs/ai-native-engineering.avif",
+    imageAlt: "Enterprise AI copilot architecture assisting teams with workflow and decision support",
+    excerpt:
+      "Deploy intelligent copilots that assist teams with decision-making, knowledge access, process execution, and productivity across enterprise functions.",
+    summary:
+      "Enterprise AI copilots become useful when they are designed around business roles, trusted knowledge, governed permissions, and the daily decisions teams need to make faster.",
+    tags: ["AI copilots", "enterprise AI", "knowledge work"],
+    keyTakeaways: [
+      "Copilots should be shaped around role-specific workflows, not generic chat.",
+      "Trusted data access and permission-aware retrieval make copilots enterprise-ready.",
+      "Adoption improves when copilots help teams complete work, not just answer questions.",
+    ],
+    sections: [
+      {
+        heading: "The enterprise copilot is a work surface",
+        paragraphs: [
+          "A useful copilot is more than a chatbot. It helps people understand context, find knowledge, compare options, draft outputs, trigger workflows, and make decisions inside the systems where work already happens.",
+          "This is why enterprise copilots must be designed around business roles. A sales copilot, operations copilot, engineering copilot, and finance copilot need different data, actions, controls, and success metrics.",
+        ],
+      },
+      {
+        heading: "Ground the copilot in trusted knowledge",
+        paragraphs: [
+          "Enterprise teams need answers that reflect internal policies, product data, customer history, process rules, and current operational context. A copilot without trusted context quickly becomes a novelty because users cannot depend on it for real decisions.",
+          "The foundation is governed access to knowledge sources. Copilots should respect permissions, cite sources, handle uncertainty clearly, and expose the information that shaped a recommendation.",
+        ],
+        bullets: [
+          "Connect the copilot to authoritative systems and documents.",
+          "Apply user permissions and data boundaries at retrieval time.",
+          "Return source-backed answers for sensitive or important decisions.",
+          "Track adoption, deflection, cycle time, and decision quality.",
+        ],
+      },
+      {
+        heading: "Move from answers to actions",
+        paragraphs: [
+          "The next level of value appears when copilots can help execute work. They can create tickets, prepare summaries, draft customer responses, update records, generate reports, route approvals, or trigger automation with human confirmation.",
+          "This turns the copilot into a productivity layer across enterprise functions. The user stays in control, but the friction around repetitive preparation, research, and coordination drops significantly.",
+        ],
+      },
+      {
+        heading: "Design for adoption and governance",
+        paragraphs: [
+          "Enterprise copilots need user trust and organizational governance at the same time. Teams should know what the copilot can do, what it cannot do, when a human must approve an action, and how feedback improves the system.",
+          "Governance should include prompt and model versioning, usage analytics, feedback loops, security review, and quality evaluation. A copilot is a product capability, so it needs product discipline.",
+        ],
+      },
+    ],
+    closing:
+      "Enterprise AI copilots work best when they are built close to the business process. The value is not the chat interface; it is faster access to context, decisions, and execution.",
+  },
+  {
+    slug: "retrieval-augmented-ai-systems-enterprise-knowledge",
+    title: "Retrieval-Augmented AI Systems",
+    category: "AI & Data Engineering",
+    displayDate: "June 22, 2026",
+    published: "2026-06-22",
+    readTime: "8 min read",
+    image: "/images/blogs/data-platforms-enterprise-ai.avif",
+    imageAlt: "Enterprise retrieval augmented AI system connected to governed knowledge sources",
+    excerpt:
+      "Build secure and scalable enterprise AI ecosystems powered by connected knowledge bases, contextual search, and real-time information retrieval.",
+    summary:
+      "Retrieval-augmented AI systems help enterprises make AI more accurate and useful by grounding responses in governed knowledge, live business context, and traceable source material.",
+    tags: ["RAG", "enterprise knowledge", "AI systems"],
+    keyTakeaways: [
+      "Retrieval-augmented systems reduce risk by grounding AI in trusted enterprise sources.",
+      "Good RAG depends on content quality, permissions, metadata, and evaluation.",
+      "Real-time retrieval makes AI more useful for decisions that depend on current context.",
+    ],
+    sections: [
+      {
+        heading: "Why retrieval matters for enterprise AI",
+        paragraphs: [
+          "Generic models do not automatically know an organization's policies, contracts, customer records, product documentation, or operational rules. Retrieval-augmented generation gives AI systems controlled access to the knowledge they need before generating an answer.",
+          "This makes the experience more useful and more accountable. Instead of relying only on model memory, the system can search enterprise sources, retrieve relevant context, and produce answers that reflect current business information.",
+        ],
+      },
+      {
+        heading: "Build a reliable knowledge foundation",
+        paragraphs: [
+          "RAG quality depends heavily on the quality of the knowledge layer. Documents need structure, ownership, freshness, metadata, and permissions. Without those foundations, retrieval can surface outdated or irrelevant context even when the model itself is strong.",
+          "Enterprises should treat the knowledge base as a governed product. Content pipelines, indexing strategies, access controls, and source monitoring all shape whether the system can be trusted.",
+        ],
+        bullets: [
+          "Map authoritative sources for each use case.",
+          "Clean, chunk, tag, and index content with retrieval quality in mind.",
+          "Apply role-aware access to protect sensitive information.",
+          "Measure answer quality against realistic user questions.",
+        ],
+      },
+      {
+        heading: "Use contextual search, not keyword search alone",
+        paragraphs: [
+          "Enterprise questions are rarely simple keyword lookups. Users ask in business language, combine multiple concepts, and expect answers that synthesize information across documents and systems.",
+          "Contextual retrieval combines semantic search, metadata filters, ranking, and business rules to find the most relevant information. For high-value use cases, retrieval should also explain which sources were used and why they matter.",
+        ],
+      },
+      {
+        heading: "Design for scale, security, and change",
+        paragraphs: [
+          "Enterprise knowledge changes constantly. A scalable RAG system needs refresh pipelines, monitoring, evaluation datasets, source traceability, and cost controls. It also needs clear boundaries around what the AI can answer and when it should decline or escalate.",
+          "The architecture should support new sources and use cases without rebuilding the platform each time. That is how RAG becomes an enterprise capability instead of a single-use assistant.",
+        ],
+      },
+    ],
+    closing:
+      "Retrieval-augmented AI systems turn enterprise knowledge into a usable intelligence layer. When built with governance and evaluation, they make AI more accurate, current, and trusted.",
+  },
+  {
     slug: "ai-native-engineering-new-blueprint-enterprise-innovation",
     title: "AI-Native Engineering: The New Blueprint for Enterprise Innovation",
     category: "Product Engineering",
