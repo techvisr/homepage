@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import {
   ArrowRight,
   Clock3,
@@ -80,6 +81,44 @@ const contactCards = [
 const inputClass =
   "mt-2 h-10 w-full rounded-[4px] border border-transparent bg-[#eeeeee] px-3 text-sm font-medium text-[#161821] outline-none transition focus:border-[#f37135] focus:bg-white focus:ring-2 focus:ring-[#f37135]/20";
 
+function useContactReveal() {
+  useEffect(() => {
+    const elements = [...document.querySelectorAll("[data-contact-reveal]")];
+
+    if (!elements.length) {
+      return undefined;
+    }
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    if (reduceMotion.matches || !("IntersectionObserver" in window)) {
+      elements.forEach((element) => element.classList.add("is-visible"));
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        rootMargin: "0px 0px -12% 0px",
+        threshold: 0.18,
+      },
+    );
+
+    elements.forEach((element) => observer.observe(element));
+
+    return () => observer.disconnect();
+  }, []);
+}
+
 function ContactHero() {
   return (
     <section className="relative isolate overflow-hidden bg-black text-white">
@@ -95,17 +134,17 @@ function ContactHero() {
       />
       <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.24),rgba(0,0,0,0.32))]" aria-hidden="true" />
       <div className="relative z-20 mx-auto grid min-h-[340px] max-w-5xl content-center justify-items-center px-4 py-16 text-center sm:min-h-[420px] sm:px-6 lg:min-h-[500px] lg:py-20">
-        <h1 className="m-0 text-[2rem] font-semibold leading-[1.1] tracking-[0] text-white sm:text-[3rem] lg:text-[3.55rem]">
+        <h1 className="m-0 text-[2rem] font-semibold leading-[1.1] tracking-[0] text-white motion-safe:animate-[heroReveal_800ms_ease_both] sm:text-[3rem] lg:text-[3.55rem]">
           Let&apos;s Build <span className="font-extrabold text-[#ff7436]">What&apos;s Next</span>
         </h1>
-        <p className="m-0 mt-5 max-w-3xl text-sm font-medium leading-6 text-white/90 sm:text-lg sm:leading-8">
+        <p className="m-0 mt-5 max-w-3xl text-sm font-medium leading-6 text-white/90 motion-safe:animate-[heroReveal_800ms_120ms_ease_both] sm:text-lg sm:leading-8">
           Whether you&apos;re modernizing legacy systems, exploring AI opportunities, or launching a new digital product, our experts are ready to help.
         </p>
         <HeaderActionButton
           href="#contact-form"
           light
           compact
-          className="mt-7 min-h-11 rounded-lg px-5 py-3 text-sm font-bold sm:text-base"
+          className="contact-button-lift mt-7 min-h-11 rounded-lg px-5 py-3 text-sm font-bold motion-safe:animate-[heroReveal_800ms_220ms_ease_both] sm:text-base"
         >
           Book a Strategy Call
         </HeaderActionButton>
@@ -124,12 +163,12 @@ function JourneySection() {
         aria-hidden="true"
       />
       <div className="relative z-10 mx-auto grid max-w-[1080px] justify-items-center">
-        <h2 className="m-0 max-w-[760px] text-center text-[2.05rem] font-extrabold leading-[1.12] tracking-[0] text-[#161821] sm:text-5xl lg:text-[3.9rem]">
+        <h2 className="contact-reveal m-0 max-w-[760px] text-center text-[2.05rem] font-extrabold leading-[1.12] tracking-[0] text-[#161821] sm:text-5xl lg:text-[3.9rem]" data-contact-reveal>
           Start Your Digital Transformation Journey
         </h2>
 
         <div className="mt-10 grid w-full gap-4 lg:grid-cols-2 lg:gap-5">
-          <article className="overflow-hidden rounded-[18px] bg-black text-white shadow-[0_18px_42px_rgba(22,24,33,0.16)]">
+          <article className="contact-card-lift contact-reveal overflow-hidden rounded-[18px] bg-black text-white shadow-[0_18px_42px_rgba(22,24,33,0.16)]" data-contact-reveal style={{ "--contact-reveal-delay": "80ms" }}>
             <div className="p-5 sm:p-7">
               <span className="inline-flex w-fit rounded-[3px] bg-[#ff7436] px-3 py-1.5 text-xs font-bold leading-none text-white">
                 Start a Conversation
@@ -142,14 +181,16 @@ function JourneySection() {
               </p>
             </div>
             <img
-              className="h-[230px] w-full object-cover sm:h-[305px] lg:h-[336px]"
+              className="contact-image-float h-[230px] w-full object-cover sm:h-[305px] lg:h-[336px]"
               src={consultationImage}
               alt="Engineer working with application code during a technology consultation"
             />
           </article>
 
           <form
-            className="grid content-start rounded-[18px] border border-[#d8d8d8] bg-white p-5 shadow-[0_14px_32px_rgba(22,24,33,0.05)] sm:p-7 lg:p-9"
+            className="contact-card-lift contact-reveal grid content-start rounded-[18px] border border-[#d8d8d8] bg-white p-5 shadow-[0_14px_32px_rgba(22,24,33,0.05)] sm:p-7 lg:p-9"
+            data-contact-reveal
+            style={{ "--contact-reveal-delay": "160ms" }}
             action="mailto:help@techvisr.com"
             method="post"
             encType="text/plain"
@@ -179,7 +220,7 @@ function JourneySection() {
               />
             </label>
             <button
-              className="mt-7 inline-flex min-h-11 w-fit items-center justify-center gap-3 rounded-[8px] border-2 border-[#161821] bg-white px-5 py-3 text-sm font-extrabold uppercase leading-none text-[#161821] transition hover:bg-[#161821] hover:text-white"
+              className="contact-button-lift mt-7 inline-flex min-h-11 w-fit items-center justify-center gap-3 rounded-[8px] border-2 border-[#161821] bg-white px-5 py-3 text-sm font-extrabold uppercase leading-none text-[#161821] transition hover:bg-[#161821] hover:text-white"
               type="submit"
             >
               Schedule a Call
@@ -196,26 +237,28 @@ function EngagementModels() {
   return (
     <section className="bg-[#f3f3f3] px-4 py-14 sm:px-6 md:px-8 lg:px-12 lg:py-20">
       <div className="mx-auto max-w-[1080px]">
-        <h2 className="m-0 text-center text-[2rem] font-extrabold leading-[1.1] tracking-[0] text-[#161821] sm:text-5xl lg:text-[3.5rem]">
+        <h2 className="contact-reveal m-0 text-center text-[2rem] font-extrabold leading-[1.1] tracking-[0] text-[#161821] sm:text-5xl lg:text-[3.5rem]" data-contact-reveal>
           Our Engagement Models
         </h2>
         <div className="mt-9 grid gap-4 md:grid-cols-3">
-          {engagementModels.map((model) => {
+          {engagementModels.map((model, index) => {
             const Icon = model.icon;
 
             return (
               <article
-                className="grid min-h-[176px] justify-items-center rounded-[8px] bg-[#ff7436] px-5 py-7 text-center text-white shadow-[0_14px_24px_rgba(243,113,53,0.16)]"
+                className="contact-card-lift contact-reveal grid min-h-[176px] justify-items-center rounded-[8px] bg-[#ff7436] px-5 py-7 text-center text-white shadow-[0_14px_24px_rgba(243,113,53,0.16)]"
+                data-contact-reveal
                 key={model.title}
+                style={{ "--contact-reveal-delay": `${index * 90}ms` }}
               >
-                <Icon size={44} strokeWidth={2.55} aria-hidden="true" />
+                <Icon className="contact-icon-breathe" size={44} strokeWidth={2.55} aria-hidden="true" />
                 <h3 className="m-0 mt-5 text-base font-extrabold leading-tight">{model.title}</h3>
                 <p className="m-0 mt-2 max-w-[260px] text-xs font-bold leading-5 text-white/95">{model.text}</p>
               </article>
             );
           })}
         </div>
-        <div className="mt-5 rounded-[8px] border-2 border-[#ff7436] bg-[#ededed] px-5 py-5 text-center text-base font-extrabold leading-6 text-[#161821]">
+        <div className="contact-reveal mt-5 rounded-[8px] border-2 border-[#ff7436] bg-[#ededed] px-5 py-5 text-center text-base font-extrabold leading-6 text-[#161821]" data-contact-reveal style={{ "--contact-reveal-delay": "220ms" }}>
           Experience the pinnacle of personalized service.
           <br className="hidden sm:block" />
           Contact Techvisr today.
@@ -235,14 +278,16 @@ function WhyWorkSection() {
         aria-hidden="true"
       />
       <div className="relative z-10 mx-auto max-w-[1080px]">
-        <h2 className="m-0 text-center text-[2rem] font-extrabold leading-[1.1] tracking-[0] text-black sm:text-5xl lg:text-[3.45rem]">
+        <h2 className="contact-reveal m-0 text-center text-[2rem] font-extrabold leading-[1.1] tracking-[0] text-black sm:text-5xl lg:text-[3.45rem]" data-contact-reveal>
           Why Work With Techvisr?
         </h2>
         <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {workReasons.map((reason) => (
+          {workReasons.map((reason, index) => (
             <div
-              className="grid min-h-[92px] place-items-center rounded-[8px] border-2 border-[#ff9b76] bg-white px-4 py-5 text-center text-xl font-extrabold leading-tight text-[#ff7436] shadow-[0_10px_22px_rgba(22,24,33,0.03)]"
+              className="contact-card-lift contact-reveal grid min-h-[92px] place-items-center rounded-[8px] border-2 border-[#ff9b76] bg-white px-4 py-5 text-center text-xl font-extrabold leading-tight text-[#ff7436] shadow-[0_10px_22px_rgba(22,24,33,0.03)]"
+              data-contact-reveal
               key={reason}
+              style={{ "--contact-reveal-delay": `${index * 55}ms` }}
             >
               {reason}
             </div>
@@ -263,14 +308,14 @@ function ContactInfoSection() {
         aria-hidden="true"
       />
       <div className="relative z-10 mx-auto grid max-w-[1080px] gap-9 lg:grid-cols-[0.76fr_1fr] lg:items-start">
-        <div>
+        <div className="contact-reveal" data-contact-reveal>
           <p className="m-0 text-base font-medium leading-none text-[#464646]">Contact Info</p>
           <h2 className="m-0 mt-6 max-w-[380px] text-[2rem] font-extrabold leading-[1.03] tracking-[0] text-black sm:text-5xl lg:text-[3.45rem]">
             We are always happy to assist you
           </h2>
         </div>
         <div className="grid gap-5 sm:grid-cols-2">
-          {contactCards.map((card) => {
+          {contactCards.map((card, index) => {
             const Icon = card.icon;
             const content = (
               <>
@@ -289,16 +334,20 @@ function ContactInfoSection() {
 
             return card.href ? (
               <a
-                className="block min-h-[150px] rounded-[8px] border-2 border-[#ff9b76] bg-white p-6 text-[#161821] transition hover:-translate-y-1 hover:shadow-[0_16px_34px_rgba(22,24,33,0.09)]"
+                className="contact-card-lift contact-reveal block min-h-[150px] rounded-[8px] border-2 border-[#ff9b76] bg-white p-6 text-[#161821] transition hover:-translate-y-1 hover:shadow-[0_16px_34px_rgba(22,24,33,0.09)]"
+                data-contact-reveal
                 href={card.href}
                 key={card.title}
+                style={{ "--contact-reveal-delay": `${index * 80}ms` }}
               >
                 {content}
               </a>
             ) : (
               <article
-                className="min-h-[150px] rounded-[8px] border-2 border-[#ff9b76] bg-white p-6 text-[#161821]"
+                className="contact-card-lift contact-reveal min-h-[150px] rounded-[8px] border-2 border-[#ff9b76] bg-white p-6 text-[#161821]"
+                data-contact-reveal
                 key={card.title}
+                style={{ "--contact-reveal-delay": `${index * 80}ms` }}
               >
                 {content}
               </article>
@@ -324,7 +373,7 @@ function TechnologyCta() {
         src={contactVideo}
       />
       <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.1),rgba(0,0,0,0.24))]" aria-hidden="true" />
-      <div className="relative z-20 mx-auto grid max-w-[840px] justify-items-center text-center">
+      <div className="contact-reveal relative z-20 mx-auto grid max-w-[840px] justify-items-center text-center" data-contact-reveal>
         <h2 className="m-0 max-w-[720px] text-[2.1rem] font-extrabold leading-[1.04] tracking-[0] text-white sm:text-5xl lg:text-[3.6rem]">
           Have a Technology Challenge to Solve?
         </h2>
@@ -336,13 +385,13 @@ function TechnologyCta() {
             href="#contact-form"
             light
             compact
-            className="min-h-11 rounded-lg px-5 py-3 text-sm font-bold"
+            className="contact-button-lift min-h-11 rounded-lg px-5 py-3 text-sm font-bold"
           >
             Schedule a Free Consultation
           </HeaderActionButton>
           <a
             href="/case-studies"
-            className="inline-flex min-h-11 items-center justify-center gap-3 rounded-lg border border-white/80 bg-transparent px-5 py-3 text-sm font-bold text-white hover:bg-white hover:text-black"
+            className="contact-button-lift inline-flex min-h-11 items-center justify-center gap-3 rounded-lg border border-white/80 bg-transparent px-5 py-3 text-sm font-bold text-white hover:bg-white hover:text-black"
           >
             <span>Explore Case Studies</span>
             <ArrowRight size={16} strokeWidth={2} aria-hidden="true" />
@@ -354,6 +403,8 @@ function TechnologyCta() {
 }
 
 export default function FigmaContactPage() {
+  useContactReveal();
+
   return (
     <div className="min-h-screen overflow-x-clip bg-white text-[#161821] [font-family:var(--font-figma-body),Roboto,sans-serif]">
       <SiteHeader />

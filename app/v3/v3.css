@@ -1035,11 +1035,80 @@ summary:focus-visible {
   }
 }
 
+.contact-reveal {
+  --contact-reveal-delay: 0ms;
+  opacity: 0.92;
+  transform: translate3d(0, 20px, 0) scale(0.99);
+  transition:
+    opacity 680ms ease,
+    transform 680ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+  transition-delay: var(--contact-reveal-delay);
+  will-change: opacity, transform;
+}
+
+.contact-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.contact-card-lift {
+  transform-origin: center;
+}
+
+.contact-card-lift:hover {
+  box-shadow: 0 22px 46px rgba(22, 24, 33, 0.1);
+  transform: translate3d(0, -4px, 0);
+}
+
+.contact-button-lift:hover {
+  transform: translate3d(0, -2px, 0);
+}
+
+.contact-image-float {
+  transform-origin: center;
+  animation: contactImageFloat 7s ease-in-out infinite;
+}
+
+.contact-icon-breathe {
+  transform-origin: center;
+  animation: contactIconBreathe 4.8s ease-in-out infinite;
+}
+
+@keyframes contactImageFloat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.025);
+  }
+}
+
+@keyframes contactIconBreathe {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-2px) scale(1.035);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .figma-site *,
-  .reveal-card {
+  .reveal-card,
+  .contact-reveal,
+  .contact-image-float,
+  .contact-icon-breathe {
     animation: none !important;
     scroll-behavior: auto !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
   }
 }
 
