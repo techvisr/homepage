@@ -29,7 +29,7 @@ export function SectionIntro({ eyebrow, title, text, light = false }) {
 
 export function ServicesHeroSection({ heroVideo }) {
   return (
-    <section className="relative isolate overflow-hidden !bg-[#020612] px-4 py-14 text-white sm:px-6 sm:py-16 md:px-8 lg:px-12 lg:py-20 2xl:px-20">
+    <section className="relative isolate overflow-hidden !bg-[#020612] text-white">
       <video
         className="absolute inset-0 -z-20 h-full w-full object-cover opacity-70"
         src={heroVideo}
@@ -45,7 +45,7 @@ export function ServicesHeroSection({ heroVideo }) {
       />
       <div className="service-scanline absolute inset-x-0 top-[54%] -z-10 h-px bg-[linear-gradient(90deg,transparent_0%,rgba(67,199,255,0.88)_48%,transparent_100%)]" aria-hidden="true" />
 
-      <div className="relative z-10 mx-auto grid min-h-[380px] max-w-[1100px] content-center justify-items-center text-center lg:min-h-[460px]">
+      <div className="relative z-10 mx-auto grid min-h-[340px] max-w-[1100px] content-center justify-items-center px-4 py-16 text-center sm:min-h-[420px] sm:px-6 lg:min-h-[500px] lg:py-20">
         <h1 className="service-reveal m-0 max-w-[1120px] text-[2.2rem] font-extrabold leading-[1.02] tracking-[0] text-white sm:text-[3rem] md:text-[3.35rem] lg:text-[3.45rem]" data-service-reveal>
           Engineering Intelligent Digital Transformation for Modern Enterprises
         </h1>
