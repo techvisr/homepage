@@ -136,19 +136,25 @@ const advantages = [
 
 const resources = [
   {
-    title: "How AI is Reshaping Enterprise Operations",
-    text: "Exploring the next generation of intelligent business automation and AI-driven workflows.",
-    image: "b1571c9960fac24f09d2b544216786e94cb60953.jpg",
+    title: "AI-Native Engineering: The New Blueprint for Enterprise Innovation",
+    text: "How businesses are embedding AI into products, operations, and decision-making at scale.",
+    image: "/images/blogs/ai-native-engineering.png",
+    imageAlt: "AI-native engineering architecture with data streams and modular product systems",
+    slug: "ai-native-engineering-new-blueprint-enterprise-innovation",
   },
   {
     title: "Cloud Modernization Strategies for Scalable Growth",
-    text: "Key considerations for building resilient and future-ready cloud ecosystems.",
-    image: "8c9ee62226affce2c6889f89dea377072a20965f.jpg",
+    text: "Key considerations for building resilient, future-ready cloud ecosystems.",
+    image: "/images/blogs/cloud-modernization.png",
+    imageAlt: "Cloud modernization architecture transforming legacy systems into scalable cloud services",
+    slug: "cloud-modernization-strategies-scalable-business-growth",
   },
   {
-    title: "Engineering High-Performance Digital Products",
-    text: "Best practices for accelerating software delivery without compromising scalability or quality.",
-    image: "c1f862eec620b62cfeb3d36eb5c88c530f61171a.jpg",
+    title: "Why Custom Software Development Still Wins in the AI Era",
+    text: "Why tailored software still matters for unique workflows, integration, and growth.",
+    image: "/images/blogs/custom-software-ai-era.png",
+    imageAlt: "Custom software platform modules connected with AI-assisted workflow logic",
+    slug: "custom-software-development-still-wins-ai-era",
   },
 ];
 

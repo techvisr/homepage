@@ -5,9 +5,12 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import HeaderActionButton from "./HeaderActionButton";
 
-const navItems = ["Services", "Case Studies", "Why Techvisr?", "Blogs"];
-
-const toSectionHref = (item) => `/#${item.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+const navItems = [
+  { label: "Services", href: "/#services" },
+  { label: "Case Studies", href: "/#case-studies" },
+  { label: "Why Techvisr?", href: "/#why-techvisr-" },
+  { label: "Blogs", href: "/blogs" },
+];
 
 export default function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -62,8 +65,8 @@ export default function SiteHeader() {
           aria-label="Primary navigation"
         >
           {navItems.map((item) => (
-            <a className="figma-site-header__nav-link text-white transition-opacity duration-200 hover:opacity-80" href={toSectionHref(item)} key={item}>
-              {item}
+            <a className="figma-site-header__nav-link text-white transition-opacity duration-200 hover:opacity-80" href={item.href} key={item.label}>
+              {item.label}
             </a>
           ))}
         </nav>
@@ -87,11 +90,11 @@ export default function SiteHeader() {
               {navItems.map((item) => (
                 <a
                   className="rounded-[10px] px-3 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white/5"
-                  href={toSectionHref(item)}
-                  key={item}
+                  href={item.href}
+                  key={item.label}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {item}
+                  {item.label}
                 </a>
               ))}
               <HeaderActionButton href="/contact" light compact className="mt-1 w-full min-h-9 rounded-lg text-sm" onClick={() => setIsMenuOpen(false)}>

@@ -60,7 +60,11 @@ export default function ResourcesSection({ asset, resources }) {
               key={`${resource.title}-${index}`}
               style={{ "--reveal-delay": `${(index % resources.length) * 70}ms` }}
             >
-              <img className="h-32 w-full object-cover min-[360px]:h-36 sm:h-48 md:h-52 lg:h-[220px]" src={asset(resource.image)} alt="" />
+              <img
+                className="h-32 w-full object-cover min-[360px]:h-36 sm:h-48 md:h-52 lg:h-[220px]"
+                src={resource.image?.startsWith("/") ? resource.image : asset(resource.image)}
+                alt={resource.imageAlt || ""}
+              />
               <div className="flex flex-1 flex-col px-4 pb-5 pt-4 sm:px-6 sm:pb-6 sm:pt-6 md:px-8 md:pb-8 md:pt-8 lg:px-8 lg:pb-9 lg:pt-8 xl:px-9 xl:pb-10 xl:pt-9">
                 <h3 className="m-0 text-lg font-extrabold leading-[1.16] tracking-[0] text-[#f36b35] min-[360px]:text-xl sm:text-[1.6rem] lg:text-[1.8rem] xl:text-[2rem]">
                   {resource.title}
@@ -71,7 +75,7 @@ export default function ResourcesSection({ asset, resources }) {
                 <div className="mt-auto h-[3px] w-full bg-[linear-gradient(90deg,#f36b35_0%,#f04c68_100%)]" />
                 <a
                   className="mt-6 inline-flex min-h-9 w-fit items-center justify-center gap-3 rounded-[8px] border border-[#161821] bg-white px-3 text-xs font-extrabold leading-none text-[#161821] no-underline transition-colors duration-200 hover:bg-[#161821] hover:text-white sm:mt-8 sm:min-h-12 sm:gap-4 sm:border-2 sm:px-5 sm:text-base md:min-h-[54px] md:text-lg lg:min-h-[56px] lg:text-xl"
-                  href="/case-studies"
+                  href={resource.href || (resource.slug ? `/blogs/${resource.slug}` : "/blogs")}
                 >
                   <span>View Blog</span>
                   <ArrowRight size={24} strokeWidth={2.6} />
