@@ -31,6 +31,9 @@ export async function generateMetadata({ params }) {
       url: `/blogs/${post.slug}`,
       type: "article",
       publishedTime: post.published,
+      modifiedTime: post.published,
+      section: post.category,
+      tags: post.tags,
       authors: ["Techvisr"],
       images: [
         {
@@ -38,6 +41,12 @@ export async function generateMetadata({ params }) {
           alt: post.imageAlt,
         },
       ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} | Techvisr`,
+      description: post.excerpt,
+      images: [post.image],
     },
   };
 }

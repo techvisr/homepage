@@ -42,6 +42,12 @@ export async function generateMetadata({ params }) {
         },
       ],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: `${study.title} | Techvisr`,
+      description: study.summary,
+      images: [asset(study.image)],
+    },
   };
 }
 
@@ -54,6 +60,31 @@ export default async function CaseStudyDetailRoute({ params }) {
   }
 
   const relatedStudies = getRelatedCaseStudies(study);
+  const caseStudySchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: study.title,
+    description: study.summary,
+    image: `https://techvisr.com${asset(study.image)}`,
+    author: {
+      "@type": "Organization",
+      name: "Techvisr",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Techvisr",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://techvisr.com/images/logo.png",
+      },
+    },
+    mainEntityOfPage: `https://techvisr.com${study.href}`,
+  };
 
-  return <FigmaCaseStudyDetailPage study={study} relatedStudies={relatedStudies} />;
+  return (
+    <>
+      <FigmaCaseStudyDetailPage study={study} relatedStudies={relatedStudies} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudySchema) }} />
+    </>
+  );
 }
