@@ -1,9 +1,17 @@
 "use client";
 
-import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 import { useEffect, useRef } from "react";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
 
-export default function FigmaFooter({ asset }) {
+const socialLinks = [
+  [FaLinkedinIn, "LinkedIn"],
+  [FaInstagram, "Instagram"],
+  [FaFacebookF, "Facebook"],
+  [FaYoutube, "YouTube"],
+  [FaTwitter, "Twitter"],
+];
+
+export default function FigmaFooter({ asset, certificationBadges = [], showDescription = true }) {
   const logoSrc = asset("58c76896b6e7aaa2c5446fbb80905b6b30ed7778.png");
   const watermarkRef = useRef(null);
 
@@ -62,47 +70,57 @@ export default function FigmaFooter({ asset }) {
 
   return (
     <footer id="footer" className="relative bg-[linear-gradient(90deg,#ff7436_0%,#f33a74_100%)] text-[#171a27]">
-      <div className="relative z-10 grid grid-cols-1 justify-items-center gap-10 bg-white px-4 py-10 text-center shadow-[0_18px_42px_rgba(0,0,0,0.12)] sm:px-6 md:grid-cols-[1fr_0.7fr_1fr] md:justify-items-stretch md:px-8 md:py-11 md:text-left lg:px-12 xl:px-[9vw]">
-        <div className="grid max-w-[340px] content-start justify-items-center gap-5 md:max-w-[320px] md:justify-items-start lg:gap-7">
-          <img className="w-36 sm:w-[150px] lg:w-[159px]" src={logoSrc} alt="Techvisr" />
-          <p className="m-0 max-w-[320px] text-base font-semibold leading-7 text-[#8d8d8d] lg:text-[17px] lg:leading-[1.55]">
-            Building scalable software, intelligent automation, and cloud-driven ecosystems for modern enterprises.
-          </p>
-          <span className="text-sm font-semibold leading-6 text-[#8d8d8d] sm:text-base md:mt-6">Copyright © 2026 Techvisr</span>
-        </div>
-
-        <nav className="grid grid-cols-2 content-start gap-x-8 gap-y-4 pt-1 text-base font-semibold leading-none text-[#181b27] md:grid-cols-1 md:justify-self-center lg:gap-[19px]">
-          <a className="text-current no-underline" href="/services">Services</a>
-          <a className="text-current no-underline" href="/case-studies">Case Studies</a>
-          <a className="text-current no-underline" href="/why-techvisr">Why Techvisr?</a>
-          <a className="text-current no-underline" href="/blogs">Blogs</a>
-          <a className="text-current no-underline" href="/contact">Contact Us</a>
-        </nav>
-
-        <div className="grid max-w-[340px] content-start justify-items-center gap-6 md:max-w-none md:justify-items-end md:text-right lg:gap-8">
-          <h3 className="m-0 text-lg font-bold leading-none text-[#181b27]">Get in touch</h3>
-          <a className="break-all text-xl font-extrabold leading-tight text-[#ff7436] no-underline sm:text-2xl lg:text-[25px]" href="mailto:techvisr@gmail.com">
-            techvisr@gmail.com
-          </a>
-          <div className="flex flex-wrap gap-3 md:justify-end lg:mt-4">
-            {[
-              [Linkedin, "LinkedIn"],
-              [Instagram, "Instagram"],
-              [Facebook, "Facebook"],
-              [Youtube, "YouTube"],
-              [Twitter, "Twitter"],
-            ].map(([Icon, label]) => (
-              <a
-                className="grid size-11 place-items-center rounded-full bg-[#ff7436] text-white transition-transform duration-200 hover:-translate-y-1 lg:size-[49px]"
-                href="/"
-                aria-label={label}
-                key={label}
-              >
-                <Icon size={18} fill="currentColor" strokeWidth={label === "YouTube" ? 0 : 2.2} />
-              </a>
-            ))}
+      <div className="relative z-10 bg-white px-4 py-10 text-center shadow-[0_18px_42px_rgba(0,0,0,0.12)] sm:px-6 md:px-8 md:py-11 md:text-left lg:px-10">
+        <div className="mx-auto grid w-full max-w-[1000px] grid-cols-1 justify-items-center gap-10 md:grid-cols-[1fr_0.7fr_1fr] md:justify-items-stretch">
+          <div className="grid max-w-[340px] content-start justify-items-center gap-5 md:max-w-[320px] md:justify-items-start lg:gap-7">
+            <img className="w-36 sm:w-[150px] lg:w-[159px]" src={logoSrc} alt="Techvisr" />
+            {certificationBadges.length ? (
+              <div className="grid grid-cols-2 gap-3 sm:gap-4" aria-label="Techvisr certifications">
+                {certificationBadges.map((badge) => (
+                  <img
+                    className="size-[64px] object-contain sm:size-[72px]"
+                    src={badge.src}
+                    alt={badge.alt}
+                    key={badge.src}
+                  />
+                ))}
+              </div>
+            ) : null}
+            {showDescription ? (
+              <p className="m-0 max-w-[320px] text-base font-semibold leading-7 text-[#8d8d8d] lg:text-[17px] lg:leading-[1.55]">
+                Building scalable software, intelligent automation, and cloud-driven ecosystems for modern enterprises.
+              </p>
+            ) : null}
+            <span className="text-sm font-semibold leading-6 text-[#8d8d8d] sm:text-base md:mt-6">Copyright © 2026 Techvisr</span>
           </div>
-          <span className="text-sm font-semibold leading-6 text-[#181b27] md:text-right">Terms and Conditions | Privacy Policy</span>
+
+          <nav className="grid grid-cols-2 content-start gap-x-8 gap-y-4 pt-1 text-base font-semibold leading-none text-[#181b27] md:grid-cols-1 md:justify-self-center lg:gap-[19px]">
+            <a className="text-current no-underline" href="/services">Services</a>
+            <a className="text-current no-underline" href="/case-studies">Case Studies</a>
+            <a className="text-current no-underline" href="/why-techvisr">Why Techvisr?</a>
+            <a className="text-current no-underline" href="/blogs">Blogs</a>
+            <a className="text-current no-underline" href="/contact">Contact Us</a>
+          </nav>
+
+          <div className="grid max-w-[340px] content-start justify-items-center gap-6 md:max-w-none md:justify-items-end md:text-right lg:gap-8">
+            <h3 className="m-0 text-lg font-bold leading-none text-[#181b27]">Get in touch</h3>
+            <a className="break-all text-xl font-extrabold leading-tight text-[#ff7436] no-underline sm:text-2xl lg:text-[25px]" href="mailto:techvisr@gmail.com">
+              techvisr@gmail.com
+            </a>
+            <div className="flex flex-wrap gap-3 md:justify-end lg:mt-4">
+              {socialLinks.map(([Icon, label]) => (
+                <a
+                  className="grid size-11 place-items-center rounded-full bg-[#ff7436] text-white transition-transform duration-200 hover:-translate-y-1 lg:size-[49px]"
+                  href="/"
+                  aria-label={label}
+                  key={label}
+                >
+                  <Icon className="size-5" />
+                </a>
+              ))}
+            </div>
+            <span className="text-sm font-semibold leading-6 text-[#181b27] md:text-right">Terms and Conditions | Privacy Policy</span>
+          </div>
         </div>
       </div>
 

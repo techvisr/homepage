@@ -7,7 +7,7 @@ import HeaderActionButton from "./HeaderActionButton";
 
 const navItems = ["Services", "Case Studies", "Why Techvisr?", "Blogs"];
 
-const toSectionHref = (item) => `#${item.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+const toSectionHref = (item) => `/#${item.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 
 export default function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
