@@ -1055,6 +1055,26 @@ summary:focus-visible {
   transform: translate3d(0, 0, 0) scale(1);
 }
 
+.case-reveal {
+  --case-reveal-delay: 0ms;
+  opacity: 0.9;
+  transform: translate3d(0, 22px, 0) scale(0.99);
+  transition:
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms ease,
+    border-color 220ms ease,
+    color 180ms ease,
+    background-color 180ms ease;
+  transition-delay: var(--case-reveal-delay);
+  will-change: opacity, transform;
+}
+
+.case-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
 .service-metric-card,
 .service-goal-button {
   transform-origin: center;
