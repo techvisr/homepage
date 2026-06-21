@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ArrowLeft, ArrowRight, CalendarDays, CheckCircle2, Clock3 } from "lucide-react";
 import FigmaFooter from "./FigmaFooter";
 import HeaderActionButton from "./HeaderActionButton";
@@ -83,11 +84,13 @@ function ArticleSection({ section, index }) {
 function RelatedCard({ post }) {
   return (
     <article className="blog-card-lift overflow-hidden rounded-[8px] border border-[rgba(22,24,33,0.14)] bg-white shadow-[0_12px_28px_rgba(22,24,33,0.04)]">
-      <a className="group block overflow-hidden bg-[#05060a]" href={`/blogs/${post.slug}`} aria-label={post.title}>
-        <img
-          className="h-40 w-full object-cover transition duration-500 group-hover:scale-[1.035]"
+      <a className="group relative block h-40 overflow-hidden bg-[#05060a]" href={`/blogs/${post.slug}`} aria-label={post.title}>
+        <Image
+          className="object-cover transition duration-500 group-hover:scale-[1.035]"
           src={post.image}
           alt={post.imageAlt}
+          fill
+          sizes="(min-width: 768px) 33vw, 100vw"
         />
       </a>
       <div className="p-5">
@@ -111,24 +114,18 @@ function RelatedCard({ post }) {
 
 function BlogArticleBody({ post }) {
   return (
-    <main className="relative isolate overflow-x-clip bg-white px-4 py-12 sm:px-6 md:px-8 lg:px-12 lg:py-20">
-      <img
-        className="pointer-events-none absolute left-[-520px] top-[280px] z-0 h-auto w-[1740px] max-w-none opacity-[0.12] md:left-[-320px] lg:left-[-150px]"
-        src="/images/story-wave-pattern.svg"
-        alt=""
-        aria-hidden="true"
-      />
-      <img
-        className="pointer-events-none absolute bottom-[-520px] right-[-620px] z-0 h-auto w-[1700px] max-w-none rotate-180 opacity-[0.12]"
-        src="/images/story-wave-pattern.svg"
-        alt=""
-        aria-hidden="true"
-      />
-
+    <main className="blog-article-shell relative isolate overflow-x-clip px-4 py-12 sm:px-6 md:px-8 lg:px-12 lg:py-20">
       <div className="relative z-10 mx-auto grid max-w-[1080px] gap-10 lg:grid-cols-[minmax(0,1fr)_300px] lg:items-start">
         <article className="min-w-0">
-          <figure className="m-0 overflow-hidden rounded-[8px] border border-[rgba(22,24,33,0.12)] bg-[#05060a] shadow-[0_18px_42px_rgba(22,24,33,0.08)]">
-            <img className="h-[260px] w-full object-cover sm:h-[360px] lg:h-[430px]" src={post.image} alt={post.imageAlt} />
+          <figure className="relative m-0 h-[260px] overflow-hidden rounded-[8px] border border-[rgba(22,24,33,0.12)] bg-[#05060a] shadow-[0_18px_42px_rgba(22,24,33,0.08)] sm:h-[360px] lg:h-[430px]">
+            <Image
+              className="object-cover"
+              src={post.image}
+              alt={post.imageAlt}
+              fill
+              sizes="(min-width: 1024px) 740px, 100vw"
+              priority
+            />
           </figure>
 
           <div className="blog-article-body mt-10">

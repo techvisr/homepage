@@ -24,7 +24,7 @@ export const blogPosts = [
     displayDate: "June 21, 2026",
     published: "2026-06-21",
     readTime: "8 min read",
-    image: "/images/blogs/ai-native-engineering.png",
+    image: "/images/blogs/ai-native-engineering.avif",
     imageAlt: "AI-native engineering architecture with data streams and modular product systems",
     excerpt:
       "Discover how businesses are moving beyond experimentation and embedding AI into products, operations, and decision-making at scale.",
@@ -87,7 +87,7 @@ export const blogPosts = [
     displayDate: "June 18, 2026",
     published: "2026-06-18",
     readTime: "7 min read",
-    image: "/images/blogs/cloud-modernization.png",
+    image: "/images/blogs/cloud-modernization.avif",
     imageAlt: "Cloud modernization architecture transforming legacy systems into scalable cloud services",
     excerpt:
       "Learn how modern cloud architectures improve agility, reduce operational complexity, and support long-term digital transformation goals.",
@@ -144,7 +144,7 @@ export const blogPosts = [
     displayDate: "June 14, 2026",
     published: "2026-06-14",
     readTime: "7 min read",
-    image: "/images/blogs/custom-software-ai-era.png",
+    image: "/images/blogs/custom-software-ai-era.avif",
     imageAlt: "Custom software platform modules connected with AI-assisted workflow logic",
     excerpt:
       "Explore why tailored software solutions continue to outperform off-the-shelf tools for enterprises with unique workflows and growth ambitions.",
@@ -201,7 +201,7 @@ export const blogPosts = [
     displayDate: "June 10, 2026",
     published: "2026-06-10",
     readTime: "8 min read",
-    image: "/images/blogs/devops-automation.png",
+    image: "/images/blogs/devops-automation.avif",
     imageAlt: "Automated DevOps pipeline with build, test, deploy, and monitoring stages",
     excerpt:
       "Understand how modern DevOps practices help organizations improve release velocity, enhance collaboration, and deliver software faster.",
@@ -259,7 +259,7 @@ export const blogPosts = [
     displayDate: "June 6, 2026",
     published: "2026-06-06",
     readTime: "9 min read",
-    image: "/images/blogs/scalable-saas-products.png",
+    image: "/images/blogs/scalable-saas-products.avif",
     imageAlt: "Scalable SaaS platform expanding from MVP core into enterprise product modules",
     excerpt:
       "Key considerations for designing SaaS platforms that can support rapid user growth, evolving business needs, and future expansion.",
@@ -317,7 +317,7 @@ export const blogPosts = [
     displayDate: "June 2, 2026",
     published: "2026-06-02",
     readTime: "7 min read",
-    image: "/images/blogs/ai-automation-services.png",
+    image: "/images/blogs/ai-automation-services.avif",
     imageAlt: "AI automation engine routing enterprise workflows through intelligent decision paths",
     excerpt:
       "Explore how intelligent automation is helping enterprises reduce manual effort, improve operational efficiency, and unlock new growth opportunities.",
@@ -375,7 +375,7 @@ export const blogPosts = [
     displayDate: "May 29, 2026",
     published: "2026-05-29",
     readTime: "8 min read",
-    image: "/images/blogs/quality-ai-delivery.png",
+    image: "/images/blogs/quality-ai-delivery.avif",
     imageAlt: "Quality engineering control tower validating AI-assisted software releases",
     excerpt:
       "A practical look at how testing, observability, and release governance must evolve as AI accelerates software delivery cycles.",
@@ -432,7 +432,7 @@ export const blogPosts = [
     displayDate: "May 24, 2026",
     published: "2026-05-24",
     readTime: "6 min read",
-    image: "/images/blogs/technology-consulting-os.png",
+    image: "/images/blogs/technology-consulting-os.avif",
     imageAlt: "Technology consulting roadmap with architecture layers and product execution signals",
     excerpt:
       "How strategic technology consulting helps leadership teams turn ambition into roadmaps, architecture choices, and delivery systems.",
@@ -490,7 +490,7 @@ export const blogPosts = [
     displayDate: "May 20, 2026",
     published: "2026-05-20",
     readTime: "8 min read",
-    image: "/images/blogs/data-platforms-enterprise-ai.png",
+    image: "/images/blogs/data-platforms-enterprise-ai.avif",
     imageAlt: "Governed enterprise data platform powering AI context and knowledge retrieval",
     excerpt:
       "Why AI value depends on clean data foundations, governed access, connected knowledge, and measurement across the enterprise.",
@@ -548,7 +548,7 @@ export const blogPosts = [
     displayDate: "May 16, 2026",
     published: "2026-05-16",
     readTime: "7 min read",
-    image: "/images/blogs/legacy-modernization.png",
+    image: "/images/blogs/legacy-modernization.avif",
     imageAlt: "Legacy system modernization bridge moving applications into modern cloud services",
     excerpt:
       "A phased modernization approach for replacing fragile systems, improving agility, and protecting the business during transition.",

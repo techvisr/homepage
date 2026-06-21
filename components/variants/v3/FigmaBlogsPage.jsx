@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { ArrowRight, RefreshCw, Search } from "lucide-react";
 import FigmaFooter from "./FigmaFooter";
@@ -97,11 +98,14 @@ function BlogCard({ post, index }) {
       data-blog-reveal
       style={{ "--blog-reveal-delay": `${(index % PAGE_SIZE) * 70}ms` }}
     >
-      <a className="group block overflow-hidden bg-[#05060a]" href={`/blogs/${post.slug}`} aria-label={post.title}>
-        <img
-          className="h-[180px] w-full object-cover transition duration-500 group-hover:scale-[1.035]"
+      <a className="group relative block h-[180px] overflow-hidden bg-[#05060a]" href={`/blogs/${post.slug}`} aria-label={post.title}>
+        <Image
+          className="object-cover transition duration-500 group-hover:scale-[1.035]"
           src={post.image}
           alt={post.imageAlt}
+          fill
+          sizes="(min-width: 1024px) 340px, (min-width: 768px) 50vw, 100vw"
+          priority={index < 3}
         />
       </a>
       <div className="flex flex-1 flex-col p-6 sm:p-7">

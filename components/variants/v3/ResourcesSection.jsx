@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 
@@ -60,11 +61,15 @@ export default function ResourcesSection({ asset, resources }) {
               key={`${resource.title}-${index}`}
               style={{ "--reveal-delay": `${(index % resources.length) * 70}ms` }}
             >
-              <img
-                className="h-32 w-full object-cover min-[360px]:h-36 sm:h-48 md:h-52 lg:h-[220px]"
-                src={resource.image?.startsWith("/") ? resource.image : asset(resource.image)}
-                alt={resource.imageAlt || ""}
-              />
+              <div className="relative h-32 w-full overflow-hidden bg-[#05060a] min-[360px]:h-36 sm:h-48 md:h-52 lg:h-[220px]">
+                <Image
+                  className="object-cover"
+                  src={resource.image?.startsWith("/") ? resource.image : asset(resource.image)}
+                  alt={resource.imageAlt || ""}
+                  fill
+                  sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 82vw"
+                />
+              </div>
               <div className="flex flex-1 flex-col px-4 pb-5 pt-4 sm:px-6 sm:pb-6 sm:pt-6 md:px-8 md:pb-8 md:pt-8 lg:px-8 lg:pb-9 lg:pt-8 xl:px-9 xl:pb-10 xl:pt-9">
                 <h3 className="m-0 text-lg font-extrabold leading-[1.16] tracking-[0] text-[#f36b35] min-[360px]:text-xl sm:text-[1.6rem] lg:text-[1.8rem] xl:text-[2rem]">
                   {resource.title}

@@ -1116,6 +1116,47 @@ summary:focus-visible {
   cursor: pointer;
 }
 
+.blog-article-shell {
+  background:
+    linear-gradient(180deg, #ffffff 0%, #ffffff 58%, #f8fafc 100%),
+    #ffffff;
+}
+
+.blog-article-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(90deg, rgba(22, 24, 33, 0.044) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(22, 24, 33, 0.036) 1px, transparent 1px),
+    linear-gradient(135deg, transparent 0 48%, rgba(243, 113, 53, 0.055) 48% 49%, transparent 49% 100%);
+  background-position:
+    center top,
+    center top,
+    center top;
+  background-size:
+    72px 72px,
+    72px 72px,
+    180px 180px;
+  opacity: 0.75;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 72%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 72%, transparent 100%);
+}
+
+.blog-article-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(243, 113, 53, 0.08), transparent 28%, transparent 72%, rgba(29, 113, 170, 0.08)),
+    linear-gradient(180deg, transparent, rgba(22, 24, 33, 0.025) 52%, transparent);
+  opacity: 0.72;
+}
+
 .blog-category-rail {
   overscroll-behavior-inline: contain;
   scrollbar-color: rgba(243, 113, 53, 0.55) rgba(22, 24, 33, 0.08);
