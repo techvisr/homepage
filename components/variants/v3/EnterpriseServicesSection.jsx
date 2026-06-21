@@ -4,15 +4,15 @@ export default function EnterpriseServicesSection({ asset, services }) {
   return (
     <section
       id="enterprise-services"
-      className="relative isolate -mt-px grid justify-items-center overflow-hidden bg-[#fff2ec] px-4 pb-14 pt-12 sm:px-6 sm:pb-16 sm:pt-14 md:px-8 md:pb-20 md:pt-16 lg:px-12 lg:pb-24 lg:pt-20 2xl:px-20"
+      className="relative isolate -mt-px grid justify-items-center overflow-hidden bg-[linear-gradient(180deg,rgba(255,255,255,0)_0%,#F3F3F3_50%)] px-4 pb-14 pt-12 sm:px-6 sm:pb-16 sm:pt-14 md:px-8 md:pb-20 md:pt-16 lg:px-12 lg:pb-24 lg:pt-20 2xl:px-20"
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(90%_48%_at_50%_-6%,rgba(243,113,53,0.18),rgba(255,242,236,0.84)_44%,rgba(255,250,247,0)_72%),radial-gradient(72%_52%_at_50%_108%,rgba(239,65,105,0.07),transparent_68%),linear-gradient(180deg,#fff2ec_0%,#fff7f3_26%,#fffaf7_50%,#ffffff_100%)]"
+        className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(90%_48%_at_50%_-6%,rgba(243,113,53,0.14),rgba(243,243,243,0.62)_44%,rgba(255,255,255,0)_72%),radial-gradient(72%_52%_at_50%_108%,rgba(239,65,105,0.05),transparent_68%),linear-gradient(180deg,rgba(255,255,255,0)_0%,#F3F3F3_50%,#ffffff_100%)]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-32 bg-[linear-gradient(180deg,#fff2ec_0%,rgba(255,242,236,0.86)_46%,rgba(255,242,236,0)_100%)] sm:h-40 lg:h-48"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-32 bg-[linear-gradient(180deg,rgba(255,255,255,0)_0%,rgba(243,243,243,0.86)_46%,rgba(243,243,243,0)_100%)] sm:h-40 lg:h-48"
       />
       <img
         aria-hidden="true"

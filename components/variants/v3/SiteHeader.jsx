@@ -40,10 +40,10 @@ export default function SiteHeader() {
   }, [isMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-black text-white">
-      <div className="mx-auto flex min-h-11 w-full max-w-screen-2xl items-center justify-between gap-4 px-3 sm:px-5 md:min-h-[52px] md:px-8 xl:px-12">
+    <header className="figma-site-header sticky top-0 z-50 w-full bg-black text-white">
+      <div className="figma-site-header__container mx-auto flex min-h-11 w-full max-w-screen-2xl items-center justify-between gap-4 px-3 sm:px-5 md:min-h-[52px] md:px-8 xl:px-12">
         <a
-          className="flex w-[82px] flex-none items-center self-center sm:w-24 lg:w-[104px]"
+          className="figma-site-header__logo flex w-[82px] flex-none items-center self-center sm:w-24 lg:w-[104px]"
           href="/"
           aria-label="Techvisr home"
         >
@@ -58,21 +58,21 @@ export default function SiteHeader() {
         </a>
 
         <nav
-          className="hidden items-center gap-7 text-[11px] font-medium leading-none text-white xl:flex 2xl:gap-10 2xl:text-xs"
+          className="figma-site-header__nav hidden items-center gap-7 text-[11px] font-medium leading-none text-white xl:flex 2xl:gap-10 2xl:text-xs"
           aria-label="Primary navigation"
         >
           {navItems.map((item) => (
-            <a className="text-white transition-opacity duration-200 hover:opacity-80" href={toSectionHref(item)} key={item}>
+            <a className="figma-site-header__nav-link text-white transition-opacity duration-200 hover:opacity-80" href={toSectionHref(item)} key={item}>
               {item}
             </a>
           ))}
         </nav>
 
-        <HeaderActionButton href="/contact" light compact className="hidden min-h-7 rounded-md px-3 py-1.5 text-[11px] xl:inline-flex xl:self-center 2xl:text-xs">
+        <HeaderActionButton href="/contact" light compact className="figma-site-header__button hidden min-h-7 rounded-md px-3 py-1.5 text-[11px] xl:inline-flex xl:self-center 2xl:text-xs">
           Contact Us
         </HeaderActionButton>
 
-        <div className="relative ml-auto grid xl:hidden" ref={menuRef}>
+        <div className="figma-site-header__mobile relative ml-auto grid xl:hidden" ref={menuRef}>
           <button
             className="grid size-8 cursor-pointer place-items-center rounded-lg border border-white/90 bg-white text-black"
             type="button"

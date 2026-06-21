@@ -85,11 +85,11 @@ export default function StorySection() {
     <section
       ref={sectionRef}
       id="our-story"
-      className="relative isolate overflow-hidden bg-[#fffaf7] px-4 pb-20 pt-14 sm:px-6 sm:pb-24 sm:pt-16 md:px-8 md:pb-28 md:pt-20 lg:px-12 lg:pb-32 lg:pt-24 2xl:px-20"
+      className="relative isolate overflow-hidden bg-[linear-gradient(180deg,rgba(255,255,255,0)_0%,#F3F3F3_50%)] px-4 pb-20 pt-14 sm:px-6 sm:pb-24 sm:pt-16 md:px-8 md:pb-28 md:pt-20 lg:px-12 lg:pb-32 lg:pt-24 2xl:px-20"
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(95%_54%_at_48%_4%,#ffffff_0%,rgba(255,250,247,0.92)_58%,rgba(255,246,241,0.88)_100%),linear-gradient(180deg,#ffffff_0%,#fffaf7_48%,#ffffff_100%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0)_0%,#F3F3F3_50%)]"
       />
 
       <div
@@ -104,9 +104,9 @@ export default function StorySection() {
           alt=""
           draggable={false}
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,#fffaf7_0%,rgba(255,250,247,0.86)_8%,rgba(255,250,247,0)_24%,rgba(255,250,247,0)_76%,rgba(255,250,247,0.86)_92%,#fffaf7_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,#fffaf7_0%,rgba(255,250,247,0.62)_8%,rgba(255,250,247,0)_22%,rgba(255,250,247,0)_78%,rgba(255,250,247,0.62)_92%,#fffaf7_100%)] opacity-70" />
-        <div className="absolute inset-x-0 bottom-0 h-[28%] bg-[linear-gradient(180deg,rgba(255,250,247,0)_0%,rgba(255,246,241,0.72)_42%,#fff2ec_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.78)_0%,rgba(255,255,255,0.52)_8%,rgba(255,255,255,0)_24%,rgba(255,255,255,0)_76%,rgba(243,243,243,0.72)_92%,#F3F3F3_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.72)_0%,rgba(255,255,255,0.42)_8%,rgba(255,255,255,0)_22%,rgba(255,255,255,0)_78%,rgba(243,243,243,0.46)_92%,#F3F3F3_100%)] opacity-70" />
+        <div className="absolute inset-x-0 bottom-0 h-[28%] bg-[linear-gradient(180deg,rgba(255,255,255,0)_0%,rgba(243,243,243,0.72)_42%,#F3F3F3_100%)]" />
       </div>
 
       <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col items-center">
