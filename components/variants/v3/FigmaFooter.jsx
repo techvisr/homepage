@@ -10,6 +10,11 @@ const socialLinks = [
   [FaYoutube, "YouTube"],
   [FaTwitter, "Twitter"],
 ];
+const contactEmail = "admin@techvisr.com";
+const phoneLinks = [
+  { label: "+91 89043 61600", href: "tel:+918904361600" },
+  { label: "+91 94384 33644", href: "tel:+919438433644" },
+];
 
 export default function FigmaFooter({
   asset,
@@ -110,9 +115,16 @@ export default function FigmaFooter({
 
           <div className="grid max-w-[340px] content-start justify-items-center gap-6 md:max-w-none md:justify-items-end md:text-right lg:gap-8">
             <h3 className="m-0 text-lg font-bold leading-none text-[#181b27]">Get in touch</h3>
-            <a className="break-all text-xl font-extrabold leading-tight text-[#ff7436] no-underline sm:text-2xl lg:text-[25px]" href="mailto:techvisr@gmail.com">
-              techvisr@gmail.com
+            <a className="break-all text-xl font-extrabold leading-tight text-[#ff7436] no-underline sm:text-2xl lg:text-[25px]" href={`mailto:${contactEmail}`}>
+              {contactEmail}
             </a>
+            <div className="grid gap-0.5 text-sm font-bold leading-tight text-[#181b27] sm:text-base">
+              {phoneLinks.map((phone) => (
+                <a className="text-current no-underline hover:text-[#ff7436]" href={phone.href} key={phone.href}>
+                  {phone.label}
+                </a>
+              ))}
+            </div>
             <div className="flex flex-wrap gap-3 md:justify-end lg:mt-4">
               {socialLinks.map(([Icon, label]) => (
                 <a
@@ -125,7 +137,15 @@ export default function FigmaFooter({
                 </a>
               ))}
             </div>
-            <span className="text-sm font-semibold leading-6 text-[#181b27] md:text-right">Terms and Conditions | Privacy Policy</span>
+            <div className="flex flex-wrap justify-center gap-x-2 gap-y-1 text-sm font-semibold leading-6 text-[#181b27] md:justify-end md:text-right">
+              <a className="text-current no-underline hover:text-[#ff7436]" href="/terms-and-conditions">
+                Terms and Conditions
+              </a>
+              <span aria-hidden="true">|</span>
+              <a className="text-current no-underline hover:text-[#ff7436]" href="/privacy-policy">
+                Privacy Policy
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -136,57 +156,57 @@ export default function FigmaFooter({
       </div> */}
 
       {showWatermark ? (
-      <div
-        ref={watermarkRef}
-        className="sticky bottom-0 z-0 isolate grid min-h-[190px] place-items-center overflow-hidden bg-[#fff1e8] px-4 py-10 [--footer-logo-y:0px] sm:px-6 md:min-h-[300px] md:px-10 md:py-16 lg:min-h-[430px] lg:px-[9vw] lg:py-20"
-      >
         <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(255,255,255,0.9)_0%,rgba(255,255,255,0)_30%),radial-gradient(circle_at_22%_76%,rgba(255,116,54,0.72)_0%,rgba(255,116,54,0)_42%),radial-gradient(circle_at_78%_26%,rgba(243,58,116,0.62)_0%,rgba(243,58,116,0)_46%),radial-gradient(circle_at_58%_88%,rgba(255,199,127,0.36)_0%,rgba(255,199,127,0)_38%),linear-gradient(120deg,#fff6ef_0%,#ffb07b_38%,#f65a72_72%,#f33a74_100%)]"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.16] mix-blend-multiply [background-image:linear-gradient(90deg,rgba(22,24,33,0.28)_1px,transparent_1px),linear-gradient(0deg,rgba(22,24,33,0.22)_1px,transparent_1px)] [background-size:64px_64px]"
-          aria-hidden="true"
-        />
-        <img
-          className="pointer-events-none absolute left-[-18vw] top-[-170px] h-auto w-[150vw] max-w-none opacity-[0.18] mix-blend-screen"
-          src="/images/story-wave-pattern.svg"
-          alt=""
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute -left-[28%] bottom-[-46%] h-[300px] w-[300px] rounded-full bg-[#ff7436]/35 blur-[64px] md:-left-[10%] md:bottom-[-36%] md:h-[560px] md:w-[560px] md:blur-[74px]"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute -right-[30%] top-[-42%] h-[320px] w-[320px] rounded-full bg-[#ef4169]/32 blur-[72px] md:-right-[9%] md:top-[-34%] md:h-[580px] md:w-[580px] md:blur-[82px]"
-          aria-hidden="true"
-        />
-
-        <div
-          className="relative aspect-[3508/882] w-full max-w-[1040px] transform-gpu will-change-transform lg:max-w-[1280px]"
-          style={{ transform: "translate3d(0, var(--footer-logo-y), 0)" }}
+          ref={watermarkRef}
+          className="sticky bottom-0 z-0 isolate grid min-h-[190px] place-items-center overflow-hidden bg-[#fff1e8] px-4 py-10 [--footer-logo-y:0px] sm:px-6 md:min-h-[300px] md:px-10 md:py-16 lg:min-h-[430px] lg:px-[9vw] lg:py-20"
         >
-          <img
-            className="absolute inset-0 h-full w-full object-contain opacity-[0.34] brightness-0 mix-blend-multiply drop-shadow-[0_18px_42px_rgba(22,24,33,0.14)]"
-            src={logoSrc}
-            alt=""
+          <div
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(255,255,255,0.9)_0%,rgba(255,255,255,0)_30%),radial-gradient(circle_at_22%_76%,rgba(255,116,54,0.72)_0%,rgba(255,116,54,0)_42%),radial-gradient(circle_at_78%_26%,rgba(243,58,116,0.62)_0%,rgba(243,58,116,0)_46%),radial-gradient(circle_at_58%_88%,rgba(255,199,127,0.36)_0%,rgba(255,199,127,0)_38%),linear-gradient(120deg,#fff6ef_0%,#ffb07b_38%,#f65a72_72%,#f33a74_100%)]"
+            aria-hidden="true"
+          />
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.16] mix-blend-multiply [background-image:linear-gradient(90deg,rgba(22,24,33,0.28)_1px,transparent_1px),linear-gradient(0deg,rgba(22,24,33,0.22)_1px,transparent_1px)] [background-size:64px_64px]"
             aria-hidden="true"
           />
           <img
-            className="absolute inset-0 h-full w-full object-contain opacity-[0.12] brightness-0 invert drop-shadow-[0_0_30px_rgba(255,255,255,0.42)]"
-            src={logoSrc}
+            className="pointer-events-none absolute left-[-18vw] top-[-170px] h-auto w-[150vw] max-w-none opacity-[0.18] mix-blend-screen"
+            src="/images/story-wave-pattern.svg"
             alt=""
             aria-hidden="true"
           />
           <div
-            className="pointer-events-none absolute inset-0 overflow-hidden opacity-[0.58] mix-blend-multiply [mask-image:url('/images/figma-raw/58c76896b6e7aaa2c5446fbb80905b6b30ed7778.png')] [mask-position:center] [mask-repeat:no-repeat] [mask-size:contain] [-webkit-mask-image:url('/images/figma-raw/58c76896b6e7aaa2c5446fbb80905b6b30ed7778.png')] [-webkit-mask-position:center] [-webkit-mask-repeat:no-repeat] [-webkit-mask-size:contain]"
+            className="pointer-events-none absolute -left-[28%] bottom-[-46%] h-[300px] w-[300px] rounded-full bg-[#ff7436]/35 blur-[64px] md:-left-[10%] md:bottom-[-36%] md:h-[560px] md:w-[560px] md:blur-[74px]"
             aria-hidden="true"
+          />
+          <div
+            className="pointer-events-none absolute -right-[30%] top-[-42%] h-[320px] w-[320px] rounded-full bg-[#ef4169]/32 blur-[72px] md:-right-[9%] md:top-[-34%] md:h-[580px] md:w-[580px] md:blur-[82px]"
+            aria-hidden="true"
+          />
+
+          <div
+            className="relative aspect-[3508/882] w-full max-w-[1040px] transform-gpu will-change-transform lg:max-w-[1280px]"
+            style={{ transform: "translate3d(0, var(--footer-logo-y), 0)" }}
           >
-            <span className="absolute inset-y-[-22%] left-[-30%] w-[30%] rotate-[12deg] bg-[linear-gradient(90deg,transparent_0%,rgba(0,0,0,0.08)_28%,rgba(0,0,0,0.56)_50%,rgba(0,0,0,0.08)_72%,transparent_100%)] blur-[3px] animate-[footerLogoShine_4.6s_linear_infinite]" />
+            <img
+              className="absolute inset-0 h-full w-full object-contain opacity-[0.34] brightness-0 mix-blend-multiply drop-shadow-[0_18px_42px_rgba(22,24,33,0.14)]"
+              src={logoSrc}
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              className="absolute inset-0 h-full w-full object-contain opacity-[0.12] brightness-0 invert drop-shadow-[0_0_30px_rgba(255,255,255,0.42)]"
+              src={logoSrc}
+              alt=""
+              aria-hidden="true"
+            />
+            <div
+              className="pointer-events-none absolute inset-0 overflow-hidden opacity-[0.58] mix-blend-multiply [mask-image:url('/images/figma-raw/58c76896b6e7aaa2c5446fbb80905b6b30ed7778.png')] [mask-position:center] [mask-repeat:no-repeat] [mask-size:contain] [-webkit-mask-image:url('/images/figma-raw/58c76896b6e7aaa2c5446fbb80905b6b30ed7778.png')] [-webkit-mask-position:center] [-webkit-mask-repeat:no-repeat] [-webkit-mask-size:contain]"
+              aria-hidden="true"
+            >
+              <span className="absolute inset-y-[-22%] left-[-30%] w-[30%] rotate-[12deg] bg-[linear-gradient(90deg,transparent_0%,rgba(0,0,0,0.08)_28%,rgba(0,0,0,0.56)_50%,rgba(0,0,0,0.08)_72%,transparent_100%)] blur-[3px] animate-[footerLogoShine_4.6s_linear_infinite]" />
+            </div>
           </div>
         </div>
-      </div>
       ) : null}
     </footer>
   );

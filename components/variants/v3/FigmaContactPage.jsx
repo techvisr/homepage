@@ -18,6 +18,17 @@ import { asset, industries } from "./figmaContent";
 
 const contactVideo = "/videos/contact-hero-background.mp4";
 const consultationImage = "/images/contact/consultation-code.png";
+const contactEmail = "admin@techvisr.com";
+const primaryPhone = "+91 89043 61600";
+const secondaryPhone = "+91 9438433644";
+const primaryPhoneHref = "tel:+918904361600";
+const companyAddressLines = [
+  "Techvisr Private Limited",
+  "11th Floor, Innov8 Prestige Tech Platina 2",
+  "Outer Ring Road, Kadabisanahalli",
+  "Bangalore South, Bangalore",
+  "Karnataka - 560087",
+];
 
 const certificationBadges = [
   { src: "/images/contact/iso-9001.png", alt: "ISO 9001:2015 certified company" },
@@ -57,8 +68,7 @@ const contactCards = [
   {
     icon: Mail,
     title: "Email Address",
-    lines: ["help@techvisr.com"],
-    href: "mailto:help@techvisr.com",
+    lines: [{ label: contactEmail, href: `mailto:${contactEmail}` }],
   },
   {
     icon: Clock3,
@@ -68,13 +78,15 @@ const contactCards = [
   {
     icon: MapPin,
     title: "Address",
-    lines: ["78 Avenue des Champs,", "Bangalore, India"],
+    lines: companyAddressLines,
   },
   {
     icon: Phone,
     title: "Phone",
-    lines: ["+91 7 68 57 02 49", "+91 7 68 57 02 49"],
-    href: "tel:+91768570249",
+    lines: [
+      { label: primaryPhone, href: primaryPhoneHref },
+      { label: secondaryPhone, href: "tel:+919438433644" },
+    ],
   },
 ];
 
@@ -191,7 +203,7 @@ export function JourneySection() {
             className="contact-card-lift contact-reveal grid content-start rounded-[18px] border border-[#d8d8d8] bg-white p-5 shadow-[0_14px_32px_rgba(22,24,33,0.05)] sm:p-7 lg:p-9"
             data-contact-reveal
             style={{ "--contact-reveal-delay": "160ms" }}
-            action="mailto:help@techvisr.com"
+            action={`mailto:${contactEmail}`}
             method="post"
             encType="text/plain"
           >
@@ -325,24 +337,22 @@ function ContactInfoSection() {
                 </div>
                 <div className="mt-5 h-[2px] w-7 bg-[#161821]" />
                 <div className="mt-5 grid gap-1 text-base font-bold leading-6 text-[#161821]">
-                  {card.lines.map((line, index) => (
-                    <span key={`${card.title}-${line}-${index}`}>{line}</span>
-                  ))}
+                  {card.lines.map((line, index) => {
+                    const lineLabel = typeof line === "string" ? line : line.label;
+
+                    return typeof line === "string" ? (
+                      <span key={`${card.title}-${lineLabel}-${index}`}>{lineLabel}</span>
+                    ) : (
+                      <a className="text-current no-underline hover:text-[#f37135]" href={line.href} key={`${card.title}-${lineLabel}-${index}`}>
+                        {lineLabel}
+                      </a>
+                    );
+                  })}
                 </div>
               </>
             );
 
-            return card.href ? (
-              <a
-                className="contact-card-lift contact-reveal block min-h-[150px] rounded-[8px] border-2 border-[#ff9b76] bg-white p-6 text-[#161821] transition hover:-translate-y-1 hover:shadow-[0_16px_34px_rgba(22,24,33,0.09)]"
-                data-contact-reveal
-                href={card.href}
-                key={card.title}
-                style={{ "--contact-reveal-delay": `${index * 80}ms` }}
-              >
-                {content}
-              </a>
-            ) : (
+            return (
               <article
                 className="contact-card-lift contact-reveal min-h-[150px] rounded-[8px] border-2 border-[#ff9b76] bg-white p-6 text-[#161821]"
                 data-contact-reveal

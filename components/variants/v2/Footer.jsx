@@ -20,6 +20,8 @@ const footerGroups = [
     title: "Contact",
     links: [
       { label: "admin@techvisr.com", href: "mailto:admin@techvisr.com" },
+      { label: "+91 89043 61600", href: "tel:+918904361600" },
+      { label: "+91 94384 33644", href: "tel:+919438433644" },
       { label: "Book a consultation", href: "/contact" },
       { label: "Explore services", href: "/services" },
     ],

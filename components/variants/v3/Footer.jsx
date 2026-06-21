@@ -39,6 +39,14 @@ export default function Footer() {
             >
               admin@techvisr.com
             </a>
+            <div className="mt-3 grid gap-1 text-sm font-semibold text-white">
+              <a href="tel:+918904361600" className="hover:text-slate-300">
+                +91 89043 61600
+              </a>
+              <a href="tel:+919438433644" className="hover:text-slate-300">
+                +91 94384 33644
+              </a>
+            </div>
           </div>
 
           {footerGroups.map((group) => (
