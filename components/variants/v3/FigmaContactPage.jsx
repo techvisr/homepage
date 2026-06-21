@@ -81,7 +81,7 @@ const contactCards = [
 const inputClass =
   "mt-2 h-10 w-full rounded-[4px] border border-transparent bg-[#eeeeee] px-3 text-sm font-medium text-[#161821] outline-none transition focus:border-[#f37135] focus:bg-white focus:ring-2 focus:ring-[#f37135]/20";
 
-function useContactReveal() {
+export function useContactReveal() {
   useEffect(() => {
     const elements = [...document.querySelectorAll("[data-contact-reveal]")];
 
@@ -153,7 +153,7 @@ function ContactHero() {
   );
 }
 
-function JourneySection() {
+export function JourneySection() {
   return (
     <section id="contact-form" className="relative isolate overflow-hidden bg-white px-4 py-14 sm:px-6 sm:py-16 md:px-8 lg:px-12 lg:py-24">
       <img

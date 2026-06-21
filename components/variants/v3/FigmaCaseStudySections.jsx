@@ -151,6 +151,9 @@ const DesktopScrollerHeading = memo(function DesktopScrollerHeading() {
 function DesktopOutcomeScroller({ studies }) {
   const sectionRef = useRef(null);
   const panelRef = useRef(null);
+  const listViewportRef = useRef(null);
+  const listTrackRef = useRef(null);
+  const rowRefs = useRef([]);
   const imageRefs = useRef([]);
   const timelineRef = useRef(null);
   const activeIndexRef = useRef(0);
@@ -158,6 +161,27 @@ function DesktopOutcomeScroller({ studies }) {
   const programmaticUnlockRef = useRef(null);
   const restoreScrollBehaviorRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const updateListOffset = (immediate = false) => {
+    const viewport = listViewportRef.current;
+    const track = listTrackRef.current;
+    const activeRow = rowRefs.current[activeIndexRef.current];
+
+    if (!viewport || !track || !activeRow) {
+      return;
+    }
+
+    const rowCenter = activeRow.offsetTop + activeRow.offsetHeight / 2;
+    const viewportCenter = viewport.clientHeight / 2;
+    const nextOffset = viewportCenter - rowCenter;
+
+    gsap.to(track, {
+      y: nextOffset,
+      duration: immediate ? 0 : 0.42,
+      ease: "power3.out",
+      overwrite: "auto",
+    });
+  };
 
   const showStudyImage = (index, duration = 0.28) => {
     const images = imageRefs.current.slice(0, studies.length).filter(Boolean);
@@ -288,6 +312,7 @@ function DesktopOutcomeScroller({ studies }) {
       gsap.set(images[0], { opacity: 1, scale: 1, filter: "blur(0px)" });
       activeIndexRef.current = 0;
       setActiveIndex(0);
+      const initialCenter = window.requestAnimationFrame(() => updateListOffset(true));
 
       studies.forEach((_, index) => {
         timeline.addLabel(`study-${index}`, index);
@@ -306,10 +331,14 @@ function DesktopOutcomeScroller({ studies }) {
 
       return () => {
         window.clearTimeout(refresh);
+        window.cancelAnimationFrame(initialCenter);
         if (programmaticUnlockRef.current) {
           window.clearTimeout(programmaticUnlockRef.current);
         }
         restoreNativeScrollBehavior();
+        if (listTrackRef.current) {
+          gsap.killTweensOf(listTrackRef.current);
+        }
         timelineRef.current = null;
         timeline.kill();
       };
@@ -318,9 +347,37 @@ function DesktopOutcomeScroller({ studies }) {
     return () => {
       timelineRef.current = null;
       restoreNativeScrollBehavior();
+      if (listTrackRef.current) {
+        gsap.killTweensOf(listTrackRef.current);
+      }
       mm.revert();
     };
   }, [studies.length]);
+
+  useEffect(() => {
+    let frame = 0;
+
+    const scheduleUpdate = () => {
+      if (frame) {
+        return;
+      }
+
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        updateListOffset();
+      });
+    };
+
+    scheduleUpdate();
+    window.addEventListener("resize", scheduleUpdate);
+
+    return () => {
+      if (frame) {
+        window.cancelAnimationFrame(frame);
+      }
+      window.removeEventListener("resize", scheduleUpdate);
+    };
+  }, [activeIndex, studies.length]);
 
   const scrollToStudy = (index) => {
     const timeline = timelineRef.current;
@@ -372,112 +429,115 @@ function DesktopOutcomeScroller({ studies }) {
         <DesktopScrollerHeading />
 
         <div className="mt-7 grid min-h-0 items-center gap-10 lg:grid-cols-[0.9fr_0.84fr] xl:gap-12">
-          <div className="relative grid gap-3">
-            {studies.map((study, index) => {
-              const active = activeIndex === index;
-              const inactiveDistance = Math.min(Math.abs(activeIndex - index), 2);
-              const inactiveRowStyle = active
-                ? undefined
-                : {
-                    opacity: inactiveDistance === 1 ? 0.52 : 0.24,
-                    transform: `translateX(-${inactiveDistance === 1 ? 4 : 9}px) scale(${
-                      inactiveDistance === 1 ? 0.97 : 0.92
-                    })`,
-                  };
-              const inactiveNumberStyle = active
-                ? undefined
-                : {
-                    color: inactiveDistance === 1 ? "#8f8f8f" : "#c8c8c8",
-                    fontSize: inactiveDistance === 1 ? "2rem" : "1.65rem",
-                  };
-              const inactiveTitleStyle = active
-                ? undefined
-                : {
-                    color: inactiveDistance === 1 ? "#8f8f8f" : "#c8c8c8",
-                    display: "-webkit-box",
-                    fontSize: inactiveDistance === 1 ? "1.22rem" : "1rem",
-                    WebkitBoxOrient: "vertical",
-                    WebkitLineClamp: 1,
-                    overflow: "hidden",
-                  };
+          <div
+            ref={listViewportRef}
+            className="relative overflow-hidden"
+            style={{ height: "clamp(430px, calc(100svh - 220px), 690px)" }}
+          >
+            <div
+              ref={listTrackRef}
+              className="relative grid gap-3 transform-gpu will-change-transform"
+            >
+              {studies.map((study, index) => {
+                const active = activeIndex === index;
+                const inactiveDistance = Math.min(Math.abs(activeIndex - index), 2);
+                const inactiveRowStyle = active
+                  ? undefined
+                  : {
+                      opacity: inactiveDistance === 1 ? 0.52 : 0.24,
+                      transform: `scale(${inactiveDistance === 1 ? 0.97 : 0.92})`,
+                    };
+                const inactiveNumberStyle = active
+                  ? undefined
+                  : {
+                      color: inactiveDistance === 1 ? "#8f8f8f" : "#c8c8c8",
+                      fontSize: inactiveDistance === 1 ? "2rem" : "1.65rem",
+                    };
+                const inactiveTitleStyle = active
+                  ? undefined
+                  : {
+                      color: inactiveDistance === 1 ? "#8f8f8f" : "#c8c8c8",
+                      display: "-webkit-box",
+                      fontSize: inactiveDistance === 1 ? "1.22rem" : "1rem",
+                      WebkitBoxOrient: "vertical",
+                      WebkitLineClamp: 1,
+                      overflow: "hidden",
+                    };
 
-              return (
-                <article
-                  className={`relative grid origin-left grid-cols-[78px_minmax(0,1fr)] gap-4 overflow-hidden transform-gpu transition-[max-height,opacity,padding,transform] duration-300 ease-out ${
-                    active
-                      ? "max-h-[620px] translate-x-0 scale-100 py-2 opacity-100"
-                      : "max-h-[52px] py-0"
-                  }`}
-                  key={study.number}
-                  aria-current={active ? "step" : undefined}
-                  style={inactiveRowStyle}
-                >
-                  <span
-                    className={`absolute left-[38px] top-[56px] bottom-0 w-px bg-[#161821]/75 transition-opacity duration-300 ${
-                      active ? "opacity-100" : "opacity-0"
-                    }`}
-                    aria-hidden="true"
-                  />
-                  <button
-                    className={`relative z-10 h-10 w-[70px] cursor-pointer bg-white text-left font-medium leading-none tracking-[0] transition-[color,font-size,transform] duration-300 ease-out ${
+                return (
+                  <article
+                    className={`relative grid origin-left grid-cols-[78px_minmax(0,1fr)] gap-4 overflow-hidden transform-gpu transition-[opacity,transform] duration-300 ease-out ${
                       active
-                        ? "translate-y-0 text-[2.3rem] text-black xl:text-[2.5rem]"
-                        : "translate-y-1"
+                        ? "max-h-[620px] translate-x-0 scale-100 py-2 opacity-100"
+                        : "max-h-[52px] py-0"
                     }`}
-                    type="button"
-                    onClick={() => scrollToStudy(index)}
-                    aria-label={`Show case study ${study.number}`}
-                    style={inactiveNumberStyle}
+                    key={study.number}
+                    aria-current={active ? "step" : undefined}
+                    ref={(node) => {
+                      rowRefs.current[index] = node;
+                    }}
+                    style={inactiveRowStyle}
                   >
-                    {study.number}
-                  </button>
-
-                  <div className="min-w-0">
+                    <span
+                      className={`absolute left-[38px] top-[56px] bottom-0 w-px bg-[#161821]/75 transition-opacity duration-300 ${
+                        active ? "opacity-100" : "opacity-0"
+                      }`}
+                      aria-hidden="true"
+                    />
                     <button
-                      className={`block w-full cursor-pointer bg-transparent p-0 text-left font-medium leading-[1.08] tracking-[0] transition-[color,font-size,opacity,transform] duration-300 ease-out ${
+                      className={`relative z-10 h-10 w-[70px] cursor-pointer bg-white text-left font-medium leading-none tracking-[0] transition-[color,transform] duration-300 ease-out ${
                         active
-                          ? "translate-y-0 text-[1.65rem] text-black opacity-100 xl:text-[1.9rem]"
+                          ? "translate-y-0 text-[2.3rem] text-black xl:text-[2.5rem]"
                           : "translate-y-1"
                       }`}
                       type="button"
                       onClick={() => scrollToStudy(index)}
-                      style={inactiveTitleStyle}
+                      aria-label={`Show case study ${study.number}`}
+                      style={inactiveNumberStyle}
                     >
-                      {study.title}
+                      {study.number}
                     </button>
 
-                    <div
-                      className={`grid overflow-hidden transition-[grid-template-rows,opacity,margin] duration-300 ${
-                        active ? "mt-4 grid-rows-[1fr] opacity-100" : "mt-0 grid-rows-[0fr] opacity-0"
-                      }`}
-                    >
-                      <div className="min-h-0">
-                        <span className="inline-flex rounded-[3px] bg-[#ff7436] px-3 py-1.5 text-[11px] font-extrabold leading-none text-white xl:text-xs">
-                          {study.category}
-                        </span>
-                        <h3 className="m-0 mt-3 max-w-[470px] text-[1.65rem] font-extrabold leading-[1.08] tracking-[0] text-black xl:text-[1.9rem]">
-                          {study.title}
-                        </h3>
-                        <p className="m-0 mt-3 max-w-[490px] text-sm font-extrabold leading-[1.55] text-[#161821] xl:text-base xl:leading-6">
-                          {study.summary}
-                        </p>
-                        <p className="m-0 mt-4 text-sm font-extrabold leading-none text-black xl:text-base">
-                          Key Outcomes
-                        </p>
-                        <OutcomePills outcomes={study.outcomes} active={active} />
-                        <a
-                          className="mt-5 inline-flex w-fit items-center gap-2 border-b border-[#161821] pb-2 text-sm font-extrabold leading-none text-[#161821] no-underline hover:text-[#f37135] xl:mt-6"
-                          href={study.href}
-                        >
-                          <span>Read More</span>
-                          <ArrowRight size={16} strokeWidth={2.2} aria-hidden="true" />
-                        </a>
-                      </div>
+                    <div className="min-w-0">
+                      <button
+                        className={`block w-full cursor-pointer bg-transparent p-0 text-left font-medium leading-[1.08] tracking-[0] transition-[color,opacity,transform] duration-300 ease-out ${
+                          active
+                            ? "translate-y-0 text-[1.65rem] text-black opacity-100 xl:text-[1.9rem]"
+                            : "translate-y-1"
+                        }`}
+                        type="button"
+                        onClick={() => scrollToStudy(index)}
+                        style={inactiveTitleStyle}
+                      >
+                        {study.title}
+                      </button>
+
+                      {active ? (
+                        <div className="mt-4 overflow-hidden">
+                          <span className="inline-flex rounded-[3px] bg-[#ff7436] px-3 py-1.5 text-[11px] font-extrabold leading-none text-white xl:text-xs">
+                            {study.category}
+                          </span>
+                          <p className="m-0 mt-3 max-w-[490px] text-sm font-extrabold leading-[1.55] text-[#161821] xl:text-base xl:leading-6">
+                            {study.summary}
+                          </p>
+                          <p className="m-0 mt-4 text-sm font-extrabold leading-none text-black xl:text-base">
+                            Key Outcomes
+                          </p>
+                          <OutcomePills outcomes={study.outcomes} active={active} />
+                          <a
+                            className="mt-5 inline-flex w-fit items-center gap-2 border-b border-[#161821] pb-2 text-sm font-extrabold leading-none text-[#161821] no-underline hover:text-[#f37135] xl:mt-6"
+                            href={study.href}
+                          >
+                            <span>Read More</span>
+                            <ArrowRight size={16} strokeWidth={2.2} aria-hidden="true" />
+                          </a>
+                        </div>
+                      ) : null}
                     </div>
-                  </div>
-                </article>
-              );
-            })}
+                  </article>
+                );
+              })}
+            </div>
           </div>
 
           <div
@@ -490,7 +550,7 @@ function DesktopOutcomeScroller({ studies }) {
                   className="absolute inset-0 h-full w-full object-cover transition-[filter] duration-200"
                   src={asset(study.image)}
                   alt={study.imageAlt}
-                  key={study.image}
+                  key={`${study.slug}-image`}
                   ref={(node) => {
                     imageRefs.current[index] = node;
                   }}

@@ -182,6 +182,165 @@ export const caseStudies = [
       "Observability and release governance",
     ],
   },
+  {
+    slug: "ai-process-automation-faster-workflows",
+    href: "/case-studies/ai-process-automation-faster-workflows",
+    number: "04",
+    category: "AI Automation",
+    title: "AI Process Automation for Faster Enterprise Workflows",
+    summary:
+      "Reduced manual effort across document-heavy operations by introducing AI workflow routing, intelligent extraction, validation, and human-in-the-loop approvals.",
+    outcomes: [
+      "65% faster AI workflows",
+      "42% fewer manual touchpoints",
+      "Improved process visibility",
+    ],
+    focusAreas: ["Workflow automation", "Document intelligence", "Approval orchestration"],
+    image: "6af58d06caf280e4e47560e947391e7ca94ed0c6.jpg",
+    imageAlt: "Enterprise automation interface for AI-powered workflow processing",
+    engagement: "AI process automation program",
+    timeline: "10-week automation release",
+    deliveryModel: "AI engineering pod with workflow specialists",
+    challenge:
+      "Operations teams were spending too much time triaging requests, extracting information from documents, updating systems, and chasing approvals through fragmented manual processes.",
+    solution:
+      "Techvisr designed an AI-assisted workflow layer that classified incoming work, extracted key data, routed tasks, validated exceptions, and kept human reviewers in control for sensitive decisions.",
+    impact:
+      "The automation program accelerated workflow cycle time, reduced repetitive manual effort, and gave leaders clearer visibility into process status, exceptions, and team workload.",
+    context:
+      "The enterprise had high-volume operational processes that depended on email, spreadsheets, document review, and multiple internal systems. Teams needed automation that could improve speed without losing auditability or human oversight.",
+    approach: [
+      "Mapped workflow stages, handoffs, document types, exception paths, and approval thresholds before selecting automation candidates.",
+      "Built AI-assisted extraction, classification, and routing capabilities connected to existing operational systems.",
+      "Introduced confidence scoring, reviewer queues, exception handling, and reporting so teams could scale automation responsibly.",
+    ],
+    deliverables: [
+      "AI-powered workflow intake and routing",
+      "Document extraction and validation pipeline",
+      "Human-in-the-loop approval and exception queues",
+      "Operational dashboards for process visibility",
+    ],
+    technicalPriorities: [
+      "AI workflow orchestration",
+      "Document intelligence",
+      "Auditability and controls",
+      "Systems integration",
+    ],
+    resultNarrative:
+      "Teams moved from slow manual coordination to a clearer AI-assisted operating model. Routine work moved faster, exceptions became easier to manage, and leaders could track throughput with better confidence.",
+    capabilities: [
+      "AI automation services",
+      "Enterprise workflow intelligence",
+      "Document processing systems",
+      "Operational analytics",
+    ],
+  },
+  {
+    slug: "enterprise-platform-modernization-cloud-delivery",
+    href: "/case-studies/enterprise-platform-modernization-cloud-delivery",
+    number: "05",
+    category: "Platform Modernization",
+    title: "Enterprise Platform Modernization for Faster Cloud Delivery",
+    summary:
+      "Modernized a business-critical platform with scalable cloud architecture, automated delivery pipelines, quality controls, and stronger release governance.",
+    outcomes: [
+      "5x faster cloud delivery",
+      "35% shorter release cycles",
+      "Stronger platform reliability",
+    ],
+    focusAreas: ["Cloud architecture", "DevOps automation", "Quality governance"],
+    image: "a1436e76b433d9cd33a19386748dfa42f79f80c2.jpg",
+    imageAlt: "Cloud delivery and platform modernization interface on a digital device",
+    engagement: "Enterprise platform modernization",
+    timeline: "14-week modernization program",
+    deliveryModel: "Managed platform team with DevOps and QA governance",
+    challenge:
+      "A growing enterprise platform was constrained by slow releases, brittle infrastructure, limited observability, and inconsistent quality checks across delivery teams.",
+    solution:
+      "Techvisr modernized the platform architecture, introduced CI/CD automation, improved environment governance, and embedded quality controls into the release lifecycle.",
+    impact:
+      "The new platform foundation improved delivery speed, increased release confidence, and gave engineering teams a more reliable path for scaling product and infrastructure changes.",
+    context:
+      "Business teams needed platform improvements faster, but engineering was slowed by manual deployment work, environment drift, and inconsistent validation practices. The modernization needed to improve speed and reliability together.",
+    approach: [
+      "Assessed architecture, release flows, environment setup, operational risk, and quality gates across the delivery lifecycle.",
+      "Sequenced platform improvements around CI/CD, cloud readiness, observability, test automation, and release governance.",
+      "Partnered with internal teams to transfer practices and create a repeatable delivery model for future roadmap work.",
+    ],
+    deliverables: [
+      "Modern cloud-ready platform architecture",
+      "Automated CI/CD and environment governance",
+      "Quality automation and release validation gates",
+      "Monitoring, observability, and delivery dashboards",
+    ],
+    technicalPriorities: [
+      "Cloud-native architecture",
+      "Deployment automation",
+      "Quality engineering",
+      "Release governance",
+    ],
+    resultNarrative:
+      "The modernization helped the organization move faster without adding delivery risk. Engineering teams gained clearer ownership, automated release paths, and a stronger reliability baseline.",
+    capabilities: [
+      "Enterprise platform modernization",
+      "Cloud migration services",
+      "DevOps consulting",
+      "Quality engineering and testing",
+    ],
+  },
+  {
+    slug: "saas-product-launch-mvp-12-weeks",
+    href: "/case-studies/saas-product-launch-mvp-12-weeks",
+    number: "06",
+    category: "SaaS Engineering",
+    title: "SaaS Product Launch from Concept to MVP in 12 Weeks",
+    summary:
+      "Designed and delivered a scalable SaaS MVP with core product workflows, cloud-native architecture, analytics, and a launch-ready operating foundation.",
+    outcomes: [
+      "MVP launch in 12 weeks",
+      "Production-ready SaaS foundation",
+      "Faster product validation",
+    ],
+    focusAreas: ["MVP delivery", "SaaS architecture", "Product validation"],
+    image: "0b9cce3595b669a8aaca5c0aaee9d500cccf4424.jpg",
+    imageAlt: "SaaS product architecture and launch planning interface",
+    engagement: "SaaS MVP product build",
+    timeline: "12-week launch cycle",
+    deliveryModel: "Product engineering team with design, cloud, and QA support",
+    challenge:
+      "The product team needed to move from concept to a credible market-ready MVP quickly while avoiding shortcuts that would make the platform difficult to scale after validation.",
+    solution:
+      "Techvisr shaped the MVP scope, designed the SaaS architecture, built core workflows, added analytics and quality controls, and prepared the product for an initial launch cycle.",
+    impact:
+      "The team launched a usable MVP in 12 weeks, gathered early market feedback sooner, and retained a platform foundation that could support future product growth.",
+    context:
+      "The client had a clear opportunity but needed disciplined execution across discovery, architecture, engineering, quality, and launch readiness. Speed mattered, but the product could not be a disposable prototype.",
+    approach: [
+      "Defined the MVP around core user journeys, operational requirements, launch risks, and the smallest useful product scope.",
+      "Built the application with scalable cloud architecture, secure user flows, analytics instrumentation, and automated quality checks.",
+      "Prepared launch readiness with stabilization cycles, backlog grooming, and roadmap recommendations for post-MVP growth.",
+    ],
+    deliverables: [
+      "SaaS MVP product architecture and core workflows",
+      "Cloud-native application build and deployment setup",
+      "Analytics instrumentation and product feedback loops",
+      "Launch readiness, QA validation, and stabilization support",
+    ],
+    technicalPriorities: [
+      "SaaS product engineering",
+      "Cloud-native delivery",
+      "User workflow design",
+      "Quality and launch readiness",
+    ],
+    resultNarrative:
+      "The MVP gave the team a real product surface for validation instead of a throwaway demo. They could test demand, learn from usage, and continue evolving on a scalable technical base.",
+    capabilities: [
+      "SaaS product development",
+      "Product engineering",
+      "Cloud-native application build",
+      "MVP delivery and validation",
+    ],
+  },
 ];
 
 export function getCaseStudy(slug) {
