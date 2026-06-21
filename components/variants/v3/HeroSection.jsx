@@ -130,7 +130,7 @@ export default function HeroSection() {
 
         <a
           className="figma-hero-scroll mx-auto mt-2 hidden animate-[scrollBounce_1.6s_ease-in-out_infinite] items-center gap-2 text-[10px] font-medium tracking-[0.08em] text-white/90 lg:absolute lg:bottom-4 lg:left-1/2 lg:mt-0 lg:inline-flex lg:-translate-x-1/2"
-          href="#our-story"
+          href="#enterprise-services"
         >
           <span>SCROLL</span>
           <ChevronDown size={22} />

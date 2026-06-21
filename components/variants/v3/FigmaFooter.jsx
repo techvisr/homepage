@@ -16,14 +16,30 @@ const phoneLinks = [
   { label: "+91 94384 33644", href: "tel:+919438433644" },
 ];
 
+const defaultCertificationBadges = [
+  { src: "/images/figma-raw/39e0cabeff999a1bd04a0d47bf59b18b175bf911.png", alt: "ISO 9001:2015 certified company" },
+  { src: "/images/figma-raw/20d5ac50b69700eeb9f6a6fb78ba46da3bd1ec42.png", alt: "ISO 27001 certified" },
+  { src: "/images/figma-raw/1b610f70ee69cb480db6c9e5f286d018e0d8e673.png", alt: "ISO 27018 certified" },
+  { src: "/images/figma-raw/94d9f6858c7596d4452d8d23975af62974247c00.png", alt: "ISO 27701 certified" },
+];
+
+const normalizeBadge = (badge) => {
+  if (Array.isArray(badge)) {
+    return { src: `/images/figma-raw/${badge[0]}`, alt: badge[1] || "" };
+  }
+
+  return badge;
+};
+
 export default function FigmaFooter({
   asset,
-  certificationBadges = [],
+  certificationBadges = defaultCertificationBadges,
   copyrightText = "Copyright © 2026 Techvisr",
   showDescription = true,
   showWatermark = true,
 }) {
   const logoSrc = asset("58c76896b6e7aaa2c5446fbb80905b6b30ed7778.png");
+  const badges = (certificationBadges.length ? certificationBadges : defaultCertificationBadges).map(normalizeBadge);
   const watermarkRef = useRef(null);
 
   useEffect(() => {
@@ -80,29 +96,21 @@ export default function FigmaFooter({
   }, [showWatermark]);
 
   return (
-    <footer id="footer" className="relative bg-[linear-gradient(90deg,#ff7436_0%,#f33a74_100%)] text-[#171a27]">
-      <div className="relative z-10 bg-white px-4 py-10 text-center shadow-[0_18px_42px_rgba(0,0,0,0.12)] sm:px-6 md:px-8 md:py-11 md:text-left lg:px-10">
-        <div className="mx-auto grid w-full max-w-[1000px] grid-cols-1 justify-items-center gap-10 md:grid-cols-[1fr_0.7fr_1fr] md:justify-items-stretch">
-          <div className="grid max-w-[340px] content-start justify-items-center gap-5 md:max-w-[320px] md:justify-items-start lg:gap-7">
-            <img className="w-36 sm:w-[150px] lg:w-[159px]" src={logoSrc} alt="Techvisr" />
-            {certificationBadges.length ? (
-              <div className="grid grid-cols-2 gap-3 sm:gap-4" aria-label="Techvisr certifications">
-                {certificationBadges.map((badge) => (
-                  <img
-                    className="size-[64px] object-contain sm:size-[72px]"
-                    src={badge.src}
-                    alt={badge.alt}
-                    key={badge.src}
-                  />
-                ))}
-              </div>
-            ) : null}
+    <footer id="footer" className="relative bg-[linear-gradient(90deg,#ff7436_0%,#f33a74_100%)] text-[#161821]">
+      <div className="relative z-10 bg-white">
+        <div className="mx-auto grid min-h-[342px] w-full max-w-[1000px] grid-cols-1 gap-10 px-4 py-10 sm:px-6 md:grid-cols-[190px_minmax(160px,1fr)_minmax(280px,360px)] md:items-stretch md:gap-[100px] md:px-0">
+          <div className="grid content-start justify-items-center gap-6 md:justify-items-start">
+            <img className="h-auto w-[190px]" src={logoSrc} alt="Techvisr" />
+            <div className="grid w-[190px] grid-cols-2 gap-[10px]" aria-label="Techvisr certifications">
+              {badges.map((badge) => (
+                <img className="size-[90px] object-contain" src={badge.src} alt={badge.alt} key={badge.src} />
+              ))}
+            </div>
             {showDescription ? (
-              <p className="m-0 max-w-[320px] text-base font-semibold leading-7 text-[#8d8d8d] lg:text-[17px] lg:leading-[1.55]">
+              <p className="m-0 hidden max-w-[320px] text-base font-semibold leading-7 text-[#8d8d8d]">
                 Building scalable software, intelligent automation, and cloud-driven ecosystems for modern enterprises.
               </p>
             ) : null}
-            <span className="text-sm font-semibold leading-6 text-[#8d8d8d] sm:text-base md:mt-6">{copyrightText}</span>
           </div>
 
           <nav className="grid grid-cols-2 content-start gap-x-8 gap-y-4 pt-1 text-base font-semibold leading-none text-[#181b27] md:grid-cols-1 md:justify-self-center lg:gap-[19px]">
@@ -128,7 +136,7 @@ export default function FigmaFooter({
             <div className="flex flex-wrap gap-3 md:justify-end lg:mt-4">
               {socialLinks.map(([Icon, label]) => (
                 <a
-                  className="grid size-11 place-items-center rounded-full bg-[#ff7436] text-white transition-transform duration-200 hover:-translate-y-1 lg:size-[49px]"
+                  className="grid size-12 place-items-center rounded-full bg-[#f37135] text-white transition-transform duration-200 hover:-translate-y-1"
                   href="/"
                   aria-label={label}
                   key={label}
@@ -149,11 +157,6 @@ export default function FigmaFooter({
           </div>
         </div>
       </div>
-
-      {/* <div className="relative z-10 grid min-h-[90px] grid-cols-1 items-center gap-4 bg-white px-8 py-5 text-[17px] font-semibold md:grid-cols-2 md:px-[11vw]">
-        <span className="text-[#8d8d8d]">Copyright © 2026 Techvisr</span>
-        <span className="text-[#181b27] md:justify-self-end">Terms And Condition | Privacy Policy</span>
-      </div> */}
 
       {showWatermark ? (
         <div

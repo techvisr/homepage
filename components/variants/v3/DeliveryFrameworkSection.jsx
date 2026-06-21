@@ -88,25 +88,11 @@ export default function DeliveryFrameworkSection({ steps }) {
       id="delivery-framework"
       ref={frameworkRef}
       data-in-view={frameworkInView ? "true" : "false"}
-      className="relative isolate grid scroll-mt-0 justify-items-center overflow-hidden bg-[#fffaf7] px-4 py-14 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-12 lg:py-24 2xl:px-20"
+      className="delivery-framework-section relative isolate grid scroll-mt-0 justify-items-center overflow-hidden px-4 py-14 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-12 lg:py-24 2xl:px-20"
     >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(78%_48%_at_50%_0%,rgba(243,113,53,0.13)_0%,rgba(255,250,247,0.72)_42%,rgba(255,255,255,0)_72%),radial-gradient(70%_46%_at_50%_100%,rgba(239,65,105,0.08)_0%,rgba(255,250,247,0.72)_46%,rgba(255,255,255,0)_74%),linear-gradient(180deg,#ffffff_0%,#fffaf7_34%,#ffffff_100%)]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.34] [background-image:radial-gradient(circle_at_1px_1px,rgba(243,113,53,0.22)_1px,transparent_0)] [background-size:28px_28px] [mask-image:radial-gradient(72%_62%_at_50%_46%,#000_0%,rgba(0,0,0,0.72)_44%,transparent_82%)]"
-      />
       <img
-        className="delivery-wave-layer pointer-events-none absolute left-[-520px] top-[-340px] z-0 h-auto w-[1480px] max-w-none opacity-[0.18] md:left-[-360px] md:top-[-390px] md:w-[1680px] lg:left-[-220px] lg:top-[-410px] lg:w-[1760px] 2xl:left-[-40px]"
-        src="/images/story-wave-pattern.svg"
-        alt=""
-        aria-hidden="true"
-      />
-      <img
-        className="delivery-wave-layer pointer-events-none absolute bottom-[-440px] right-[-620px] z-0 h-auto w-[1520px] max-w-none rotate-180 opacity-[0.12] md:bottom-[-520px] md:right-[-420px] md:w-[1720px] lg:bottom-[-610px] lg:right-[-260px] lg:w-[1800px]"
-        src="/images/story-wave-pattern.svg"
+        className="delivery-framework-wave"
+        src="/images/our-story-wave.svg"
         alt=""
         aria-hidden="true"
       />

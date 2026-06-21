@@ -197,7 +197,7 @@ export default function AdvantageSection({ asset, advantages }) {
 
   const renderInnerDots = (dotSizeClass = "size-10", bubbleSizeClass = "size-[34px]") => (
     <div className="pointer-events-none absolute inset-0 z-10 overflow-visible">
-      <div className="pointer-events-none absolute inset-0 z-20 overflow-visible" style={{ filter: "url(#advantage-gooeyness)" }}>
+      <div className="pointer-events-none absolute inset-0 z-20 overflow-visible">
         {leavingIndex !== null && (
           <span
             className={`absolute rounded-full ${bubbleSizeClass}`}
@@ -307,30 +307,16 @@ export default function AdvantageSection({ asset, advantages }) {
     <section
       id="why-techvisr-"
       ref={sectionRef}
-      className="relative scroll-mt-24 overflow-hidden bg-white md:scroll-mt-28 lg:min-h-0"
+      className="advantage-section relative scroll-mt-24 overflow-hidden md:scroll-mt-28 lg:min-h-0"
       aria-label="The Techvisr Advantage"
     >
-      <svg className="absolute h-0 w-0" aria-hidden="true" focusable="false">
-        <defs>
-          <filter id="advantage-gooeyness" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
-            <feColorMatrix
-              in="blur"
-              mode="matrix"
-              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10"
-              result="gooey"
-            />
-            <feComposite in="SourceGraphic" in2="gooey" operator="atop" />
-          </filter>
-        </defs>
-      </svg>
-
       <div className="relative isolate grid content-start justify-items-center px-4 pb-14 pt-20 sm:px-6 sm:pb-16 sm:pt-20 md:px-8 md:pb-20 md:pt-24 lg:px-12 lg:py-24 2xl:px-20">
         <img
-          className="pointer-events-none absolute bottom-[-320px] left-[-260px] z-0 h-auto w-[1680px] max-w-none opacity-[0.13] md:bottom-[-360px] md:left-[-170px] lg:bottom-[-420px] lg:left-[-120px] lg:w-[1900px]"
-          src="/images/story-wave-pattern.svg"
+          className="advantage-partner-wave"
+          src="/images/our-story-wave.svg"
           alt=""
           aria-hidden="true"
+          draggable="false"
         />
 
         <h2 className="relative z-10 m-0 max-w-[760px] text-center text-[32px] font-extrabold leading-[1.06] tracking-[0] text-[#161821] sm:text-5xl md:text-[3.4rem] lg:text-[4rem] xl:max-w-none xl:whitespace-nowrap xl:text-[4.5rem]">
@@ -342,9 +328,17 @@ export default function AdvantageSection({ asset, advantages }) {
             <div className="absolute inset-[5%] rounded-full border-[3px] border-[#8f8f8f]" />
             <div className="absolute inset-[12%] rounded-full border border-white bg-[radial-gradient(circle_at_50%_45%,#f5f5f5_0%,#ebebeb_56%,#f4f4f4_100%)] shadow-[inset_0_0_28px_rgba(0,0,0,0.04)]" />
             <div className="absolute inset-[24%] grid place-items-center rounded-full border border-white bg-[radial-gradient(circle_at_44%_38%,#ffffff_0%,#f4f4f4_68%,#ededed_100%)] shadow-[0_16px_28px_rgba(0,0,0,0.16)]">
-              <div className="grid justify-items-center gap-2">
-                <img className="h-16 w-16 object-contain min-[380px]:h-20 min-[380px]:w-20 md:h-24 md:w-24 lg:h-28 lg:w-28" src={asset("0b24c7c2d782973d27bd119c9b63dbddc971b776.png")} alt="" />
-                <img className="w-28 min-[380px]:w-32 md:w-40 lg:w-48" src={asset("2b505ce3b912ab094138fc521132f921a2ec04b8.png")} alt="" />
+              <div className="relative h-[96px] w-[140px] min-[380px]:h-[112px] min-[380px]:w-[160px] md:h-[128px] md:w-[190px] lg:h-[136px] lg:w-[204px]">
+                <img
+                  className="absolute left-1/2 top-0 h-[60px] w-auto -translate-x-1/2 object-contain min-[380px]:h-[70px] md:h-[78px] lg:h-[82px]"
+                  src={asset("0b24c7c2d782973d27bd119c9b63dbddc971b776.png")}
+                  alt=""
+                />
+                <img
+                  className="absolute bottom-0 left-1/2 h-[25px] w-auto -translate-x-1/2 object-contain min-[380px]:h-[28px] md:h-[32px] lg:h-[34px]"
+                  src={asset("TechvisrV4a.png")}
+                  alt=""
+                />
               </div>
             </div>
 
@@ -431,9 +425,17 @@ export default function AdvantageSection({ asset, advantages }) {
               <div className="absolute inset-[5%] rounded-full border-[3px] border-[#8f8f8f]" />
               <div className="absolute inset-[12%] rounded-full border border-white bg-[radial-gradient(circle_at_50%_45%,#f5f5f5_0%,#ebebeb_56%,#f4f4f4_100%)] shadow-[inset_0_0_30px_rgba(0,0,0,0.04)]" />
               <div className="absolute inset-[24%] grid place-items-center rounded-full border border-white bg-[radial-gradient(circle_at_44%_38%,#ffffff_0%,#f4f4f4_68%,#ededed_100%)] shadow-[0_16px_30px_rgba(0,0,0,0.14)]">
-                <div className="grid justify-items-center gap-2">
-                  <img className="h-24 w-24 object-contain xl:h-28 xl:w-28" src={asset("0b24c7c2d782973d27bd119c9b63dbddc971b776.png")} alt="" />
-                  <img className="w-40 xl:w-44" src={asset("2b505ce3b912ab094138fc521132f921a2ec04b8.png")} alt="" />
+                <div className="relative h-[136px] w-[204px] 2xl:h-[144px] 2xl:w-[214px]">
+                  <img
+                    className="absolute left-1/2 top-0 h-[82px] w-auto -translate-x-1/2 object-contain 2xl:h-[88px]"
+                    src={asset("0b24c7c2d782973d27bd119c9b63dbddc971b776.png")}
+                    alt=""
+                  />
+                  <img
+                    className="absolute bottom-0 left-1/2 h-[34px] w-auto -translate-x-1/2 object-contain 2xl:h-[36px]"
+                    src={asset("TechvisrV4a.png")}
+                    alt=""
+                  />
                 </div>
               </div>
 

@@ -9,11 +9,13 @@ import FaqSection from "./FaqSection";
 import FigmaFooter from "./FigmaFooter";
 import HeroSection from "./HeroSection";
 import IndustriesSection from "./IndustriesSection";
+import OurStorySection from "./OurStorySection";
 import ResourcesSection from "./ResourcesSection";
 import SiteHeader from "./SiteHeader";
-import StorySection from "./StorySection";
 import SuccessStoriesSection from "./SuccessStoriesSection";
-import { asset, industries } from "./figmaContent";
+import { industries } from "./figmaContent";
+
+const asset = (name) => name.startsWith("/") ? name : `/images/figma-raw/${name}`;
 
 const enterpriseServices = [
   {
@@ -26,11 +28,11 @@ const enterpriseServices = [
   },
   {
     title: "Microsoft Fabric & Cloud Migration",
-    image: "9e4e90e1f05111d4c568ca9cac9b3cd1876bff2a.png",
+    image: "/images/enterprise-cloud-migration-icon.png",
   },
   {
     title: "Quality Engineering & Testing",
-    image: "c655d9de26b62707191070d4f121c7a172112846.png",
+    image: "/images/enterprise-quality-testing-icon.png",
   },
   {
     title: "Technology Consulting & CTO Advisory",
@@ -209,8 +211,7 @@ export default function FigmaHomepage() {
       <main>
         <HeroSection />
 
-        <StorySection />
-
+        <OurStorySection />
         <EnterpriseServicesSection asset={asset} services={enterpriseServices} />
         <CapabilitiesSection asset={asset} capabilities={capabilities} />
         <DeliveryFrameworkSection steps={frameworkSteps} />

@@ -42,19 +42,6 @@ export default function ResourcesSection({
       id={sectionId}
       className="relative isolate grid justify-items-center overflow-hidden bg-white px-4 py-14 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-12 lg:py-24 2xl:px-20"
     >
-      <img
-        className="pointer-events-none absolute left-[-330px] top-[-250px] z-0 h-auto w-[1640px] max-w-none rotate-180 opacity-[0.16] md:left-[-250px] md:top-[-245px] md:w-[1740px] lg:left-[-160px] lg:top-[-238px] lg:w-[1780px]"
-        src="/images/story-wave-pattern.svg"
-        alt=""
-        aria-hidden="true"
-      />
-      <img
-        className="pointer-events-none absolute bottom-[-430px] right-[-620px] z-0 h-auto w-[1480px] max-w-none opacity-[0.14] md:right-[-520px] lg:bottom-[-500px] lg:right-[-430px] lg:w-[1700px]"
-        src="/images/story-wave-pattern.svg"
-        alt=""
-        aria-hidden="true"
-      />
-
       <div className="relative z-10 mb-10 grid w-full justify-items-center gap-4 text-center md:mb-14 lg:mb-16">
         <h2 className="m-0 w-full text-4xl font-black leading-[1.04] tracking-[0] text-[#161821] sm:text-5xl md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem]">
           {title}

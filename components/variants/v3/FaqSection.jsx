@@ -15,7 +15,7 @@ export default function FaqSection({
   const hasMoreFaqs = showLoadMore && visibleCount < faqs.length;
 
   return (
-    <section className="relative grid justify-items-center bg-[#f7f7f7] px-4 py-14 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-12 lg:py-24 2xl:px-20">
+    <section className="faq-section relative grid justify-items-center px-4 py-14 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-12 lg:py-24 2xl:px-20">
       <div className="grid w-full max-w-[1260px] items-start gap-8 md:gap-10 lg:grid-cols-[minmax(260px,360px)_minmax(0,760px)] lg:justify-center lg:gap-14 xl:gap-[72px]">
         <h2 className="m-0 max-w-full text-center text-4xl font-extrabold leading-[1.16] tracking-[0] text-[#161821] sm:text-5xl lg:text-left lg:text-[3.25rem] xl:text-[3.75rem]">
           Frequently Asked Questions

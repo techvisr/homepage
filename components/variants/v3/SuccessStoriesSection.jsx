@@ -70,27 +70,6 @@ export default function SuccessStoriesSection({ asset, stories }) {
       id="case-studies"
       className="relative isolate grid scroll-mt-0 justify-items-center overflow-hidden bg-[#fffdfb] px-4 py-14 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-12 lg:py-24 2xl:px-20"
     >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(72%_52%_at_50%_0%,rgba(243,113,53,0.08)_0%,rgba(255,253,251,0.8)_48%,rgba(255,255,255,0)_76%),linear-gradient(180deg,#ffffff_0%,#fffdfb_42%,#ffffff_100%)]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.26] [background-image:radial-gradient(circle_at_1px_1px,rgba(243,113,53,0.18)_1px,transparent_0)] [background-size:30px_30px] [mask-image:radial-gradient(70%_58%_at_50%_48%,#000_0%,rgba(0,0,0,0.7)_48%,transparent_84%)]"
-      />
-      <img
-        className="story-wave-layer pointer-events-none absolute left-[-520px] top-[-260px] z-0 h-auto w-[1620px] max-w-none opacity-[0.16] md:left-[-340px] md:top-[-270px] md:w-[1740px] lg:left-[-180px] lg:top-[-270px] lg:w-[1840px]"
-        src="/images/story-wave-pattern.svg"
-        alt=""
-        aria-hidden="true"
-      />
-      <img
-        className="story-wave-layer pointer-events-none absolute bottom-[-420px] right-[-620px] z-0 h-auto w-[1460px] max-w-none rotate-180 opacity-[0.1] md:bottom-[-500px] md:right-[-430px] md:w-[1680px] lg:bottom-[-600px] lg:right-[-280px] lg:w-[1820px]"
-        src="/images/story-wave-pattern.svg"
-        alt=""
-        aria-hidden="true"
-      />
-
       <h2 className="relative z-10 m-0 mb-10 w-full text-center text-3xl font-extrabold leading-[1.1] tracking-[0] text-[#161821] sm:text-4xl md:mb-14 md:text-5xl lg:mb-16 lg:text-[3.5rem] xl:text-[4rem]">
         Our Success Stories
       </h2>

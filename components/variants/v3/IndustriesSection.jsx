@@ -183,12 +183,18 @@ export default function IndustriesSection({
       </svg>
 
       <img
-        className="pointer-events-none absolute left-[-340px] top-[-360px] z-0 h-auto w-[1780px] max-w-none opacity-[0.14] md:left-[-220px] md:top-[-370px] md:w-[1900px] lg:left-[-130px] lg:top-[-430px] lg:w-[2040px]"
-        src="/images/story-wave-pattern.svg"
+        className="industries-partner-wave"
+        src="/images/capabilities-wave.svg"
         alt=""
         aria-hidden="true"
       />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-1/2 bg-[radial-gradient(80%_55%_at_50%_100%,rgba(243,113,53,0.09)_0%,rgba(255,255,255,0)_72%)]" aria-hidden="true" />
+      <img
+        className="industries-capabilities-wave"
+        src="/images/capabilities-wave.svg"
+        alt=""
+        aria-hidden="true"
+        draggable="false"
+      />
 
       <div className="relative z-10 grid content-start justify-items-center">
         <h2 className="relative z-10 m-0 mb-8 text-center text-3xl font-extrabold leading-[1.1] tracking-[0] text-[#05060a] sm:text-4xl md:mb-10 md:text-5xl lg:mb-8 lg:text-[3.4rem] xl:mb-9 xl:text-[3.875rem]">

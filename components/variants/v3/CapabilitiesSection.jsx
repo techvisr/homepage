@@ -4,10 +4,17 @@ export default function CapabilitiesSection({ asset, capabilities }) {
   return (
     <section
       id="services"
-      className="relative isolate grid justify-items-center overflow-hidden bg-[radial-gradient(80%_48%_at_50%_0%,rgba(243,113,53,0.1),transparent_60%),linear-gradient(180deg,#ffffff_0%,#fff9f6_52%,#ffffff_100%)] px-4 py-14 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-12 lg:py-24 2xl:px-20"
+      className="capabilities-section relative isolate grid justify-items-center overflow-hidden px-4 py-14 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-12 lg:py-24 2xl:px-20"
     >
+      <img
+        className="capabilities-wave"
+        src="/images/capabilities-wave.svg"
+        alt=""
+        aria-hidden="true"
+        draggable="false"
+      />
       <div
-        className="pointer-events-none absolute inset-0 z-0 opacity-45 [background-image:radial-gradient(circle_at_1px_1px,rgba(243,113,53,0.24)_1px,transparent_0),linear-gradient(135deg,rgba(243,113,53,0.08)_1px,transparent_1px)] [background-size:26px_26px,52px_52px] [mask-image:radial-gradient(92%_78%_at_50%_42%,#000_0%,rgba(0,0,0,0.82)_46%,transparent_82%)]"
+        className="pointer-events-none absolute inset-0 z-0 opacity-20 [background-image:radial-gradient(circle_at_1px_1px,rgba(243,113,53,0.18)_1px,transparent_0),linear-gradient(135deg,rgba(243,113,53,0.06)_1px,transparent_1px)] [background-size:26px_26px,52px_52px] [mask-image:radial-gradient(92%_78%_at_50%_42%,#000_0%,rgba(0,0,0,0.58)_46%,transparent_82%)]"
         aria-hidden="true"
       />
 
