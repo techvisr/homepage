@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   ArrowRight,
   Clock3,
@@ -18,7 +18,9 @@ import { asset, industries } from "./figmaContent";
 
 const contactVideo = "/videos/contact-hero-background.mp4";
 const consultationImage = "/images/contact/consultation-code.png";
-const contactEmail = "admin@techvisr.com";
+const contactEmail = "connect@techvisr.com";
+const contactEndpoint = `https://formsubmit.co/ajax/${contactEmail}`;
+const contactFallbackEndpoint = `https://formsubmit.co/${contactEmail}`;
 const primaryPhone = "+91 89043 61600";
 const secondaryPhone = "+91 9438433644";
 const primaryPhoneHref = "tel:+918904361600";
@@ -166,6 +168,35 @@ function ContactHero() {
 }
 
 export function JourneySection() {
+  const [formStatus, setFormStatus] = useState("idle");
+
+  async function handleContactSubmit(event) {
+    event.preventDefault();
+    setFormStatus("sending");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(contactEndpoint, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Unable to submit contact form");
+      }
+
+      form.reset();
+      setFormStatus("sent");
+    } catch {
+      setFormStatus("error");
+    }
+  }
+
   return (
     <section id="contact-form" className="relative isolate overflow-hidden bg-white px-4 py-14 sm:px-6 sm:py-16 md:px-8 lg:px-12 lg:py-24">
       <img
@@ -203,10 +234,14 @@ export function JourneySection() {
             className="contact-card-lift contact-reveal grid content-start rounded-[18px] border border-[#d8d8d8] bg-white p-5 shadow-[0_14px_32px_rgba(22,24,33,0.05)] sm:p-7 lg:p-9"
             data-contact-reveal
             style={{ "--contact-reveal-delay": "160ms" }}
-            action={`mailto:${contactEmail}`}
-            method="post"
-            encType="text/plain"
+            action={contactFallbackEndpoint}
+            method="POST"
+            onSubmit={handleContactSubmit}
           >
+            <input type="hidden" name="_subject" value="New Techvisr contact form submission" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input className="hidden" name="_honey" tabIndex={-1} autoComplete="off" />
             <label className="text-xs font-bold leading-none text-[#8d8d8d]">
               Name<span className="text-[#ff7436]">*</span>
               <input className={inputClass} name="Name" type="text" required />
@@ -234,10 +269,27 @@ export function JourneySection() {
             <button
               className="contact-button-lift mt-7 inline-flex min-h-11 w-fit items-center justify-center gap-3 rounded-[8px] border-2 border-[#161821] bg-white px-5 py-3 text-sm font-extrabold uppercase leading-none text-[#161821] transition hover:bg-[#161821] hover:text-white"
               type="submit"
+              disabled={formStatus === "sending"}
             >
-              Schedule a Call
+              {formStatus === "sending" ? "Sending..." : "Schedule a Call"}
               <Send size={17} strokeWidth={2.2} />
             </button>
+            <div aria-live="polite" className="mt-4 min-h-6">
+              {formStatus === "sent" ? (
+                <p className="m-0 rounded-md bg-[#edf8f1] px-3 py-2 text-sm font-bold leading-5 text-[#176032]">
+                  Thanks. Your message has been sent to Techvisr.
+                </p>
+              ) : null}
+              {formStatus === "error" ? (
+                <p className="m-0 rounded-md bg-[#fff0ed] px-3 py-2 text-sm font-bold leading-5 text-[#8f2f1e]">
+                  The form could not be sent right now. Please email{" "}
+                  <a className="underline" href={`mailto:${contactEmail}`}>
+                    {contactEmail}
+                  </a>
+                  .
+                </p>
+              ) : null}
+            </div>
           </form>
         </div>
       </div>

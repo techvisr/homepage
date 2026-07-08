@@ -9,7 +9,7 @@ import FaqSection from "./FaqSection";
 import FigmaFooter from "./FigmaFooter";
 import HeroSection from "./HeroSection";
 import IndustriesSection from "./IndustriesSection";
-import OurStorySection from "./OurStorySection";
+// import OurStorySection from "./OurStorySection";
 import ResourcesSection from "./ResourcesSection";
 import SiteHeader from "./SiteHeader";
 import SuccessStoriesSection from "./SuccessStoriesSection";
@@ -211,7 +211,7 @@ export default function FigmaHomepage() {
       <main>
         <HeroSection />
 
-        <OurStorySection />
+        {/* <OurStorySection /> */}
         <EnterpriseServicesSection asset={asset} services={enterpriseServices} />
         <CapabilitiesSection asset={asset} capabilities={capabilities} />
         <DeliveryFrameworkSection steps={frameworkSteps} />
