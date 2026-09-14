@@ -1,26 +1,17 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRightSquare } from "lucide-react";
-
-const advantageIcons = [
-  { image: "7597dd54e6f39c152c930dcd9571d9be9f290e7f.png" },
-  { image: "8a352124b8b879108b2b10abd8dd8854bce272b6.png" },
-  { image: "advantage-security-icon.png" },
-  { image: "advantage-integration-icon.png" },
-  { image: "d7287a66d8a93b50e79122c70fab2a63c6d6ba2e.png" },
-  { component: ArrowUpRightSquare },
-];
+import AdvantageLottieIcon from "./AdvantageLottieIcon";
 const INNER_DOT_RADIUS = 26;
 const INNER_DOT_TRANSITION_MS = 800;
 
 const radialItems = [
-  { angle: -70, textOffsetX: 88, textOffsetY: -50 },
-  { angle: -42, textOffsetX: 88, textOffsetY: -10 },
-  { angle: -12, textOffsetX: 90, textOffsetY: -10 },
-  { angle: 18, textOffsetX: 92, textOffsetY: 0 },
-  { angle: 48, textOffsetX: 92, textOffsetY: 20 },
-  { angle: 78, textOffsetX: 92, textOffsetY: 70 },
+  { angle: -70, textOffsetX: 72, textOffsetY: -24 },
+  { angle: -42, textOffsetX: 72, textOffsetY: -4 },
+  { angle: -12, textOffsetX: 74, textOffsetY: 0 },
+  { angle: 18, textOffsetX: 74, textOffsetY: 0 },
+  { angle: 48, textOffsetX: 74, textOffsetY: 8 },
+  { angle: 78, textOffsetX: 74, textOffsetY: 54 },
 ];
 
 const innerDotAngles = [-76, -47, -16, 15, 44, 75];
@@ -79,59 +70,36 @@ const notchStyle = (outerAngle, innerAngle, distance = "54px") => {
   };
 };
 
-const inactiveTextClass = "text-[#b8b8b8]";
-
 const textColumnStyle = (index, layout) => ({
   ...calloutTextPosition(layout, 45),
   zIndex: 10 - index,
 });
 
-const desktopTextOffsetClass = (index) => {
-  if (index === 5) {
-    return "w-[440px] 2xl:w-[600px]";
-  }
-
-  return "w-[440px] 2xl:w-[660px]";
-};
-
-const desktopHeadingClass = (isActive) =>
-  `m-0 text-[1.85rem] font-extrabold leading-[1.08] tracking-[0] 2xl:text-[2.3rem] ${isActive ? "text-[#161821]" : inactiveTextClass}`;
-
-const desktopCopyClass = (isActive) =>
-  `m-0 mt-2 text-base font-medium leading-[1.45] 2xl:text-xl ${isActive ? "text-[#8d8d8d]" : "text-[#c6c6c6]"}`;
-
 const outerCircleClass = (isActive, sizeClass) =>
   `pointer-events-auto absolute z-30 isolate grid ${sizeClass} cursor-pointer touch-manipulation place-items-center rounded-full border-transparent p-0 outline-none transition-[transform,box-shadow] duration-300 hover:scale-[1.04] focus-visible:ring-2 focus-visible:ring-[#f37135] focus-visible:ring-offset-2 ${
     isActive
-      ? "shadow-[0_14px_28px_rgba(243,88,72,0.28)]"
-      : "shadow-[0_10px_18px_rgba(0,0,0,0.18)]"
+      ? "shadow-[0_8px_24px_rgba(222,102,84,0.24)]"
+      : "shadow-[0_6px_18px_rgba(35,39,49,0.12)]"
   }`;
-
-const outerIconClass = (isActive) => (isActive ? "text-[#f45b45]" : "text-[#8a8a8a]");
-const iconFilter = (isActive) =>
-  isActive
-    ? "brightness(0) saturate(100%) invert(48%) sepia(82%) saturate(1558%) hue-rotate(328deg) brightness(105%) contrast(96%)"
-    : "brightness(0) saturate(100%) invert(55%) sepia(0%) saturate(0%) hue-rotate(151deg) brightness(95%) contrast(89%)";
 
 const outerNotchClass = (isActive, sizeClass) =>
   `pointer-events-none absolute left-1/2 top-1/2 z-[-1] ${sizeClass} ${
-    isActive ? "bg-[linear-gradient(135deg,#ff7238_0%,#f84845_52%,#e92f79_100%)]" : "bg-[#8a8a8a]"
+    isActive ? "bg-[linear-gradient(135deg,#f69973_0%,#ed735e_52%,#e77490_100%)]" : "bg-[#b7bbca]"
   }`;
 
 const outerCircleStyle = (layout, isActive) => {
   const position = centeredPolarPosition(layout.angle, 47);
   const ring = isActive
-    ? "linear-gradient(135deg, #ff7238 0%, #f84845 48%, #e92f79 100%)"
-    : "linear-gradient(#8a8a8a, #8a8a8a)";
+    ? "linear-gradient(135deg, #f69973 0%, #ed735e 48%, #e77490 100%)"
+    : "linear-gradient(135deg, #c7c9d5, #a4aabb)";
 
   return {
     ...position,
-    background: `linear-gradient(#f3f3f3, #f3f3f3) padding-box, ${ring} border-box`,
+    background: `linear-gradient(145deg, #ffffff, #f8f7fa) padding-box, ${ring} border-box`,
   };
 };
 
 export default function AdvantageSection({ asset, advantages }) {
-  const sectionRef = useRef(null);
   const liquidIndexRef = useRef(0);
   const leavingTimerRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -176,26 +144,10 @@ export default function AdvantageSection({ asset, advantages }) {
   };
 
   const renderAdvantageIcon = (index, isActive, sizeClass) => {
-    const icon = advantageIcons[index] ?? advantageIcons[0];
-
-    if (icon.image) {
-      return (
-        <img
-          className={`${sizeClass} object-contain`}
-          src={asset(icon.image)}
-          style={{ filter: iconFilter(isActive) }}
-          alt=""
-          aria-hidden="true"
-        />
-      );
-    }
-
-    const Icon = icon.component ?? ArrowUpRightSquare;
-
-    return <Icon className={`${outerIconClass(isActive)} ${sizeClass}`} strokeWidth={1.8} aria-hidden="true" />;
+    return <AdvantageLottieIcon index={index} active={isActive} className={sizeClass} />;
   };
 
-  const renderInnerDots = (dotSizeClass = "size-10", bubbleSizeClass = "size-[34px]") => (
+  const renderInnerDots = (dotSizeClass = "size-8", bubbleSizeClass = "size-6") => (
     <div className="pointer-events-none absolute inset-0 z-10 overflow-visible">
       <div className="pointer-events-none absolute inset-0 z-20 overflow-visible">
         {leavingIndex !== null && (
@@ -235,17 +187,17 @@ export default function AdvantageSection({ asset, advantages }) {
 
         return (
           <button
-            className={`pointer-events-auto absolute z-10 rounded-full border-[5px] shadow-[0_4px_10px_rgba(0,0,0,0.26)] outline-none transition-[background,border-color,transform] duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] [-webkit-tap-highlight-color:transparent] hover:scale-110 focus-visible:ring-2 focus-visible:ring-[#f37135] focus-visible:ring-offset-2 ${
+            className={`pointer-events-auto absolute z-10 rounded-full border-[4px] shadow-[0_3px_8px_rgba(35,39,49,0.12)] outline-none transition-[background,border-color,transform] duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] [-webkit-tap-highlight-color:transparent] hover:scale-110 focus-visible:ring-2 focus-visible:ring-[#f37135] focus-visible:ring-offset-2 ${
               isSelected ? "border-[#f75a45]" : "border-white"
             } ${dotSizeClass}`}
             style={{
               ...centeredPolarPosition(angle, INNER_DOT_RADIUS),
-              backgroundColor: isSelected ? activeLiquidColor : "#8e8e8e",
+              backgroundColor: isSelected ? activeLiquidColor : "#929bad",
             }}
             key={angle}
             type="button"
-            onMouseEnter={() => setAdvantageIndex(index)}
-            onFocus={() => setAdvantageIndex(index)}
+            onMouseEnter={() => { if (window.matchMedia("(hover: hover)").matches) setAdvantageIndex(index); }}
+            onFocus={(event) => { if (event.currentTarget.matches(":focus-visible")) setAdvantageIndex(index); }}
             onClick={() => setAdvantageIndex(index)}
             aria-label={`Show ${title}`}
             aria-pressed={isSelected}
@@ -254,48 +206,6 @@ export default function AdvantageSection({ asset, advantages }) {
       })}
     </div>
   );
-
-  useEffect(() => {
-    const section = sectionRef.current;
-
-    if (!section) {
-      return undefined;
-    }
-
-    let frame = 0;
-
-    const updateActiveAdvantage = () => {
-      frame = 0;
-
-      const rect = section.getBoundingClientRect();
-      const scrollableDistance = Math.max(rect.height - window.innerHeight, 1);
-      const progress = Math.min(Math.max(-rect.top / scrollableDistance, 0), 0.999);
-      const nextIndex = Math.min(advantages.length - 1, Math.floor(progress * advantages.length));
-
-      setAdvantageIndex(nextIndex);
-    };
-
-    const scheduleUpdate = () => {
-      if (frame) {
-        return;
-      }
-
-      frame = window.requestAnimationFrame(updateActiveAdvantage);
-    };
-
-    updateActiveAdvantage();
-    window.addEventListener("scroll", scheduleUpdate, { passive: true });
-    window.addEventListener("resize", scheduleUpdate);
-
-    return () => {
-      if (frame) {
-        window.cancelAnimationFrame(frame);
-      }
-
-      window.removeEventListener("scroll", scheduleUpdate);
-      window.removeEventListener("resize", scheduleUpdate);
-    };
-  }, [advantages.length]);
 
   useEffect(() => () => {
     if (leavingTimerRef.current) {
@@ -306,7 +216,6 @@ export default function AdvantageSection({ asset, advantages }) {
   return (
     <section
       id="why-techvisr-"
-      ref={sectionRef}
       className="advantage-section relative scroll-mt-24 overflow-hidden md:scroll-mt-28 lg:min-h-0"
       aria-label="The Techvisr Advantage"
     >
@@ -319,15 +228,15 @@ export default function AdvantageSection({ asset, advantages }) {
           draggable="false"
         />
 
-        <h2 className="relative z-10 m-0 max-w-[760px] text-center text-[32px] font-extrabold leading-[1.06] tracking-[0] text-[#161821] sm:text-5xl md:text-[3.4rem] lg:text-[4rem] xl:max-w-none xl:whitespace-nowrap xl:text-[4.5rem]">
+        <h2 className="relative z-10 m-0 max-w-[760px] text-center text-[45px] font-semibold leading-none tracking-[0] text-[#161821] [font-family:var(--font-figma-display),Barlow,sans-serif] max-[820px]:text-[clamp(26px,7.3vw,32px)] max-[820px]:leading-[1.14] xl:max-w-none">
           The Techvisr Advantage
         </h2>
 
-        <div className="relative z-10 mt-10 w-full max-w-[1180px] md:mt-12 xl:mt-6 xl:h-[660px] 2xl:h-[725px]">
+        <div className="relative z-10 mt-6 w-full max-w-[1180px] md:mt-8 xl:mt-6 xl:h-[620px] 2xl:h-[650px]">
           <div className="relative mx-auto aspect-square w-full max-w-[min(320px,82vw)] overflow-visible min-[420px]:max-w-[min(360px,86vw)] sm:max-w-[430px] md:max-w-[600px] lg:max-w-[720px] xl:hidden">
-            <div className="absolute inset-[5%] rounded-full border-[3px] border-[#8f8f8f]" />
-            <div className="absolute inset-[12%] rounded-full border border-white bg-[radial-gradient(circle_at_50%_45%,#f5f5f5_0%,#ebebeb_56%,#f4f4f4_100%)] shadow-[inset_0_0_28px_rgba(0,0,0,0.04)]" />
-            <div className="absolute inset-[24%] grid place-items-center rounded-full border border-white bg-[radial-gradient(circle_at_44%_38%,#ffffff_0%,#f4f4f4_68%,#ededed_100%)] shadow-[0_16px_28px_rgba(0,0,0,0.16)]">
+            <div className="advantage-orbit absolute inset-[5%] rounded-full border" />
+            <div className="advantage-halo absolute inset-[12%] rounded-full border border-white" />
+            <div className="advantage-core absolute inset-[24%] grid place-items-center rounded-full border border-white">
               <div className="relative h-[96px] w-[140px] min-[380px]:h-[112px] min-[380px]:w-[160px] md:h-[128px] md:w-[190px] lg:h-[136px] lg:w-[204px]">
                 <img
                   className="absolute left-1/2 top-0 h-[60px] w-auto -translate-x-1/2 object-contain min-[380px]:h-[70px] md:h-[78px] lg:h-[82px]"
@@ -351,15 +260,13 @@ export default function AdvantageSection({ asset, advantages }) {
                 <button
                   className={outerCircleClass(
                     isActive,
-                    "size-[58px] border-[6px] min-[380px]:size-[64px] min-[380px]:border-[7px] sm:size-[86px] sm:border-[9px] md:size-[104px] md:border-[10px] lg:size-[112px]",
+                    "size-[58px] border-[3px] min-[380px]:size-[64px] sm:size-[86px] md:size-[104px] md:border-[4px] lg:size-[112px]",
                   )}
                   style={outerCircleStyle(layout, isActive)}
                   key={title}
                   type="button"
-                  onPointerEnter={() => setAdvantageIndex(index)}
-                  onPointerDown={() => setAdvantageIndex(index)}
-                  onMouseEnter={() => setAdvantageIndex(index)}
-                  onFocus={() => setAdvantageIndex(index)}
+                  onPointerEnter={(event) => { if (event.pointerType === "mouse") setAdvantageIndex(index); }}
+                  onFocus={(event) => { if (event.currentTarget.matches(":focus-visible")) setAdvantageIndex(index); }}
                   onClick={() => setAdvantageIndex(index)}
                   aria-label={`Show ${title}`}
                   aria-pressed={isActive}
@@ -383,11 +290,7 @@ export default function AdvantageSection({ asset, advantages }) {
 
               return (
                 <article
-                  className={`reveal-card grid cursor-pointer grid-cols-[auto_minmax(0,1fr)] gap-3 rounded-xl border bg-white/92 p-3 text-left shadow-[0_8px_20px_rgba(22,24,33,0.07)] transition-[border-color,box-shadow,transform] duration-300 sm:gap-4 sm:rounded-2xl sm:p-4 md:p-5 xl:hidden ${
-                    isActive
-                      ? "border-[#f37135]/45 shadow-[0_16px_38px_rgba(243,113,53,0.13)]"
-                      : "border-[rgba(22,24,33,0.1)]"
-                  }`}
+                  className="advantage-mobile-item reveal-card grid cursor-pointer grid-cols-[auto_minmax(0,1fr)] gap-3 rounded-2xl border p-4 text-left transition-[border-color,box-shadow,background] duration-300 sm:gap-4 md:p-5 xl:hidden"
                   key={title}
                   style={{ "--reveal-delay": `${index * 55}ms` }}
                   onMouseEnter={() => setAdvantageIndex(index)}
@@ -408,10 +311,10 @@ export default function AdvantageSection({ asset, advantages }) {
                     {renderAdvantageIcon(index, isActive, "size-5 sm:size-6")}
                   </span>
                   <span className="min-w-0">
-                    <h3 className="m-0 text-base font-extrabold leading-[1.12] tracking-[0] text-[#161821] sm:text-xl md:text-[1.65rem]">
+                    <h3 className="advantage-item-title">
                       {title}
                     </h3>
-                    <p className="m-0 mt-1 text-xs font-medium leading-5 text-[#777] sm:mt-2 sm:text-[15px] sm:leading-7 md:text-[17px]">
+                    <p className="advantage-item-copy">
                       {text}
                     </p>
                   </span>
@@ -422,9 +325,9 @@ export default function AdvantageSection({ asset, advantages }) {
 
           <div className="relative mx-auto hidden h-full w-[920px] xl:block 2xl:w-[1120px]">
             <div className="absolute left-0 top-[58px] aspect-square w-[470px] 2xl:left-[34px] 2xl:top-[66px] 2xl:w-[500px]">
-              <div className="absolute inset-[5%] rounded-full border-[3px] border-[#8f8f8f]" />
-              <div className="absolute inset-[12%] rounded-full border border-white bg-[radial-gradient(circle_at_50%_45%,#f5f5f5_0%,#ebebeb_56%,#f4f4f4_100%)] shadow-[inset_0_0_30px_rgba(0,0,0,0.04)]" />
-              <div className="absolute inset-[24%] grid place-items-center rounded-full border border-white bg-[radial-gradient(circle_at_44%_38%,#ffffff_0%,#f4f4f4_68%,#ededed_100%)] shadow-[0_16px_30px_rgba(0,0,0,0.14)]">
+              <div className="advantage-orbit absolute inset-[5%] rounded-full border" />
+              <div className="advantage-halo absolute inset-[12%] rounded-full border border-white" />
+              <div className="advantage-core absolute inset-[24%] grid place-items-center rounded-full border border-white">
                 <div className="relative h-[136px] w-[204px] 2xl:h-[144px] 2xl:w-[214px]">
                   <img
                     className="absolute left-1/2 top-0 h-[82px] w-auto -translate-x-1/2 object-contain 2xl:h-[88px]"
@@ -450,7 +353,7 @@ export default function AdvantageSection({ asset, advantages }) {
                 return (
                   <article key={title}>
                     <button
-                      className={outerCircleClass(isActive, "size-[92px] border-[10px] 2xl:size-[104px] 2xl:border-[11px]")}
+                      className={outerCircleClass(isActive, "size-[84px] border-[3px] 2xl:size-[92px] 2xl:border-[4px]")}
                       style={outerCircleStyle(layout, isActive)}
                       type="button"
                       onPointerEnter={() => setAdvantageIndex(index)}
@@ -468,7 +371,7 @@ export default function AdvantageSection({ asset, advantages }) {
                       {renderAdvantageIcon(index, isActive, "size-16 2xl:size-[72px]")}
                     </button>
                     <div
-                      className={`pointer-events-auto absolute ${desktopTextOffsetClass(index)} cursor-pointer transition-[opacity,color] duration-700 ${isActive ? "opacity-100" : "opacity-82"}`}
+                      className={`advantage-callout pointer-events-auto absolute w-[430px] cursor-pointer 2xl:w-[510px] ${index === 4 ? "advantage-callout--industry" : ""}`}
                       style={textColumnStyle(index, layout)}
                       onMouseEnter={() => setAdvantageIndex(index)}
                       onFocus={() => setAdvantageIndex(index)}
@@ -479,10 +382,10 @@ export default function AdvantageSection({ asset, advantages }) {
                       aria-label={`Show ${title}`}
                       aria-pressed={isActive}
                     >
-                      <h3 className={desktopHeadingClass(isActive)}>
+                      <h3 className="advantage-item-title">
                         {title}
                       </h3>
-                      <p className={desktopCopyClass(isActive)}>
+                      <p className="advantage-item-copy">
                         {text}
                       </p>
                     </div>

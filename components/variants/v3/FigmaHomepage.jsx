@@ -9,7 +9,7 @@ import FaqSection from "./FaqSection";
 import FigmaFooter from "./FigmaFooter";
 import HeroSection from "./HeroSection";
 import PartnersSection from "../../PartnersSection";
-import IndustriesSection from "./IndustriesSection";
+import IndustryExplorer from "./IndustryExplorer";
 // import OurStorySection from "./OurStorySection";
 import ResourcesSection from "./ResourcesSection";
 import SiteHeader from "./SiteHeader";
@@ -22,22 +22,29 @@ const enterpriseServices = [
   {
     title: "Product Engineering & Development",
     image: "7597dd54e6f39c152c930dcd9571d9be9f290e7f.png",
+    animatedImage: "/images/enterprise-services/product-engineering.gif",
   },
   {
     title: "AI & Data\nEngineering",
     image: "8a352124b8b879108b2b10abd8dd8854bce272b6.png",
+    animatedImage: "/images/enterprise-services/ai-data-engineering.gif",
   },
   {
     title: "Microsoft Fabric & Cloud Migration",
     image: "/images/enterprise-cloud-migration-icon.png",
+    animatedImage: "/images/enterprise-services/cloud-migration.gif",
+    opaqueBackground: true,
   },
   {
     title: "Quality Engineering & Testing",
     image: "/images/enterprise-quality-testing-icon.png",
+    animatedImage: "/images/enterprise-services/quality-testing.gif",
+    opaqueBackground: true,
   },
   {
     title: "Technology Consulting & CTO Advisory",
     image: "d7287a66d8a93b50e79122c70fab2a63c6d6ba2e.png",
+    animatedImage: "/images/enterprise-services/technology-consulting.gif",
   },
 ];
 
@@ -140,6 +147,7 @@ const advantages = [
 const resources = [
   {
     title: "AI-Native Engineering: The New Blueprint for Enterprise Innovation",
+    illustration: "ai",
     text: "How businesses are embedding AI into products, operations, and decision-making at scale.",
     image: "/images/blogs/ai-native-engineering.avif",
     imageAlt: "AI-native engineering architecture with data streams and modular product systems",
@@ -147,6 +155,7 @@ const resources = [
   },
   {
     title: "Cloud Modernization Strategies for Scalable Growth",
+    illustration: "cloud",
     text: "Key considerations for building resilient, future-ready cloud ecosystems.",
     image: "/images/blogs/cloud-modernization.avif",
     imageAlt: "Cloud modernization architecture transforming legacy systems into scalable cloud services",
@@ -154,6 +163,7 @@ const resources = [
   },
   {
     title: "Why Custom Software Development Still Wins in the AI Era",
+    illustration: "software",
     text: "Why tailored software still matters for unique workflows, integration, and growth.",
     image: "/images/blogs/custom-software-ai-era.avif",
     imageAlt: "Custom software platform modules connected with AI-assisted workflow logic",
@@ -206,7 +216,7 @@ const faqs = [
 
 export default function FigmaHomepage() {
   return (
-    <div className="figma-site">
+    <div className="figma-site figma-homepage">
       <SiteHeader />
 
       <main>
@@ -214,17 +224,31 @@ export default function FigmaHomepage() {
         <PartnersSection />
 
         {/* <OurStorySection /> */}
-        <EnterpriseServicesSection asset={asset} services={enterpriseServices} />
-        <CapabilitiesSection asset={asset} capabilities={capabilities} />
+        <div className="services-capabilities-backdrop">
+          <EnterpriseServicesSection asset={asset} services={enterpriseServices} />
+          <CapabilitiesSection asset={asset} capabilities={capabilities} />
+        </div>
         <DeliveryFrameworkSection steps={frameworkSteps} />
-        <SuccessStoriesSection asset={asset} stories={successStories} />
-        <IndustriesSection asset={asset} industries={industries} />
+        <div className="success-stories-backdrop">
+          <div className="success-story-ambient" aria-hidden="true">
+            {Array.from({ length: 2 }, (_, index) => (
+              <span className="success-story-glow" key={index} style={{
+                animationDuration: `${31 + index * 3}s`,
+                animationDelay: `${-index * 7}s`,
+                left: index === 0 ? "12%" : "80%",
+                top: index === 0 ? "20%" : "72%",
+              }} />
+            ))}
+          </div>
+          <SuccessStoriesSection asset={asset} stories={successStories} />
+        </div>
+        <IndustryExplorer asset={asset} industries={industries} />
 
         <AdvantageSection asset={asset} advantages={advantages} />
 
         <ResourcesSection asset={asset} resources={resources} />
 
-        <FaqSection faqs={faqs} />
+        <FaqSection faqs={faqs} variant="glass" />
       </main>
 
       <FigmaFooter asset={asset} />

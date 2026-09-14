@@ -151,6 +151,17 @@ export default function IndustriesSection({
     };
   }, [industries.length]);
 
+  useEffect(() => {
+    if (industries.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const timer = window.setInterval(() => {
+      if (document.hidden) return;
+      setIndustryIndex((liquidIndexRef.current + 1) % industries.length, true);
+    }, 2500);
+
+    return () => window.clearInterval(timer);
+  }, [industries.length]);
+
   useEffect(() => () => {
     if (leavingTimerRef.current) {
       window.clearTimeout(leavingTimerRef.current);
@@ -170,7 +181,7 @@ export default function IndustriesSection({
       <svg className="absolute h-0 w-0" aria-hidden="true" focusable="false">
         <defs>
           <filter id="industry-gooeyness" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+            <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
             <feColorMatrix
               in="blur"
               mode="matrix"
@@ -197,7 +208,7 @@ export default function IndustriesSection({
       />
 
       <div className="relative z-10 grid content-start justify-items-center">
-        <h2 className="relative z-10 m-0 mb-8 text-center text-3xl font-extrabold leading-[1.1] tracking-[0] text-[#05060a] sm:text-4xl md:mb-10 md:text-5xl lg:mb-8 lg:text-[3.4rem] xl:mb-9 xl:text-[3.875rem]">
+        <h2 className="relative z-10 m-0 mb-8 text-center text-[45px] font-semibold leading-none tracking-[0] text-[#161821] [font-family:var(--font-figma-display),Barlow,sans-serif] max-[820px]:text-[clamp(26px,7.3vw,32px)] max-[820px]:leading-[1.14] md:mb-10 lg:mb-8 xl:mb-9">
           Industries We Serve
         </h2>
 
@@ -228,8 +239,8 @@ export default function IndustriesSection({
                 key={industry.label}
                 style={{
                   background: isActive
-                    ? "linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(135deg, #f37135 0%, #ff6b3b 45%, #ef4169 100%) border-box"
-                    : "linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(135deg, rgba(243, 113, 53, 0.38) 0%, rgba(255, 107, 59, 0.26) 48%, rgba(239, 65, 105, 0.28) 100%) border-box",
+                    ? "linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(135deg, #f37135 0%, #ffffff 28%, #ff6b3b 50%, #ffffff 74%, #ef4169 100%) border-box"
+                    : "linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(135deg, rgba(243, 113, 53, 0.38) 0%, #ffffff 28%, rgba(255, 107, 59, 0.26) 50%, #ffffff 74%, rgba(239, 65, 105, 0.28) 100%) border-box",
                 }}
               >
                 <div
@@ -280,11 +291,11 @@ export default function IndustriesSection({
         </div>
 
         <div className="relative z-20 mt-5 flex w-full items-center justify-center md:mt-6" aria-label="Select industry">
-          <div className="relative h-10 w-full max-w-[260px] overflow-visible md:h-14 md:max-w-[420px]">
+          <div className="relative h-10 w-full max-w-[200px] overflow-visible md:h-12 md:max-w-[280px]">
             <div className="pointer-events-none absolute inset-0 z-20 overflow-visible" style={{ filter: "url(#industry-gooeyness)" }}>
               {leavingIndex !== null ? (
                 <span
-                  className="absolute size-4 rounded-full md:size-6"
+                  className="absolute size-2 rounded-full md:size-3"
                   style={{
                     ...linearDotPosition(leavingIndex, industries.length),
                     background: activeLiquidColor,
@@ -294,7 +305,7 @@ export default function IndustriesSection({
                 />
               ) : null}
               <span
-                className="absolute size-4 md:size-6"
+                className="absolute size-2 md:size-3"
                 style={{
                   ...linearDotPosition(liquidIndex, industries.length),
                   transition: `left ${DOT_TRANSITION_MS}ms cubic-bezier(0.22,1,0.36,1)`,
@@ -317,7 +328,7 @@ export default function IndustriesSection({
 
               return (
                 <button
-                  className={`absolute z-10 size-5 cursor-pointer rounded-full border-4 p-0 shadow-[0_3px_8px_rgba(0,0,0,0.18)] outline-none transition-[background-color,border-color,transform] duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] [-webkit-tap-highlight-color:transparent] hover:scale-110 focus-visible:ring-2 focus-visible:ring-[#f37135] focus-visible:ring-offset-2 md:size-8 md:border-[5px] ${
+                  className={`absolute z-10 size-3 cursor-pointer rounded-full border-2 p-0 shadow-[0_3px_8px_rgba(0,0,0,0.18)] outline-none transition-[background-color,border-color,transform] duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] [-webkit-tap-highlight-color:transparent] after:absolute after:left-1/2 after:top-1/2 after:size-8 after:-translate-x-1/2 after:-translate-y-1/2 after:content-[''] hover:scale-110 focus-visible:ring-2 focus-visible:ring-[#f37135] focus-visible:ring-offset-2 md:size-4 ${
                     isActive ? "border-[#f75a45] bg-[#f75a45]" : "border-white bg-[#8e8e8e]"
                   }`}
                   key={industry.label}

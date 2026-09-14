@@ -10,7 +10,7 @@ const socialLinks = [
   [FaYoutube, "YouTube"],
   [FaTwitter, "Twitter"],
 ];
-const contactEmail = "admin@techvisr.com";
+const contactEmail = "connect@techvisr.com";
 const phoneLinks = [
   { label: "+91 89043 61600", href: "tel:+918904361600" },
   { label: "+91 94384 33644", href: "tel:+919438433644" },
@@ -39,6 +39,7 @@ export default function FigmaFooter({
   showWatermark = true,
 }) {
   const logoSrc = asset("58c76896b6e7aaa2c5446fbb80905b6b30ed7778.png");
+  const watermarkLogoSrc = asset("58c76896b6e7aaa2c5446fbb80905b6b30ed7778.png");
   const badges = (certificationBadges.length ? certificationBadges : defaultCertificationBadges).map(normalizeBadge);
   const watermarkRef = useRef(null);
 
@@ -96,24 +97,24 @@ export default function FigmaFooter({
   }, [showWatermark]);
 
   return (
-    <footer id="footer" className="relative bg-[linear-gradient(90deg,#ff7436_0%,#f33a74_100%)] text-[#161821]">
-      <div className="relative z-10 bg-white">
-        <div className="mx-auto grid min-h-[342px] w-full max-w-[1000px] grid-cols-1 gap-10 px-4 py-10 sm:px-6 md:grid-cols-[190px_minmax(160px,1fr)_minmax(280px,360px)] md:items-stretch md:gap-[100px] md:px-0">
-          <div className="grid content-start justify-items-center gap-6 md:justify-items-start">
-            <img className="h-auto w-[190px]" src={logoSrc} alt="Techvisr" />
-            <div className="grid w-[190px] grid-cols-2 gap-[10px]" aria-label="Techvisr certifications">
+    <footer id="footer" className="relative bg-[#fffaf8] text-[#29252c]">
+      <div className="relative z-10 border-t border-[#e8dfe4] bg-[linear-gradient(120deg,#ffffff_0%,#faf7fb_45%,#fff1e9_100%)]">
+        <div className="mx-auto grid w-full max-w-[1000px] grid-cols-1 gap-6 px-4 py-7 sm:px-6 md:grid-cols-[190px_minmax(160px,1fr)_minmax(280px,360px)] md:items-start md:gap-8 md:py-8 lg:gap-[100px] lg:px-0">
+          <div className="grid content-start justify-items-center gap-4 md:justify-items-start md:gap-5">
+            <img className="h-auto w-[168px] md:w-[190px]" src={logoSrc} alt="Techvisr" />
+            <div className="grid w-full max-w-[280px] grid-cols-4 gap-2 md:w-[190px] md:grid-cols-2 md:gap-[10px]" aria-label="Techvisr certifications">
               {badges.map((badge) => (
-                <img className="size-[90px] object-contain" src={badge.src} alt={badge.alt} key={badge.src} />
+                <img className="aspect-square w-full object-contain md:size-[90px]" src={badge.src} alt={badge.alt} key={badge.src} />
               ))}
             </div>
             {showDescription ? (
-              <p className="m-0 hidden max-w-[320px] text-base font-semibold leading-7 text-[#8d8d8d]">
+              <p className="m-0 hidden max-w-[320px] text-base font-semibold leading-7 text-[#69616b]">
                 Building scalable software, intelligent automation, and cloud-driven ecosystems for modern enterprises.
               </p>
             ) : null}
           </div>
 
-          <nav className="grid grid-cols-2 content-start gap-x-8 gap-y-4 pt-1 text-base font-semibold leading-none text-[#181b27] md:grid-cols-1 md:justify-self-center lg:gap-[19px]">
+          <nav aria-label="Footer navigation" className="mx-auto flex w-full max-w-[340px] flex-wrap content-start items-center justify-center gap-x-5 text-center text-sm font-semibold leading-snug text-[#37313b] [&_a]:inline-flex [&_a]:min-h-11 [&_a]:items-center [&_a]:transition-colors [&_a:hover]:text-[#9d493d] md:mx-0 md:grid md:w-auto md:max-w-none md:grid-cols-1 md:justify-self-center md:gap-4 md:pt-1 md:text-left md:text-base md:[&_a]:min-h-0">
             <a className="text-current no-underline" href="/services">Services</a>
             <a className="text-current no-underline" href="/case-studies">Case Studies</a>
             <a className="text-current no-underline" href="/why-techvisr">Why Techvisr?</a>
@@ -121,22 +122,22 @@ export default function FigmaFooter({
             <a className="text-current no-underline" href="/contact">Contact Us</a>
           </nav>
 
-          <div className="grid max-w-[340px] content-start justify-items-center gap-6 md:max-w-none md:justify-items-end md:text-right lg:gap-8">
-            <h3 className="m-0 text-lg font-bold leading-none text-[#181b27]">Get in touch</h3>
+          <div className="mx-auto grid w-full max-w-[340px] content-start justify-items-center gap-4 text-center md:mx-0 md:max-w-none md:justify-items-end md:gap-5 md:text-right">
+            <h3 className="m-0 text-lg font-bold leading-none text-[#29252c]">Get in touch</h3>
             <a className="break-all text-xl font-extrabold leading-tight text-[#ff7436] no-underline sm:text-2xl lg:text-[25px]" href={`mailto:${contactEmail}`}>
               {contactEmail}
             </a>
-            <div className="grid gap-0.5 text-sm font-bold leading-tight text-[#181b27] sm:text-base">
+            <div className="grid gap-0.5 text-sm font-bold leading-tight text-[#37313b] sm:text-base">
               {phoneLinks.map((phone) => (
-                <a className="text-current no-underline hover:text-[#ff7436]" href={phone.href} key={phone.href}>
+                <a className="text-current no-underline hover:text-[#9d493d]" href={phone.href} key={phone.href}>
                   {phone.label}
                 </a>
               ))}
             </div>
-            <div className="flex flex-wrap gap-3 md:justify-end lg:mt-4">
+            <div className="flex flex-wrap justify-center gap-3 md:justify-end">
               {socialLinks.map(([Icon, label]) => (
                 <a
-                  className="grid size-12 place-items-center rounded-full bg-[#f37135] text-white transition-transform duration-200 hover:-translate-y-1"
+                  className="grid size-11 place-items-center rounded-full bg-[#f37135] text-white transition-colors duration-200 hover:bg-[#dd622b]"
                   href="/"
                   aria-label={label}
                   key={label}
@@ -145,12 +146,12 @@ export default function FigmaFooter({
                 </a>
               ))}
             </div>
-            <div className="flex flex-wrap justify-center gap-x-2 gap-y-1 text-sm font-semibold leading-6 text-[#181b27] md:justify-end md:text-right">
-              <a className="text-current no-underline hover:text-[#ff7436]" href="/terms-and-conditions">
+            <div className="flex flex-wrap justify-center gap-x-2 gap-y-1 text-sm font-semibold leading-6 text-[#69616b] md:justify-end md:text-right">
+              <a className="text-current no-underline hover:text-[#9d493d]" href="/terms-and-conditions">
                 Terms and Conditions
               </a>
               <span aria-hidden="true">|</span>
-              <a className="text-current no-underline hover:text-[#ff7436]" href="/privacy-policy">
+              <a className="text-current no-underline hover:text-[#9d493d]" href="/privacy-policy">
                 Privacy Policy
               </a>
             </div>
@@ -192,13 +193,13 @@ export default function FigmaFooter({
           >
             <img
               className="absolute inset-0 h-full w-full object-contain opacity-[0.34] brightness-0 mix-blend-multiply drop-shadow-[0_18px_42px_rgba(22,24,33,0.14)]"
-              src={logoSrc}
+              src={watermarkLogoSrc}
               alt=""
               aria-hidden="true"
             />
             <img
               className="absolute inset-0 h-full w-full object-contain opacity-[0.12] brightness-0 invert drop-shadow-[0_0_30px_rgba(255,255,255,0.42)]"
-              src={logoSrc}
+              src={watermarkLogoSrc}
               alt=""
               aria-hidden="true"
             />
