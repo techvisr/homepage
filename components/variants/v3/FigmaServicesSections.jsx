@@ -7,14 +7,6 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HeaderActionButton from "./HeaderActionButton";
 
-const heroBrandLogos = [
-  { label: "Nike", src: "/images/brand-logos/nike.png", className: "h-6 w-20 sm:h-7 sm:w-24" },
-  { label: "Google", src: "/images/brand-logos/google.png", className: "h-8 w-28 sm:h-9 sm:w-32" },
-  { label: "Microsoft", src: "/images/brand-logos/microsoft.png", className: "h-8 w-32 sm:h-9 sm:w-36" },
-  { label: "adidas", src: "/images/brand-logos/adidas.png", className: "h-10 w-20 sm:h-12 sm:w-24" },
-  { label: "M·A·C", src: "/images/brand-logos/mac.png", className: "h-5 w-32 sm:h-6 sm:w-40" },
-];
-
 export function SectionIntro({ eyebrow, title, text, light = false }) {
   return (
     <div className="relative z-10 mx-auto mb-9 grid max-w-[980px] gap-4 text-center md:mb-12 lg:mb-14">
@@ -39,7 +31,7 @@ export function SectionIntro({ eyebrow, title, text, light = false }) {
   );
 }
 
-export function ServicesHeroSection({ heroVideo, showBrandLogos = false }) {
+export function ServicesHeroSection({ heroVideo }) {
   return (
     <section className="relative isolate overflow-hidden !bg-[#020612] text-white">
       <video
@@ -69,25 +61,6 @@ export function ServicesHeroSection({ heroVideo, showBrandLogos = false }) {
             Talk to Our Experts
           </HeaderActionButton>
         </div>
-        {showBrandLogos ? (
-          <div
-            className="service-reveal mt-10 grid w-full max-w-[760px] grid-cols-2 items-center justify-items-center gap-x-8 gap-y-5 text-white/88 sm:grid-cols-5 sm:gap-x-9 md:mt-12"
-            data-service-reveal
-            aria-label="Enterprise brands"
-          >
-            {heroBrandLogos.map((brand) => (
-              <span className="inline-flex min-h-12 items-center justify-center opacity-90" key={brand.label}>
-                <img
-                  className={`${brand.className} max-w-full object-contain`}
-                  src={brand.src}
-                  alt={brand.label}
-                  draggable={false}
-                  decoding="async"
-                />
-              </span>
-            ))}
-          </div>
-        ) : null}
       </div>
     </section>
   );

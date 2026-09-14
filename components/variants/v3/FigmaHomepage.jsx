@@ -8,6 +8,7 @@ import EnterpriseServicesSection from "./EnterpriseServicesSection";
 import FaqSection from "./FaqSection";
 import FigmaFooter from "./FigmaFooter";
 import HeroSection from "./HeroSection";
+import PartnersSection from "../../PartnersSection";
 import IndustriesSection from "./IndustriesSection";
 // import OurStorySection from "./OurStorySection";
 import ResourcesSection from "./ResourcesSection";
@@ -210,6 +211,7 @@ export default function FigmaHomepage() {
 
       <main>
         <HeroSection />
+        <PartnersSection />
 
         {/* <OurStorySection /> */}
         <EnterpriseServicesSection asset={asset} services={enterpriseServices} />

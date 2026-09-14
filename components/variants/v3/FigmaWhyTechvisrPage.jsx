@@ -1,5 +1,7 @@
 "use client";
 
+import PartnersSection from "../../PartnersSection";
+
 import { useEffect } from "react";
 import {
   ListChecks,
@@ -298,7 +300,8 @@ export default function FigmaWhyTechvisrPage() {
     <div className="figma-site figma-services-page figma-why-techvisr-page">
       <SiteHeader />
       <main>
-        <ServicesHeroSection heroVideo={heroVideo} showBrandLogos />
+        <ServicesHeroSection heroVideo={heroVideo} />
+        <PartnersSection compact />
         <ServiceMetricsSection metrics={metrics} />
         <ServiceGoalsSection goals={goals} />
         <ServicesTechnologySection technologies={technologies} />

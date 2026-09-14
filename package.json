@@ -2,6 +2,7 @@
   "name": "techvisr",
   "private": true,
   "scripts": {
+    "test": "node --test",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"

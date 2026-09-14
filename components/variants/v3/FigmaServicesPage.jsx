@@ -1,5 +1,7 @@
 "use client";
 
+import PartnersSection from "../../PartnersSection";
+
 import { useEffect } from "react";
 import {
   ListChecks,
@@ -276,6 +278,7 @@ export default function FigmaServicesPage() {
 
       <main>
         <ServicesHeroSection heroVideo={heroVideo} />
+        <PartnersSection compact />
         <ServiceMetricsSection metrics={serviceMetrics} />
         <ServiceGoalsSection goals={serviceGoals} />
         <ServicesTechnologySection technologies={technologies} />
