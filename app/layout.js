@@ -1,5 +1,6 @@
 import "./globals.css";
 import Script from "next/script";
+import Analytics from "../components/Analytics";
 import { Barlow, Inter, Manrope, Plus_Jakarta_Sans, Roboto } from "next/font/google";
 
 const siteUrl = "https://techvisr.com";
@@ -172,6 +173,19 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${manrope.variable} ${plusJakartaSans.variable} ${barlow.variable} ${roboto.variable} ${inter.variable}`}>
         {children}
+        <Analytics />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-W4JTQHQV5D"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-W4JTQHQV5D');
+          `}
+        </Script>
         <Script
           src="https://assets.calendly.com/assets/external/widget.js"
           strategy="afterInteractive"

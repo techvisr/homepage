@@ -1,5 +1,7 @@
 "use client";
 
+import { trackEvent } from "../../../lib/analytics.mjs";
+
 export default function CalendlyPopupButton({
   className,
   label = "Book a Consultation",
@@ -10,9 +12,11 @@ export default function CalendlyPopupButton({
 
     if (typeof window !== "undefined" && window.Calendly?.initPopupWidget) {
       window.Calendly.initPopupWidget({ url });
+      trackEvent("calendly_open", { display_mode: "popup" });
       return;
     }
 
+    trackEvent("calendly_open", { display_mode: "new_tab" });
     window.open(url, "_blank", "noopener,noreferrer");
   };
 

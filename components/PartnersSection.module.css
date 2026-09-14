@@ -1,0 +1,48 @@
+.section {
+  position: relative;
+  background: #fff;
+  border-bottom: 1px solid #ece9e6;
+  color: #161821;
+  padding: 48px 24px;
+  font-family: var(--font-figma-body), sans-serif;
+}
+.inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 270px minmax(0, 1fr); align-items: center; gap: 40px; }
+.eyebrow { margin: 0 0 14px; display: flex; align-items: center; gap: 9px; font-size: 11px; line-height: 1.5; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: #686563; }
+.eyebrow > span { width: 6px; height: 6px; border-radius: 50%; background: #f37135; }
+.heading h2 { margin: 0; font-size: 27px; line-height: 1.2; font-weight: 700; letter-spacing: -.025em; }
+.heading h2 > span { color: #c65322; }
+.logos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; padding: 0; margin: 0; list-style: none; }
+.partner { min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; }
+.logoFrame { width: 100%; height: 108px; display: flex; align-items: center; justify-content: center; }
+.logoFrame img { display: block; object-fit: contain; height: auto; max-width: 100%; }
+.reliance img { width: 126px; max-height: 92px; }
+.rupantar img { width: 136px; max-height: 100px; }
+.arrow { height: 88px; margin: 10px 0; background: #161821; border-radius: 10px; max-width: 166px; padding: 12px; }
+.arrow img { width: 142px; max-height: 64px; }
+.hailm img { width: 94px; height: 94px; }
+.name { font-size: 11px; line-height: 1.5; font-weight: 500; color: #686563; text-align: center; }
+.compact { padding-top: 28px; padding-bottom: 28px; }
+.compact .inner { grid-template-columns: 170px minmax(0, 1fr); max-width: 1100px; }
+.compact .eyebrow { margin: 0; }
+.compact .logoFrame { height: 82px; }
+.compact .reliance img { width: 108px; max-height: 76px; }
+.compact .rupantar img { width: 112px; max-height: 80px; }
+.compact .arrow { height: 72px; margin: 5px 0; max-width: 148px; }
+.compact .hailm img { width: 78px; height: 78px; }
+@media (max-width: 1050px) {
+  .inner, .compact .inner { grid-template-columns: 1fr; gap: 28px; }
+  .heading { text-align: center; }
+  .eyebrow { justify-content: center; }
+  .heading h2 br { display: none; }
+  .heading h2 > span::before { content: ' '; }
+  .logos { max-width: 820px; width: 100%; margin: 0 auto; }
+}
+@media (max-width: 560px) {
+  .section { padding: 32px 20px; }
+  .heading h2 { font-size: 25px; }
+  .heading h2 br { display: block; }
+  .logos { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; row-gap: 24px; }
+  .partner { gap: 8px; }
+  .name { font-size: 10px; }
+  .compact { padding-top: 24px; padding-bottom: 24px; }
+}

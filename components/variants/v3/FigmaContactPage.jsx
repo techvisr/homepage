@@ -1,6 +1,10 @@
 "use client";
 
+import PartnersSection from "../../PartnersSection";
+
 import { useEffect, useState } from "react";
+import { trackEvent } from "../../../lib/analytics.mjs";
+import { submitContactForm } from "../../../lib/contact-form.mjs";
 import {
   ArrowRight,
   Clock3,
@@ -173,27 +177,20 @@ export function JourneySection() {
   async function handleContactSubmit(event) {
     event.preventDefault();
     setFormStatus("sending");
+    trackEvent("contact_form_attempt", { form_id: "contact" });
 
     const form = event.currentTarget;
     const formData = new FormData(form);
 
     try {
-      const response = await fetch(contactEndpoint, {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-        },
-        body: formData,
-      });
-
-      if (!response.ok) {
-        throw new Error("Unable to submit contact form");
-      }
+      await submitContactForm(contactEndpoint, formData);
 
       form.reset();
       setFormStatus("sent");
+      trackEvent("generate_lead", { lead_source: "contact_form", form_id: "contact" });
     } catch {
       setFormStatus("error");
+      trackEvent("contact_form_error", { form_id: "contact" });
     }
   }
 
@@ -231,6 +228,7 @@ export function JourneySection() {
           </article>
 
           <form
+            data-analytics-form="contact"
             className="contact-card-lift contact-reveal grid content-start rounded-[18px] border border-[#d8d8d8] bg-white p-5 shadow-[0_14px_32px_rgba(22,24,33,0.05)] sm:p-7 lg:p-9"
             data-contact-reveal
             style={{ "--contact-reveal-delay": "160ms" }}
@@ -472,6 +470,7 @@ export default function FigmaContactPage() {
       <SiteHeader />
       <main>
         <ContactHero />
+        <PartnersSection compact />
         <JourneySection />
         <EngagementModels />
         <IndustriesSection asset={asset} industries={industries} />
