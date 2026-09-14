@@ -5,6 +5,7 @@ const partners = [
   { name: "Rupantar", image: "/images/partners/rupantar.webp", width: 408, height: 287, style: "rupantar" },
   { name: "Arrow Foundry", image: "/images/partners/arrow-foundry.webp", width: 386, height: 208, style: "arrow" },
   { name: "Human AI Literacy Mission", image: "/images/partners/human-ai-literacy-mission.webp", width: 288, height: 288, style: "hailm" },
+  { name: "Flipkart", image: "/images/partners/flipkart.png", width: 5000, height: 5000, style: "flipkart" },
 ];
 
 export default function PartnersSection({ compact = false }) {

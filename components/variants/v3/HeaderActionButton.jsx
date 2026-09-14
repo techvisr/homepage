@@ -17,6 +17,7 @@ export default function HeaderActionButton({
   const Icon = icon === "up-right" ? ArrowUpRight : ArrowRight;
 
   const variantClasses = {
+    secondary: "figma-secondary-button",
     gradient: "bg-[linear-gradient(90deg,#f37135,#ef4169)] text-white",
     light: "bg-white text-black",
     outline: "border-[3px] border-[#161821] bg-white text-[#161821]",

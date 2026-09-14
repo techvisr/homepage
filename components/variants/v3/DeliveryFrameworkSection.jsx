@@ -198,9 +198,9 @@ export default function DeliveryFrameworkSection({ steps }) {
       </div>
 
       <HeaderActionButton
-        variant="outline"
+        variant="secondary"
         size="default"
-        className="framework-button relative z-10 border-2"
+        className="framework-button relative z-10"
       >
         Know More
       </HeaderActionButton>

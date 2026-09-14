@@ -32,7 +32,7 @@ export const industries = [
       "Ecommerce modernization and automation",
       "Intelligent inventory optimization systems",
     ],
-    image: "8c9ee62226affce2c6889f89dea377072a20965f.jpg",
+    image: "nathalia-rosa-rWMIbqmOxrY-unsplash.jpg",
   },
   {
     label: "EdTech",
@@ -43,7 +43,7 @@ export const industries = [
       "Scalable LMS and mobile solutions",
       "Intelligent student analytics systems",
     ],
-    image: "c1f862eec620b62cfeb3d36eb5c88c530f61171a.jpg",
+    image: "pandhuya-niking-oXKkG1P1Yck-unsplash.jpg",
   },
   {
     label: "Government IT\nServices",
@@ -76,7 +76,7 @@ export const industries = [
       "Predictive operational analytics solutions",
       "Scalable industrial workflow optimization",
     ],
-    image: "a1436e76b433d9cd33a19386748dfa42f79f80c2.jpg",
+    image: "simon-kadula-8gr6bObQLOI-unsplash.jpg",
   },
   {
     label: "Logistics",
@@ -87,7 +87,7 @@ export const industries = [
       "Real-time supply chain visibility",
       "Intelligent warehouse automation systems",
     ],
-    image: "5237973d508c91db229995638f0aa07f3743cacd.png",
+    image: "adrian-sulyok-sczNLg6rrhQ-unsplash.jpg",
   },
   {
     label: "Real Estate",
@@ -98,6 +98,6 @@ export const industries = [
       "AI-powered customer engagement systems",
       "Intelligent document automation solutions",
     ],
-    image: "c73de4d7495850eec11d832ed7447c4972c283cf.png",
+    image: "sean-pollock-PhYq704ffdA-unsplash.jpg",
   },
 ];

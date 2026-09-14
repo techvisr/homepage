@@ -41,7 +41,7 @@
 }
 .track { display: flex; width: max-content; animation: partnerMarquee 28s linear infinite; }
 .marquee:hover .track { animation-play-state: paused; }
-.logos { display: grid; flex-shrink: 0; width: max(800px, 100cqw); grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; padding: 0 20px 0 0; margin: 0; list-style: none; }
+.logos { display: grid; flex-shrink: 0; width: max(1000px, 100cqw); grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; padding: 0 20px 0 0; margin: 0; list-style: none; }
 @keyframes partnerMarquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -54,6 +54,7 @@
 .arrow { height: 88px; margin: 10px 0; background: #161821; border-radius: 10px; max-width: 166px; padding: 12px; }
 .arrow img { width: 142px; max-height: 64px; }
 .hailm img { width: 94px; height: 94px; }
+.flipkart img { width: 166px; }
 .name { font-size: 11px; line-height: 1.5; font-weight: 500; color: #686563; text-align: center; }
 .compact { padding-top: 28px; padding-bottom: 28px; }
 .compact .inner { grid-template-columns: 170px minmax(0, 1fr); max-width: 1100px; }
@@ -63,6 +64,7 @@
 .compact .rupantar img { width: 112px; max-height: 80px; }
 .compact .arrow { height: 72px; margin: 5px 0; max-width: 148px; }
 .compact .hailm img { width: 78px; height: 78px; }
+.compact .flipkart img { width: 148px; }
 @media (max-width: 1050px) {
   .inner, .compact .inner { grid-template-columns: 1fr; gap: 28px; }
   .heading { text-align: center; }
