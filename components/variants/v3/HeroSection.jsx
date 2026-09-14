@@ -85,7 +85,7 @@ export default function HeroSection() {
         </div>
 
         <div
-          className="figma-hero-metrics pointer-events-none z-30 mx-auto hidden w-full select-none lg:block"
+          className="figma-hero-metrics pointer-events-none z-30 mx-auto hidden w-full select-none"
           aria-label="Business outcome metrics"
         >
           {metrics.map((metric, index) => (

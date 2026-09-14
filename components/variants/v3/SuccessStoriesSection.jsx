@@ -3,9 +3,52 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
+function AnimatedStoryMetric({ value, progress, animating }) {
+  const length = Math.floor(value.length * progress);
+
+  return (
+    <strong className="success-story-metric" aria-label={value} data-complete={animating && progress === 1}>
+      <span className="success-story-metric-placeholder" aria-hidden="true">{value}</span>
+      <span className="success-story-metric-text" aria-hidden="true" data-typing={animating && progress < 1}>
+        {value.slice(0, length)}
+      </span>
+    </strong>
+  );
+}
+
 export default function SuccessStoriesSection({ asset, stories }) {
   const carouselRef = useRef(null);
   const [activeStoryIndex, setActiveStoryIndex] = useState(0);
+  const [metricProgress, setMetricProgress] = useState(1);
+  const [metricsAnimating, setMetricsAnimating] = useState(false);
+  const metricSteps = Math.max(1, ...stories.map((story) => story.stat.split("\n")[0].length));
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+
+    let timer;
+    const observer = new IntersectionObserver(([entry]) => {
+      window.clearTimeout(timer);
+      setMetricsAnimating(entry.isIntersecting);
+      if (!entry.isIntersecting) return;
+
+      let step = 0;
+      setMetricProgress(0);
+      const tick = () => {
+        step = step === metricSteps ? 0 : step + 1;
+        setMetricProgress(step / metricSteps);
+        timer = window.setTimeout(tick, step === metricSteps ? 1000 : step === 0 ? 150 : 80);
+      };
+      timer = window.setTimeout(tick, 80);
+    }, { threshold: 0.2 });
+    observer.observe(carouselRef.current);
+
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(timer);
+    };
+  }, [metricSteps]);
+
 
   const getCarouselStep = () => {
     const carousel = carouselRef.current;
@@ -70,7 +113,7 @@ export default function SuccessStoriesSection({ asset, stories }) {
       id="case-studies"
       className="relative isolate grid scroll-mt-0 justify-items-center overflow-hidden bg-[#fffdfb] px-4 py-14 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-12 lg:py-24 2xl:px-20"
     >
-      <h2 className="relative z-10 m-0 mb-10 w-full text-center text-3xl font-extrabold leading-[1.1] tracking-[0] text-[#161821] sm:text-4xl md:mb-14 md:text-5xl lg:mb-16 lg:text-[3.5rem] xl:text-[4rem]">
+      <h2 className="relative z-10 m-0 mb-10 w-full text-center text-[45px] font-semibold leading-none tracking-[0] text-[#161821] [font-family:var(--font-figma-display),Barlow,sans-serif] max-[820px]:text-[clamp(26px,7.3vw,32px)] max-[820px]:leading-[1.14] md:mb-14 lg:mb-16">
         Our Success Stories
       </h2>
 
@@ -91,14 +134,18 @@ export default function SuccessStoriesSection({ asset, stories }) {
                 key={story.title}
                 style={{ "--reveal-delay": `${index * 70}ms` }}
               >
-                <img className="h-32 w-full object-cover min-[360px]:h-36 sm:h-48 md:h-52 lg:h-[214px]" src={asset(story.image)} alt="" />
+                <div className="relative shrink-0">
+                  <img className="h-32 w-full object-cover min-[360px]:h-36 sm:h-48 md:h-52 lg:h-[214px]" src={asset(story.image)} alt="" />
+                  <div
+                    className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-[linear-gradient(180deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.55)_55%,#ffffff_100%)] sm:h-20"
+                    aria-hidden="true"
+                  />
+                </div>
                 <div className="flex flex-1 flex-col px-4 pb-5 pt-4 sm:px-6 sm:pb-6 sm:pt-6 md:px-8 md:pb-8 md:pt-7 lg:px-8 lg:pb-9">
                   <h3 className="m-0 max-w-[270px] text-base font-extrabold leading-[1.08] text-[#f37135] sm:text-2xl md:text-[26px]">
                     {story.title}
                   </h3>
-                  <strong className="mt-3 block text-4xl font-black leading-[0.98] tracking-[0] text-[#161821] sm:mt-4 sm:text-6xl md:text-[4.25rem] xl:text-[4.75rem]">
-                    {statValue}
-                  </strong>
+                  <AnimatedStoryMetric value={statValue} progress={metricProgress} animating={metricsAnimating} />
                   <p className="m-0 mt-1 text-base font-extrabold leading-[1.15] text-[#161821] sm:text-xl md:text-2xl">
                     {statLabel}
                   </p>
@@ -107,7 +154,7 @@ export default function SuccessStoriesSection({ asset, stories }) {
                     {story.text}
                   </p>
                   <a
-                    className="mt-auto inline-flex min-h-9 w-max items-center justify-center gap-2.5 rounded-[7px] border border-[#161821] bg-white px-3 text-xs font-bold leading-none text-[#161821] no-underline transition-[background-color,color,transform] duration-200 hover:-translate-y-0.5 hover:bg-[#161821] hover:text-white sm:min-h-11 sm:gap-3 sm:px-4 sm:text-base md:min-h-[46px] md:px-5 md:text-[17px]"
+                    className="success-story-button relative mt-auto inline-flex min-h-9 w-max items-center justify-center gap-3 px-4 py-2 text-sm font-semibold leading-tight no-underline sm:min-h-10 sm:gap-4 sm:px-6 sm:text-[17px] lg:text-lg"
                     href={story.href || "/case-studies"}
                   >
                     <span>Read More</span>

@@ -15,16 +15,22 @@ export default function PartnersSection({ compact = false }) {
           <p className={styles.eyebrow}><span aria-hidden="true" /> Our partners</p>
           {!compact && <h2>Building what comes next.<br /><span>Together.</span></h2>}
         </div>
-        <ul className={styles.logos} aria-label="Partner organisations">
-          {partners.map((partner) => (
-            <li className={styles.partner} key={partner.name}>
-              <div className={`${styles.logoFrame} ${styles[partner.style]}`}>
-                <img src={partner.image} alt={partner.name} width={partner.width} height={partner.height} loading="lazy" decoding="async" />
-              </div>
-              <span className={styles.name} aria-hidden="true">{partner.name}</span>
-            </li>
-          ))}
-        </ul>
+        <div className={styles.marquee}>
+          <div className={styles.track}>
+            {[0, 1].map((copy) => (
+              <ul className={styles.logos} key={copy} aria-label={copy === 0 ? "Partner organisations" : undefined} aria-hidden={copy === 1 ? true : undefined}>
+                {partners.map((partner) => (
+                  <li className={styles.partner} key={partner.name}>
+                    <div className={`${styles.logoFrame} ${styles[partner.style]}`}>
+                      <img src={partner.image} alt={partner.name} width={partner.width} height={partner.height} loading="lazy" decoding="async" />
+                    </div>
+                    <span className={styles.name} aria-hidden="true">{partner.name}</span>
+                  </li>
+                ))}
+              </ul>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

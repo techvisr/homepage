@@ -88,6 +88,7 @@ export default function DeliveryFrameworkSection({ steps }) {
       id="delivery-framework"
       ref={frameworkRef}
       data-in-view={frameworkInView ? "true" : "false"}
+      data-sequence-complete={frameworkSequenceComplete ? "true" : "false"}
       className="delivery-framework-section relative isolate grid scroll-mt-0 justify-items-center overflow-hidden px-4 py-14 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-12 lg:py-24 2xl:px-20"
     >
       <img
@@ -98,11 +99,11 @@ export default function DeliveryFrameworkSection({ steps }) {
       />
 
       <div className="relative z-10 mx-auto mb-12 grid max-w-[1050px] gap-5 text-center md:mb-16 lg:mb-20 lg:max-w-[1120px]">
-        <h2 className="m-0 text-3xl font-extrabold leading-[1.1] tracking-[0] text-[#161821] sm:text-4xl md:text-5xl lg:text-[3.45rem] xl:whitespace-nowrap xl:text-[4rem]">
+        <h2 className="m-0 text-[45px] font-semibold leading-none tracking-[0] text-[#161821] [font-family:var(--font-figma-display),Barlow,sans-serif] max-[820px]:text-[clamp(26px,7.3vw,32px)] max-[820px]:leading-[1.14]">
           Intelligent Delivery
           <br className="md:hidden" /> Framework
         </h2>
-        <p className="mx-auto m-0 max-w-[840px] text-base leading-7 text-[rgba(22,24,33,0.58)] md:text-lg md:leading-8 lg:text-xl">
+        <p className="mx-auto m-0 max-w-[840px] text-[18px] leading-[1.5] text-[#5b6170] max-[820px]:text-[clamp(13px,3.6vw,15px)]">
           Driving faster enterprise transformation through intelligent and scalable delivery models.
         </p>
       </div>
@@ -163,6 +164,8 @@ export default function DeliveryFrameworkSection({ steps }) {
                           : "-translate-x-10 translate-y-6 scale-[0.94] blur-0"
             }`}
             style={{
+              "--pulse-delay": `${index * 1000}ms`,
+              "--pulse-duration": `${steps.length * 1000}ms`,
               clipPath:
                 frameworkInView || frameworkAnimation === "badge-pop"
                   ? "inset(-24px -24px -24px -24px round 18px)"
@@ -197,7 +200,7 @@ export default function DeliveryFrameworkSection({ steps }) {
       <HeaderActionButton
         variant="outline"
         size="default"
-        className="relative z-10 border-2"
+        className="framework-button relative z-10 border-2"
       >
         Know More
       </HeaderActionButton>
