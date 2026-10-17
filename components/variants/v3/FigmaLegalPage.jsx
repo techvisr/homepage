@@ -58,9 +58,6 @@ export default function FigmaLegalPage({ page }) {
                 <a className="w-fit text-[#f37135] no-underline hover:text-[#161821]" href={`mailto:${legalContact.email}`}>
                   {legalContact.email}
                 </a>
-                {legalContact.phones.map((phone) => (
-                  <span key={phone}>{phone}</span>
-                ))}
                 <span>{legalContact.address}</span>
               </div>
             </article>

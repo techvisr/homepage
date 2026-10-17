@@ -3,8 +3,8 @@ import assert from "node:assert/strict";
 import { safeLabel, linkDetails, trackEvent, installInteractions } from "../lib/analytics.mjs";
 
 test("contact details and query values are excluded from custom click data", () => {
-  assert.equal(safeLabel("Email jane@example.com or +91 89043 61600"), "Email [email] or [phone]");
-  assert.deepEqual(linkDetails("mailto:jane@example.com?body=private", "https://techvisr.com"), { link_type: "email" });
+  assert.equal(safeLabel("Email contact@example.test or +1 202 555 0100"), "Email [email] or [phone]");
+  assert.deepEqual(linkDetails("mailto:contact@example.test?body=private", "https://techvisr.com"), { link_type: "email" });
   assert.deepEqual(linkDetails("/contact?email=private#secret", "https://techvisr.com"), {
     link_type: "internal", link_domain: "techvisr.com", link_path: "/contact",
   });

@@ -11,10 +11,6 @@ const socialLinks = [
   [FaTwitter, "Twitter"],
 ];
 const contactEmail = "connect@techvisr.com";
-const phoneLinks = [
-  { label: "+91 89043 61600", href: "tel:+918904361600" },
-  { label: "+91 94384 33644", href: "tel:+919438433644" },
-];
 
 const defaultCertificationBadges = [
   { src: "/images/figma-raw/39e0cabeff999a1bd04a0d47bf59b18b175bf911.png", alt: "ISO 9001:2015 certified company" },
@@ -127,13 +123,6 @@ export default function FigmaFooter({
             <a className="break-all text-xl font-extrabold leading-tight text-[#ff7436] no-underline sm:text-2xl lg:text-[25px]" href={`mailto:${contactEmail}`}>
               {contactEmail}
             </a>
-            <div className="grid gap-0.5 text-sm font-bold leading-tight text-[#37313b] sm:text-base">
-              {phoneLinks.map((phone) => (
-                <a className="text-current no-underline hover:text-[#9d493d]" href={phone.href} key={phone.href}>
-                  {phone.label}
-                </a>
-              ))}
-            </div>
             <div className="flex flex-wrap justify-center gap-3 md:justify-end">
               {socialLinks.map(([Icon, label]) => (
                 <a
