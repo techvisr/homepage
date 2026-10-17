@@ -120,7 +120,6 @@ const organizationSchema = {
   logo: `${siteUrl}/images/logo.png`,
   image: `${siteUrl}${ogImage}`,
   email: "admin@techvisr.com",
-  telephone: ["+91 89043 61600", "+91 94384 33644"],
   sameAs: [
     "https://www.linkedin.com/company/techvisr",
     "https://www.facebook.com/techvisr",
@@ -132,7 +131,6 @@ const organizationSchema = {
       "@type": "ContactPoint",
       contactType: "sales",
       email: "admin@techvisr.com",
-      telephone: "+91 89043 61600",
       availableLanguage: ["en"],
     },
   ],

@@ -32,7 +32,7 @@ export const industries = [
       "Ecommerce modernization and automation",
       "Intelligent inventory optimization systems",
     ],
-    image: "nathalia-rosa-rWMIbqmOxrY-unsplash.jpg",
+    image: "retail-commerce-unsplash.jpg",
   },
   {
     label: "EdTech",
@@ -76,7 +76,7 @@ export const industries = [
       "Predictive operational analytics solutions",
       "Scalable industrial workflow optimization",
     ],
-    image: "simon-kadula-8gr6bObQLOI-unsplash.jpg",
+    image: "manufacturing-team-unsplash.jpg",
   },
   {
     label: "Logistics",
@@ -87,7 +87,7 @@ export const industries = [
       "Real-time supply chain visibility",
       "Intelligent warehouse automation systems",
     ],
-    image: "adrian-sulyok-sczNLg6rrhQ-unsplash.jpg",
+    image: "logistics-operations-unsplash.jpg",
   },
   {
     label: "Real Estate",
@@ -98,6 +98,6 @@ export const industries = [
       "AI-powered customer engagement systems",
       "Intelligent document automation solutions",
     ],
-    image: "sean-pollock-PhYq704ffdA-unsplash.jpg",
+    image: "real-estate-team-unsplash.jpg",
   },
 ];

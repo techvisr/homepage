@@ -10,7 +10,6 @@ import {
   Clock3,
   Mail,
   MapPin,
-  Phone,
   Send,
 } from "lucide-react";
 import { FiCheckCircle, FiGlobe, FiShield } from "react-icons/fi";
@@ -25,9 +24,6 @@ const consultationImage = "/images/contact/consultation-code.png";
 const contactEmail = "connect@techvisr.com";
 const contactEndpoint = `https://formsubmit.co/ajax/${contactEmail}`;
 const contactFallbackEndpoint = `https://formsubmit.co/${contactEmail}`;
-const primaryPhone = "+91 89043 61600";
-const secondaryPhone = "+91 9438433644";
-const primaryPhoneHref = "tel:+918904361600";
 const companyAddressLines = [
   "Techvisr Private Limited",
   "11th Floor, Innov8 Prestige Tech Platina 2",
@@ -85,14 +81,6 @@ const contactCards = [
     icon: MapPin,
     title: "Address",
     lines: companyAddressLines,
-  },
-  {
-    icon: Phone,
-    title: "Phone",
-    lines: [
-      { label: primaryPhone, href: primaryPhoneHref },
-      { label: secondaryPhone, href: "tel:+919438433644" },
-    ],
   },
 ];
 

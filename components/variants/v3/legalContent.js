@@ -4,7 +4,6 @@ const companyAddress =
 export const legalContact = {
   email: "admin@techvisr.com",
   address: companyAddress,
-  phones: ["+91 89043 61600", "+91 94384 33644"],
 };
 
 export const termsPage = {
